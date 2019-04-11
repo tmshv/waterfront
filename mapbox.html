@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://cdn.maptiler.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+  <link href="https://cdn.maptiler.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    #map {
+        position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    }
+
+    #marker {
+        background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+ 
+    .mapboxgl-popup {
+        max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+    <div id="map"></div>
+    <p>
+        <a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a>
+        <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>
+    </p>
+    <script src="app.js"></script>
+</body>
+</html>
