@@ -1,0 +1,64 @@
+{
+    "attributes": {
+        "authorType": {
+            "render": "circle",
+            "types": {
+                "artist": {
+                    "r": 20,
+                    "fill": "#adb6e8",
+                    "opacity": 0.9
+                },
+                "activist": {
+                    "r": 20,
+                    "fill": "#adb6e8",
+                    "opacity": 0.9
+                },
+                "developer": {
+                    "r": 20,
+                    "fill": "#adb6e8",
+                    "opacity": 0.9
+                },
+                "designer": {
+                    "r": 20,
+                    "fill": "#adb6e8",
+                    "opacity": 0.9
+                },
+                "scientist": {
+                    "r": 20,
+                    "fill": "#91d595",
+                    "opacity": 0.9
+                },
+                "authority": {
+                    "r": 20,
+                    "fill": "#2e8cae",
+                    "opacity": 0.9
+                },
+                "complex": {
+                    "r": 20,
+                    "fill": "#826278",
+                    "opacity": 0.9
+                }
+            }
+        },
+        "placement": {
+            "render": "circle",
+            "types": {
+                "on_water": {
+                    "r": 9,
+                    "fill": "#00536B",
+                    "opacity": 1
+                }
+            }
+        },
+        "type": {
+            "render": "circle",
+            "types": {
+                "academic_research": {
+                    "r": 6,
+                    "fill": "#FFC312",
+                    "opacity": 1
+                }
+            }
+        }
+    }
+}

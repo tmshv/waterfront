@@ -1,170 +1,87 @@
-const attribution = [
-    '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a>',
-    '<a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
-].join('')
+let config = null
 
-// const center = [59.932924, 30.344087]
-const center = [30.344087, 59.932924]
-const zoom = 11
-const key = 'BANyZrASqDKOtn6kEAe9'
-
-const palette = {
-    attributes: {
-        authorType: {
-            render: 'circle',
-            types: {
-                artists: {
-                    r: 20,
-                    fill: '#AAB38C',
-                    opacity: 0.5,
-                },
-                designers: {
-                    r: 20,
-                    fill: '#ACB7E9',
-                    opacity: 0.75,
-                },
-            }
-        },
-        placement: {
-            render: 'circle',
-            types: {
-                designers: {
-                    r: 10,
-                    fill: '#00536B',
-                    opacity: 1,
-                },
-            }
-        },
-        type: {
-            render: 'circle',
-            types: {
-                designers: {
-                    r: 8,
-                    fill: '#FFC312',
-                    opacity: 1,
-                },
-            }
-        },
-        // placement: 'on_water',
-        // type: 'academic_research',
-    }
+async function json(url) {
+    const res = await fetch(url)
+    return res.json()
 }
 
-const features = [
-    {
-        city: 'saint-petersburg',
-        attributes: {
-            authorType: 'developers',
-            placement: 'on_water',
-            type: 'academic_research',
-        },
-        location: [30.235576, 59.928145],
-    },
-    {
-        city: 'saint-petersburg',
-        attributes: {
-            authorType: 'artists',
-            placement: 'on_water',
-            type: 'academic_research',
-        },
-        location: [30.205556, 59.954418],
-    },
-    {
-        city: 'saint-petersburg',
-        attributes: {
-            authorType: 'designers',
-            placement: 'on_water',
-            type: 'academic_research',
-        },
-        location: [30.240918, 59.965245],
-    },
-    {
-        city: 'saint-petersburg',
-        attributes: {
-            authorType: 'designers',
-            placement: 'on_water',
-            type: 'academic_research',
-        },
-        location: [30.335332, 59.954418],
-    },
-    {
-        city: 'saint-petersburg',
-        attributes: {
-            authorType: 'designers',
-            placement: 'on_water',
-            type: 'academic_research',
-        },
-        location: [30.388203, 59.926559],
-    },
-    {
-        city: 'saint-petersburg',
-        attributes: {
-            authorType: 'designers',
-            placement: 'on_water',
-            type: 'academic_research',
-        },
-        location: [30.278684, 59.927247],
-    },
-]
+async function main() {
+    const attribution = [
+        '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a>',
+        '<a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
+    ].join('')
 
-// const map = L.map('map').setView(center, zoom)
-// const gl = L.mapboxGL({
-//     attribution,
-//     accessToken: 'not-needed',
-//     style: `https://api.maptiler.com/maps/495bac53-4c52-4e14-b9d1-3bd481a5be26/style.json?key=${key}`
-// }).addTo(map)
+    // const center = [59.932924, 30.344087]
+    const center = [30.344087, 59.932924]
+    const zoom = 11
+    const key = 'BANyZrASqDKOtn6kEAe9'
+    const mapName = '495bac53-4c52-4e14-b9d1-3bd481a5be26'
+    // const mapName = 'positron'
 
-// L.marker(center)
-//     .addTo(map)
-//     .bindPopup('<strong>WF</strong>')
-//     .openPopup()
+    config = await json('config.json')
+    const features = await json('features.json')
 
-const style = `https://api.maptiler.com/maps/495bac53-4c52-4e14-b9d1-3bd481a5be26/style.json?key=${key}`
+    // const map = L.map('map').setView(center, zoom)
+    // const gl = L.mapboxGL({
+    //     attribution,
+    //     accessToken: 'not-needed',
+    //     style: `https://api.maptiler.com/maps/495bac53-4c52-4e14-b9d1-3bd481a5be26/style.json?key=${key}`
+    // }).addTo(map)
 
-// You can remove the following line if you don't need support for RTL (right-to-left) labels:
-mapboxgl.setRTLTextPlugin('https://cdn.maptiler.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.2/mapbox-gl-rtl-text.js');
-const map = new mapboxgl.Map({
-    container: 'map',
-    style,
-    center,
-    zoom,
-})
+    // L.marker(center)
+    //     .addTo(map)
+    //     .bindPopup('<strong>WF</strong>')
+    //     .openPopup()
 
-map.on('click', event => {
-    console.log('map click', event.lngLat)
-})
+    const style = `https://api.maptiler.com/maps/${mapName}/style.json?key=${key}`
 
-// // create the popup
-// const popup = new mapboxgl.Popup({ offset: 25 })
-//     .setText('WF')
+    // You can remove the following line if you don't need support for RTL (right-to-left) labels:
+    mapboxgl.setRTLTextPlugin('https://cdn.maptiler.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.2/mapbox-gl-rtl-text.js');
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style,
+        center,
+        zoom,
+    })
 
-// var popup = new mapboxgl.Popup({
-//     closeOnClick: false
-// })
-//     .setLngLat(center)
-//     .setHTML('<h1>WF</h1>')
-//     .addTo(map)
+    map.on('click', event => {
+        console.log('map click', event.lngLat)
+    })
 
-const currentCity = 'saint-petersburg'
+    // // create the popup
+    // const popup = new mapboxgl.Popup({ offset: 25 })
+    //     .setText('WF')
 
-for (const f of features) {
-    if (f.city !== currentCity) {
-        continue
+    // var popup = new mapboxgl.Popup({
+    //     closeOnClick: false
+    // })
+    //     .setLngLat(center)
+    //     .setHTML('<h1>WF</h1>')
+    //     .addTo(map)
+
+    const currentCity = 'saint-petersburg'
+
+    for (const f of features) {
+        if (f.city !== currentCity) {
+            continue
+        }
+
+        const element = createMarkerElement(f)
+        const options = {
+        }
+
+        if (element) {
+            options.element = element
+        }
+
+        const marker = new mapboxgl.Marker(options)
+        marker.setLngLat(f.location).addTo(map)
     }
-
-    const element = createMarkerElement(f)
-    const options = {
-    }
-
-    if (element) {
-        options.element = element
-    }
-
-    const marker = new mapboxgl.Marker(options)
-    marker.setLngLat(f.location).addTo(map)
-}
 
 // map.addControl(new mapboxgl.NavigationControl());
+}
+
+main()
 
 // code for creating an SVG donut chart from feature properties
 function createMarkerElement(feature) {
@@ -178,23 +95,12 @@ function createMarkerElement(feature) {
     }
 
     const children = [
-        renderAttribute('authorType', feature.attributes.authorType, options),
-        renderAttribute('placement', feature.attributes.authorType, options),
-        renderAttribute('type', feature.attributes.authorType, options),
-        // svgCircle({
-        //     cx: r,
-        //     cy: r,
-        //     r: 15,
-        //     fill: '#4F7986',
-        //     opacity: 1,
-        // }),
-        // svgCircle({
-        //     cx: r,
-        //     cy: r,
-        //     r: 12,
-        //     fill: '#F79F1F',
-        //     opacity: 1,
-        // }),
+        renderAttribute('authorType', feature.attributes.authorType, {
+            ...options,
+            className: 'wf-marker',
+        }),
+        renderAttribute('placement', feature.attributes.placement, options),
+        renderAttribute('type', feature.attributes.type, options),
     ]
 
     for (const c of children) {
@@ -209,7 +115,7 @@ function createMarkerElement(feature) {
 }
 
 function renderAttribute(name, value, options) {
-    const p = palette.attributes[name]
+    const p = config.attributes[name]
 
     if (p.render !== 'circle') {
         return null
@@ -226,8 +132,8 @@ function renderAttribute(name, value, options) {
     })
 }
 
-function svgCircle({ cx, cy, r, fill, opacity }) {
-    return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" fill-opacity="${opacity}"/>`
+function svgCircle({ cx, cy, r, fill, opacity, className }) {
+    return `<circle class="${className}" cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" fill-opacity="${opacity}"/>`
 }
 
 function htmlElementFromString(html, container = 'div') {

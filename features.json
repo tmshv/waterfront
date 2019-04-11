@@ -1,0 +1,86 @@
+[
+    {
+        "city": "saint-petersburg",
+        "attributes": {
+            "authorType": "artist",
+            "placement": "on_water",
+            "type": "academic_research"
+        },
+        "location": [
+            30.235576,
+            59.928145
+        ]
+    },
+    {
+        "city": "saint-petersburg",
+        "attributes": {
+            "authorType": "activist",
+            "placement": "on_water",
+            "type": "academic_research"
+        },
+        "location": [
+            30.205556,
+            59.954418
+        ]
+    },
+    {
+        "city": "saint-petersburg",
+        "attributes": {
+            "authorType": "developer",
+            "placement": "on_water",
+            "type": "academic_research"
+        },
+        "location": [
+            30.240918,
+            59.965245
+        ]
+    },
+    {
+        "city": "saint-petersburg",
+        "attributes": {
+            "authorType": "designer",
+            "placement": "on_water",
+            "type": "academic_research"
+        },
+        "location": [
+            30.335332,
+            59.954418
+        ]
+    },
+    {
+        "city": "saint-petersburg",
+        "attributes": {
+            "authorType": "scientist",
+            "placement": "on_water",
+            "type": "academic_research"
+        },
+        "location": [
+            30.388203,
+            59.926559
+        ]
+    },
+    {
+        "city": "saint-petersburg",
+        "attributes": {
+            "authorType": "authority",
+            "placement": "on_water",
+            "type": "academic_research"
+        },
+        "location": [
+            30.278684,
+            59.927247
+        ]
+    },
+    {
+        "city": "saint-petersburg",
+        "attributes": {
+            "authorType": "complex",
+            "placement": "on_water",
+            "type": "academic_research"
+        },
+        "location": [
+            30.271817,
+            59.951151
+        ]
+    }
+]
