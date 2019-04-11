@@ -3,7 +3,7 @@
         "city": "saint-petersburg",
         "attributes": {
             "authorType": "artist",
-            "placement": "on_water",
+            "placement": "on_coastal_complexes",
             "type": "academic_research"
         },
         "location": [
@@ -15,8 +15,8 @@
         "city": "saint-petersburg",
         "attributes": {
             "authorType": "activist",
-            "placement": "on_water",
-            "type": "academic_research"
+            "placement": "on_the_shore",
+            "type": "instalation"
         },
         "location": [
             30.205556,
@@ -27,8 +27,8 @@
         "city": "saint-petersburg",
         "attributes": {
             "authorType": "developer",
-            "placement": "on_water",
-            "type": "academic_research"
+            "placement": "on_the_shore",
+            "type": "private_project"
         },
         "location": [
             30.240918,
@@ -38,9 +38,9 @@
     {
         "city": "saint-petersburg",
         "attributes": {
-            "authorType": "designer",
-            "placement": "on_water",
-            "type": "academic_research"
+            "authorType": "scientist",
+            "placement": "on_coastal_complexes",
+            "type": "academic_project"
         },
         "location": [
             30.335332,
@@ -50,21 +50,21 @@
     {
         "city": "saint-petersburg",
         "attributes": {
-            "authorType": "scientist",
-            "placement": "on_water",
-            "type": "academic_research"
+            "authorType": "designer",
+            "placement": "on_coastal_complexes",
+            "type": "public_research"
         },
         "location": [
-            30.388203,
-            59.926559
+            30.387699,
+            59.926368
         ]
     },
     {
         "city": "saint-petersburg",
         "attributes": {
             "authorType": "authority",
-            "placement": "on_water",
-            "type": "academic_research"
+            "placement": "on_special_designs_on_the_water",
+            "type": "art_intervention"
         },
         "location": [
             30.278684,
@@ -74,13 +74,37 @@
     {
         "city": "saint-petersburg",
         "attributes": {
-            "authorType": "complex",
-            "placement": "on_water",
-            "type": "academic_research"
+            "authorType": "artist",
+            "placement": "on_coastal_complexes",
+            "type": "urban_intervention"
         },
         "location": [
             30.271817,
             59.951151
+        ]
+    },
+    {
+        "city": "saint-petersburg",
+        "attributes": {
+            "authorType": "complex",
+            "placement": "on_water",
+            "type": "public_project"
+        },
+        "location": [
+            30.261689,
+            59.917525
+        ]
+    },
+    {
+        "city": "saint-petersburg",
+        "attributes": {
+            "authorType": "scientist",
+            "placement": "on_coastal_complexes",
+            "type": "private_research"
+        },
+        "location": [
+            30.221274,
+            59.936241
         ]
     }
 ]
