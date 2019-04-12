@@ -110,11 +110,13 @@ async function main() {
         })
     })
 
+    const activeLayer = 'featuresActorType'
+
     map.on('click', e => {
         removeElementsByClass('feature-preview')
 
         const features = map.queryRenderedFeatures(e.point, {
-            layers: ['featuresActorType'] // replace this with the name of the layer
+            layers: [activeLayer] // replace this with the name of the layer
         });
 
         if (!features.length) {
@@ -171,7 +173,15 @@ async function main() {
         //     anchor: 'bottom',
         // })
         // popup.setHTML(preview)
-    });
+    })
+
+    map.on('mouseenter', activeLayer, () => {
+        map.getCanvas().style.cursor = 'pointer'
+    })
+
+    map.on('mouseleave', activeLayer, () => {
+        map.getCanvas().style.cursor = ''
+    })
 }
 
 main()
