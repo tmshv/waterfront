@@ -44,6 +44,18 @@ async function main() {
         });
 
         map.addLayer({
+            id: 'featuresShadow',
+            source: 'features',
+            type: 'circle',
+            paint: {
+                "circle-color": "black",
+                "circle-opacity": 1,
+                "circle-blur": 0.5,
+                "circle-radius": 24
+            }
+        })
+
+        map.addLayer({
             id: 'featuresActorType',
             source: 'features',
             type: 'circle',
