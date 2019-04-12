@@ -5,6 +5,10 @@
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
   <style>
+    body {
+        font-family: sans-serif;
+    }
+
     #map {
         position: fixed;
         top: 0;
@@ -93,6 +97,43 @@
         }
     }
 
+    .wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 10px;
+    }
+
+    .wf-legend {
+        color: white;
+    }
+    
+    .wf-legend header {
+        font-size: 1.2em;
+        background-color: #00536b;
+
+        padding: 2px 5px;
+        margin-bottom: 5px;
+    }
+
+    .wf-legend-block{
+        margin-bottom: 15px;
+    }
+
+    .wf-legend-block ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .wf-legend-block li {
+        padding: 2px 5px;
+    }
+
+    .checkbox {
+        border: none;
+    }
+
     @media (max-width: 31.25em) {
         .mapboxgl-popup {
             display: none;
@@ -110,6 +151,53 @@
         <a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a>
         <a href="https://www.openstreetmap.org/copyright" target="_blank">© OSM</a>
     </p> -->
+
+    <div class="wrapper">
+        <div class="wf-legend">
+            <div class="wf-legend-block">
+                <header>Расположение</header>
+
+                <ul>
+                    <li style="background-color: #59070c;"><input class="checkbox" type="checkbox"/>на воде</li>
+                    <li style="background-color: #871811;"><input class="checkbox" type="checkbox"/>конструкции на воде</li>
+                    <li style="background-color: #5e3c23;"><input class="checkbox" type="checkbox"/>намыв</li>
+                    <li style="background-color: #272d63;"><input class="checkbox" type="checkbox"/>на берегу</li>
+                    <li style="background-color: #016661;"><input class="checkbox" type="checkbox"/>прибрежные комплексы</li>
+                </ul>
+            </div>
+        
+            <div class="wf-legend-block">
+                <header>Тип акторов</header>
+
+                <ul>
+                    <li style="background-color: #f19698;"><input class="checkbox" type="checkbox"/>Artists</li>
+                    <li style="background-color: #9898cb;"><input class="checkbox" type="checkbox"/>Activists</li>
+                    <li style="background-color: #facb99;"><input class="checkbox" type="checkbox"/>Developers</li>
+                    <li style="background-color: #edcce3;"><input class="checkbox" type="checkbox"/>Designers</li>
+                    <li style="background-color: #eb6568;"><input class="checkbox" type="checkbox"/>Scientists</li>
+                    <li style="background-color: #cde3c2;"><input class="checkbox" type="checkbox"/>Authorities</li>
+                    <li style="background-color: #996767;"><input class="checkbox" type="checkbox"/>Complex</li>
+                </ul>
+            </div>
+        
+            <div class="wf-legend-block">
+                <header>Тип проекта</header>
+
+                <ul>
+                    <li style="background-color: #009fdb;"><input class="checkbox" type="checkbox"/>Art Intervention</li>
+                    <li style="background-color: #2f46d1;"><input class="checkbox" type="checkbox"/>Urban Intervention</li>
+                    <li style="background-color: #9f1f80;"><input class="checkbox" type="checkbox"/>Installation</li>
+                    <li style="background-color: #e44892;"><input class="checkbox" type="checkbox"/>Public Research</li>
+                    <li style="background-color: #e21d2f;"><input class="checkbox" type="checkbox"/>Private Research</li>
+                    <li style="background-color: #ec7c23;"><input class="checkbox" type="checkbox"/>Academic Research</li>
+                    <li style="background-color: #99bc36;"><input class="checkbox" type="checkbox"/>Public Project</li>
+                    <li style="background-color: #ffe800;"><input class="checkbox" type="checkbox"/>Private Project</li>
+                    <li style="background-color: #009447;"><input class="checkbox" type="checkbox"/>Academic Project</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
