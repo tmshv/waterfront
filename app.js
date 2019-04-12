@@ -10,28 +10,12 @@ async function main() {
         '<a href="https://unit4.io" target="_blank">design::unit</a>',
     ].join('')
 
-    // const center = [59.932924, 30.344087]
+    const currentCity = 'saint-petersburg'
     const center = [30.344087, 59.932924]
     const zoom = 11
     const key = 'BANyZrASqDKOtn6kEAe9'
     // const mapName = '495bac53-4c52-4e14-b9d1-3bd481a5be26'
     const mapName = 'positron'
-
-    config = await json('config.json')
-    const features = await json('features.json')
-
-    // const map = L.map('map').setView(center, zoom)
-    // const gl = L.mapboxGL({
-    //     attribution,
-    //     accessToken: 'not-needed',
-    //     style: `https://api.maptiler.com/maps/495bac53-4c52-4e14-b9d1-3bd481a5be26/style.json?key=${key}`
-    // }).addTo(map)
-
-    // L.marker(center)
-    //     .addTo(map)
-    //     .bindPopup('<strong>WF</strong>')
-    //     .openPopup()
-
     const style = `https://api.maptiler.com/maps/${mapName}/style.json?key=${key}`
 
     const map = new mapboxgl.Map({
@@ -46,62 +30,123 @@ async function main() {
         console.log('map click', event.lngLat)
     })
 
+    // map.addControl(new mapboxgl.NavigationControl());
     map.addControl(new mapboxgl.AttributionControl({
         compact: true,
         customAttribution: attribution,
     }));
 
-    // // create the popup
-    // const popup = new mapboxgl.Popup({ offset: 25 })
-    //     .setText('WF')
+    map.on('load', () => {
+        map.addSource('features', {
+            type: 'geojson',
+            data: './features.json',
+            // data: "https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson",
+        });
 
-    // var popup = new mapboxgl.Popup({
-    //     closeOnClick: false
-    // })
-    //     .setLngLat(center)
-    //     .setHTML('<h1>WF</h1>')
-    //     .addTo(map)
+        map.addLayer({
+            id: 'featuresActorType',
+            source: 'features',
+            type: 'circle',
+            paint: {
+                'circle-color': [
+                    'match',
+                    ['get', 'actorType'],
+                    "artist", "#f19698",
+                    "activist", "#9898cb",
+                    "developer", "#facb99",
+                    "designer", "#edcce3",
+                    "scientist", "#eb6568",
+                    "authority", "#cde3c2",
+                    "complex", "#996767",
+                    /* other */ 'black'
+                ],
+                "circle-opacity": 1,
+                "circle-radius": 21
+            }
+        })
 
-    const currentCity = 'saint-petersburg'
+        map.addLayer({
+            id: 'featuresInitiativeType',
+            source: 'features',
+            type: 'circle',
+            paint: {
+                'circle-color': [
+                    'match',
+                    ['get', 'initiativeType'],
+                    "art_intervention", "#009fdb",
+                    "urban_intervention", "#2f46d1",
+                    "instalation", "#9f1f80",
+                    "public_research", "#e44892",
+                    "private_research", "#e21d2f",
+                    "academic_research", "#ec7c23",
+                    "public_project", "#99bc36",
+                    "private_project", "#ffe800",
+                    "academic_project", "#009447",
+                    /* other */ 'black'
+                ],
+                "circle-opacity": 1,
+                "circle-radius": 14
+            }
+        })
 
-    for (const f of features) {
-        if (f.city !== currentCity) {
-            continue
+        map.addLayer({
+            id: 'featuresPlacementType',
+            source: 'features',
+            type: 'circle',
+            paint: {
+                'circle-color': [
+                    'match',
+                    ['get', 'placementType'],
+                    "on_water", "#59070c",
+                    "on_special_designs_on_the_water", "#871811",
+                    "on_the_mound", "#5e3c23",
+                    "on_the_shore", "#272d63",
+                    "on_coastal_complexes", "#016661",
+                    /* other */ 'black'
+                ],
+                "circle-opacity": 1,
+                "circle-radius": 7
+            }
+        })
+    })
+
+    map.on('click', e => {
+        removeElementsByClass('feature-preview')
+
+        const features = map.queryRenderedFeatures(e.point, {
+            layers: ['featuresActorType'] // replace this with the name of the layer
+        });
+
+        if (!features.length) {
+            return
         }
 
-        const element = createMarkerElement(f)
-        const options = {
-        }
+        const selectedFeature = features[0]
 
-        if (element) {
-            options.element = element
-        }
+        // map.flyTo({
+        //     center: selectedFeature.geometry.coordinates,
+        //     // zoom: 13,
+        // });
 
-        const preview = createFeaturePreview(f)
-        // const popup = new mapboxgl.Popup({
-        //     // closeOnClick: false,
-        //     closeButton: false,
-        //     offset: 25,
-        //     className: 'wf-popup',
-        //     anchor: 'bottom',
-        // })
-        // popup.setHTML(preview)
+        console.log(selectedFeature)
 
+        const preview = createFeaturePreview(selectedFeature)
         const previewElement = createFeaturePreviewContainer()
         previewElement.innerHTML = preview
 
-        const marker = new mapboxgl.Marker(options)
-        marker.setLngLat(f.location)
-            // .setPopup(popup)
-            .addTo(map)
-    }
+        var popup = createPopup({
+            // offset: [0, -15],
+            // closeOnClick: false,
+            closeButton: false,
+            offset: 25,
+            className: 'wf-popup',
+            // anchor: 'bottom',
+        })
+            .setLngLat(selectedFeature.geometry.coordinates)
+            .setHTML(createFeaturePreview(selectedFeature)) // CHANGE THIS TO REFLECT THE PROPERTIES YOU WANT TO SHOW
+            .setLngLat(selectedFeature.geometry.coordinates)
+            .addTo(map);
 
-    // map.addControl(new mapboxgl.NavigationControl());
-
-    // When a click event occurs on a feature in the places layer, open a popup at the
-    // location of the feature, with description HTML from its properties.
-    map.on('click', e => {
-        console.log(e.features)
         // var coordinates = e.features[0].geometry.coordinates.slice();
         // var description = e.features[0].properties.description;
 
@@ -131,26 +176,35 @@ async function main() {
 
 main()
 
+function createPopup(options) {
+    return new mapboxgl.Popup(options)
+}
+
+function removeElementsByClass(className) {
+    var elements = document.getElementsByClassName(className);
+    while (elements.length > 0) {
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
 function createFeaturePreviewContainer() {
     const element = document.createElement('div')
     element.classList.add('feature-preview')
     element.classList.add('wf-popup')
 
     document.body.appendChild(element)
-    
+
     return element
 }
 
 function createFeaturePreview(feature) {
-    const img = 'https://cdn.architecturendesign.net/wp-content/uploads/2014/06/6589.jpg'
+    const img = 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1498156851%2Fopera-house-oslo-norway-OSLO0617.jpg%3Fitok%3DrcuoL2da&q=85'
     const url = 'http://waterfront.tools'
     const title = 'Название проекта длинное. В две строки'
     const date = '1 January 1970'
     const short = `                    
     Краткое описание. For example, MercatorCoordinate(0, 0, 0)
     is the north-west corner of the mercator world and MercatorCoordinate(1, 1, 0) is the south-east corner.
-    If you are familiar with vector tiles it may be helpful to think of the coordinate space as
-    the 0/0/0 tile with an extent of 1.
     `
 
     return (`

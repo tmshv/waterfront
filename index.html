@@ -2,22 +2,17 @@
 <html>
 <head>
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <script src="https://cdn.maptiler.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
-  <link href="https://cdn.maptiler.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" rel="stylesheet" />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
   <style>
     #map {
-        position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
     }
 
-    #marker {
-        background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
-        background-size: cover;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
- 
     .mapboxgl-popup {
         max-width: 200px;
     }
@@ -64,7 +59,7 @@
         left: 0;
         right: 0;
         /* width: 100%; */
-        height: 50%;
+        height: 75%;
         overflow: auto;
         margin: 3px;
         background-color: white;
@@ -99,6 +94,10 @@
     }
 
     @media (max-width: 31.25em) {
+        .mapboxgl-popup {
+            display: none;
+        }
+
         .feature-preview {
             display: block;
         }
