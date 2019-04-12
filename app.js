@@ -34,8 +34,6 @@ async function main() {
 
     const style = `https://api.maptiler.com/maps/${mapName}/style.json?key=${key}`
 
-    // You can remove the following line if you don't need support for RTL (right-to-left) labels:
-    mapboxgl.setRTLTextPlugin('https://cdn.maptiler.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.2/mapbox-gl-rtl-text.js');
     const map = new mapboxgl.Map({
         attributionControl: false,
         container: 'map',
