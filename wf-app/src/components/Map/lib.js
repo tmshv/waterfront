@@ -32,10 +32,6 @@ export async function initMap(htmlElement) {
         zoom,
     })
 
-    map.on('click', event => {
-        console.log('map click', event.lngLat)
-    })
-
     // map.addControl(new mapboxgl.NavigationControl());
     map.addControl(new mapboxgl.AttributionControl({
         compact: true,
@@ -167,6 +163,8 @@ export async function initMap(htmlElement) {
     map.on('mouseleave', activeLayer, () => {
         map.getCanvas().style.cursor = ''
     })
+
+    return map
 }
 
 function filterFeatureSettingsByFieldType(featureSettings, type) {

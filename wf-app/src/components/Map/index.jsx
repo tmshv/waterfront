@@ -8,8 +8,12 @@ export default class Map extends React.Component {
         this.mapRef = React.createRef()        
     }
 
-    componentDidMount() {
-        initMap(this.mapRef.current)
+    async componentDidMount() {
+        const map = await initMap(this.mapRef.current)
+
+        map.on('click', event => {
+            console.log('map click', event.lngLat)
+        })
     }
 
     render() {
