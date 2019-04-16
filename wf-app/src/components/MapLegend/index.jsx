@@ -128,8 +128,11 @@ export default class MapLegend extends React.Component {
                 <header>{title}</header>
 
                 <ul>
-                    {items.map(x => (
-                        <li style={x.style}>
+                    {items.map((x, i) => (
+                        <li
+                            key={i}
+                            style={x.style}
+                        >
                             <input className="checkbox" type="checkbox" />
                             {x.name}
                         </li>
