@@ -1,0 +1,171 @@
+################################################################
+# Global configuration
+################################################################
+[global]
+  checkNewVersion = false
+  sendAnonymousUsage = false
+
+################################################################
+# Entrypoints configuration
+################################################################
+
+# Entrypoints definition
+#
+# Optional
+# Default:
+[entrypoints]
+    [entrypoints.http]
+        address = ":80"
+    
+    [entrypoints.https]
+        address = ":443"
+
+################################################################
+# Let's Encrypt configuration
+################################################################
+
+[acme] # every router with TLS enabled will now be able to use ACME for its certificates
+   email = "roman@tmshv.ru"
+   storage = "acme.json"
+   acmeLogging = true
+   entryPoint = "https" # used during the challenge
+   # onHostRule = true # dynamic generation based on the Host() & HostSNI() matchers
+
+   [acme.httpChallenge]
+      entryPoint = "http" # used during the challenge
+
+# Domains list.
+# Only domains defined here can generate wildcard certificates.
+# The certificates for these domains are negotiated at traefik startup only.
+#
+   [[acme.domains]]
+       main = "wf.tmshv.com"
+#   sans = ["test1.local1.com", "test2.local1.com"]
+# [[acme.domains]]
+#   main = "local2.com"
+# [[acme.domains]]
+#   main = "*.local3.com"
+#   sans = ["local3.com", "test1.test1.local3.com"]
+
+################################################################
+# Traefik logs configuration
+################################################################
+
+# Traefik logs
+# Enabled by default and log to stdout
+#
+# Optional
+#
+[log]
+
+# Log level
+#
+# Optional
+# Default: "ERROR"
+#
+logLevel = "DEBUG"
+
+# Sets the filepath for the traefik log. If not specified, stdout will be used.
+# Intermediate directories are created if necessary.
+#
+# Optional
+# Default: os.Stdout
+#
+# filePath = "log/traefik.log"
+
+# Format is either "json" or "common".
+#
+# Optional
+# Default: "common"
+#
+# format = "common"
+
+################################################################
+# Access logs configuration
+################################################################
+
+# Enable access logs
+# By default it will write to stdout and produce logs in the textual
+# Common Log Format (CLF), extended with additional fields.
+#
+# Optional
+#
+[accessLog]
+
+# Sets the file path for the access log. If not specified, stdout will be used.
+# Intermediate directories are created if necessary.
+#
+# Optional
+# Default: os.Stdout
+#
+# filePath = "/path/to/log/log.txt"
+
+# Format is either "json" or "common".
+#
+# Optional
+# Default: "common"
+#
+# format = "common"
+
+################################################################
+# API and dashboard configuration
+################################################################
+
+# Enable API and dashboard
+[api]
+
+  # Name of the related entry point
+  #
+  # Optional
+  # Default: "traefik"
+  #
+  # entryPoint = "traefik"
+
+  # Enabled Dashboard
+  #
+  # Optional
+  # Default: true
+  #
+  # dashboard = false
+
+################################################################
+# Ping configuration
+################################################################
+
+# Enable ping
+[ping]
+
+  # Name of the related entry point
+  #
+  # Optional
+  # Default: "traefik"
+  #
+  # entryPoint = "traefik"
+
+################################################################
+# Docker configuration backend
+################################################################
+
+# Enable Docker configuration backend
+[providers.docker]
+
+# Docker server endpoint. Can be a tcp or a unix socket endpoint.
+#
+# Required
+# Default: "unix:///var/run/docker.sock"
+#
+# endpoint = "tcp://10.10.10.10:2375"
+
+# Default host rule.
+#
+# Optional
+# Default: ""
+#
+# DefaultRule = "Host(`{{ normalize .Name }}.docker.localhost`)"
+
+# Expose containers by default in traefik
+#
+# Optional
+# Default: true
+#
+# exposedByDefault = true
