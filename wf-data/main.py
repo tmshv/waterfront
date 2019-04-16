@@ -2,6 +2,7 @@ import aiohttp
 
 from sanic import Sanic
 from sanic.response import json
+from sanic_cors import cross_origin
 
 app = Sanic()
 
@@ -49,6 +50,7 @@ async def home(request):
 
 
 @app.route('/<lang>/<city>/<status>/features')
+@cross_origin(app)
 async def get_features(request, lang, city, status):
     """
     API Item structure
