@@ -5,7 +5,7 @@ async function json(url) {
     return res.json()
 }
 
-async function main() {
+export async function initMap(htmlElement) {
     let featureSettings = await json('https://wf.tmshv.com/api/_/items/feature_settings')
     featureSettings = featureSettings['data']
 
@@ -26,7 +26,7 @@ async function main() {
 
     const map = new mapboxgl.Map({
         attributionControl: false,
-        container: 'map',
+        container: htmlElement,
         style,
         center,
         zoom,
@@ -300,5 +300,3 @@ function htmlElementFromString(html, container = 'div') {
 
     return element
 }
-
-main()
