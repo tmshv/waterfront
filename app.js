@@ -6,6 +6,12 @@ async function json(url) {
 }
 
 async function main() {
+    let featureSettings = await json('https://wf.tmshv.com/api/_/items/feature_settings')
+    featureSettings = featureSettings['data']
+
+    const actorTypeColors = filterFeatureSettingsByFieldType(featureSettings, 'actor_type')
+    const projectTypeColors = filterFeatureSettingsByFieldType(featureSettings, 'project_type')
+
     const attribution = [
         '<a href="https://unit4.io" target="_blank">design::unit</a>',
     ].join('')
@@ -39,8 +45,7 @@ async function main() {
     map.on('load', () => {
         map.addSource('features', {
             type: 'geojson',
-            data: './features.json',
-            // data: "https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson",
+            data: 'https://wf.tmshv.com/data/en/saint_petersburg/published/features',
         });
 
         map.addLayer({
@@ -51,7 +56,7 @@ async function main() {
                 "circle-color": "black",
                 "circle-opacity": 1,
                 "circle-blur": 0.5,
-                "circle-radius": 24
+                "circle-radius": 17
             }
         })
 
@@ -59,67 +64,35 @@ async function main() {
             id: 'featuresActorType',
             source: 'features',
             type: 'circle',
-            paint: {
-                'circle-color': [
-                    'match',
-                    ['get', 'actorType'],
-                    "artist", "#f19698",
-                    "activist", "#9898cb",
-                    "developer", "#facb99",
-                    "designer", "#edcce3",
-                    "scientist", "#eb6568",
-                    "authority", "#cde3c2",
-                    "complex", "#996767",
-                    /* other */ 'black'
-                ],
-                "circle-opacity": 1,
-                "circle-radius": 21
-            }
+            paint: createLayerPaint('actorType', 14, guardPaintColors(actorTypeColors))
         })
 
         map.addLayer({
             id: 'featuresInitiativeType',
             source: 'features',
             type: 'circle',
-            paint: {
-                'circle-color': [
-                    'match',
-                    ['get', 'initiativeType'],
-                    "art_intervention", "#009fdb",
-                    "urban_intervention", "#2f46d1",
-                    "instalation", "#9f1f80",
-                    "public_research", "#e44892",
-                    "private_research", "#e21d2f",
-                    "academic_research", "#ec7c23",
-                    "public_project", "#99bc36",
-                    "private_project", "#ffe800",
-                    "academic_project", "#009447",
-                    /* other */ 'black'
-                ],
-                "circle-opacity": 1,
-                "circle-radius": 14
-            }
+            paint: createLayerPaint('projectType', 7, guardPaintColors(projectTypeColors))
         })
 
-        map.addLayer({
-            id: 'featuresPlacementType',
-            source: 'features',
-            type: 'circle',
-            paint: {
-                'circle-color': [
-                    'match',
-                    ['get', 'placementType'],
-                    "on_water", "#59070c",
-                    "on_special_designs_on_the_water", "#871811",
-                    "on_the_mound", "#5e3c23",
-                    "on_the_shore", "#272d63",
-                    "on_coastal_complexes", "#016661",
-                    /* other */ 'black'
-                ],
-                "circle-opacity": 1,
-                "circle-radius": 7
-            }
-        })
+        // map.addLayer({
+        //     id: 'featuresPlacementType',
+        //     source: 'features',
+        //     type: 'circle',
+        //     paint: {
+        //         'circle-color': [
+        //             'match',
+        //             ['get', 'placementType'],
+        //             "on_water", "#59070c",
+        //             "on_special_designs_on_the_water", "#871811",
+        //             "on_the_mound", "#5e3c23",
+        //             "on_the_shore", "#272d63",
+        //             "on_coastal_complexes", "#016661",
+        //             /* other */ 'black'
+        //         ],
+        //         "circle-opacity": 1,
+        //         "circle-radius": 7
+        //     }
+        // })
     })
 
     const activeLayer = 'featuresActorType'
@@ -196,7 +169,31 @@ async function main() {
     })
 }
 
-main()
+function filterFeatureSettingsByFieldType(featureSettings, type) {
+  return featureSettings
+      .filter(x => x.field_target === type)
+      .map(x => [x.field_value, x.color])
+      .flat()
+}
+
+function guardPaintColors(colors){
+  return colors.length >= 2 ? colors : [
+    `${Math.random()}`, 'black'
+  ]
+}
+
+function createLayerPaint(field, radius, colors){
+  return {
+    "circle-color": [
+        "match",
+        ["get", field],
+        ...colors,
+        /* other */ 'black'
+    ],
+    "circle-opacity": 1,
+    "circle-radius": radius
+  }
+}
 
 function createPopup(options) {
     return new mapboxgl.Popup(options)
@@ -303,3 +300,5 @@ function htmlElementFromString(html, container = 'div') {
 
     return element
 }
+
+main()
