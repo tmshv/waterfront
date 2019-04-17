@@ -5,6 +5,53 @@ async function json(url) {
     return res.json()
 }
 
+function createOsmStyle() {
+    return {
+        style: {
+            "version": 8,
+            "sources": {
+                "simple-tiles": {
+                    "type": "raster",
+                    "tiles": [
+                        "http://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        "http://b.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        "http://c.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    ],
+                    "tileSize": 128,
+                },
+            },
+            "layers": [
+                {
+                    "id": "simple-tiles",
+                    "type": "raster",
+                    "source": "simple-tiles",
+                    "minzoom": 0,
+                    "maxzoom": 22
+                },
+            ]
+        }
+    }
+}
+
+function createMapboxStyle() {
+    const mapboxAccessKey = 'pk.eyJ1IjoidG1zaHYiLCJhIjoiY2p1bDljc3diMXd5cDQ0cGdvYnNzenJociJ9.RrSRbUiEKsCecdtNnXKzxg'
+
+    return {
+        style: 'mapbox://styles/mapbox/light-v9',
+        accessToken: mapboxAccessKey,
+    }
+}
+
+function createMaptilerStyle() {
+    const key = 'BANyZrASqDKOtn6kEAe9'
+    // const mapName = '495bac53-4c52-4e14-b9d1-3bd481a5be26'
+    const mapName = 'positron'
+    
+    return {
+        style: `https://api.maptiler.com/maps/${mapName}/style.json?key=${key}`
+    }
+}
+
 export async function initMap(htmlElement) {
     let featureSettings = await json('https://wf.tmshv.com/api/_/items/feature_settings')
     featureSettings = featureSettings['data']
@@ -16,21 +63,39 @@ export async function initMap(htmlElement) {
         '<a href="https://unit4.io" target="_blank">design::unit</a>',
     ].join('')
 
+    // mapboxgl.accessToken = mapboxAccessKey
+    const saintPetersburgBounds = [
+        [29.56453961226603, 59.77965770830431],
+        [30.671368054481917, 60.142457987352316],
+    ];
+
+    // const saintPetersburgBounds= new mapboxgl.LngLatBounds(
+    //     new mapboxgl.LngLat(-73.9876, 40.7661),
+    //     new mapboxgl.LngLat(-73.9397, 40.8002)
+    // );
+
     const currentCity = 'saint-petersburg'
     const center = [30.344087, 59.932924]
     const zoom = 11
-    const key = 'BANyZrASqDKOtn6kEAe9'
-    // const mapName = '495bac53-4c52-4e14-b9d1-3bd481a5be26'
-    const mapName = 'positron'
-    const style = `https://api.maptiler.com/maps/${mapName}/style.json?key=${key}`
 
+    // const map = new mapboxgl.Map({
+    //     attributionControl: false,
+    //     container: htmlElement,
+    //     style,
+    //     center,
+    //     zoom,
+    // })
+    const styleOptions = createMaptilerStyle()
     const map = new mapboxgl.Map({
         attributionControl: false,
         container: htmlElement,
-        style,
         center,
         zoom,
-    })
+        maxBounds: saintPetersburgBounds,
+        // bearing: 0,
+        // collectResourceTiming: supported
+        ...styleOptions,
+    });
 
     // map.addControl(new mapboxgl.NavigationControl());
     map.addControl(new mapboxgl.AttributionControl({
@@ -90,6 +155,22 @@ export async function initMap(htmlElement) {
         //     }
         // })
     })
+
+    new mapboxgl.Marker().setLngLat(
+        new mapboxgl.LngLat(-73.9876, 40.7661),
+        // new mapboxgl.LngLat(-73.9397, 40.8002)
+    ).addTo(map)
+    new mapboxgl.Marker().setLngLat(
+        // new mapboxgl.LngLat(-73.9876, 40.7661),
+        new mapboxgl.LngLat(-73.9397, 40.8002)
+    ).addTo(map)
+
+    new mapboxgl.Marker().setLngLat(
+        [29.56453961226603, 59.77965770830431]
+    ).addTo(map)
+    new mapboxgl.Marker().setLngLat(
+        [30.671368054481917, 60.142457987352316],
+    ).addTo(map)
 
     const activeLayer = 'featuresActorType'
 
@@ -168,29 +249,29 @@ export async function initMap(htmlElement) {
 }
 
 function filterFeatureSettingsByFieldType(featureSettings, type) {
-  return featureSettings
-      .filter(x => x.field_target === type)
-      .map(x => [x.field_value, x.color])
-      .flat()
+    return featureSettings
+        .filter(x => x.field_target === type)
+        .map(x => [x.field_value, x.color])
+        .flat()
 }
 
-function guardPaintColors(colors){
-  return colors.length >= 2 ? colors : [
-    `${Math.random()}`, 'black'
-  ]
+function guardPaintColors(colors) {
+    return colors.length >= 2 ? colors : [
+        `${Math.random()}`, 'black'
+    ]
 }
 
-function createLayerPaint(field, radius, colors){
-  return {
-    "circle-color": [
-        "match",
-        ["get", field],
-        ...colors,
+function createLayerPaint(field, radius, colors) {
+    return {
+        "circle-color": [
+            "match",
+            ["get", field],
+            ...colors,
         /* other */ 'black'
-    ],
-    "circle-opacity": 1,
-    "circle-radius": radius
-  }
+        ],
+        "circle-opacity": 1,
+        "circle-radius": radius
+    }
 }
 
 function createPopup(options) {
