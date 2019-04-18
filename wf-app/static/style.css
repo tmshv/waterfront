@@ -123,10 +123,6 @@ body {
     padding: 2px 5px;
 }
 
-.checkbox {
-    border: none;
-}
-
 @media (max-width: 31.25em) {
     .mapboxgl-popup {
         display: none;

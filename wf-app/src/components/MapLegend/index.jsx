@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Checkbox from '../Checkbox'
 
 import { SET_LAYER_VISIBLE } from '../../app/actions'
 
@@ -49,15 +50,13 @@ export default class MapLegend extends React.Component {
                             key={itemIndex}
                             style={createStyle(x)}
                         >
-                            <input
-                                className={'checkbox'}
-                                type={'checkbox'}
+                            <Checkbox
+                                label={x.name}
                                 checked={x.checked}
                                 onChange={
                                     event => this.onChange(blockIndex, itemIndex, event.target.checked)
                                 }
                             />
-                            {x.name}
                         </li>
                     ))}
                 </ul>
