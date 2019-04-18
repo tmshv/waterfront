@@ -44,141 +44,57 @@ function createMapboxStyle() {
 
 function createMaptilerStyle() {
     const key = 'BANyZrASqDKOtn6kEAe9'
-    // const mapName = '495bac53-4c52-4e14-b9d1-3bd481a5be26'
     const mapName = 'positron'
-    
+
     return {
         style: `https://api.maptiler.com/maps/${mapName}/style.json?key=${key}`
     }
 }
 
-export async function initMap(htmlElement) {
-    let featureSettings = await json('https://wf.tmshv.com/api/_/items/feature_settings')
-    featureSettings = featureSettings['data']
-
-    const actorTypeColors = filterFeatureSettingsByFieldType(featureSettings, 'actor_type')
-    const projectTypeColors = filterFeatureSettingsByFieldType(featureSettings, 'project_type')
-
-    const attribution = [
-        '<a href="https://unit4.io" target="_blank">design::unit</a>',
-    ].join('')
-
-    // mapboxgl.accessToken = mapboxAccessKey
-    const saintPetersburgBounds = [
-        [29.56453961226603, 59.77965770830431],
-        [30.671368054481917, 60.142457987352316],
-    ];
-
-    // const saintPetersburgBounds= new mapboxgl.LngLatBounds(
-    //     new mapboxgl.LngLat(-73.9876, 40.7661),
-    //     new mapboxgl.LngLat(-73.9397, 40.8002)
-    // );
-
-    const currentCity = 'saint-petersburg'
-    const center = [30.344087, 59.932924]
-    const zoom = 11
-
-    // const map = new mapboxgl.Map({
-    //     attributionControl: false,
-    //     container: htmlElement,
-    //     style,
-    //     center,
-    //     zoom,
-    // })
+export async function initMap(htmlElement, options) {
     const styleOptions = createMaptilerStyle()
     const map = new mapboxgl.Map({
-        attributionControl: false,
-        container: htmlElement,
-        center,
-        zoom,
-        maxBounds: saintPetersburgBounds,
-        // bearing: 0,
-        // collectResourceTiming: supported
+        ...options.map,
         ...styleOptions,
-    });
-
-    // map.addControl(new mapboxgl.NavigationControl());
-    map.addControl(new mapboxgl.AttributionControl({
-        compact: true,
-        customAttribution: attribution,
-    }));
-
-    map.on('load', () => {
-        map.addSource('features', {
-            type: 'geojson',
-            data: 'https://wf.tmshv.com/data/en/saint_petersburg/published/features',
-        });
-
-        map.addLayer({
-            id: 'featuresShadow',
-            source: 'features',
-            type: 'circle',
-            paint: {
-                "circle-color": "black",
-                "circle-opacity": 1,
-                "circle-blur": 0.5,
-                "circle-radius": 17
-            }
-        })
-
-        map.addLayer({
-            id: 'featuresActorType',
-            source: 'features',
-            type: 'circle',
-            paint: createLayerPaint('actorType', 14, guardPaintColors(actorTypeColors))
-        })
-
-        map.addLayer({
-            id: 'featuresInitiativeType',
-            source: 'features',
-            type: 'circle',
-            paint: createLayerPaint('projectType', 7, guardPaintColors(projectTypeColors))
-        })
-
-        // map.addLayer({
-        //     id: 'featuresPlacementType',
-        //     source: 'features',
-        //     type: 'circle',
-        //     paint: {
-        //         'circle-color': [
-        //             'match',
-        //             ['get', 'placementType'],
-        //             "on_water", "#59070c",
-        //             "on_special_designs_on_the_water", "#871811",
-        //             "on_the_mound", "#5e3c23",
-        //             "on_the_shore", "#272d63",
-        //             "on_coastal_complexes", "#016661",
-        //             /* other */ 'black'
-        //         ],
-        //         "circle-opacity": 1,
-        //         "circle-radius": 7
-        //     }
-        // })
+        container: htmlElement,
     })
 
-    new mapboxgl.Marker().setLngLat(
-        new mapboxgl.LngLat(-73.9876, 40.7661),
-        // new mapboxgl.LngLat(-73.9397, 40.8002)
-    ).addTo(map)
-    new mapboxgl.Marker().setLngLat(
-        // new mapboxgl.LngLat(-73.9876, 40.7661),
-        new mapboxgl.LngLat(-73.9397, 40.8002)
-    ).addTo(map)
+    // map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.AttributionControl(options.attribution))
 
-    new mapboxgl.Marker().setLngLat(
-        [29.56453961226603, 59.77965770830431]
-    ).addTo(map)
-    new mapboxgl.Marker().setLngLat(
-        [30.671368054481917, 60.142457987352316],
-    ).addTo(map)
+    return new Promise(resolve => {
+        map.on('load', () => {
+            resolve(map)
+        })
+    })
+}
 
-    const activeLayer = 'featuresActorType'
+export function updateMap(map, { sources, layers }) {
+    sources.forEach(x => {
+        const { id, ...source } = x
+      
+        if (!map.getSource(id)) {
+            map.addSource(id, source)
+        }
+    })
+
+    layers.forEach(x => {
+        const layerId = x.id
+        const { visible, ...layerOptions} = x
+
+        if (!map.getLayer(layerId)) {
+            map.addLayer(layerOptions)
+        }
+
+        const visibility = visible ? 'visible' : 'none'
+        map.setLayoutProperty(layerId, 'visibility', visibility)
+    })
 
     map.on('click', e => {
-        removeElementsByClass('feature-preview')
+        // removeElementsByClass('feature-preview')
 
         const features = map.queryRenderedFeatures(e.point, {
-            layers: [activeLayer] // replace this with the name of the layer
+            // layers: [activeLayer] // replace this with the name of the layer
         });
 
         if (!features.length) {
@@ -191,8 +107,6 @@ export async function initMap(htmlElement) {
         //     center: selectedFeature.geometry.coordinates,
         //     // zoom: 13,
         // });
-
-        console.log(selectedFeature)
 
         const preview = createFeaturePreview(selectedFeature)
         const previewElement = createFeaturePreviewContainer()
@@ -237,41 +151,13 @@ export async function initMap(htmlElement) {
         // popup.setHTML(preview)
     })
 
-    map.on('mouseenter', activeLayer, () => {
-        map.getCanvas().style.cursor = 'pointer'
-    })
+    // map.on('mouseenter', () => {
+    //     map.getCanvas().style.cursor = 'pointer'
+    // })
 
-    map.on('mouseleave', activeLayer, () => {
-        map.getCanvas().style.cursor = ''
-    })
-
-    return map
-}
-
-function filterFeatureSettingsByFieldType(featureSettings, type) {
-    return featureSettings
-        .filter(x => x.field_target === type)
-        .map(x => [x.field_value, x.color])
-        .flat()
-}
-
-function guardPaintColors(colors) {
-    return colors.length >= 2 ? colors : [
-        `${Math.random()}`, 'black'
-    ]
-}
-
-function createLayerPaint(field, radius, colors) {
-    return {
-        "circle-color": [
-            "match",
-            ["get", field],
-            ...colors,
-        /* other */ 'black'
-        ],
-        "circle-opacity": 1,
-        "circle-radius": radius
-    }
+    // map.on('mouseleave', () => {
+    //     map.getCanvas().style.cursor = ''
+    // })
 }
 
 function createPopup(options) {

@@ -1,15 +1,113 @@
-import React, {useReducer} from 'react'
+import React, { useReducer } from 'react'
 import Map from '../src/components/Map'
 import MapLegend from '../src/components/MapLegend'
-import { getFeatureSettings } from '../src/api'
+import { getFeatureSettings, getFeatures } from '../src/api'
 import configReducer from '../src/app/reducers/configReducer'
+import { filterFeatureSettingsByFieldType, guardPaintColors, createLayerPaint } from '../src/app/map';
 
 const Index = (props) => {
+    console.log(props)
+
     const [config, setConfig] = useReducer(configReducer, props.config)
+    const saintPetersburgBounds = [
+        [29.56453961226603, 59.77965770830431],
+        [30.671368054481917, 60.142457987352316],
+    ]
+
+    const center = [30.344087, 59.932924]
+    const zoom = 11
+
+    const options = {
+        map: {
+            center,
+            zoom,
+            attributionControl: false,
+            // maxBounds: saintPetersburgBounds,
+        },
+        attribution: {
+            customAttribution: [
+                '<a href="https://unit4.io" target="_blank">design::unit</a>',
+            ].join(''),
+            compact: true,
+        }
+    }
+
+    const features = config.features
+    const sources = [
+        {
+            id: 'features',
+            type: 'geojson',
+            data: features,
+        },
+    ]
+
+    const actorTypeColors = filterFeatureSettingsByFieldType(config.featureSettings, 'actor_type')
+    const actorTypeBlock = config.legend.find(x => x.type === 'actorType')
+    const actorTypeVisible = actorTypeBlock.items.reduce((acc, item) => {
+        acc[item.type] = item.checked
+
+        return acc
+    }, {})
+
+    const projectTypeColors = filterFeatureSettingsByFieldType(config.featureSettings, 'project_type')
+    const projectTypeBlock = config.legend.find(x => x.type === 'projectType')
+    const projectTypeVisible = projectTypeBlock.items.reduce((acc, item) => {
+        acc[item.type] = item.checked
+
+        return acc
+    }, {})
+
+    const isFeatureVisible = feature => {
+        const projectType = projectTypeVisible[feature.properties.projectType]
+        const actorType = actorTypeVisible[feature.properties.actorType]
+
+        return projectType && actorType
+    }
+
+    const createLayerId = (feature, prefix) => `${feature.properties.id}-${prefix}`
+    const createLayer = (feature, type, radius, colors) => {
+        const id = feature.properties.id
+        const layerId = createLayerId(feature, type)
+
+        return {
+            id: layerId,
+            visible: isFeatureVisible(feature),
+            source: 'features',
+            type: 'circle',
+            paint: createLayerPaint(type, radius, guardPaintColors(colors)),
+            filter: ['==', 'id', id]
+        }
+    }
+
+    const layers = features.features
+        .map(feature => {
+            return [
+                {
+                    visible: isFeatureVisible(feature),
+                    id: createLayerId(feature, 'shadow'),
+                    source: 'features',
+                    filter: ['==', 'id', feature.properties.id],
+                    type: 'circle',
+                    paint: {
+                        "circle-color": "black",
+                        "circle-opacity": 1,
+                        "circle-blur": 0.75,
+                        "circle-radius": 17
+                    }
+                },
+                createLayer(feature, 'actorType', 14, actorTypeColors),
+                createLayer(feature, 'projectType', 7, projectTypeColors),
+            ]
+        })
+        .flat()
 
     return (
         <div>
-            <Map />
+            <Map
+                mapOptions={options}
+                sources={sources}
+                layers={layers}
+            />
 
             <div className={'wrapper'}>
                 <MapLegend
@@ -23,9 +121,7 @@ const Index = (props) => {
 
 Index.getInitialProps = async () => {
     const featureSettings = await getFeatureSettings()
-    // const actorTypeColors = filterFeatureSettingsByFieldType(featureSettings, 'actor_type')
-    // const projectTypeColors = filterFeatureSettingsByFieldType(featureSettings, 'project_type')
-
+    const features = await getFeatures('saint_petersburg')
     const translation = {
         'art_intervention': 'Art Intervention',
         'urban_intervention': 'Urban Intervention',
@@ -110,6 +206,7 @@ Index.getInitialProps = async () => {
     return {
         config: {
             featureSettings,
+            features,
             legend,
         },
     }
