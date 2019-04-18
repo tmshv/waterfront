@@ -1,0 +1,1 @@
+export const SET_LAYER_VISIBLE = '@app/SET_LAYER_VISIBLE'
