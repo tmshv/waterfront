@@ -81,6 +81,7 @@ async def get_features(request, lang, city, status):
     :return:
     """
     name_field = f'name_{lang}'
+    short_field = f'short_{lang}'
 
     data = await api_features()
     features = []
@@ -107,6 +108,7 @@ async def get_features(request, lang, city, status):
                 # 'placementType': item['placement_type'],
                 'projectType': item['project_type'],
                 'name': item[name_field],
+                'short': item[short_field],
                 'previewImage': image,
             },
             'geometry': {
