@@ -6,9 +6,12 @@ from sanic_cors import cross_origin
 
 app = Sanic()
 
+def api_url(path):
+    base_url = 'https://wf.tmshv.com'
+    return base_url + path
 
 async def api_features():
-    url = 'https://wf.tmshv.com/api/_/items/features'
+    url = api_url('/api/_/items/features')
 
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
@@ -17,7 +20,7 @@ async def api_features():
 
 
 async def api_image(image_id):
-    url = f'https://wf.tmshv.com/api/_/files/{image_id}'
+    url = api_url(f'/api/_/files/{image_id}')
 
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
