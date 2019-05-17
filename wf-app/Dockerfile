@@ -1,8 +1,8 @@
-FROM node:10-alpine
+FROM node:12-alpine
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm i
+RUN npm ci
 
 EXPOSE 80
 ENV PORT 80
