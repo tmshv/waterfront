@@ -103,6 +103,7 @@ async def get_features(request, lang, city, status):
             'properties': {
                 'city': city,
                 'actorType': item['actor_type'],
+                'slug': item['slug'],
                 # 'placementType': item['placement_type'],
                 'projectType': item['project_type'],
                 'name': item[name_field],
