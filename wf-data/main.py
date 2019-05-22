@@ -10,6 +10,7 @@ def api_url(path):
     base_url = 'https://wf.tmshv.com'
     return base_url + path
 
+
 async def api_features():
     url = api_url('/api/_/items/features')
 
@@ -38,6 +39,14 @@ def create_image_url(image):
     return image['data']['full_url']
 
     # return f'https://wf.tmshv.com/thumbnail/_/{width}/{height}/{action}/{quality}/{filename}'
+
+
+def clean(obj):
+    out = {}
+    for k, v in obj.items():
+        if v is not None:
+            out[k] = obj[k]
+    return out
 
 
 @app.route('/')
@@ -99,18 +108,20 @@ async def get_features(request, lang, city, status):
         else:
             image = None
 
+        properties = {
+            'city': city,
+            'actorType': item['actor_type'],
+            'slug': item['slug'],
+            'year': item['year'],
+            # 'placementtype': item['placement_type'],
+            'projectType': item['project_type'],
+            'name': item[name_field],
+            'short': item[short_field],
+            'previewImage': image,
+        }
         features.append({
             'type': 'Feature',
-            'properties': {
-                'city': city,
-                'actorType': item['actor_type'],
-                'slug': item['slug'],
-                # 'placementType': item['placement_type'],
-                'projectType': item['project_type'],
-                'name': item[name_field],
-                'short': item[short_field],
-                'previewImage': image,
-            },
+            'properties': clean(properties),
             'geometry': {
                 'type': 'Point',
                 'coordinates': [
