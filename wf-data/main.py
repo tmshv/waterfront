@@ -182,9 +182,10 @@ async def get_features(request, lang, city, status):
     features = []
     
     full = request.args.get('full', False)
+    all_cities = city == 'all'
 
     for item in data:
-        if item['city'] != city:
+        if not all_cities and item['city'] != city:
             continue
 
         if item['status'] != status:
@@ -197,7 +198,7 @@ async def get_features(request, lang, city, status):
             image = None
 
         properties = {
-            'city': city,
+            'city': item['city'],
             'actorType': item['actor_type'],
             'slug': item['slug'],
             'year': item['year'],
