@@ -180,6 +180,8 @@ async def get_features(request, lang, city, status):
 
     data = await api_features()
     features = []
+    
+    full = request.args.get('full', False)
 
     for item in data:
         if item['city'] != city:
@@ -205,6 +207,10 @@ async def get_features(request, lang, city, status):
             'short': item[short_field],
             'previewImage': image,
         }
+        if full:
+            content_field = f'content_{lang}'
+            properties['content'] = item[content_field]
+
         features.append({
             'type': 'Feature',
             'properties': clean(properties),
