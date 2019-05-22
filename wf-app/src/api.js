@@ -23,3 +23,16 @@ export async function getFeatures(city) {
 
     return geojson
 }
+
+export async function getFeature(slug) {
+    const geojson = await json(`https://wf.tmshv.com/data/en/features/${slug}`)
+
+    // to do 
+    geojson.features.forEach((x, i) => {
+        // if (!x.properties.id) {
+        //     x.properties.id = `feature-${i}`
+        // }
+    })
+
+    return geojson
+}
