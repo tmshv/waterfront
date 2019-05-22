@@ -1,16 +1,16 @@
 FROM python:3.7-alpine
 
-RUN apk update \
-    && apk add --no-cache build-base
-
 RUN mkdir /app
 WORKDIR /app
 
+RUN apk update \
+    && apk add --no-cache build-base
 COPY ./requirements.txt ./
-
 RUN pip3 install --no-cache-dir -r requirements.txt
-COPY ./main.py ./
+RUN apk del build-base && \
+    rm -r /root/.cache
 
+COPY ./main.py ./
 EXPOSE 80
 ENV PORT=80
 
