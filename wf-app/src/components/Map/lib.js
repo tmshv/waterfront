@@ -1,4 +1,17 @@
+import MarkdownIt from 'markdown-it'
+
+const md = new MarkdownIt({
+    typographer: true,
+    quotes: '«»‘’',
+})
+
 let config = null
+
+const FEATURE_GEOMETRY_TYPE_POINT = 'Point'
+
+function renderMarkdown(text) {
+    return md.renderInline(text)
+}
 
 async function json(url) {
     const res = await fetch(url)
@@ -69,6 +82,10 @@ export async function initMap(htmlElement, options) {
     })
 }
 
+function isFeatureGeometryTypeOf(feature, geometryType) {
+    return feature.geometry.type === geometryType
+}
+
 export function updateMap(map, { sources, layers }) {
     sources.forEach(x => {
         const { id, ...source } = x
@@ -103,14 +120,18 @@ export function updateMap(map, { sources, layers }) {
 
         const selectedFeature = features[0]
 
+        if (!isFeatureGeometryTypeOf(selectedFeature, FEATURE_GEOMETRY_TYPE_POINT)) {
+            return
+        }
+
         // map.flyTo({
         //     center: selectedFeature.geometry.coordinates,
         //     // zoom: 13,
         // });
 
         const preview = createFeaturePreview(selectedFeature)
-        const previewElement = createFeaturePreviewContainer()
-        previewElement.innerHTML = preview
+        // const previewElement = createFeaturePreviewContainer()
+        // previewElement.innerHTML = preview
 
         var popup = createPopup({
             // offset: [0, -15],
@@ -121,8 +142,7 @@ export function updateMap(map, { sources, layers }) {
             // anchor: 'bottom',
         })
             .setLngLat(selectedFeature.geometry.coordinates)
-            .setHTML(createFeaturePreview(selectedFeature)) // CHANGE THIS TO REFLECT THE PROPERTIES YOU WANT TO SHOW
-            .setLngLat(selectedFeature.geometry.coordinates)
+            .setHTML(preview) // CHANGE THIS TO REFLECT THE PROPERTIES YOU WANT TO SHOW
             .addTo(map);
 
         // var coordinates = e.features[0].geometry.coordinates.slice();
@@ -182,25 +202,30 @@ function createFeaturePreviewContainer() {
 }
 
 function createFeaturePreview(feature) {
-    const img = 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1498156851%2Fopera-house-oslo-norway-OSLO0617.jpg%3Fitok%3DrcuoL2da&q=85'
-    const url = 'http://waterfront.tools'
-    const title = 'Название проекта длинное. В две строки'
-    const date = '1 January 1970'
-    const short = `                    
-    Краткое описание. For example, MercatorCoordinate(0, 0, 0)
-    is the north-west corner of the mercator world and MercatorCoordinate(1, 1, 0) is the south-east corner.
-    `
+    const { slug, previewImage, name, short, year } = feature.properties
+    const url = slug
+        ? `//waterfront.tools/projects/${slug}`
+        : '//waterfront.tools'
+    const shortContent = short
+        ? `<p>${renderMarkdown(short)}</p>`
+        : ''
+    const yearContent = year
+        ? `<p class="date">${year}</p>`
+        : ''
+    // console.log(feature.properties)
+    // console.log(shortContent)
+
 
     return (`
         <a href="${url}">
             <div class="wf-popup-content">
-                <p class="date">${date}</p>
-                <h3>${title}</h3>
-                <p>${short}</p>
+                ${yearContent}
+                <h3>${renderMarkdown(name)}</h3>
+                ${shortContent}
             </div>
 
             <div class="preview-image">
-                <img src="${img}" />
+                <img src="${previewImage}" />
             </div>
         </a>
     `)
