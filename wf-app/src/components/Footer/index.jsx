@@ -28,7 +28,7 @@ const Footer = (props) => (
         </section>
         <section>
             contacts
-                </section>
+        </section>
     </div>
 )
 
