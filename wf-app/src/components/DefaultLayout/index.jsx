@@ -16,7 +16,7 @@ const DefaultLayout = (props) => {
 
                 header {
                     width: 100%;
-                    background-color: rgb(0, 83, 108);
+                    background-color: white;
                 }
 
                 footer {
