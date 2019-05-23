@@ -75,9 +75,9 @@ const ArticleHead = (props) => {
                 </h1>
 
                 {!props.showCaption || !props.caption ? null : (
-                    <p>
-                        {props.caption}
-                    </p>
+                    <p
+                        dangerouslySetInnerHTML={{ __html: props.caption }}
+                    />
                 )}
             </div>
         </section>
