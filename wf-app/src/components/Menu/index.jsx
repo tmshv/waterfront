@@ -6,6 +6,8 @@ import Logo from '../Logo'
 import Icon from '@mdi/react'
 import { mdiFacebookBox, mdiYoutube, mdiVkBox, mdiInstagram } from '@mdi/js'
 
+const target = newTab => newTab ? '_blank' : null
+
 const Menu = (props) => (
     <div>
         <style jsx>{`
@@ -69,21 +71,24 @@ const Menu = (props) => (
                     <li
                         key={x.url}
                     >
-                        <a        
+                        <Link
                             href={x.url}
-                            target={'_blank'}
                         >
-                            {!x.name ? null : (
-                                <span>{x.name}</span>
-                            )}
+                            <a
+                                target={target(x.newTab)}
+                            >
+                                {!x.name ? null : (
+                                    <span>{x.name}</span>
+                                )}
 
-                            {!x.icon ? null : (
-                                <Icon path={x.icon}
-                                    size={props.menuItemIconSize}
-                                    color={'rgb(0, 83, 108)'}
-                                />
-                            )}
-                        </a>
+                                {!x.icon ? null : (
+                                    <Icon path={x.icon}
+                                        size={props.menuItemIconSize}
+                                        color={'rgb(0, 83, 108)'}
+                                    />
+                                )}
+                            </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
@@ -123,18 +128,22 @@ Menu.defaultProps = {
         {
             icon: mdiInstagram,
             url: 'https://www.instagram.com/waterfront.tools',
+            newTab: true,
         },
         {
             icon: mdiYoutube,
             url: 'https://www.youtube.com/playlist?list=PL04bG7e-zbhB_pGj9UGQIgM8G34xo3hqj',
+            newTab: true,
         },
         {
             icon: mdiFacebookBox,
             url: 'https://www.facebook.com/waterfront.tools',
+            newTab: true,
         },
         {
             icon: mdiVkBox,
             url: 'https://vk.com/waterfront2019',
+            newTab: true,
         },
     ]
 }
