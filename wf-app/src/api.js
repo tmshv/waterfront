@@ -11,8 +11,12 @@ export async function getFeatureSettings() {
     return featureSettings['data']
 }
 
-export async function getFeatures(city) {
-    const geojson = await json(`https://wf.tmshv.com/data/en/${city}/published/features`)
+export async function getFeatures(city, full = false) {
+    let url = `https://wf.tmshv.com/data/en/${city}/published/features`
+    if (full) {
+        url += '?full=1'
+    }
+    const geojson = await json(url)
 
     // to do 
     geojson.features.forEach((x, i) => {
