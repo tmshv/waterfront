@@ -7,11 +7,20 @@ const Image = (props) => (
     <div>
         <style jsx>{`
             div {
+                position: relative;
+                display: block;
                 width: 100%;
+                height: 100%;
+                //max-height: 100vh;
+
+                overflow: none;
             }
             
             img {
+                display: block;
                 width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         `}</style>
 
@@ -22,6 +31,40 @@ const Image = (props) => (
     </div>
 )
 
+const ArticleHead = (props) => {
+    return (
+        <section>
+            <style jsx>{`
+                section {
+                    position: relative;
+                    width: 100%;
+                    height: calc(100vh - 60px);
+                }
+
+                h1 {
+                    position: absolute;
+                    width: 70%;
+                    bottom: 100px;
+                    left: 0;
+                    right: 0;
+                    color: white;
+                    font-size: 5em;
+                    padding: 0;
+                    margin: 0 auto;
+
+                    text-shadow: 2px 2px 0px black;
+                }
+            `}</style>
+            
+            {props.children}
+
+            <h1>
+                {props.title}
+            </h1>
+        </section>
+    )
+}
+
 const Article = (props) => {
     return (
         <article>
@@ -29,6 +72,7 @@ const Article = (props) => {
                 div {
                     width: 70%;
                     margin: 0 auto;
+                    padding-top: 60px;
                 }
 
                 @media screen and (max-width: 31.25em) {
@@ -38,10 +82,14 @@ const Article = (props) => {
                 }
             `}</style>
 
-            <Image
-                src={props.article.previewImage}
-                alt={props.article.name}
-            />
+            <ArticleHead
+                title={props.article.name}
+            >
+                <Image
+                    src={props.article.previewImage}
+                    alt={props.article.name}
+                />
+            </ArticleHead>
 
             <div
                 dangerouslySetInnerHTML={{ __html: props.article.body }}
