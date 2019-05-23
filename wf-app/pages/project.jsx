@@ -4,8 +4,8 @@ import Article from '../src/components/Article'
 import { toArticle } from '../src/app/factory';
 import DefaultLayout from '../src/components/DefaultLayout'
 import Menu from '../src/components/Menu'
+import Footer from '../src/components/Footer'
 
-const year = () => (new Date()).getFullYear()
 const Project = (props) => (
     <DefaultLayout
         headerOverlay={true}
@@ -18,34 +18,7 @@ const Project = (props) => (
             />
         )}
         footer={(
-            <div>
-                <style jsx>{`
-                    div {
-                        display: flex;
-                        justify-content: space-between;
-                        margin: 0 25px;
-                    }
-
-                    span {
-                        padding: 0 10px;
-                    }
-
-                    @media screen and (max-width: 31.25em) {
-                        div {
-                            margin: 0 10px;
-                        }
-                    }
-                `}</style>
-
-                <section>
-                    waterfront.tool
-                    <span>/</span>
-                    {year()}
-                </section>
-                <section>
-                    contacts
-                </section>
-            </div>
+            <Footer />
         )}
     />
 )
