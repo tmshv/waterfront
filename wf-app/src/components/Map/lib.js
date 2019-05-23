@@ -1,17 +1,8 @@
-import MarkdownIt from 'markdown-it'
-
-const md = new MarkdownIt({
-    typographer: true,
-    quotes: '«»‘’',
-})
+import { renderMarkdown } from '../../lib'
 
 let config = null
 
 const FEATURE_GEOMETRY_TYPE_POINT = 'Point'
-
-function renderMarkdown(text) {
-    return md.renderInline(text)
-}
 
 async function json(url) {
     const res = await fetch(url)
