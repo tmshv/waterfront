@@ -12,6 +12,7 @@ const DefaultLayout = (props) => {
                 }
 
                 main {
+                    width: 100%;
                 }
 
                 header {
