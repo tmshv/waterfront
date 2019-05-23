@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import { getFeatures } from '../src/api'
 import { toArticle } from '../src/app/factory'
-import ArticleCard from '../src/components/ArticleCard'
+import ArticleCardList from '../src/components/ArticleCardList'
 import Menu from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 import DefaultLayout from '../src/components/DefaultLayout'
@@ -14,12 +14,15 @@ const Projects = (props) => (
         )}
         main={(
             <div>
-                {props.articleCards.map(x => (
-                    <ArticleCard
-                        key={x.slug}
-                        article={x}
-                    />
-                ))}
+                <style jsx>{`
+                    div {
+                        padding: 0 10px;
+                    }
+                `}</style>
+                
+                <ArticleCardList
+                    items={props.articleCards}
+                />
             </div>
         )}
         footer={(
