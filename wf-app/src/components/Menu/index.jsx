@@ -31,10 +31,6 @@ const Menu = (props) => (
 
                 margin: 0 50px;
             }
-
-            li {
-                margin-right: 40px;
-            }
             
             a {
                 font-size: 1.2em;
@@ -70,6 +66,11 @@ const Menu = (props) => (
                 {props.menuItems.map(x => (
                     <li
                         key={x.url}
+                        style={{
+                            marginRight: x.marginRight
+                                ? x.marginRight
+                                : props.menuItemMarginRight,
+                        }}
                     >
                         <Link
                             href={x.url}
@@ -101,6 +102,7 @@ const Menu = (props) => (
 Menu.propTypes = {
     logoUrl: PropTypes.string,
     menuItemIconSize: PropTypes.number,
+    menuItemMarginRight: PropTypes.number,
     menuItems: PropTypes.arrayOf(PropTypes.shape({
         icon: PropTypes.string,
         name: PropTypes.string,
@@ -111,6 +113,7 @@ Menu.propTypes = {
 Menu.defaultProps = {
     logoUrl: '/',
     menuItemIconSize: 1.2,
+    menuItemMarginRight: 40,
     menuItems: [
         {
             name: 'About',
@@ -129,21 +132,25 @@ Menu.defaultProps = {
             icon: mdiInstagram,
             url: 'https://www.instagram.com/waterfront.tools',
             newTab: true,
+            marginRight: 10,
         },
         {
             icon: mdiYoutube,
             url: 'https://www.youtube.com/playlist?list=PL04bG7e-zbhB_pGj9UGQIgM8G34xo3hqj',
             newTab: true,
+            marginRight: 10,
         },
         {
             icon: mdiFacebookBox,
             url: 'https://www.facebook.com/waterfront.tools',
             newTab: true,
+            marginRight: 10,
         },
         {
             icon: mdiVkBox,
             url: 'https://vk.com/waterfront2019',
             newTab: true,
+            marginRight: 10,
         },
     ]
 }
