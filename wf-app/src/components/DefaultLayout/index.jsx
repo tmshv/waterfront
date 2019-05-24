@@ -9,10 +9,15 @@ const DefaultLayout = (props) => {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
                 }
 
                 main {
                     width: 100%;
+                    flex: 1;
                 }
 
                 header {
