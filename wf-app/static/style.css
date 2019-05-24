@@ -94,39 +94,6 @@ body {
     }
 }
 
-.wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 10px;
-}
-
-.wf-legend {
-    color: white;
-}
-
-.wf-legend header {
-    font-size: 1.2em;
-    color: black;
-
-    padding: 2px 5px;
-    margin-bottom: 5px;
-}
-
-.wf-legend-block{
-    margin-bottom: 15px;
-}
-
-.wf-legend-block ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.wf-legend-block li {
-    padding: 2px 5px;
-}
-
 @media (max-width: 31.25em) {
     .mapboxgl-popup {
         display: none;

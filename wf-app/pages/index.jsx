@@ -1,9 +1,46 @@
 import React, { useReducer } from 'react'
 import Map from '../src/components/Map'
 import MapLegend from '../src/components/MapLegend'
+import Menu from '../src/components/Menu'
 import { getFeatureSettings, getFeatures } from '../src/api'
 import configReducer from '../src/app/reducers/configReducer'
 import { filterFeatureSettingsByFieldType, guardPaintColors, createLayerPaint } from '../src/app/map';
+
+const Content = props => (
+    <div className={'content'}>
+        <style jsx>{`
+            .content {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                pointer-events: none;
+            }
+
+            .head {
+                pointer-events: auto;
+            }
+
+            .body {
+                width: 35%;
+                min-width: 200px;
+                max-width: 250px;
+
+                pointer-events: auto;
+            }
+        `}</style>
+        
+        <div className={'head'}>
+            {props.head}
+        </div>
+
+        <div className={'body'}>
+            {props.children}
+        </div>
+    </div>
+)
 
 const Index = (props) => {
     console.log(props)
@@ -109,12 +146,16 @@ const Index = (props) => {
                 layers={layers}
             />
 
-            <div className={'wrapper'}>
+            <Content
+                head={(
+                    <Menu/>
+                )}
+            >
                 <MapLegend
                     data={config.legend}
                     onChangeItemSelected={setConfig}
                 />
-            </div>
+            </Content>
         </div>
     )
 }

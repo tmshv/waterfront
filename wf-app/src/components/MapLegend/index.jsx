@@ -42,6 +42,30 @@ export default class MapLegend extends React.Component {
                 key={blockIndex}
                 className="wf-legend-block"
             >
+                <style jsx>{`
+                    header {
+                        font-size: 1.2em;
+                        color: black;
+
+                        padding: 2px 5px;
+                        margin-bottom: 5px;
+                    }
+
+                    .wf-legend-block{
+                        margin-bottom: 15px;
+                    }
+
+                    .wf-legend-block ul {
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                    }
+
+                    .wf-legend-block li {
+                        padding: 2px 5px;
+                    }
+                `}</style>
+
                 <header>{title}</header>
 
                 <ul>
@@ -66,7 +90,14 @@ export default class MapLegend extends React.Component {
 
     render() {
         return (
-            <div className="wf-legend">
+            <div>
+                <style jsx>{`
+                    div {
+                        color: white;
+                        padding: 15px;
+                    }
+                `}</style>
+
                 {this.props.data.map(
                     (x, i) => this.renderBlock(x.type, x.title, x.items, i)
                 )}
