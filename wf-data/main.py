@@ -11,6 +11,16 @@ def api_url(path):
     return base_url + path
 
 
+async def api_data(kind):
+    url = api_url(f'/api/_/items/{kind}')
+
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as resp:
+            data = await resp.json()
+            return data['data']
+
+
+
 async def api_features():
     url = api_url('/api/_/items/features')
 
@@ -71,6 +81,29 @@ async def home(request):
             'status': ['published', 'draft'],
         }
     })
+
+
+@app.route('/<lang>/persons')
+@cross_origin(app)
+async def get_persons(request, lang):
+    name_field = f'name_{lang}'
+    content_field = f'content_{lang}'
+
+    items = await api_data('persons')
+    result = []
+    for item in items:
+        if item['preview_image']:
+            image_data = await api_image(item['preview_image'])
+            image = create_image_url(image_data)
+        else:
+            image = None
+        result.append({
+            'name': item[name_field],
+            'content': item[content_field],
+            'previewImage': image,
+        })
+
+    return json(result)
 
 
 @app.route('/<lang>/features/<slug>')
