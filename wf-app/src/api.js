@@ -40,3 +40,18 @@ export async function getFeature(slug) {
 
     return geojson
 }
+
+export async function getAbout() {
+    const res = await json(`https://wf.tmshv.com/api/_/items/about/1`)
+    const { content_en, content_ru, name_en, name_ru, ...about } = res.data
+
+    return {
+        ...about,
+        name: name_en,
+        content: content_en,
+    }
+}
+
+export async function getPersons() {
+    return json(`https://wf.tmshv.com/data/en/persons`)
+}

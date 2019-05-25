@@ -17,6 +17,8 @@ const Menu = (props) => (
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                background-color: rgba(255, 255, 255, 0.9);
             }
             
             section {
@@ -72,24 +74,21 @@ const Menu = (props) => (
                                 : props.menuItemMarginRight,
                         }}
                     >
-                        <Link
+                        <a
                             href={x.url}
+                            target={target(x.newTab)}
                         >
-                            <a
-                                target={target(x.newTab)}
-                            >
-                                {!x.name ? null : (
-                                    <span>{x.name}</span>
-                                )}
+                            {!x.name ? null : (
+                                <span>{x.name}</span>
+                            )}
 
-                                {!x.icon ? null : (
-                                    <Icon path={x.icon}
-                                        size={props.menuItemIconSize}
-                                        color={'rgb(0, 83, 108)'}
-                                    />
-                                )}
-                            </a>
-                        </Link>
+                            {!x.icon ? null : (
+                                <Icon path={x.icon}
+                                    size={props.menuItemIconSize}
+                                    color={'rgb(0, 83, 108)'}
+                                />
+                            )}
+                        </a>
                     </li>
                 ))}
             </ul>

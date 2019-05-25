@@ -11,3 +11,14 @@ export function toArticle(feature) {
         url: `/project/${feature.properties.slug}`,
     }
 }
+
+export function aboutToArticle(about) {
+    return {
+        ...about,
+        previewImage: 'https://wf.tmshv.com/api/uploads/_/originals/IMG_3643.jpg',
+        // https://wf.tmshv.com/api/uploads/_/originals/IMG_3643.jpg
+        // body: renderMarkdown(about.content),
+        body: about.content,
+        // url: `/project/${feature.properties.slug}`,
+    }
+}
