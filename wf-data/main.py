@@ -101,6 +101,7 @@ async def get_persons(request, lang):
             'name': item[name_field],
             'content': item[content_field],
             'previewImage': image,
+            'role': item['role'],
         })
 
     return json(result)
