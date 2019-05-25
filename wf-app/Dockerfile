@@ -15,4 +15,4 @@ COPY . .
 RUN npm run build
 
 # Running the app
-CMD [ "npm", "start", "--", "-p", "${PORT}" ]
+CMD [ "npm", "start" ]
