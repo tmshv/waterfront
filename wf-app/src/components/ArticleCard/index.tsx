@@ -1,24 +1,30 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 import Link from 'next/link'
+import { IArticleShort } from '../../app/types'
 
-const ArticleCard = (props) => {
+// ArticleCard.propTypes = {
+//     article: PropTypes.object,
+// }
+
+export interface IArticleCardProps {
+    style?: React.CSSProperties
+    article: IArticleShort
+}
+
+export const ArticleCard: React.FC<IArticleCardProps> = props => {
     return (
         <div
             style={props.style}
         >
             <style jsx>{`
                 div {
-                    min-width: 300px;
-                    width: 25%;
-                    //width: 33.333%;
-
                     box-sizing: border-box;
                 }
 
                 img {
                     display: block;
                     width: 100%;
+                    object-fit: cover;
                 }
 
                 p {
@@ -32,6 +38,7 @@ const ArticleCard = (props) => {
                 }
 
                 a {
+                    display: block;
                     text-decoration: none;
                     color: black;
                 }
@@ -67,9 +74,3 @@ const ArticleCard = (props) => {
         </div>
     )
 }
-
-ArticleCard.propTypes = {
-    article: PropTypes.object,
-}
-
-export default ArticleCard

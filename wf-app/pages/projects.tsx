@@ -1,14 +1,14 @@
 import React, { useReducer } from 'react'
 import { getFeatures } from '../src/api'
 import { toArticle } from '../src/app/factory'
-import ArticleCardList from '../src/components/ArticleCardList'
+import {ArticleCardList} from '../src/components/ArticleCardList'
 import Menu from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 import DefaultLayout from '../src/components/DefaultLayout'
 
 const Projects = (props) => (
     <DefaultLayout
-        headerOverlay={true}
+        // headerOverlay={true}
         header={(
             <Menu />
         )}
@@ -21,6 +21,7 @@ const Projects = (props) => (
                 `}</style>
                 
                 <ArticleCardList
+                    highlightFirst={true}
                     items={props.articleCards}
                 />
             </div>

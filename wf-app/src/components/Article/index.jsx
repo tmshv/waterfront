@@ -118,9 +118,9 @@ const Article = (props) => {
                 />
             )}
 
-            <div>
+            {/* <div>
                 {props.after}
-            </div>
+            </div> */}
         </article>
     )
 }
