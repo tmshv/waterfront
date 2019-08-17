@@ -1,17 +1,17 @@
 import * as React from 'react'
 import Link from 'next/link'
-import { IArticleShort } from '../../app/types'
-
-// ArticleCard.propTypes = {
-//     article: PropTypes.object,
-// }
+import { IArticle } from '../../app/types'
 
 export interface IArticleCardProps {
     style?: React.CSSProperties
-    article: IArticleShort
+    article: IArticle
 }
 
 export const ArticleCard: React.FC<IArticleCardProps> = props => {
+    const year = props.article.date
+        ? props.article.date.getFullYear()
+        : null
+
     return (
         <div
             style={props.style}
@@ -59,6 +59,12 @@ export const ArticleCard: React.FC<IArticleCardProps> = props => {
                     <img
                         src={props.article.previewImage}
                     />
+
+                    {!year ? null : (
+                        <p>
+                            {year}
+                        </p>
+                    )}
 
                     <h2>
                         {props.article.name}

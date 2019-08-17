@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { head, tail, chunk } from 'lodash'
 import Link from 'next/link'
-import { IArticleShort } from '../../app/types'
-import {ArticleCard} from '../ArticleCard'
+import { IArticle } from '../../app/types'
+import { ArticleCard } from '../ArticleCard'
 import Article from '../Article'
+import { splitIntoColumns } from './lib'
 
 const HeadArticle = (props) => (
     <Link
@@ -21,32 +22,28 @@ const HeadArticle = (props) => (
 
 export interface IArticleCardListProps {
     highlightFirst: boolean
-    items: IArticleShort[]
+    items: IArticle[]
+    columns: number
 }
 
 export const ArticleCardList: React.FC<IArticleCardListProps> = props => {
+    const width = 100 / props.columns
     const cardItems = props.highlightFirst ? tail(props.items) : props.items
-    const cardColumns = chunk(
-        cardItems,
-        4,
-    )
+    const cardColumns = splitIntoColumns(cardItems, props.columns)
 
     return (
         <div>
             <style jsx>{`
-                div {
-                    //flex-wrap: wrap;
-                }
-
                 .column-container {
                     display: flex;
+                    flex-direction: row;
                 }
 
                 .column {
                     display: flex;
                     flex-direction: column;
 
-                    width: 25%;
+                    width: ${width}%;
                     box-sizing: border-box;
 
                     padding-right: 1px;
@@ -56,7 +53,7 @@ export const ArticleCardList: React.FC<IArticleCardListProps> = props => {
                     padding-right: 0;
                 }
             `}</style>
-            
+
             {!props.highlightFirst ? null : (
                 <section
                     style={{
@@ -80,10 +77,9 @@ export const ArticleCardList: React.FC<IArticleCardListProps> = props => {
                             <ArticleCard
                                 key={article.slug}
                                 article={article}
-                                // style={{
-                                //     paddingRight: 1,
-                                //     paddingBottom: 1,
-                                // }}
+                                style={{
+                                    marginBottom: '2em',
+                                }}
                             />
                         ))}
                     </div>

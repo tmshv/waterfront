@@ -1,7 +1,9 @@
+import { IArticle } from './types'
 import { renderMarkdown } from '../lib'
 
-export function toArticle(feature) {
+export function toArticle(feature: any): IArticle {
     const short = feature.properties.short
+    const year: string | number = feature.properties.year
 
     return {
         ...feature.properties,
@@ -9,6 +11,7 @@ export function toArticle(feature) {
         name: renderMarkdown(feature.properties.name),
         body: feature.properties.content,
         url: `/project/${feature.properties.slug}`,
+        date: year ? new Date(Number(year), 1, 1) : null,
     }
 }
 
