@@ -117,6 +117,10 @@ const Article = (props) => {
                     dangerouslySetInnerHTML={{ __html: props.article.body }}
                 />
             )}
+
+            <div>
+                {props.after}
+            </div>
         </article>
     )
 }
