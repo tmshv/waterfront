@@ -6,6 +6,9 @@ export default function Checkbox(props) {
         <label>
             <style jsx>{`
                 label {
+                    flex; 1;
+                    cursor: pointer;
+
                     padding-left: 1.0em;
                 }
 
@@ -24,8 +27,6 @@ export default function Checkbox(props) {
                 }
 
                 span {
-                    cursor: pointer;
-
                     position: absolute;
                     margin-top: 3px;
                     margin-left: -1.0em;
