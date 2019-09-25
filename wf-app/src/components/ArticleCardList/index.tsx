@@ -3,7 +3,7 @@ import { head, tail, chunk } from 'lodash'
 import Link from 'next/link'
 import { IArticle } from '../../app/types'
 import { ArticleCard } from '../ArticleCard'
-import Article from '../Article'
+import { Article } from '../Article'
 import { splitIntoColumns } from './lib'
 
 const HeadArticle = (props) => (

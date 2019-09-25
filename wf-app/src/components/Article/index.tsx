@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
+import { IArticle } from '../../app/types'
 
 import './styles.css'
 
@@ -95,7 +95,7 @@ const ArticleHead = (props) => {
 
                 {!props.showCaption || !props.caption ? null : (
                     <div className={'caption'}>
-                        <div className={'caption-overlay'}/>
+                        <div className={'caption-overlay'} />
                         <p className={'caption-text'}
                             dangerouslySetInnerHTML={{ __html: props.caption }}
                         />
@@ -106,7 +106,14 @@ const ArticleHead = (props) => {
     )
 }
 
-const Article = (props) => {
+export interface IArticleProps {
+    article: IArticle,
+    showContent?: boolean,
+    showCaption?: boolean,
+    after?: React.ReactNode,
+}
+
+export const Article: React.FC<IArticleProps> = ({ showContent = true, showCaption = false, ...props }) => {
     return (
         <article>
             <style jsx>{`
@@ -126,7 +133,7 @@ const Article = (props) => {
             <ArticleHead
                 title={props.article.name}
                 caption={props.article.short}
-                showCaption={props.showCaption}
+                showCaption={showCaption}
             >
                 <Image
                     src={props.article.previewImage}
@@ -134,31 +141,17 @@ const Article = (props) => {
                 />
             </ArticleHead>
 
-            {!props.showContent ? null : (
+            {!showContent ? null : (
                 <div
                     dangerouslySetInnerHTML={{ __html: props.article.body }}
                 />
             )}
 
-            {/* <div>
-                {props.after}
-            </div> */}
+            {!props.after ? null : (
+                <div>
+                    {props.after}
+                </div>
+            )}
         </article>
     )
 }
-
-Article.propTypes = {
-    article: PropTypes.object,
-    showContent: PropTypes.bool,
-    showCaption: PropTypes.bool,
-    // article: PropTypes.shape({
-    //     i
-    // })
-}
-
-Article.defaultProps = {
-    showContent: true,
-    showCaption: false,
-}
-
-export default Article

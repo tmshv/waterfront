@@ -5,4 +5,5 @@ export interface IArticle {
     short: string
     slug: string
     date?: Date
+    body: string
 }

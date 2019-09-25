@@ -1,6 +1,6 @@
 import React from 'react'
 import { getFeature } from '../src/api'
-import Article from '../src/components/Article'
+import { Article } from '../src/components/Article'
 import { toArticle } from '../src/app/factory';
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import Menu from '../src/components/Menu'
