@@ -10,9 +10,7 @@ const DefaultLayout = (props) => {
                     flex-direction: column;
                     align-items: center;
 
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
+                    background-color: var(--background-color);
                 }
 
                 main {
