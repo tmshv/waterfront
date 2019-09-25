@@ -195,8 +195,8 @@ function createFeaturePreviewContainer() {
 function createFeaturePreview(feature) {
     const { slug, previewImage, name, short, year } = feature.properties
     const url = slug
-        ? `//waterfront.tools/projects/${slug}`
-        : '//waterfront.tools'
+        ? `/projects/${slug}`
+        : '/'
     const shortContent = short
         ? `<p>${renderMarkdown(short)}</p>`
         : ''
