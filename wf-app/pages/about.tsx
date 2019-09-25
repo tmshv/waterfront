@@ -1,12 +1,14 @@
-import React, { useReducer } from 'react'
+import * as React from 'react'
+
 import { getAbout, getPersons } from '../src/api'
 import { aboutToArticle } from '../src/app/factory'
 import Menu from '../src/components/Menu'
 import Footer from '../src/components/Footer'
-import DefaultLayout from '../src/components/DefaultLayout'
-import Article from '../src/components/Article'
+import { DefaultLayout } from '../src/components/DefaultLayout'
+import { Article } from '../src/components/Article'
+import { NextPage } from 'next'
 
-const Partner = (props) => (
+const Partner: React.FC<{ item: any }> = props => (
     <div className={'partner'}>
         <style jsx>{`
             .partner {
@@ -43,7 +45,7 @@ const Partner = (props) => (
 
         <div className={'content'}>
             <strong>{props.item.name}</strong>
-            
+
             <div
                 dangerouslySetInnerHTML={{ __html: props.item.content }}
             />
@@ -51,9 +53,16 @@ const Partner = (props) => (
     </div>
 )
 
-const About = (props) => (
+interface IProps {
+    article: any
+    team: any[]
+    experts: any[]
+    partners: any[]
+}
+
+const About: NextPage<IProps> = props => (
     <DefaultLayout
-        headerOverlay={true}
+        // headerOverlay={true}
         header={(
             <Menu />
         )}
