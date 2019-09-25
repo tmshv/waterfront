@@ -15,6 +15,22 @@ export default class MyDocument extends Document {
                     <link href="/static/style.css" rel="stylesheet"></link>
                 </Head>
                 <body>
+                    <style jsx global>{`
+                        :root {
+                            --body-background-color: rgb(0, 83, 108);
+                            --footer-background-color: rgb(0, 83, 108);
+                            --background-color: rgb(255, 255, 255);
+                        }
+
+                        body {
+                            font-family: sans-serif;
+
+                            padding: 0;
+                            margin: 0;
+
+                            background-color: var(--body-background-color);
+                        }
+                    `}</style>
                     <main>
                         <Main />
                     </main>

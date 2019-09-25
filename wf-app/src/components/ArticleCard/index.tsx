@@ -1,6 +1,8 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { IArticle } from '../../app/types'
+import { Tag } from '../Tag'
+import { ImageBlock } from './ImageBlock'
 
 export interface IArticleCardProps {
     style?: React.CSSProperties
@@ -21,26 +23,27 @@ export const ArticleCard: React.FC<IArticleCardProps> = props => {
                     box-sizing: border-box;
                 }
 
-                img {
-                    display: block;
-                    width: 100%;
-                    object-fit: cover;
-                }
-
                 p {
-                    padding: 0 10px;
                     line-height: 1.5em;
+                    padding: 0 10px;
+                    
+                    margin-top: 0.5em;
+                    margin-bottom: 0.5em;
                 }
 
                 h2 {
                     padding: 0 10px;
                     color: rgb(90, 200, 240);
+
+                    margin: 0.5em 0;
                 }
 
                 a {
                     display: block;
                     text-decoration: none;
                     color: black;
+
+                    position: relative;
                 }
 
                 a:hover {
@@ -56,15 +59,13 @@ export const ArticleCard: React.FC<IArticleCardProps> = props => {
                 href={props.article.url}
             >
                 <a>
-                    <img
-                        src={props.article.previewImage}
-                    />
-
-                    {!year ? null : (
-                        <p>
-                            {year}
-                        </p>
-                    )}
+                    <ImageBlock src={props.article.previewImage}>
+                        {!year ? null : (
+                            <Tag>
+                                {year}
+                            </Tag>
+                        )}
+                    </ImageBlock>
 
                     <h2>
                         {props.article.name}

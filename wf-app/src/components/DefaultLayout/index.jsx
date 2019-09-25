@@ -28,7 +28,7 @@ const DefaultLayout = (props) => {
                 footer {
                     width: 100%;
 
-                    background-color: rgb(0, 83, 108);
+                    background-color: var(--footer-background-color);
                     color: white;
 
                     padding: 20px 0;
