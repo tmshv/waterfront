@@ -4,7 +4,7 @@ import { toArticle } from '../src/app/factory'
 import { ArticleCardList } from '../src/components/ArticleCardList'
 import Menu from '../src/components/Menu'
 import Footer from '../src/components/Footer'
-import DefaultLayout from '../src/components/DefaultLayout'
+import { DefaultLayout } from '../src/components/DefaultLayout'
 
 const Projects = (props) => {
     const articleCards = props.data.features.map(toArticle)
