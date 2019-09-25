@@ -1,4 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
+import { init } from '../src/app/init'
 
 export default class MyDocument extends Document {
     render() {

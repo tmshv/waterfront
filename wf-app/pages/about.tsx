@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { getAbout, getPersons } from '../src/api'
 import { aboutToArticle } from '../src/app/factory'
-import Menu from '../src/components/Menu'
+import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import { Article } from '../src/components/Article'

@@ -3,7 +3,7 @@ import { getFeature } from '../src/api'
 import { Article } from '../src/components/Article'
 import { toArticle } from '../src/app/factory';
 import { DefaultLayout } from '../src/components/DefaultLayout'
-import Menu from '../src/components/Menu'
+import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 
 const Project = (props) => (

@@ -2,7 +2,7 @@ import React, { useReducer } from 'react'
 import { getFeatures } from '../src/api'
 import { toArticle } from '../src/app/factory'
 import { ArticleCardList } from '../src/components/ArticleCardList'
-import Menu from '../src/components/Menu'
+import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'
 

@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import Map from '../src/components/Map'
 import MapLegend from '../src/components/MapLegend'
-import Menu from '../src/components/Menu'
+import { Menu } from '../src/components/Menu'
 import { getFeatureSettings, getFeatures } from '../src/api'
 import configReducer from '../src/app/reducers/configReducer'
 import { filterFeatureSettingsByFieldType, guardPaintColors, createLayerPaint } from '../src/app/map';
@@ -31,7 +31,7 @@ const Content = props => (
                 pointer-events: auto;
             }
         `}</style>
-        
+
         <div className={'head'}>
             {props.head}
         </div>
@@ -148,7 +148,7 @@ const Index = (props) => {
 
             <Content
                 head={(
-                    <Menu/>
+                    <Menu />
                 )}
             >
                 <MapLegend

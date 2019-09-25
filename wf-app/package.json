@@ -14,8 +14,10 @@
   "dependencies": {
     "@mdi/js": "^3.6.95",
     "@mdi/react": "^1.1.1",
+    "@rehooks/local-storage": "^1.6.0",
     "@zeit/next-css": "^1.0.1",
     "express": "^4.17.0",
+    "i18next": "^17.0.16",
     "isomorphic-unfetch": "^3.0.0",
     "jest": "^24.9.0",
     "lodash": "^4.17.15",
@@ -23,6 +25,7 @@
     "next": "^9.0.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-i18next": "^10.13.0",
     "react-map-gl": "^4.1.2",
     "ts-jest": "^24.0.2"
   },
