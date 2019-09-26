@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch'
+import { cleanText } from './lib/text'
 
 export async function json(url) {
     const res = await fetch(url)
@@ -51,7 +52,7 @@ export async function getAbout(lang: string) {
     return {
         ...about,
         name,
-        content,
+        content: cleanText(content),
     }
 }
 
