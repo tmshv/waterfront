@@ -56,6 +56,11 @@ export async function getAbout(lang: string) {
     }
 }
 
-export async function getPersons() {
-    return json(`https://wf.tmshv.com/data/en/persons`)
+export async function getPersons(lang: string) {
+    const items = await json(`https://wf.tmshv.com/data/${lang}/persons`)
+
+    return items.map(x => ({
+        ...x,
+        content: cleanText(x.content),
+    }))
 }

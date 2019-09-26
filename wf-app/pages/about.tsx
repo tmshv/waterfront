@@ -119,7 +119,7 @@ Page.getInitialProps = async ({ req }) => {
     }
 
     const about = await getAbout(lang!)
-    const persons = await getPersons()
+    const persons = await getPersons(lang!)
 
     const team = persons.filter(x => x.role === 'team')
     const experts = persons.filter(x => x.role === 'expert')
