@@ -1,12 +1,14 @@
 import * as React from 'react'
 
+import { NextPage } from 'next'
+
 import { getAbout, getPersons } from '../src/api'
 import { aboutToArticle } from '../src/app/factory'
 import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import { Article } from '../src/components/Article'
-import { NextPage } from 'next'
+import { withTranslation, i18n } from '../src/i18n'
 
 const Partner: React.FC<{ item: any }> = props => (
     <div className={'partner'}>
@@ -60,7 +62,7 @@ interface IProps {
     partners: any[]
 }
 
-const About: NextPage<IProps> = props => (
+const Page: NextPage<IProps> = props => (
     <DefaultLayout
         // headerOverlay={true}
         header={(
@@ -96,8 +98,15 @@ const About: NextPage<IProps> = props => (
     />
 )
 
-About.getInitialProps = async () => {
-    const about = await getAbout()
+Page.getInitialProps = async ({ req }) => {
+    let lang: string | null = null
+    if (req) {
+        lang = (req as any).i18n.language
+    } else {
+        lang = i18n.language
+    }
+
+    const about = await getAbout(lang!)
     const persons = await getPersons()
 
     const team = persons.filter(x => x.role === 'team')
@@ -109,7 +118,8 @@ About.getInitialProps = async () => {
         team,
         experts,
         partners,
+        namespacesRequired: ['common'],
     }
 }
 
-export default About
+export default withTranslation('common')(Page as any)

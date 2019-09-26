@@ -1,24 +1,17 @@
 import * as React from 'react'
-import { useLocalStorage } from '@rehooks/local-storage'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '../../i18n'
 
 const LangButton: React.FC = props => {
-    const [lang, setLang] = useLocalStorage('lang')
     const { i18n } = useTranslation()
-
-    React.useEffect(() => {
-        if (lang) {
-            i18n.changeLanguage(lang)
-        }
-    }, [lang])
+    const lang = i18n.language
 
     return (
         <div>
             <button onClick={() => {
                 if (lang === 'en') {
-                    setLang('ru')
+                    i18n.changeLanguage('ru')
                 } else {
-                    setLang('en')
+                    i18n.changeLanguage('en')
                 }
             }}>{lang}</button>
         </div>

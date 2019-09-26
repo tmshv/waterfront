@@ -1,5 +1,7 @@
 import next from 'next'
 import express from 'express'
+import nextI18NextMiddleware from 'next-i18next/middleware'
+import nextI18next from './i18n'
 
 const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 3000
@@ -9,6 +11,8 @@ const handle = app.getRequestHandler()
 app.prepare()
     .then(() => {
         const server = express()
+
+        server.use(nextI18NextMiddleware(nextI18next))
 
         server.get('/projects', (req, res) => {
             const actualPage = '/projects'
