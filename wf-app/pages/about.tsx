@@ -8,7 +8,7 @@ import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import { Article } from '../src/components/Article'
-import { withTranslation, i18n } from '../src/i18n'
+import { withTranslation, i18n, useTranslation } from '../src/i18n'
 
 const Partner: React.FC<{ item: any }> = props => (
     <div className={'partner'}>
@@ -62,41 +62,53 @@ interface IProps {
     partners: any[]
 }
 
-const Page: NextPage<IProps> = props => (
-    <DefaultLayout
-        // headerOverlay={true}
-        header={(
-            <Menu />
-        )}
-        main={(
-            <Article
-                article={props.article}
-                after={(
-                    <>
-                        <h2>Team</h2>
-                        {props.team.map((x, i) => (
-                            <Partner
-                                key={i}
-                                item={x}
-                            />
-                        ))}
+const Page: NextPage<IProps> = props => {
+    const { t } = useTranslation()
 
-                        <h2>Partners</h2>
-                        {props.partners.map((x, i) => (
-                            <Partner
-                                key={i}
-                                item={x}
-                            />
-                        ))}
-                    </>
-                )}
-            />
-        )}
-        footer={(
-            <Footer />
-        )}
-    />
-)
+    return (
+        <DefaultLayout
+            // headerOverlay={true}
+            header={(
+                <Menu />
+            )}
+            main={(
+                <Article
+                    article={props.article}
+                    after={(
+                        <>
+                            <h2>{t('Team')}</h2>
+                            {props.team.map((x, i) => (
+                                <Partner
+                                    key={i}
+                                    item={x}
+                                />
+                            ))}
+
+                            <h2>{t('Experts')}</h2>
+                            {props.partners.map((x, i) => (
+                                <Partner
+                                    key={i}
+                                    item={x}
+                                />
+                            ))}
+
+                            <h2>{t('Partners')}</h2>
+                            {props.partners.map((x, i) => (
+                                <Partner
+                                    key={i}
+                                    item={x}
+                                />
+                            ))}
+                        </>
+                    )}
+                />
+            )}
+            footer={(
+                <Footer />
+            )}
+        />
+    )
+}
 
 Page.getInitialProps = async ({ req }) => {
     let lang: string | null = null

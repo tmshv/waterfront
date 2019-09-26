@@ -1,5 +1,8 @@
 {
     "contacts": "contacts",
+    "Team": "Команда",
+    "Partners": "Партнеры",
+    "Experts": "Эксперты",
     "About": "О Проекте",
     "Projects": "Проекты",
     "Events": "События"

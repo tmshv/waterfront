@@ -1,5 +1,8 @@
 {
     "contacts": "contacts",
+    "Team": "Team",
+    "Partners": "Partners",
+    "Experts": "Experts",
     "About": "About",
     "Projects": "Projects",
     "Events": "Events"
