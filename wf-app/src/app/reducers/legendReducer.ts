@@ -4,7 +4,8 @@ export default (state, action) => {
     switch (action.type) {
         case SET_LAYER_VISIBLE: {
             const payload = action.payload
-            const legend = state.legend.map((block, blockIndex) => {
+            
+            return state.map((block, blockIndex) => {
                 if (blockIndex !== payload.blockIndex) {
                     return block
                 }
@@ -25,11 +26,6 @@ export default (state, action) => {
                     items,
                 }
             })
-
-            return {
-                ...state,
-                legend,
-            }
         }
 
         default: {
