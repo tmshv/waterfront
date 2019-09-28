@@ -23,7 +23,7 @@ export const MapLegend: React.FC<IMapLegendProps> = props => (
             <LegendBlock
                 data={x}
                 onChangeItemSelected={(itemIndex, checked) => {
-                    this.props.onChangeItemSelected({
+                    props.onChangeItemSelected({
                         type: SET_LAYER_VISIBLE,
                         payload: {
                             blockIndex,
