@@ -2,13 +2,22 @@ import * as React from 'react'
 
 import Checkbox from '../Checkbox'
 import { ILegendBlock } from '../../app/types'
+import { isLayerVisible } from '../../app/map'
 
 export interface ILegendBlockProps {
     data: ILegendBlock
-    onChangeItemSelected: (itemIndex: number, checked: boolean) => void
+    visibleIndex: {
+        [id: string]: boolean
+    }
+    onChangeItemSelected: (itemId: string, checked: boolean) => void
 }
 
 export const LegendBlock: React.FC<ILegendBlockProps> = props => {
+    const isVisible = React.useCallback(
+        (id: string) => isLayerVisible(id, props.visibleIndex),
+        [props.visibleIndex],
+    )
+
     return (
         <div>
             <style jsx>{`
@@ -38,18 +47,18 @@ export const LegendBlock: React.FC<ILegendBlockProps> = props => {
             <header>{props.data.title}</header>
 
             <ul>
-                {props.data.items.map((x, itemIndex) => (
+                {props.data.items.map(x => (
                     <li
-                        key={itemIndex}
+                        key={x.id}
                         style={{
                             backgroundColor: x.color,
                         }}
                     >
                         <Checkbox
                             label={x.name}
-                            checked={x.checked}
+                            checked={isVisible(x.id)}
                             onChange={
-                                event => props.onChangeItemSelected(itemIndex, event.target.checked)
+                                event => props.onChangeItemSelected(x.id, event.target.checked)
                             }
                         />
                     </li>

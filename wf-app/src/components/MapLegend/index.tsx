@@ -22,12 +22,13 @@ export const MapLegend: React.FC<IMapLegendProps> = props => (
         {props.data.blocks.map((x, blockIndex) => (
             <LegendBlock
                 data={x}
-                onChangeItemSelected={(itemIndex, checked) => {
+                visibleIndex={props.data.visible}
+                onChangeItemSelected={(itemId, checked) => {
                     props.onChangeItemSelected({
                         type: SET_LAYER_VISIBLE,
                         payload: {
                             blockIndex,
-                            itemIndex,
+                            itemId,
                             visible: checked,
                         },
                     })

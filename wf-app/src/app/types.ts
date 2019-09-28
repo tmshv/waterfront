@@ -35,6 +35,4 @@ export interface ILegendItem {
     name: string
     type: string
     color: string
-
-    checked: boolean
 }

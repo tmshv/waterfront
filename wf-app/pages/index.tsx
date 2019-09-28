@@ -4,14 +4,13 @@ import { MapLegend } from '../src/components/MapLegend'
 import { Menu } from '../src/components/Menu'
 import { getFeatureSettings, getFeatures } from '../src/api'
 import legendReducer, { LegendAction } from '../src/app/reducers/legendReducer'
-import { filterFeatureSettingsByFieldType, guardPaintColors, createLayerPaint } from '../src/app/map'
+import { filterFeatureSettingsByFieldType, guardPaintColors, createLayerPaint, isLayerVisible } from '../src/app/map'
 import { NextPage } from 'next'
 import { useTranslation, withTranslation } from '../src/i18n'
 import { IFeatureSettings, ILegendBlock, ILegend } from '../src/app/types'
 import { TFunction } from 'next-i18next'
 
 function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegend {
-    const defaultChecked = true
     const actorTypes = featureSettings
         .filter(x => x.field_target === 'actor_type')
         .map(x => ({
@@ -19,7 +18,6 @@ function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegen
             color: x.color,
             type: x.field_value,
             name: t(x.field_value),
-            checked: defaultChecked,
         }))
     const projectTypes = featureSettings
         .filter(x => x.field_target === 'project_type')
@@ -28,7 +26,6 @@ function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegen
             color: x.color,
             type: x.field_value,
             name: t(x.field_value),
-            checked: defaultChecked,
         }))
 
     return {
@@ -130,7 +127,7 @@ const Index: NextPage<IProps> = props => {
     const actorTypeColors = filterFeatureSettingsByFieldType(props.featureSettings, 'actor_type')
     const actorTypeBlock = legend.blocks.find(x => x.type === 'actorType')!
     const actorTypeVisible = actorTypeBlock.items.reduce((acc, item) => {
-        acc[item.type] = item.checked
+        acc[item.type] = isLayerVisible(item.id, legend.visible)
 
         return acc
     }, {})
@@ -138,7 +135,7 @@ const Index: NextPage<IProps> = props => {
     const projectTypeColors = filterFeatureSettingsByFieldType(props.featureSettings, 'project_type')
     const projectTypeBlock = legend.blocks.find(x => x.type === 'projectType')!
     const projectTypeVisible = projectTypeBlock.items.reduce((acc, item) => {
-        acc[item.type] = item.checked
+        acc[item.type] = isLayerVisible(item.id, legend.visible)
 
         return acc
     }, {})
