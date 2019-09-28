@@ -20,11 +20,13 @@ export interface IFeatureSettings {
 export interface ILegendBlock {
     title: string
     type: string
-    items: {
-        name: string
-        type: string
-        color: string
+    items: ILegendItem[]
+}
 
-        checked: boolean
-    }[]
+export interface ILegendItem {
+    name: string
+    type: string
+    color: string
+
+    checked: boolean
 }
