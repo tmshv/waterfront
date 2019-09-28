@@ -10,9 +10,7 @@ export interface ILegendBlockProps {
 
 export const LegendBlock: React.FC<ILegendBlockProps> = props => {
     return (
-        <div
-            className={'wf-legend-block'}
-        >
+        <div>
             <style jsx>{`
                 header {
                     font-size: 1.2em;
@@ -22,17 +20,17 @@ export const LegendBlock: React.FC<ILegendBlockProps> = props => {
                     margin-bottom: 5px;
                 }
 
-                .wf-legend-block{
+                div {
                     margin-bottom: 15px;
                 }
 
-                .wf-legend-block ul {
+                ul {
                     margin: 0;
                     padding: 0;
                     list-style: none;
                 }
 
-                .wf-legend-block li {
+                ul li {
                     padding: 2px 5px;
                 }
             `}</style>
