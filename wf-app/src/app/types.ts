@@ -8,6 +8,15 @@ export interface IArticle {
     body: string
 }
 
+export interface IFeatureSettings {
+    color: string
+    created_by: number
+    created_on: number
+    field_target: string
+    field_value: string
+    id: number
+}
+
 export interface ILegendItem {
     title: string
     type: string
