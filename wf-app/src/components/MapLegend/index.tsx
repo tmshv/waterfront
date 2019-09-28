@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Checkbox from '../Checkbox'
 
 import { SET_LAYER_VISIBLE } from '../../app/actions'
+import { ILegendItem } from '../../app/types'
 
 function createStyle(item) {
     return {
@@ -10,21 +10,12 @@ function createStyle(item) {
     }
 }
 
-export default class MapLegend extends React.Component {
-    static propTypes = {
-        data: PropTypes.arrayOf(PropTypes.shape({
-            title: PropTypes.string,
-            type: PropTypes.string,
-            items: PropTypes.arrayOf(PropTypes.shape({
-                type: PropTypes.string,
-                color: PropTypes.string,
-                name: PropTypes.string,
-                checked: PropTypes.bool,
-            }))
-        })),
-        onChangeItemSelected: PropTypes.func,
-    }
+export interface IMapLegendProps {
+    data: ILegendItem[]
+    onChangeItemSelected: (action: any) => void
+}
 
+export default class MapLegend extends React.Component<IMapLegendProps> {
     onChange = (blockIndex, itemIndex, checked) => {
         this.props.onChangeItemSelected({
             type: SET_LAYER_VISIBLE,

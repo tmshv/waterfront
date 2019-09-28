@@ -7,3 +7,15 @@ export interface IArticle {
     date?: Date
     body: string
 }
+
+export interface ILegendItem {
+    title: string
+    type: string
+    items: {
+        name: string
+        type: string
+        color: string
+
+        checked: boolean
+    }[]
+}
