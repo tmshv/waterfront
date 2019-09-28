@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import * as React from 'react'
 import Map from '../src/components/Map'
 import { MapLegend } from '../src/components/MapLegend'
 import { Menu } from '../src/components/Menu'
@@ -7,8 +7,10 @@ import legendReducer, { LegendAction } from '../src/app/reducers/legendReducer'
 import { filterFeatureSettingsByFieldType, guardPaintColors, createLayerPaint } from '../src/app/map'
 import { NextPage } from 'next'
 import { useTranslation, withTranslation } from '../src/i18n'
+import { IFeatureSettings, ILegendItem } from '../src/app/types'
+import { TFunction } from 'next-i18next'
 
-const createLegend = (featureSettings, t) => {
+function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegendItem[] {
     const defaultChecked = true
     const actorTypes = featureSettings
         .filter(x => x.field_target === 'actor_type')
@@ -78,7 +80,7 @@ const Content = props => (
 )
 
 interface IProps {
-    featureSettings: any[]
+    featureSettings: IFeatureSettings[]
     features: any
 }
 
@@ -121,7 +123,7 @@ const Index: NextPage<IProps> = props => {
     ]
 
     const actorTypeColors = filterFeatureSettingsByFieldType(props.featureSettings, 'actor_type')
-    const actorTypeBlock = legend.find(x => x.type === 'actorType')
+    const actorTypeBlock = legend.find(x => x.type === 'actorType')!
     const actorTypeVisible = actorTypeBlock.items.reduce((acc, item) => {
         acc[item.type] = item.checked
 
@@ -129,7 +131,7 @@ const Index: NextPage<IProps> = props => {
     }, {})
 
     const projectTypeColors = filterFeatureSettingsByFieldType(props.featureSettings, 'project_type')
-    const projectTypeBlock = legend.find(x => x.type === 'projectType')
+    const projectTypeBlock = legend.find(x => x.type === 'projectType')!
     const projectTypeVisible = projectTypeBlock.items.reduce((acc, item) => {
         acc[item.type] = item.checked
 
