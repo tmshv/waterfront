@@ -3,10 +3,11 @@ import * as React from 'react'
 import { SET_LAYER_VISIBLE } from '../../app/actions'
 import { ILegendItem } from '../../app/types'
 import { LegendBlock } from './LegendBlock'
+import { LegendAction } from '../../app/reducers/legendReducer'
 
 export interface IMapLegendProps {
     data: ILegendItem[]
-    onChangeItemSelected: (action: any) => void
+    onChangeItemSelected: (action: LegendAction) => void
 }
 
 export const MapLegend: React.FC<IMapLegendProps> = props => (

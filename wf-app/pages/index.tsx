@@ -3,7 +3,7 @@ import Map from '../src/components/Map'
 import { MapLegend } from '../src/components/MapLegend'
 import { Menu } from '../src/components/Menu'
 import { getFeatureSettings, getFeatures } from '../src/api'
-import legendReducer from '../src/app/reducers/legendReducer'
+import legendReducer, { LegendAction } from '../src/app/reducers/legendReducer'
 import { filterFeatureSettingsByFieldType, guardPaintColors, createLayerPaint } from '../src/app/map'
 import { NextPage } from 'next'
 import { useTranslation, withTranslation } from '../src/i18n'
@@ -114,7 +114,7 @@ interface IProps {
 
 const Index: NextPage<IProps> = props => {
     const { t } = useTranslation()
-    const [legend, dispatchConfig] = useReducer(
+    const [legend, dispatchConfig] = React.useReducer<React.Reducer<ILegendItem[], LegendAction>>(
         legendReducer,
         createLegend(props.featureSettings, t),
     )
