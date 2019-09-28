@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 import Map from '../src/components/Map'
-import MapLegend from '../src/components/MapLegend'
+import { MapLegend } from '../src/components/MapLegend'
 import { Menu } from '../src/components/Menu'
 import { getFeatureSettings, getFeatures } from '../src/api'
 import legendReducer from '../src/app/reducers/legendReducer'
