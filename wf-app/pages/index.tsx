@@ -9,6 +9,7 @@ import { NextPage } from 'next'
 import { useTranslation, withTranslation } from '../src/i18n'
 import { IFeatureSettings, ILegendBlock, ILegend } from '../src/app/types'
 import { TFunction } from 'next-i18next'
+import { LEGEND_BLOCKS_UPDATE } from '../src/app/actions'
 
 function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegend {
     const actorTypes = featureSettings
@@ -88,14 +89,21 @@ interface IProps {
 
 const Index: NextPage<IProps> = props => {
     const { t } = useTranslation()
-    const [legend, dispatchConfig] = React.useReducer<React.Reducer<ILegend, LegendAction>>(
+    const newLegend = createLegend(props.featureSettings, t)
+
+    const [l, dispatchConfig] = React.useReducer<React.Reducer<ILegend, LegendAction>>(
         legendReducer,
-        createLegend(props.featureSettings, t),
+        newLegend,
     )
     const saintPetersburgBounds = [
         [29.56453961226603, 59.77965770830431],
         [30.671368054481917, 60.142457987352316],
     ]
+
+    const legend: ILegend = {
+        ...newLegend,
+        visible: l.visible
+    }
 
     const center = [30.344087, 59.932924]
     const zoom = 11

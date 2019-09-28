@@ -1,5 +1,5 @@
-import { SET_LAYER_VISIBLE, SET_LAYER_VISIBLE_INVERSE } from '../actions'
-import { ILegend } from '../types'
+import { SET_LAYER_VISIBLE, SET_LAYER_VISIBLE_INVERSE, LEGEND_BLOCKS_UPDATE } from '../actions'
+import { ILegend, ILegendBlock } from '../types'
 
 const initialState: ILegend = {
     blocks: [],
@@ -7,6 +7,9 @@ const initialState: ILegend = {
 }
 
 export type LegendAction =
+    | {
+        type: typeof LEGEND_BLOCKS_UPDATE, payload: ILegendBlock[]
+    }
     | {
         type: typeof SET_LAYER_VISIBLE, payload: {
             blockIndex: number,
@@ -24,6 +27,13 @@ export type LegendAction =
 
 export default (state: ILegend = initialState, action: LegendAction) => {
     switch (action.type) {
+        case LEGEND_BLOCKS_UPDATE: {
+            return {
+                ...state,
+                blocks: action.payload,
+            }
+        }
+
         case SET_LAYER_VISIBLE: {
             const payload = action.payload
             const visible = {
