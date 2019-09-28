@@ -10,10 +10,10 @@ export interface IArticle {
 
 export interface IFeatureSettings {
     color: string
-    created_by: number
-    created_on: number
-    field_target: string
-    field_value: string
+    createdBy: number
+    createdOn: Date
+    fieldTarget: string
+    fieldValue: string
     id: number
 }
 

@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-unfetch'
-import { cleanText } from './lib/text'
-import { IFeatureSettings } from './app/types'
+import { cleanText } from '../lib/text'
+import { IFeatureSettings } from '../app/types'
+import { createFeatureSettingsList } from './factory'
 
 export async function json(url) {
     const res = await fetch(url)
@@ -10,7 +11,7 @@ export async function json(url) {
 export async function getFeatureSettings(): Promise<IFeatureSettings[]> {
     const featureSettings = await json('https://wf.tmshv.com/api/_/items/feature_settings')
 
-    return featureSettings['data']
+    return createFeatureSettingsList(featureSettings['data'])
 }
 
 export async function getFeatures(city, full = false) {

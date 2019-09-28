@@ -1,7 +1,9 @@
-export function filterFeatureSettingsByFieldType(featureSettings, type) {
+import { IFeatureSettings } from './types'
+
+export function filterFeatureSettingsByFieldType(featureSettings: IFeatureSettings[], type) {
     return featureSettings
-        .filter(x => x.field_target === type)
-        .map(x => [x.field_value, x.color])
+        .filter(x => x.fieldTarget === type)
+        .map(x => [x.fieldValue, x.color])
         .flat()
 }
 

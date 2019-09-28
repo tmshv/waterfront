@@ -12,20 +12,20 @@ import { TFunction } from 'next-i18next'
 
 function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegend {
     const actorTypes = featureSettings
-        .filter(x => x.field_target === 'actor_type')
+        .filter(x => x.fieldTarget === 'actor_type')
         .map(x => ({
-            id: `actor_type.${x.field_value}`,
+            id: `actor_type.${x.fieldValue}`,
             color: x.color,
-            type: x.field_value,
-            name: t(x.field_value),
+            type: x.fieldValue,
+            name: t(x.fieldValue),
         }))
     const projectTypes = featureSettings
-        .filter(x => x.field_target === 'project_type')
+        .filter(x => x.fieldTarget === 'project_type')
         .map(x => ({
-            id: `project_type.${x.field_value}`,
+            id: `project_type.${x.fieldValue}`,
             color: x.color,
-            type: x.field_value,
-            name: t(x.field_value),
+            type: x.fieldValue,
+            name: t(x.fieldValue),
         }))
 
     return {
