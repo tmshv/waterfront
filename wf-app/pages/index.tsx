@@ -28,36 +28,6 @@ const createLegend = (featureSettings, t) => {
         }))
 
     return [
-        // {
-        //     title: 'Placement',
-        //     items: [
-        //         {
-        //             color: '#871811',
-        //             type: 'placementType',
-        //             name: 'конструкции на воде',
-        //         },
-        //         {
-        //             color: '#5e3c23',
-        //             type: 'placementType',
-        //             name: 'намыв',
-        //         },
-        //         {
-        //             color: '#59070c',
-        //             type: 'placementType',
-        //             name: 'на воде',
-        //         },
-        //         {
-        //             color: '#272d63',
-        //             type: 'placementType',
-        //             name: 'на берегу',
-        //         },
-        //         {
-        //             color: '#016661',
-        //             type: 'placementType',
-        //             name: 'прибрежные комплексы',
-        //         },
-        //     ],
-        // },
         {
             title: t('Actor Type'),
             type: 'actorType',
