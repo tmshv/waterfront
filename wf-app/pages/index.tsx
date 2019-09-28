@@ -59,12 +59,12 @@ const createLegend = (featureSettings, t) => {
         //     ],
         // },
         {
-            title: 'Actor Type',
+            title: t('Actor Type'),
             type: 'actorType',
             items: actorTypes,
         },
         {
-            title: 'Project Type',
+            title: t('Project Type'),
             type: 'projectType',
             items: projectTypes,
         },
