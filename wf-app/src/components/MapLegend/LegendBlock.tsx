@@ -1,10 +1,10 @@
 import * as React from 'react'
 
 import Checkbox from '../Checkbox'
-import { ILegendItem } from '../../app/types'
+import { ILegendBlock } from '../../app/types'
 
 export interface ILegendBlockProps {
-    data: ILegendItem
+    data: ILegendBlock
     onChangeItemSelected: (itemIndex: number, checked: boolean) => void
 }
 

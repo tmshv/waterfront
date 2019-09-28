@@ -7,10 +7,10 @@ import legendReducer, { LegendAction } from '../src/app/reducers/legendReducer'
 import { filterFeatureSettingsByFieldType, guardPaintColors, createLayerPaint } from '../src/app/map'
 import { NextPage } from 'next'
 import { useTranslation, withTranslation } from '../src/i18n'
-import { IFeatureSettings, ILegendItem } from '../src/app/types'
+import { IFeatureSettings, ILegendBlock } from '../src/app/types'
 import { TFunction } from 'next-i18next'
 
-function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegendItem[] {
+function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegendBlock[] {
     const defaultChecked = true
     const actorTypes = featureSettings
         .filter(x => x.field_target === 'actor_type')
@@ -86,7 +86,7 @@ interface IProps {
 
 const Index: NextPage<IProps> = props => {
     const { t } = useTranslation()
-    const [legend, dispatchConfig] = React.useReducer<React.Reducer<ILegendItem[], LegendAction>>(
+    const [legend, dispatchConfig] = React.useReducer<React.Reducer<ILegendBlock[], LegendAction>>(
         legendReducer,
         createLegend(props.featureSettings, t),
     )

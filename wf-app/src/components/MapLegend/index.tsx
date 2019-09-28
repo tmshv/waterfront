@@ -1,12 +1,12 @@
 import * as React from 'react'
 
 import { SET_LAYER_VISIBLE } from '../../app/actions'
-import { ILegendItem } from '../../app/types'
+import { ILegendBlock } from '../../app/types'
 import { LegendBlock } from './LegendBlock'
 import { LegendAction } from '../../app/reducers/legendReducer'
 
 export interface IMapLegendProps {
-    data: ILegendItem[]
+    data: ILegendBlock[]
     onChangeItemSelected: (action: LegendAction) => void
 }
 

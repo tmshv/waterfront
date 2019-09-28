@@ -17,7 +17,7 @@ export interface IFeatureSettings {
     id: number
 }
 
-export interface ILegendItem {
+export interface ILegendBlock {
     title: string
     type: string
     items: {
