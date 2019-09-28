@@ -7,10 +7,10 @@ import legendReducer, { LegendAction } from '../src/app/reducers/legendReducer'
 import { filterFeatureSettingsByFieldType, guardPaintColors, createLayerPaint } from '../src/app/map'
 import { NextPage } from 'next'
 import { useTranslation, withTranslation } from '../src/i18n'
-import { IFeatureSettings, ILegendBlock } from '../src/app/types'
+import { IFeatureSettings, ILegendBlock, ILegend } from '../src/app/types'
 import { TFunction } from 'next-i18next'
 
-function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegendBlock[] {
+function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegend {
     const defaultChecked = true
     const actorTypes = featureSettings
         .filter(x => x.field_target === 'actor_type')
@@ -31,18 +31,21 @@ function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegen
             checked: defaultChecked,
         }))
 
-    return [
-        {
-            title: t('Actor Type'),
-            type: 'actorType',
-            items: actorTypes,
-        },
-        {
-            title: t('Project Type'),
-            type: 'projectType',
-            items: projectTypes,
-        },
-    ]
+    return {
+        visible: {},
+        blocks: [
+            {
+                title: t('Actor Type'),
+                type: 'actorType',
+                items: actorTypes,
+            },
+            {
+                title: t('Project Type'),
+                type: 'projectType',
+                items: projectTypes,
+            },
+        ]
+    }
 }
 
 const Content = props => (
@@ -88,7 +91,7 @@ interface IProps {
 
 const Index: NextPage<IProps> = props => {
     const { t } = useTranslation()
-    const [legend, dispatchConfig] = React.useReducer<React.Reducer<ILegendBlock[], LegendAction>>(
+    const [legend, dispatchConfig] = React.useReducer<React.Reducer<ILegend, LegendAction>>(
         legendReducer,
         createLegend(props.featureSettings, t),
     )
@@ -125,7 +128,7 @@ const Index: NextPage<IProps> = props => {
     ]
 
     const actorTypeColors = filterFeatureSettingsByFieldType(props.featureSettings, 'actor_type')
-    const actorTypeBlock = legend.find(x => x.type === 'actorType')!
+    const actorTypeBlock = legend.blocks.find(x => x.type === 'actorType')!
     const actorTypeVisible = actorTypeBlock.items.reduce((acc, item) => {
         acc[item.type] = item.checked
 
@@ -133,7 +136,7 @@ const Index: NextPage<IProps> = props => {
     }, {})
 
     const projectTypeColors = filterFeatureSettingsByFieldType(props.featureSettings, 'project_type')
-    const projectTypeBlock = legend.find(x => x.type === 'projectType')!
+    const projectTypeBlock = legend.blocks.find(x => x.type === 'projectType')!
     const projectTypeVisible = projectTypeBlock.items.reduce((acc, item) => {
         acc[item.type] = item.checked
 

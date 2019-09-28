@@ -1,12 +1,12 @@
 import * as React from 'react'
 
 import { SET_LAYER_VISIBLE } from '../../app/actions'
-import { ILegendBlock } from '../../app/types'
+import { ILegend } from '../../app/types'
 import { LegendBlock } from './LegendBlock'
 import { LegendAction } from '../../app/reducers/legendReducer'
 
 export interface IMapLegendProps {
-    data: ILegendBlock[]
+    data: ILegend
     onChangeItemSelected: (action: LegendAction) => void
 }
 
@@ -19,7 +19,7 @@ export const MapLegend: React.FC<IMapLegendProps> = props => (
             }
         `}</style>
 
-        {props.data.map((x, blockIndex) => (
+        {props.data.blocks.map((x, blockIndex) => (
             <LegendBlock
                 data={x}
                 onChangeItemSelected={(itemIndex, checked) => {

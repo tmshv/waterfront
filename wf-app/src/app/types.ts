@@ -23,6 +23,13 @@ export interface ILegendBlock {
     items: ILegendItem[]
 }
 
+export interface ILegend {
+    blocks: ILegendBlock[]
+    visible: {
+        [name: string]: boolean
+    }
+}
+
 export interface ILegendItem {
     id: string
     name: string
