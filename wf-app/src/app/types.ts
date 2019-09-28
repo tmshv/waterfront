@@ -24,6 +24,7 @@ export interface ILegendBlock {
 }
 
 export interface ILegendItem {
+    id: string
     name: string
     type: string
     color: string
