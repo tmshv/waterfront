@@ -1,13 +1,15 @@
+import { Map, AttributionControl, Popup } from 'mapbox-gl'
 import { renderMarkdown } from '../../lib'
 
-let config = null
+let config: any = null
+let currentPopup = null
 
 const FEATURE_GEOMETRY_TYPE_POINT = 'Point'
 
-async function json(url) {
-    const res = await fetch(url)
-    return res.json()
-}
+// async function json(url) {
+//     const res = await fetch(url)
+//     return res.json()
+// }
 
 function createOsmStyle() {
     return {
@@ -57,14 +59,14 @@ function createMaptilerStyle() {
 
 export async function initMap(htmlElement, options) {
     const styleOptions = createMaptilerStyle()
-    const map = new mapboxgl.Map({
+    const map = new Map({
         ...options.map,
         ...styleOptions,
         container: htmlElement,
     })
 
     // map.addControl(new mapboxgl.NavigationControl());
-    map.addControl(new mapboxgl.AttributionControl(options.attribution))
+    map.addControl(new AttributionControl(options.attribution))
 
     return new Promise(resolve => {
         map.on('load', () => {
@@ -80,7 +82,7 @@ function isFeatureGeometryTypeOf(feature, geometryType) {
 export function updateMap(map, { sources, layers }) {
     sources.forEach(x => {
         const { id, ...source } = x
-      
+
         if (!map.getSource(id)) {
             map.addSource(id, source)
         }
@@ -88,7 +90,7 @@ export function updateMap(map, { sources, layers }) {
 
     layers.forEach(x => {
         const layerId = x.id
-        const { visible, ...layerOptions} = x
+        const { visible, ...layerOptions } = x
 
         if (!map.getLayer(layerId)) {
             map.addLayer(layerOptions)
@@ -124,17 +126,22 @@ export function updateMap(map, { sources, layers }) {
         // const previewElement = createFeaturePreviewContainer()
         // previewElement.innerHTML = preview
 
-        var popup = createPopup({
-            // offset: [0, -15],
-            // closeOnClick: false,
-            closeButton: false,
-            offset: 25,
-            className: 'wf-popup',
-            // anchor: 'bottom',
-        })
-            .setLngLat(selectedFeature.geometry.coordinates)
-            .setHTML(preview) // CHANGE THIS TO REFLECT THE PROPERTIES YOU WANT TO SHOW
-            .addTo(map);
+        // if (currentPopup) {
+        //     // createPopup.remove()
+        // }
+
+        // 111111
+        // currentPopup = createPopup({
+        //     // offset: [0, -15],
+        //     // closeOnClick: false,
+        //     closeButton: false,
+        //     offset: 25,
+        //     className: 'wf-popup',
+        //     // anchor: 'bottom',
+        // })
+        //     .setLngLat(selectedFeature.geometry.coordinates)
+        //     .setHTML(preview) // CHANGE THIS TO REFLECT THE PROPERTIES YOU WANT TO SHOW
+        //     .addTo(map);
 
         // var coordinates = e.features[0].geometry.coordinates.slice();
         // var description = e.features[0].properties.description;
@@ -172,15 +179,15 @@ export function updateMap(map, { sources, layers }) {
 }
 
 function createPopup(options) {
-    return new mapboxgl.Popup(options)
+    return new Popup(options)
 }
 
-function removeElementsByClass(className) {
-    var elements = document.getElementsByClassName(className);
-    while (elements.length > 0) {
-        elements[0].parentNode.removeChild(elements[0]);
-    }
-}
+// function removeElementsByClass(className) {
+//     var elements = document.getElementsByClassName(className);
+//     while (elements.length > 0) {
+//         elements[0].parentNode.removeChild(elements[0]);
+//     }
+// }
 
 function createFeaturePreviewContainer() {
     const element = document.createElement('div')
@@ -253,8 +260,8 @@ function createMarkerElement(feature) {
     return htmlElementFromString(svg).firstChild
 }
 
-function renderAttribute(name, value, options) {
-    const p = config.attributes[name]
+function renderAttribute(name: string, value, options) {
+    const p = config!.attributes[name]
 
     if (p.render !== 'circle') {
         return null

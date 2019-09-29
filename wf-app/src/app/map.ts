@@ -1,12 +1,3 @@
-import { IFeatureSettings } from './types'
-
-export function filterFeatureSettingsByFieldType(featureSettings: IFeatureSettings[], type) {
-    return featureSettings
-        .filter(x => x.fieldTarget === type)
-        .map(x => [x.fieldValue, x.color])
-        .flat()
-}
-
 export function guardPaintColors(colors) {
     return colors.length >= 2 ? colors : [
         `${Math.random()}`, 'black'

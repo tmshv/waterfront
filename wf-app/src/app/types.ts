@@ -36,3 +36,15 @@ export interface ILegendItem {
     type: string
     color: string
 }
+
+export interface IFeatureProperties {
+    id: string
+    actorType: string
+    city: string
+    name: string
+    previewImage: string
+    projectType: string
+    short: string
+    slug: string
+    year: number
+}
