@@ -1,16 +1,17 @@
 import * as React from 'react'
+
+import { NextPage } from 'next'
+import { ViewState } from 'react-map-gl'
+import { Feature, Point } from 'geojson'
+
 import { Map } from '../src/components/Map'
 import { MapLegend } from '../src/components/MapLegend'
 import { Menu } from '../src/components/Menu'
-import { ViewState } from 'react-map-gl'
 import { getFeatureSettings, getFeatures } from '../src/api'
-import legendReducer, { LegendAction } from '../src/app/reducers/legendReducer'
-import { guardPaintColors, createLayerPaint, isLayerVisible } from '../src/app/map'
-import { NextPage } from 'next'
+import { isLayerVisible } from '../src/app/map'
 import { withTranslation } from '../src/i18n'
-import { IFeatureSettings, ILegendBlock, ILegend, IFeatureProperties } from '../src/app/types'
+import { IFeatureSettings, IFeatureProperties } from '../src/app/types'
 import { useLegend } from '../src/hooks/useLegend'
-import { Feature, Point } from 'geojson'
 import { createColorMap } from '../src/app/featureSettings'
 
 function createMaptilerStyle() {
