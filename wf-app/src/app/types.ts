@@ -1,3 +1,5 @@
+import { Feature, Point } from "geojson";
+
 export interface IArticle {
     url: string
     previewImage: string
@@ -48,3 +50,5 @@ export interface IFeatureProperties {
     slug: string
     year: number
 }
+
+export type AppPointFeature = Feature<Point, IFeatureProperties>

@@ -1,7 +1,8 @@
 import * as React from 'react'
 
-export interface IVsgCirclesProps {
-    onClick?: () => void
+export interface ISvgCirclesProps {
+    value?: string
+    onClick: (value: string) => void
     size: number
     children: Array<{
         color: string,
@@ -9,32 +10,41 @@ export interface IVsgCirclesProps {
     }>
 }
 
-export const SvgCircles: React.FC<IVsgCirclesProps> = ({ size, ...props }) => (
-    <svg
-        width={size}
-        height={size}
-        viewBox={`0 0 ${size} ${size}`}
-        style={{
-            transform: `translate(${-size / 2},${-size / 2})`,
-            display: 'block',
-            cursor: 'pointer',
-        }}
-        onClick={props.onClick}
-    >
-        <g
-            transform={`translate(${size / 2},${size / 2})`}
+export const SvgCircles: React.FC<ISvgCirclesProps> = ({ size, ...props }) => {
+    const onClick = React.useCallback(() => {
+        if (props.value) {
+            props.onClick(props.value)
+        }
+    }, [props.value])
+
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox={`0 0 ${size} ${size}`}
+            style={{
+                transform: `translate(${-size / 2},${-size / 2})`,
+                display: 'block',
+                cursor: 'pointer',
+            }}
+            onClick={onClick}
         >
-            {props.children.map((x, i) => (
-                <circle
-                    key={i}
-                    cx={0}
-                    cy={0}
-                    r={x.size / 2}
-                    style={{
-                        fill: x.color,
-                    }}
-                />
-            ))}
-        </g>
-    </svg>
-)
+            <g
+                transform={`translate(${size / 2},${size / 2})`}
+            >
+                {props.children.map((x, i) => (
+                    <circle
+                        key={i}
+                        cx={0}
+                        cy={0}
+                        r={x.size / 2}
+                        style={{
+                            fill: x.color,
+                        }}
+                    />
+                ))}
+            </g>
+        </svg>
+    )
+
+}

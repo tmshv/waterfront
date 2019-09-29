@@ -4,16 +4,26 @@ import ReactMapGL, { ViewState, Marker } from 'react-map-gl'
 import { SvgCircles } from './SvgCircles'
 import { IMapFeatureProperties } from './types'
 
+type MapFeature = Feature<Point, IMapFeatureProperties>
+
 export interface IMapProps {
-    features: Feature<Point, IMapFeatureProperties>[]
+    features: MapFeature[]
     mapStyle: string | object
-    // sources: any[]
-    // layers: any[]
     viewport: ViewState
     onChangeViewport: (viewport: ViewState) => void
+    onClickMap: (coord: [number, number]) => void
+    onClickFeature: (featureId: string) => void
 }
 
 export const Map: React.FC<IMapProps> = props => {
+    const onClick = React.useCallback(event => {
+        props.onClickMap(event.lngLat)
+    }, [])
+
+    const onFeatureClick = React.useCallback((id) => {
+        props.onClickFeature(id)
+    }, [props.onClickFeature])
+
     return (
         <ReactMapGL
             {...props.viewport}
@@ -28,32 +38,52 @@ export const Map: React.FC<IMapProps> = props => {
             //     props.onLoad((mapRef.current as any).getMap())
             // }}
             // mapboxApiAccessToken={props.mapboxToken}
-            // onClick={props.onClick}
+            onClick={onClick}
             // onMouseMove={props.onMouseMove}
             attributionControl={false}
         >
-            {props.features.map((x, i) => (
+            <style global jsx>{`
+                .mapboxgl-popup-close-button {
+                    display: none;
+                }
+
+                .mapboxgl-popup {
+                    min-width: 300px;
+                    max-width: 400px;
+                }
+
+                .mapboxgl-popup-content {
+                    border-radius: 0;
+                    padding: 0;
+                }
+            `}</style>
+
+            {props.features.map((f, i) => (
                 <Marker
                     key={i}
-                    longitude={x.geometry.coordinates[0]}
-                    latitude={x.geometry.coordinates[1]}
+                    longitude={f.geometry.coordinates[0]}
+                    latitude={f.geometry.coordinates[1]}
                 >
                     <SvgCircles
                         size={32}
+                        value={f.id ? `${f.id}` : undefined}
+                        onClick={onFeatureClick}
                     >
                         {[
                             {
                                 size: 32,
-                                color: x.properties.color1,
+                                color: f.properties.color1,
                             },
                             {
                                 size: 16,
-                                color: x.properties.color2,
+                                color: f.properties.color2,
                             },
                         ]}
                     </SvgCircles>
                 </Marker>
             ))}
+
+            {props.children}
         </ReactMapGL>
     )
 }

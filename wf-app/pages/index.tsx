@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { NextPage } from 'next'
-import { ViewState } from 'react-map-gl'
+import { ViewState, Popup } from 'react-map-gl'
 import { Feature, Point } from 'geojson'
 
 import { Map } from '../src/components/Map'
@@ -10,9 +10,10 @@ import { Menu } from '../src/components/Menu'
 import { getFeatureSettings, getFeatures } from '../src/api'
 import { isLayerVisible } from '../src/app/map'
 import { withTranslation } from '../src/i18n'
-import { IFeatureSettings, IFeatureProperties } from '../src/app/types'
+import { IFeatureSettings, IFeatureProperties, AppPointFeature } from '../src/app/types'
 import { useLegend } from '../src/hooks/useLegend'
 import { createColorMap } from '../src/app/featureSettings'
+import { FeaturePreview } from '../src/components/FeaturePreview'
 
 function createMaptilerStyle() {
     const key = 'BANyZrASqDKOtn6kEAe9'
@@ -69,6 +70,7 @@ const Index: NextPage<IProps> = props => {
         longitude: 30.344087,
         zoom: 11,
     })
+    const [selectedFeature, setSelectedFeature] = React.useState<AppPointFeature | undefined>(undefined)
     const colorMap = createColorMap(props.featureSettings)
 
     const actorTypeBlock = legend.blocks.find(x => x.type === 'actorType')!
@@ -96,6 +98,7 @@ const Index: NextPage<IProps> = props => {
         .filter(isFeatureVisible)
         .map(f => ({
             ...f,
+            id: f.properties.id,
             properties: {
                 color1: colorMap.get(`actor_type.${f.properties.actorType}`)!,
                 color2: colorMap.get(`project_type.${f.properties.projectType}`)!,
@@ -109,7 +112,31 @@ const Index: NextPage<IProps> = props => {
                 mapStyle={createMaptilerStyle()}
                 viewport={viewport}
                 onChangeViewport={v => setViewport(v)}
-            />
+                onClickMap={() => {
+                    setSelectedFeature(undefined)
+                }}
+                onClickFeature={id => {
+                    const feature = props.features.find(f => f.properties.id === id)
+
+                    setSelectedFeature(feature)
+                }}
+            >
+                {!selectedFeature ? null : (
+                    <Popup
+                        tipSize={5}
+                        anchor={'top'}
+                        longitude={selectedFeature.geometry.coordinates[0]}
+                        latitude={selectedFeature.geometry.coordinates[1]}
+                        closeOnClick={false}
+                    // onClose={props.onClosePopup}
+                    >
+                        <FeaturePreview
+                            title={selectedFeature.properties.name}
+                            previewImageSrc={selectedFeature.properties.previewImage}
+                        />
+                    </Popup>
+                )}
+            </Map>
 
             <Content
                 head={(
