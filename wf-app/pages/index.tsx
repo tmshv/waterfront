@@ -15,6 +15,8 @@ import { useLegend } from '../src/hooks/useLegend'
 import { createColorMap } from '../src/app/featureSettings'
 import { FeaturePreview } from '../src/components/FeaturePreview'
 import { createUrl } from '../src/app/feature'
+import { useFeatures } from '../src/hooks/useFeatures'
+import { useLanguage } from '../src/hooks/useLanguage'
 
 function createMaptilerStyle() {
     const key = 'BANyZrASqDKOtn6kEAe9'
@@ -61,17 +63,19 @@ const Content = props => (
 
 interface IProps {
     featureSettings: IFeatureSettings[]
-    features: Feature<Point, IFeatureProperties>[]
 }
 
 const Index: NextPage<IProps> = props => {
+    const city = 'saint_petersburg'
+    const lang = useLanguage()
+    const features = useFeatures(city)
     const [legend, dispatchLegend] = useLegend(props.featureSettings)
     const [viewport, setViewport] = React.useState<ViewState>({
         latitude: 59.932924,
         longitude: 30.344087,
         zoom: 11,
     })
-    const [selectedFeature, setSelectedFeature] = React.useState<AppPointFeature | undefined>(undefined)
+    const [selectedFeatureId, setSelectedFeatureId] = React.useState<string | undefined>(undefined)
     const colorMap = createColorMap(props.featureSettings)
 
     const actorTypeBlock = legend.blocks.find(x => x.type === 'actorType')!
@@ -95,7 +99,8 @@ const Index: NextPage<IProps> = props => {
         return projectType && actorType
     }
 
-    const mapFeatures = props.features
+    const selectedFeature = features.find(f => f.properties.id === selectedFeatureId)
+    const mapFeatures = features
         .filter(isFeatureVisible)
         .map(f => ({
             ...f,
@@ -114,22 +119,20 @@ const Index: NextPage<IProps> = props => {
                 viewport={viewport}
                 onChangeViewport={v => setViewport(v)}
                 onClickMap={() => {
-                    setSelectedFeature(undefined)
+                    setSelectedFeatureId(undefined)
                 }}
                 onClickFeature={id => {
-                    const feature = props.features.find(f => f.properties.id === id)
-
-                    setSelectedFeature(feature)
+                    setSelectedFeatureId(id)
                 }}
             >
                 {!selectedFeature ? null : (
                     <Popup
+                        key={`${lang}.${city}.${selectedFeature.properties.id}`}
                         tipSize={5}
                         anchor={'top'}
                         longitude={selectedFeature.geometry.coordinates[0]}
                         latitude={selectedFeature.geometry.coordinates[1]}
                         closeOnClick={false}
-                    // onClose={props.onClosePopup}
                     >
                         <FeaturePreview
                             href={createUrl(selectedFeature.properties.slug)}
@@ -158,11 +161,9 @@ const Index: NextPage<IProps> = props => {
 
 Index.getInitialProps = async () => {
     const featureSettings = await getFeatureSettings()
-    const features = await getFeatures('saint_petersburg')
 
     return {
         featureSettings,
-        features,
     }
 }
 

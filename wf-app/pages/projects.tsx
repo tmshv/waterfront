@@ -40,7 +40,7 @@ const Projects = (props) => {
 Projects.getInitialProps = async ({ query }) => {
     // const city = query.city || 'saint_peterburg'
     const city = 'saint_petersburg'
-    const data = await getFeatures(city, true)
+    const data = await getFeatures('en', city, true)
 
     return {
         data,
