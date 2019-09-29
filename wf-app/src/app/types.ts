@@ -1,3 +1,5 @@
+import { Feature, Point } from "geojson";
+
 export interface IArticle {
     url: string
     previewImage: string
@@ -36,3 +38,17 @@ export interface ILegendItem {
     type: string
     color: string
 }
+
+export interface IFeatureProperties {
+    id: string
+    actorType: string
+    city: string
+    name: string
+    previewImage: string
+    projectType: string
+    short: string
+    slug: string
+    year: number
+}
+
+export type AppPointFeature = Feature<Point, IFeatureProperties>

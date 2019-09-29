@@ -1,7 +1,8 @@
 import fetch from 'isomorphic-unfetch'
 import { cleanText } from '../lib/text'
-import { IFeatureSettings } from '../app/types'
-import { createFeatureSettingsList } from './factory'
+import { IFeatureSettings, AppPointFeature } from '../app/types'
+import { createFeatureSettingsList, createFeaturePointList } from './factory'
+import { Point, Feature } from 'geojson'
 
 export async function json(url) {
     const res = await fetch(url)
@@ -14,21 +15,14 @@ export async function getFeatureSettings(): Promise<IFeatureSettings[]> {
     return createFeatureSettingsList(featureSettings['data'])
 }
 
-export async function getFeatures(city, full = false) {
-    let url = `https://wf.tmshv.com/data/en/${city}/published/features`
+export async function getFeatures(lang: string, city: string, full = false): Promise<AppPointFeature[]> {
+    let url = `https://wf.tmshv.com/data/${lang}/${city}/published/features`
     if (full) {
         url += '?full=1'
     }
     const geojson = await json(url)
 
-    // to do 
-    geojson.features.forEach((x, i) => {
-        if (!x.properties.id) {            
-            x.properties.id = `feature-${i}`
-        }
-    })
-
-    return geojson
+    return createFeaturePointList(geojson)
 }
 
 export async function getFeature(slug) {
