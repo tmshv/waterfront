@@ -49,6 +49,7 @@ export interface IFeatureProperties {
     short: string
     slug: string
     year: number
+    content?: string
 }
 
 export type AppPointFeature = Feature<Point, IFeatureProperties>
