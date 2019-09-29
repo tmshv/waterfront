@@ -1,6 +1,7 @@
 import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto } from './types'
 import { IFeatureSettings, IFeatureProperties } from '../app/types'
 import { Point, Feature } from 'geojson'
+import { cleanText } from '../lib/text'
 
 export function createFeatureSettingsList(dto: FeatureSettingsDto[]): IFeatureSettings[] {
     return dto.map(x => ({
@@ -36,7 +37,7 @@ function createPointFeature(dto: FeatureDto): Feature<Point, IFeatureProperties>
             short: dto.properties.short,
             slug: dto.properties.slug,
             year: dto.properties.year,
-            content: dto.properties.content,
+            content: cleanText(dto.properties.content),
         }
     }
 }
