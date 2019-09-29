@@ -20,7 +20,6 @@ export const Page: NextPage<IProps> = props => {
 
     return (
         <DefaultLayout
-            // headerOverlay={true}
             header={(
                 <Menu />
             )}
