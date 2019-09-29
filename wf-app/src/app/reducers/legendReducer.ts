@@ -43,6 +43,7 @@ export default (state: ILegend = initialState, action: LegendAction) => {
 
             return {
                 ...state,
+                visible,
             }
         }
 
