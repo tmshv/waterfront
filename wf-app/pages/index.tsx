@@ -10,41 +10,7 @@ import { useTranslation, withTranslation } from '../src/i18n'
 import { IFeatureSettings, ILegendBlock, ILegend } from '../src/app/types'
 import { TFunction } from 'next-i18next'
 import { LEGEND_BLOCKS_UPDATE } from '../src/app/actions'
-
-function createLegend(featureSettings: IFeatureSettings[], t: TFunction): ILegend {
-    const actorTypes = featureSettings
-        .filter(x => x.fieldTarget === 'actor_type')
-        .map(x => ({
-            id: `actor_type.${x.fieldValue}`,
-            color: x.color,
-            type: x.fieldValue,
-            name: t(x.fieldValue),
-        }))
-    const projectTypes = featureSettings
-        .filter(x => x.fieldTarget === 'project_type')
-        .map(x => ({
-            id: `project_type.${x.fieldValue}`,
-            color: x.color,
-            type: x.fieldValue,
-            name: t(x.fieldValue),
-        }))
-
-    return {
-        visible: {},
-        blocks: [
-            {
-                title: t('Actor Type'),
-                type: 'actorType',
-                items: actorTypes,
-            },
-            {
-                title: t('Project Type'),
-                type: 'projectType',
-                items: projectTypes,
-            },
-        ]
-    }
-}
+import { useLegend } from '../src/hooks/useLegend'
 
 const Content = props => (
     <div className={'content'}>
@@ -88,22 +54,12 @@ interface IProps {
 }
 
 const Index: NextPage<IProps> = props => {
-    const { t } = useTranslation()
-    const newLegend = createLegend(props.featureSettings, t)
+    const [legend, dispatchConfig] = useLegend(props.featureSettings)
 
-    const [l, dispatchConfig] = React.useReducer<React.Reducer<ILegend, LegendAction>>(
-        legendReducer,
-        newLegend,
-    )
     const saintPetersburgBounds = [
         [29.56453961226603, 59.77965770830431],
         [30.671368054481917, 60.142457987352316],
     ]
-
-    const legend: ILegend = {
-        ...newLegend,
-        visible: l.visible
-    }
 
     const center = [30.344087, 59.932924]
     const zoom = 11
