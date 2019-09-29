@@ -10,7 +10,7 @@ export interface IFeaturePreviewProps {
     previewImageSrc: string
 }
 
-export const FeaturePreview: React.FC<IFeaturePreviewProps> = props => {
+export const FeaturePreview: React.FC<IFeaturePreviewProps> = React.memo(props => {
     return (
         <Link href={props.href}>
             <a>
@@ -69,4 +69,4 @@ export const FeaturePreview: React.FC<IFeaturePreviewProps> = props => {
             </a>
         </Link>
     )
-}
+})
