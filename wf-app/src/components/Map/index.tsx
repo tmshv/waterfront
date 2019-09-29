@@ -50,6 +50,8 @@ export const Map: React.FC<IMapProps> = props => {
                 .mapboxgl-popup {
                     min-width: 300px;
                     max-width: 400px;
+
+                    border: 1px solid black;
                 }
 
                 .mapboxgl-popup-content {
