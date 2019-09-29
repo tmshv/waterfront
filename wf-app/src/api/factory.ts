@@ -1,4 +1,4 @@
-import { FeatureSettingsDto, FeatureCollectionDto } from './types'
+import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto } from './types'
 import { IFeatureSettings, IFeatureProperties } from '../app/types'
 import { Point, Feature } from 'geojson'
 
@@ -14,18 +14,29 @@ export function createFeatureSettingsList(dto: FeatureSettingsDto[]): IFeatureSe
 }
 
 export function createFeaturePointList(dto: FeatureCollectionDto): Feature<Point, IFeatureProperties>[] {
-    return dto.features.map((f, i) => ({
-        ...f,
+    return dto.features.map(createPointFeature)
+}
+
+export function createFeature(dto: FeatureCollectionDto): Feature<Point, IFeatureProperties> {
+    const feature = dto.features[0]
+
+    return createPointFeature(feature)
+}
+
+function createPointFeature(dto: FeatureDto): Feature<Point, IFeatureProperties> {
+    return {
+        ...dto,
         properties: {
-            id: `feature-${i}`,
-            actorType: f.properties.actorType,
-            city: f.properties.city,
-            name: f.properties.name,
-            previewImage: f.properties.previewImage,
-            projectType: f.properties.projectType,
-            short: f.properties.short,
-            slug: f.properties.slug,
-            year: f.properties.year,
+            id: `feature-${dto.properties.slug}`,
+            actorType: dto.properties.actorType,
+            city: dto.properties.city,
+            name: dto.properties.name,
+            previewImage: dto.properties.previewImage,
+            projectType: dto.properties.projectType,
+            short: dto.properties.short,
+            slug: dto.properties.slug,
+            year: dto.properties.year,
+            content: dto.properties.content,
         }
-    }))
+    }
 }

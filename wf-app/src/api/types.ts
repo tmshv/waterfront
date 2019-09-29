@@ -1,4 +1,16 @@
-import { FeatureCollection, Point } from 'geojson'
+import { FeatureCollection, Point, Feature } from 'geojson'
+
+type FeatureProperties = {
+    actorType: string
+    city: string
+    name: string
+    previewImage: string
+    projectType: string
+    short: string
+    content: string
+    slug: string
+    year: number
+}
 
 export type FeatureSettingsDto = {
     color: string
@@ -9,13 +21,5 @@ export type FeatureSettingsDto = {
     id: number
 }
 
-export type FeatureCollectionDto = FeatureCollection<Point, {
-    actorType: string
-    city: string
-    name: string
-    previewImage: string
-    projectType: string
-    short: string
-    slug: string
-    year: number
-}>
+export type FeatureDto = Feature<Point, FeatureProperties>
+export type FeatureCollectionDto = FeatureCollection<Point, FeatureProperties>
