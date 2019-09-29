@@ -5,20 +5,12 @@ import { renderMarkdown } from '../../lib'
 export interface IFeaturePreviewProps {
     href: string
     title: string
+    body: string
+    year: number
     previewImageSrc: string
 }
 
 export const FeaturePreview: React.FC<IFeaturePreviewProps> = props => {
-    // const { slug, previewImage, name, short, year } = feature.properties
-    // const shortContent = short
-    //     ? `<p>${renderMarkdown(short)}</p>`
-    //     : ''
-    // const yearContent = year
-    //     ? `<p class="date">${year}</p>`
-    //     : ''
-    // // console.log(feature.properties)
-    // // console.log(shortContent)
-
     return (
         <Link href={props.href}>
             <a>
@@ -56,11 +48,19 @@ export const FeaturePreview: React.FC<IFeaturePreviewProps> = props => {
                 `}</style>
                 
                 <div className={'wf-popup-content'}>
-                    {/* ${yearContent} */}
+                    {!props.year ? null : (
+                        <p className={'date'}>
+                            {props.year}
+                        </p>
+                    )}
                     <h3>
                         {renderMarkdown(props.title)}
                     </h3>
-                    {/* ${shortContent} */}
+                    {!props.body ? null : (
+                        <p>
+                            {renderMarkdown(props.body)}
+                        </p>
+                    )}
                 </div>
 
                 <div className="preview-image">

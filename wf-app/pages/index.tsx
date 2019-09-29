@@ -134,6 +134,8 @@ const Index: NextPage<IProps> = props => {
                         <FeaturePreview
                             href={createUrl(selectedFeature.properties.slug)}
                             title={selectedFeature.properties.name}
+                            body={selectedFeature.properties.short}
+                            year={selectedFeature.properties.year}
                             previewImageSrc={selectedFeature.properties.previewImage}
                         />
                     </Popup>
