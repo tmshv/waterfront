@@ -1,7 +1,26 @@
-import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto } from './types'
-import { IFeatureSettings, IFeatureProperties } from '../app/types'
+import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto, AboutDto } from './types'
+import { IFeatureSettings, IFeatureProperties, IArticle } from '../app/types'
 import { Point, Feature } from 'geojson'
 import { cleanText } from '../lib/text'
+
+export function createAboutArticle(lang: string, about: AboutDto, previewImage: string): IArticle {
+    const name = lang === 'en'
+        ? about.name_en
+        : about.name_ru
+    const content = lang === 'en'
+        ? about.content_en
+        : about.content_ru
+
+    return {
+        ...about,
+        url: '',
+        short: '',
+        slug: '/about',
+        name,
+        previewImage,
+        body: cleanText(content),
+    }
+}
 
 export function createFeatureSettingsList(dto: FeatureSettingsDto[]): IFeatureSettings[] {
     return dto.map(x => ({

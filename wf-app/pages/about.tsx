@@ -3,12 +3,12 @@ import * as React from 'react'
 import { NextPage } from 'next'
 
 import { getAbout, getPersons } from '../src/api'
-import { aboutToArticle } from '../src/app/factory'
 import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import { Article } from '../src/components/Article'
 import { withTranslation, i18n, useTranslation } from '../src/i18n'
+import { IArticle } from '../src/app/types'
 
 const Partner: React.FC<{ item: any }> = props => (
     <div className={'partner'}>
@@ -56,7 +56,7 @@ const Partner: React.FC<{ item: any }> = props => (
 )
 
 interface IProps {
-    article: any
+    article: IArticle
     team: any[]
     experts: any[]
     partners: any[]
@@ -67,7 +67,6 @@ const Page: NextPage<IProps> = props => {
 
     return (
         <DefaultLayout
-            // headerOverlay={true}
             header={(
                 <Menu />
             )}
@@ -118,7 +117,7 @@ Page.getInitialProps = async ({ req }) => {
         lang = i18n.language
     }
 
-    const about = await getAbout(lang!)
+    const article = await getAbout(lang!)
     const persons = await getPersons(lang!)
 
     const team = persons.filter(x => x.role === 'team')
@@ -126,7 +125,7 @@ Page.getInitialProps = async ({ req }) => {
     const partners = persons.filter(x => x.role === 'partner')
 
     return {
-        article: aboutToArticle(about),
+        article,
         team,
         experts,
         partners,
