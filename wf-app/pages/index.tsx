@@ -14,6 +14,7 @@ import { IFeatureSettings, IFeatureProperties, AppPointFeature } from '../src/ap
 import { useLegend } from '../src/hooks/useLegend'
 import { createColorMap } from '../src/app/featureSettings'
 import { FeaturePreview } from '../src/components/FeaturePreview'
+import { createUrl } from '../src/app/feature'
 
 function createMaptilerStyle() {
     const key = 'BANyZrASqDKOtn6kEAe9'
@@ -131,6 +132,7 @@ const Index: NextPage<IProps> = props => {
                     // onClose={props.onClosePopup}
                     >
                         <FeaturePreview
+                            href={createUrl(selectedFeature.properties.slug)}
                             title={selectedFeature.properties.name}
                             previewImageSrc={selectedFeature.properties.previewImage}
                         />

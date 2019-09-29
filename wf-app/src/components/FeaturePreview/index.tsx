@@ -3,16 +3,13 @@ import Link from 'next/link'
 import { renderMarkdown } from '../../lib'
 
 export interface IFeaturePreviewProps {
+    href: string
     title: string
     previewImageSrc: string
 }
 
 export const FeaturePreview: React.FC<IFeaturePreviewProps> = props => {
     // const { slug, previewImage, name, short, year } = feature.properties
-    const url = '/'
-    // const url = slug
-    //     ? `/projects/${slug}`
-    //     : '/'
     // const shortContent = short
     //     ? `<p>${renderMarkdown(short)}</p>`
     //     : ''
@@ -23,7 +20,7 @@ export const FeaturePreview: React.FC<IFeaturePreviewProps> = props => {
     // // console.log(shortContent)
 
     return (
-        <Link href={url}>
+        <Link href={props.href}>
             <a>
                 <style jsx>{`
                     a {
