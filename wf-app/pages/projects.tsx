@@ -27,10 +27,10 @@ export const Page: NextPage<IProps> = props => {
             main={(
                 <div>
                     <style jsx>{`
-                    div {
-                        padding: 0 10px;
-                    }
-                `}</style>
+                        div {
+                            padding: 0 10px;
+                        }
+                    `}</style>
 
                     <ArticleCardList
                         highlightFirst={true}
