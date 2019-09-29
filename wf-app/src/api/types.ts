@@ -5,6 +5,13 @@ export interface IApiResponse<T> {
     public: boolean
 }
 
+export type PersonDto = {
+    content: string
+    name: string
+    previewImage: string
+    role: 'partner' | 'expert' | 'team'
+}
+
 export type AboutDto = {
     content_ru: string
     content_en: string

@@ -1,5 +1,5 @@
-import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto, AboutDto } from './types'
-import { IFeatureSettings, IFeatureProperties, IArticle } from '../app/types'
+import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto, AboutDto, PersonDto } from './types'
+import { IFeatureSettings, IFeatureProperties, IArticle, IPerson } from '../app/types'
 import { Point, Feature } from 'geojson'
 import { cleanText } from '../lib/text'
 
@@ -20,6 +20,15 @@ export function createAboutArticle(lang: string, about: AboutDto, previewImage: 
         previewImage,
         body: cleanText(content),
     }
+}
+
+export function createPersons(dto: PersonDto[]): IPerson[] {
+    return dto.map(person => ({
+        content: cleanText(person.content),
+        name: person.name,
+        previewImage: person.previewImage,
+        role: person.role,
+    }))
 }
 
 export function createFeatureSettingsList(dto: FeatureSettingsDto[]): IFeatureSettings[] {

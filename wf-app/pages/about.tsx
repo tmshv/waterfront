@@ -8,9 +8,9 @@ import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import { Article } from '../src/components/Article'
 import { withTranslation, i18n, useTranslation } from '../src/i18n'
-import { IArticle } from '../src/app/types'
+import { IArticle, IPerson } from '../src/app/types'
 
-const Partner: React.FC<{ item: any }> = props => (
+const Person: React.FC<{ item: IPerson }> = props => (
     <div className={'partner'}>
         <style jsx>{`
             .partner {
@@ -57,9 +57,9 @@ const Partner: React.FC<{ item: any }> = props => (
 
 interface IProps {
     article: IArticle
-    team: any[]
-    experts: any[]
-    partners: any[]
+    team: IPerson[]
+    experts: IPerson[]
+    partners: IPerson[]
 }
 
 const Page: NextPage<IProps> = props => {
@@ -77,7 +77,7 @@ const Page: NextPage<IProps> = props => {
                         <>
                             <h2>{t('Team')}</h2>
                             {props.team.map((x, i) => (
-                                <Partner
+                                <Person
                                     key={i}
                                     item={x}
                                 />
@@ -85,7 +85,7 @@ const Page: NextPage<IProps> = props => {
 
                             <h2>{t('Experts')}</h2>
                             {props.partners.map((x, i) => (
-                                <Partner
+                                <Person
                                     key={i}
                                     item={x}
                                 />
@@ -93,7 +93,7 @@ const Page: NextPage<IProps> = props => {
 
                             <h2>{t('Partners')}</h2>
                             {props.partners.map((x, i) => (
-                                <Partner
+                                <Person
                                     key={i}
                                     item={x}
                                 />

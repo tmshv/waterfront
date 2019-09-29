@@ -1,11 +1,9 @@
 import fetch from 'isomorphic-unfetch'
-import { cleanText } from '../lib/text'
-import { IFeatureSettings, AppPointFeature, IArticle } from '../app/types'
-import { createFeatureSettingsList, createFeaturePointList, createFeature, createAboutArticle } from './factory'
-import { Point, Feature } from 'geojson'
+import { IFeatureSettings, AppPointFeature, IArticle, IPerson } from '../app/types'
+import { createFeatureSettingsList, createFeaturePointList, createFeature, createAboutArticle, createPersons } from './factory'
 import { IApiResponse, ImageDto, AboutDto } from './types'
 
-export async function json(url) {
+export async function json(url: string) {
     const res = await fetch(url)
     return res.json()
 }
@@ -39,13 +37,10 @@ export async function getAbout(lang: string): Promise<IArticle> {
     return createAboutArticle(lang, res.data, image)
 }
 
-export async function getPersons(lang: string) {
+export async function getPersons(lang: string): Promise<IPerson[]> {
     const items = await json(`https://wf.tmshv.com/data/${lang}/persons`)
 
-    return items.map(x => ({
-        ...x,
-        content: cleanText(x.content),
-    }))
+    return createPersons(items)
 }
 
 export async function getImageUrl(imageId: number): Promise<string> {
