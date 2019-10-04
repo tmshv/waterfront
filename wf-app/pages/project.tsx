@@ -8,7 +8,7 @@ import { toArticle } from '../src/app/factory';
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
-import { i18n } from '../src/i18n'
+import { i18n, withTranslation } from '../src/i18n'
 import { IArticle } from '../src/app/types'
 
 interface IProps {
@@ -49,4 +49,4 @@ Page.getInitialProps = async ({ req, query }) => {
     }
 }
 
-export default Page
+export default withTranslation('common')(Page as any)
