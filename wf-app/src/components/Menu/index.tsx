@@ -104,21 +104,24 @@ export const Menu: React.FC<IMenuProps> = ({
                                     : menuItemMarginRight,
                             }}
                         >
-                            <a
+                            <Link
                                 href={x.url}
-                                target={target(x.newTab)}
                             >
-                                {!x.name ? null : (
-                                    <span>{t(x.name)}</span>
-                                )}
+                                <a
+                                    target={target(x.newTab)}
+                                >
+                                    {!x.name ? null : (
+                                        <span>{t(x.name)}</span>
+                                    )}
 
-                                {!x.icon ? null : (
-                                    <Icon path={x.icon}
-                                        size={menuItemIconSize}
-                                        color={'rgb(0, 83, 108)'}
-                                    />
-                                )}
-                            </a>
+                                    {!x.icon ? null : (
+                                        <Icon path={x.icon}
+                                            size={menuItemIconSize}
+                                            color={'rgb(0, 83, 108)'}
+                                        />
+                                    )}
+                                </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
