@@ -10,6 +10,27 @@ class MyApp extends App {
 
         return (
             <Container>
+                <style global jsx>{`
+                    :root {
+                        --body-background-color: rgb(0, 83, 108);
+                        --footer-background-color: rgb(0, 83, 108);
+                        --background-color: rgb(255, 255, 255);
+                    }
+
+                    body {
+                        font-family: Arial;
+                        background-color: var(--body-background-color);
+
+                        height: 100vh;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    #__next {
+                        height: 100%;
+                    }
+                `}</style>
+                
                 <Component {...pageProps} />
             </Container>
         )
