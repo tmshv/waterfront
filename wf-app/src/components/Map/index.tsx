@@ -58,6 +58,29 @@ export const Map: React.FC<IMapProps> = props => {
                     border-radius: 0;
                     padding: 0;
                 }
+
+                /* Marker tweaks */
+                .mapboxgl-popup-tip {
+                    display: none;
+                }
+
+                @media only screen and (max-width: 480px) {
+                    .mapboxgl-popup-content {
+                        max-width: 250px;
+                    }
+                    .mapboxgl-popup-content div {
+                        padding: 0em;
+                    }
+                    .mapboxgl-popup-content p {
+                        margin: 0.5em 0.5em;
+                    }
+                }
+
+                @media (max-width: 31.25em) {
+                    .mapboxgl-popup {
+                        display: none;
+                    }
+                }
             `}</style>
 
             {props.features.map((f, i) => (
