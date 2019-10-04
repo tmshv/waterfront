@@ -8,8 +8,8 @@ const instance = new NextI18Next({
     // otherLanguages: ['ru']
 
     defaultNS:	'common',
-    browserLanguageDetection: false,
-    serverLanguageDetection: false,
+    browserLanguageDetection: true,
+    serverLanguageDetection: true,
     // defaultLanguage	'en'
     // ignoreRoutes['/_next/', '/static/']
     // otherLanguages(required)	[]
