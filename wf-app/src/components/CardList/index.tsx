@@ -26,7 +26,7 @@ export interface IArticleCardListProps {
     columns: number
 }
 
-export const ArticleCardList: React.FC<IArticleCardListProps> = props => {
+export const CardList: React.FC<IArticleCardListProps> = props => {
     const width = 100 / props.columns
     const cardItems = props.highlightFirst ? tail(props.items) : props.items
     const cardColumns = splitIntoColumns(cardItems, props.columns)

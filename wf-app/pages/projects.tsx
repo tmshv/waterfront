@@ -4,7 +4,7 @@ import { NextPage } from 'next'
 
 import { getFeatures } from '../src/app/api'
 import { toArticle } from '../src/app/factory'
-import { ArticleCardList } from '../src/components/ArticleCardList'
+import { CardList } from '../src/components/CardList'
 import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'
@@ -31,7 +31,7 @@ export const Page: NextPage<IProps> = props => {
                         }
                     `}</style>
 
-                    <ArticleCardList
+                    <CardList
                         highlightFirst={true}
                         items={articleCards}
                         columns={3}
