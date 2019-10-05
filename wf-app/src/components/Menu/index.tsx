@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 import Icon from '@mdi/react'
 import { useLocalStorage } from '@rehooks/local-storage';
 
-import Logo from '../Logo'
+import { Logo } from '../Logo'
 import { createDefaultMenuItems } from './lib'
 
 const LangButton = dynamic(() => import('../LangButton'), {
