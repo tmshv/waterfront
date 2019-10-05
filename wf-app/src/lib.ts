@@ -5,6 +5,6 @@ const md = new MarkdownIt({
     quotes: '«»‘’',
 })
 
-export function renderMarkdown(text) {
+export function renderMarkdown(text: string) {
     return md.renderInline(text)
 }
