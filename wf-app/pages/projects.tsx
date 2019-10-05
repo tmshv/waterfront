@@ -10,6 +10,8 @@ import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import { AppPointFeature } from '../src/app/types'
 import { i18n } from '../src/i18n'
+import { ArticleCard } from '../src/components/ArticleCard'
+import { HeadArticleCard } from '../src/components/ArticleCard/HeadArticleCard'
 
 interface IProps {
     features: AppPointFeature[]
@@ -32,9 +34,23 @@ export const Page: NextPage<IProps> = props => {
                     `}</style>
 
                     <CardList
-                        highlightFirst={true}
-                        items={articleCards}
                         columns={3}
+                        items={articleCards}
+                        highlightFirst={true}
+                        renderFirstItem={article => (
+                            <HeadArticleCard
+                                item={article}
+                            />
+                        )}
+                        renderItem={article => (
+                            <ArticleCard
+                                key={article.slug}
+                                article={article}
+                                style={{
+                                    marginBottom: '2em',
+                                }}
+                            />
+                        )}
                     />
                 </div>
             )}

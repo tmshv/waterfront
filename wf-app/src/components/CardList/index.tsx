@@ -6,27 +6,15 @@ import { ArticleCard } from '../ArticleCard'
 import { Article } from '../Article'
 import { splitIntoColumns } from './lib'
 
-const HeadArticle = (props) => (
-    <Link
-        href={props.item.url}
-    >
-        <a>
-            <Article
-                article={props.item}
-                showContent={false}
-                showCaption={true}
-            />
-        </a>
-    </Link>
-)
-
-export interface IArticleCardListProps {
+export interface ICardListProps<T> {
     highlightFirst: boolean
-    items: IArticle[]
+    items: T[]
     columns: number
+    renderItem: (item: T) => React.ReactNode
+    renderFirstItem?: (item: T) => React.ReactNode
 }
 
-export const CardList: React.FC<IArticleCardListProps> = props => {
+export function CardList<T>(props: ICardListProps<T>) {
     const width = 100 / props.columns
     const cardItems = props.highlightFirst ? tail(props.items) : props.items
     const cardColumns = splitIntoColumns(cardItems, props.columns)
@@ -61,9 +49,9 @@ export const CardList: React.FC<IArticleCardListProps> = props => {
                         marginBottom: 1,
                     }}
                 >
-                    <HeadArticle
-                        item={head(props.items)}
-                    />
+                    {props.renderFirstItem!(
+                        head(props.items)!
+                    )}
                 </section>
             )}
 
@@ -73,15 +61,9 @@ export const CardList: React.FC<IArticleCardListProps> = props => {
                         key={i}
                         className={'column'}
                     >
-                        {columnItems.map(article => (
-                            <ArticleCard
-                                key={article.slug}
-                                article={article}
-                                style={{
-                                    marginBottom: '2em',
-                                }}
-                            />
-                        ))}
+                        {columnItems.map(
+                            x => props.renderItem(x)
+                        )}
                     </div>
                 ))}
             </section>
