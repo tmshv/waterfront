@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import Checkbox from '../Checkbox'
+import { Checkbox } from '../Checkbox'
 import { ILegendBlock } from '../../app/types'
 import { isLayerVisible } from '../../app/map'
 

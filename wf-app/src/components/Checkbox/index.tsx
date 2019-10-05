@@ -1,10 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import * as React from 'react'
 
-export default function Checkbox(props) {
-    return (
-        <label>
-            <style jsx>{`
+export interface ICheckboxProps {
+    checked: boolean
+    label: string
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export const Checkbox: React.FC<ICheckboxProps> = props => (
+    <label>
+        <style jsx>{`
                 label {
                     flex; 1;
                     cursor: pointer;
@@ -33,31 +37,18 @@ export default function Checkbox(props) {
                     width: 10px;
                     height: 10px;
                     overflow: hidden;
-                    // border-radius: 0.05em;
                     background-color: white;
-                    // border: 2px solid black;
-                    // background-repeat: no-repeat;
-                    // background-position: 50% 50%;
-                    // box-shadow: 0 0 0 0.1em #4A90E2;
                 }
             `}</style>
 
-            <input
-                // className={'checkbox'}
-                type={'checkbox'}
-                checked={props.checked}
-                onChange={props.onChange}
-            />
+        <input
+            type={'checkbox'}
+            checked={props.checked}
+            onChange={props.onChange}
+        />
 
-            <span/>
+        <span />
 
-            {props.label}
-        </label>
-    )
-}
-
-Checkbox.propTypes = {
-    checked: PropTypes.bool,
-    onChange: PropTypes.func,
-    label: PropTypes.string,
-}
+        {props.label}
+    </label>
+)
