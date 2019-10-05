@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "ts-dev": "ts-node-dev --respawn --transpileOnly src/server.ts",
-    "dev": "ts-node --project server.tsconfig.json src/server.ts",
+    "ts-dev": "ts-node-dev --respawn --transpileOnly src/server/server.ts",
+    "dev": "ts-node --project server.tsconfig.json src/server/server.ts",
     "prod": "tsc && node ./build/server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node src/server.js",
+    "start": "NODE_ENV=production node src/server/server.js",
     "test": "jest --forceExit --coverage --verbose"
   },
   "author": "",

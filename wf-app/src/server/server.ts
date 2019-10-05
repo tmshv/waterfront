@@ -1,7 +1,7 @@
 import next from 'next'
 import express from 'express'
 import nextI18NextMiddleware from 'next-i18next/middleware'
-import nextI18next from './i18n'
+import nextI18next from '../i18n'
 
 const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 3000
@@ -41,7 +41,9 @@ app.prepare()
             app.render(req, res, actualPage, queryParams)
         })
 
-        server.get('*', (req, res) => { return handle(req, res) })
+        server.get('*', (req, res) => {
+            return handle(req, res)
+        })
 
         server.listen(port, () => {
             console.log(`> Ready on http://localhost:${port}`)
