@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { NextPage } from 'next'
 
-import { getFeatures } from '../src/api'
+import { getFeatures } from '../src/app/api'
 import { toArticle } from '../src/app/factory'
 import { ArticleCardList } from '../src/components/ArticleCardList'
 import { Menu } from '../src/components/Menu'

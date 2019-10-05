@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { NextPage } from 'next'
 
-import { getAbout, getPersons } from '../src/api'
+import { getAbout, getPersons } from '../src/app/api'
 import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'

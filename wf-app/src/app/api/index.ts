@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch'
-import { IFeatureSettings, AppPointFeature, IArticle, IPerson } from '../app/types'
+import { IFeatureSettings, AppPointFeature, IArticle, IPerson } from '../types'
 import { createFeatureSettingsList, createFeaturePointList, createFeature, createAboutArticle, createPersons } from './factory'
 import { IApiResponse, ImageDto, AboutDto } from './types'
 

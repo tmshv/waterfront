@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { NextPage } from 'next'
 
-import { getFeature } from '../src/api'
+import { getFeature } from '../src/app/api'
 import { Article } from '../src/components/Article'
 import { toArticle } from '../src/app/factory';
 import { DefaultLayout } from '../src/components/DefaultLayout'

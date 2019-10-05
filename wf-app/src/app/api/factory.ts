@@ -1,7 +1,7 @@
 import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto, AboutDto, PersonDto } from './types'
-import { IFeatureSettings, IFeatureProperties, IArticle, IPerson } from '../app/types'
+import { IFeatureSettings, IFeatureProperties, IArticle, IPerson } from '../types'
 import { Point, Feature } from 'geojson'
-import { cleanText } from '../lib/text'
+import { cleanText } from '../../lib/text'
 
 export function createAboutArticle(lang: string, about: AboutDto, previewImage: string): IArticle {
     const name = lang === 'en'
