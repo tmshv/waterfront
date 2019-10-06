@@ -90,7 +90,29 @@ const Index: NextPage<IProps> = props => {
         }))
 
     return (
-        <>
+        <AppLayout
+           side={(
+                <div>
+                    <style jsx>{`
+                        div {
+                            padding: 15px;
+                        }
+                    `}</style>
+
+                    <Select
+                        onChange={value => {
+                            setCity(value)
+                        }}
+                        value={city.key}
+                        options={cityOptions}
+                    />
+                    <MapLegend
+                        data={legend}
+                        onChangeItemSelected={dispatchLegend}
+                    />
+                </div>
+            )}
+        >
             <MapGL
                 features={mapFeatures}
                 mapStyle={createMaptilerStyle()}
@@ -124,33 +146,7 @@ const Index: NextPage<IProps> = props => {
                     </Popup>
                 )}
             </MapGL>
-
-            <AppLayout
-                head={(
-                    <Menu />
-                )}
-            >
-                <div>
-                    <style jsx>{`
-                        div {
-                            padding: 15px;
-                        }
-                    `}</style>
-
-                    <Select
-                        onChange={value => {
-                            setCity(value)
-                        }}
-                        value={city.key}
-                        options={cityOptions}
-                    />
-                    <MapLegend
-                        data={legend}
-                        onChangeItemSelected={dispatchLegend}
-                    />
-                </div>
-            </AppLayout>
-        </>
+        </AppLayout>
     )
 }
 

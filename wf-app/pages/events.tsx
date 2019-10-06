@@ -11,16 +11,26 @@ import { CardList } from '../src/components/CardList'
 import { Card } from '../src/components/Card'
 import { createApiUrl } from '../src/app/lib'
 import { getJson } from '../src/lib/fetch'
+import { useLayout } from '../src/hooks/useLayout'
+import { Header } from '../src/components/Header'
 
 interface IProps {
     events: IEvent[]
 }
 
 export const Page: NextPage<IProps> = props => {
+    const layout = useLayout()
+
     return (
         <DefaultLayout
             header={(
-                <Menu />
+                <Header
+                    layout={layout}
+                >
+                    <Menu
+                        layout={layout}
+                    />
+                </Header>
             )}
             main={(
                 <div>

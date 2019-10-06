@@ -35,7 +35,7 @@ export const Article: React.FC<IArticleProps> = ({ showContent = true, showCapti
             >
                 <Image
                     src={props.article.previewImage}
-                    alt={props.article.name}
+                    alt={''}
                 />
             </ArticleHead>
 

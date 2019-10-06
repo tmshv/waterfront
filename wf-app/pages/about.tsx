@@ -8,7 +8,9 @@ import Footer from '../src/components/Footer'
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import { Article } from '../src/components/Article'
 import { withTranslation, i18n, useTranslation } from '../src/i18n'
+import { useLayout } from '../src/hooks/useLayout'
 import { IArticle, IPerson } from '../src/app/types'
+import { Header } from '../src/components/Header'
 
 const Person: React.FC<{ item: IPerson }> = props => (
     <div className={'partner'}>
@@ -64,11 +66,18 @@ interface IProps {
 
 const Page: NextPage<IProps> = props => {
     const { t } = useTranslation()
+    const layout = useLayout()
 
     return (
         <DefaultLayout
             header={(
-                <Menu />
+                <Header
+                    layout={layout}
+                >
+                    <Menu
+                        layout={layout}
+                    />
+                </Header>
             )}
             main={(
                 <Article

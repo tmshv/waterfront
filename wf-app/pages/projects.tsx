@@ -12,6 +12,8 @@ import { AppPointFeature } from '../src/app/types'
 import { i18n } from '../src/i18n'
 import { ArticleCard } from '../src/components/ArticleCard'
 import { HeadArticleCard } from '../src/components/ArticleCard/HeadArticleCard'
+import { Header } from '../src/components/Header'
+import { useLayout } from '../src/hooks/useLayout'
 
 interface IProps {
     features: AppPointFeature[]
@@ -19,11 +21,18 @@ interface IProps {
 
 export const Page: NextPage<IProps> = props => {
     const articleCards = props.features.map(featureToArticle)
+    const layout = useLayout()
 
     return (
         <DefaultLayout
             header={(
-                <Menu />
+                <Header
+                    layout={layout}
+                >
+                    <Menu
+                        layout={layout}
+                    />
+                </Header>
             )}
             main={(
                 <div>

@@ -1,41 +1,71 @@
 import * as React from 'react'
+import { DesktopLayout } from './DesktopLayout'
+import Sidebar from 'react-sidebar'
+import { Header } from '../Header'
+import { Menu } from '../Menu'
+import { useMobile } from '../../hooks/useMobile'
 
 interface IAppLayoutProps {
-    head: React.ReactNode
+    side: React.ReactNode
 }
 
-export const AppLayout:React.FC<IAppLayoutProps> = props => (
-    <div className={'content'}>
-        <style jsx>{`
-            .content {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+export const AppLayout: React.FC<IAppLayoutProps> = props => {
+    const [showSide, setShowSide] = React.useState(false)
+    const isMobile = useMobile()
+    const layout = !isMobile ? 'horizontal' : 'vertical'
 
-                pointer-events: none;
-            }
+    const head = (
+        <Header
+            layout={layout}
+        >
+            <Menu
+                layout={layout}
+            />
+        </Header>
+    )
 
-            .head {
-                pointer-events: auto;
-            }
+    if (!isMobile) {
+        return (
+            <DesktopLayout
+                back={props.children}
+                head={head}
+            >
+                {props.side}
+            </DesktopLayout>
+        )
+    }
 
-            .body {
-                width: 35%;
-                min-width: 300px;
-                max-width: 350px;
+    return (
+        <Sidebar
+            sidebar={(
+                <div>
+                    {head}
+                    {props.side}
+                </div>
+            )}
+            open={showSide}
+            onSetOpen={(value) => {
+                setShowSide(value)
+            }}
+            styles={{ sidebar: { background: "white" } }}
+        >
+            <style jsx>{`
+                .overlay-content {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            `}</style>
 
-                pointer-events: auto;
-            }
-        `}</style>
-
-        <div className={'head'}>
-            {props.head}
-        </div>
-
-        <div className={'body'}>
             {props.children}
-        </div>
-    </div>
-)
+
+            <div className={'overlay-content'}>
+                <button
+                    onClick={() => setShowSide(true)}
+                >
+                    Open
+                </button>
+            </div>
+        </Sidebar>
+    )
+}

@@ -12,26 +12,38 @@ import { IArticle } from '../src/app/types'
 import { getJson, q } from '../src/lib/fetch'
 import { createApiUrl } from '../src/app/lib'
 import { IEvent } from '../src/types'
+import { useLayout } from '../src/hooks/useLayout'
+import { Header } from '../src/components/Header'
 
 interface IProps {
     article: IArticle
 }
 
-const Page: NextPage<IProps> = props => (
-    <DefaultLayout
-        header={(
-            <Menu />
-        )}
-        main={(
-            <Article
-                article={props.article}
-            />
-        )}
-        footer={(
-            <Footer />
-        )}
-    />
-)
+const Page: NextPage<IProps> = props => {
+    const layout = useLayout()
+
+    return (
+        <DefaultLayout
+            header={(
+                <Header
+                    layout={layout}
+                >
+                    <Menu
+                        layout={layout}
+                    />
+                </Header>
+            )}
+            main={(
+                <Article
+                    article={props.article}
+                />
+            )}
+            footer={(
+                <Footer />
+            )}
+        />
+    )
+}
 
 Page.getInitialProps = async ({ req, query }) => {
     let lang: string | null = null
