@@ -3,7 +3,6 @@ import * as React from 'react'
 import { NextPage } from 'next'
 import { ViewState, Popup } from 'react-map-gl'
 import { Feature, Point } from 'geojson'
-import Select from 'react-select'
 
 import { MapGL } from '../src/components/MapGL'
 import { MapLegend } from '../src/components/MapLegend'
@@ -20,6 +19,7 @@ import { useFeatures } from '../src/hooks/useFeatures'
 import { useLanguage } from '../src/hooks/useLanguage'
 import { ICity } from '../src/types'
 import { useCity } from '../src/hooks/useCity'
+import { Select } from '../src/components/Select'
 
 function createMaptilerStyle() {
     const key = 'BANyZrASqDKOtn6kEAe9'
@@ -70,16 +70,14 @@ interface IProps {
 }
 
 const Index: NextPage<IProps> = props => {
-    const { t } = useTranslation()
     const lang = useLanguage()
     const cityOptions = React.useMemo(
-        () => Array
-            .from(props.cities.values())
+        () => props.cities
             .map(x => ({
                 value: x.key,
-                label: t(x.title),
+                label: x.title,
             })),
-        [props.cities, lang],
+        [props.cities],
     )
 
     const [city, setCity] = useCity(props.cities)
@@ -175,38 +173,10 @@ const Index: NextPage<IProps> = props => {
                     `}</style>
 
                     <Select
-                        onChange={(value: any) => {
-                            setCity(value.value)
+                        onChange={value => {
+                            setCity(value)
                         }}
-                        theme={theme => ({
-                            ...theme,
-                            borderRadius: 0,
-                            colors: {
-                                ...theme.colors,
-                                primary25: 'rgb(90, 200, 240)',
-                                primary: 'rgb(0, 83, 108)',
-                            },
-                        })}
-                        styles={{
-                            container: style => ({
-                                ...style,
-                                marginBottom: 15,
-                            }),
-                            control: style => ({
-                                ...style,
-                                borderRadius: 0,
-                                borderColor: 'white',
-                            })
-                        }}
-                        className="basic-single"
-                        classNamePrefix="select"
-                        defaultValue={city.key}
-                        isDisabled={false}
-                        isLoading={false}
-                        isClearable={false}
-                        isRtl={false}
-                        isSearchable={false}
-                        name="color"
+                        value={city.key}
                         options={cityOptions}
                     />
                     <MapLegend
