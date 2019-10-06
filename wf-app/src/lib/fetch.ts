@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 
-export async function getJson<T>(jsonUrl: string, query?: object): Promise<T> {
+export async function getJson<T>(jsonUrl: string, query?: { [name: string]: any }): Promise<T> {
     const url = new URL(jsonUrl)
 
     if (query) {
@@ -10,8 +10,11 @@ export async function getJson<T>(jsonUrl: string, query?: object): Promise<T> {
     }
 
     const res = await fetch(`${url}`)
+    if (res.ok) {
+        return res.json()
+    }
 
-    return res.json()
+    throw new Error('not ok')
 }
 
 export function q(value: string | string[]): string {
