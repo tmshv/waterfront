@@ -118,7 +118,9 @@ const Index: NextPage<IProps> = props => {
                 mapStyle={createMaptilerStyle()}
                 viewport={viewport}
                 onChangeViewport={v => setViewport(v)}
-                onClickMap={() => {
+                onClickMap={coord => {
+                    console.log('click coord', coord)
+
                     setSelectedFeatureId(undefined)
                 }}
                 onClickFeature={id => {
