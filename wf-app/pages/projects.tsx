@@ -3,7 +3,7 @@ import * as React from 'react'
 import { NextPage } from 'next'
 
 import { getFeatures } from '../src/app/api'
-import { toArticle } from '../src/app/factory'
+import { featureToArticle } from '../src/app/factory'
 import { CardList } from '../src/components/CardList'
 import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
@@ -18,7 +18,7 @@ interface IProps {
 }
 
 export const Page: NextPage<IProps> = props => {
-    const articleCards = props.features.map(toArticle)
+    const articleCards = props.features.map(featureToArticle)
 
     return (
         <DefaultLayout

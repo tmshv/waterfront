@@ -4,7 +4,7 @@ import { NextPage } from 'next'
 
 import { getFeature } from '../src/app/api'
 import { Article } from '../src/components/Article'
-import { toArticle } from '../src/app/factory';
+import { featureToArticle } from '../src/app/factory';
 import { DefaultLayout } from '../src/components/DefaultLayout'
 import { Menu } from '../src/components/Menu'
 import Footer from '../src/components/Footer'
@@ -45,7 +45,7 @@ Page.getInitialProps = async ({ req, query }) => {
     const feature = await getFeature(lang!, slug)
 
     return {
-        article: toArticle(feature)
+        article: featureToArticle(feature)
     }
 }
 

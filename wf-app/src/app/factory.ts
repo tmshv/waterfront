@@ -1,7 +1,7 @@
 import { IArticle, AppPointFeature } from './types'
 import { renderMarkdown } from '../lib'
 
-export function toArticle(feature: AppPointFeature): IArticle {
+export function featureToArticle(feature: AppPointFeature): IArticle {
     const short = feature.properties.short
     const year: string | number = feature.properties.year
     const body = feature.properties.content
