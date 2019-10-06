@@ -63,7 +63,10 @@ Page.getInitialProps = async ({ req }) => {
     }
 
     const events = await getJson<IEvent[]>(
-        createApiUrl(req, `/api/events/${lang!}`)
+        createApiUrl(req, `/api/events`),
+        {
+            lang,
+        }
     )
 
     return {
