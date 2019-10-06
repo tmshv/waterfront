@@ -34,7 +34,10 @@ export async function getAbout(lang: string): Promise<IArticle> {
     const res: IApiResponse<AboutDto> = await json(`https://wf.tmshv.com/api/_/items/about/1`)
     const image = await getImageUrl(res.data.preview_image)
 
-    return createAboutArticle(lang, res.data, image)
+    if (image) {
+        return createAboutArticle(lang, res.data, image)
+    }
+    return createAboutArticle(lang, res.data, '')
 }
 
 export async function getPersons(lang: string): Promise<IPerson[]> {
@@ -43,8 +46,12 @@ export async function getPersons(lang: string): Promise<IPerson[]> {
     return createPersons(items)
 }
 
-export async function getImageUrl(imageId: number): Promise<string> {
+export async function getImageUrl(imageId: number): Promise<string | undefined> {
     const res: IApiResponse<ImageDto> = await json(`https://wf.tmshv.com/api/_/files/${imageId}`)
 
-    return res.data.data.full_url
+    try {
+        return res.data.data.full_url
+    } catch (e) {
+        return undefined
+    }
 }

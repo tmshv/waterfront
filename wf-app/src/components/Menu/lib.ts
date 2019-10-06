@@ -11,6 +11,10 @@ export function createDefaultMenuItems(): IMenuItem[] {
             name: 'Projects',
             url: '/projects',
         },
+        {
+            name: 'Events',
+            url: '/events',
+        },
 
         {
             icon: mdiInstagram,
