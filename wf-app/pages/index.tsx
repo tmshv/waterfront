@@ -10,7 +10,7 @@ import { MapLegend } from '../src/components/MapLegend'
 import { Menu } from '../src/components/Menu'
 import { getFeatureSettings } from '../src/app/api'
 import { isLayerVisible } from '../src/app/map'
-import { withTranslation } from '../src/i18n'
+import { withTranslation, useTranslation } from '../src/i18n'
 import { IFeatureSettings, IFeatureProperties } from '../src/app/types'
 import { useLegend } from '../src/hooks/useLegend'
 import { createColorMap } from '../src/app/featureSettings'
@@ -70,15 +70,19 @@ interface IProps {
 }
 
 const Index: NextPage<IProps> = props => {
-    const cityOptions = Array
-        .from(props.cities.values())
-        .map(x => ({
-            value: x.key,
-            label: x.title,
-        }))
+    const { t } = useTranslation()
+    const lang = useLanguage()
+    const cityOptions = React.useMemo(
+        () => Array
+            .from(props.cities.values())
+            .map(x => ({
+                value: x.key,
+                label: t(x.title),
+            })),
+        [props.cities, lang],
+    )
 
     const [city, setCity] = useCity(props.cities)
-    const lang = useLanguage()
     const features = useFeatures(city.key)
     const [legend, dispatchLegend] = useLegend(props.featureSettings)
     const [viewport, setViewport] = React.useState<ViewState>(city.viewport)
@@ -196,7 +200,7 @@ const Index: NextPage<IProps> = props => {
                         }}
                         className="basic-single"
                         classNamePrefix="select"
-                        defaultValue={cityOptions[0]}
+                        defaultValue={city.key}
                         isDisabled={false}
                         isLoading={false}
                         isClearable={false}
