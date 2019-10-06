@@ -15,7 +15,6 @@ export const MapLegend: React.FC<IMapLegendProps> = props => (
         <style jsx>{`
             div {
                 color: white;
-                padding: 15px;
             }
         `}</style>
 

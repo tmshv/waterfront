@@ -1,3 +1,5 @@
+import { ViewState } from 'react-map-gl'
+
 export interface IEvent {
     id: number
     slug: string
@@ -7,4 +9,10 @@ export interface IEvent {
     imageId: number
     date: Date
     href: string
+}
+
+export interface ICity {
+    key: string
+    title: string
+    viewport: ViewState
 }

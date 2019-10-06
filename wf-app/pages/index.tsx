@@ -3,6 +3,7 @@ import * as React from 'react'
 import { NextPage } from 'next'
 import { ViewState, Popup } from 'react-map-gl'
 import { Feature, Point } from 'geojson'
+import Select from 'react-select'
 
 import { MapGL } from '../src/components/MapGL'
 import { MapLegend } from '../src/components/MapLegend'
@@ -17,6 +18,8 @@ import { FeaturePreview } from '../src/components/FeaturePreview'
 import { createUrl } from '../src/app/feature'
 import { useFeatures } from '../src/hooks/useFeatures'
 import { useLanguage } from '../src/hooks/useLanguage'
+import { ICity } from '../src/types'
+import { useCity } from '../src/hooks/useCity'
 
 function createMaptilerStyle() {
     const key = 'BANyZrASqDKOtn6kEAe9'
@@ -63,20 +66,28 @@ const Content = props => (
 
 interface IProps {
     featureSettings: IFeatureSettings[]
+    cities: ICity[]
 }
 
 const Index: NextPage<IProps> = props => {
-    const city = 'saint_petersburg'
+    const cityOptions = Array
+        .from(props.cities.values())
+        .map(x => ({
+            value: x.key,
+            label: x.title,
+        }))
+
+    const [city, setCity] = useCity(props.cities)
     const lang = useLanguage()
-    const features = useFeatures(city)
+    const features = useFeatures(city.key)
     const [legend, dispatchLegend] = useLegend(props.featureSettings)
-    const [viewport, setViewport] = React.useState<ViewState>({
-        latitude: 59.932924,
-        longitude: 30.344087,
-        zoom: 11,
-    })
+    const [viewport, setViewport] = React.useState<ViewState>(city.viewport)
     const [selectedFeatureId, setSelectedFeatureId] = React.useState<string | undefined>(undefined)
     const colorMap = createColorMap(props.featureSettings)
+
+    React.useEffect(() => {
+        setViewport(city.viewport)
+    }, [city])
 
     const actorTypeBlock = legend.blocks.find(x => x.type === 'actorType')!
     const actorTypeVisible = actorTypeBlock.items.reduce((acc, item) => {
@@ -152,10 +163,53 @@ const Index: NextPage<IProps> = props => {
                     <Menu />
                 )}
             >
-                <MapLegend
-                    data={legend}
-                    onChangeItemSelected={dispatchLegend}
-                />
+                <div>
+                    <style jsx>{`
+                        div {
+                            padding: 15px;
+                        }
+                    `}</style>
+
+                    <Select
+                        onChange={(value: any) => {
+                            setCity(value.value)
+                        }}
+                        theme={theme => ({
+                            ...theme,
+                            borderRadius: 0,
+                            colors: {
+                                ...theme.colors,
+                                primary25: 'rgb(90, 200, 240)',
+                                primary: 'rgb(0, 83, 108)',
+                            },
+                        })}
+                        styles={{
+                            container: style => ({
+                                ...style,
+                                marginBottom: 15,
+                            }),
+                            control: style => ({
+                                ...style,
+                                borderRadius: 0,
+                                borderColor: 'white',
+                            })
+                        }}
+                        className="basic-single"
+                        classNamePrefix="select"
+                        defaultValue={cityOptions[0]}
+                        isDisabled={false}
+                        isLoading={false}
+                        isClearable={false}
+                        isRtl={false}
+                        isSearchable={false}
+                        name="color"
+                        options={cityOptions}
+                    />
+                    <MapLegend
+                        data={legend}
+                        onChangeItemSelected={dispatchLegend}
+                    />
+                </div>
             </Content>
         </>
     )
@@ -163,8 +217,38 @@ const Index: NextPage<IProps> = props => {
 
 Index.getInitialProps = async () => {
     const featureSettings = await getFeatureSettings()
+    const cities: ICity[] = [
+        {
+            key: 'saint_petersburg',
+            title: 'Saint Petersburg',
+            viewport: {
+                latitude: 59.932924,
+                longitude: 30.344087,
+                zoom: 11,
+            }
+        },
+        {
+            key: 'stockholm',
+            title: 'Stockholm',
+            viewport: {
+                latitude: 59.32477835068242,
+                longitude: 18.071174590117273,
+                zoom: 12,
+            }
+        },
+        {
+            key: 'oslo',
+            title: 'Oslo',
+            viewport: {
+                latitude: 59.912112881280706,
+                longitude: 10.741096809260386,
+                zoom: 12,
+            }
+        },
+    ]
 
     return {
+        cities,
         featureSettings,
     }
 }
