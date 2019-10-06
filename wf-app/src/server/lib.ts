@@ -4,12 +4,12 @@ export function createApiUrl(path: string) {
     return baseUrl + path
 }
 
-export function resolveLangField(obj: object, key: string, langs: string[]): string {
+export function resolveLangField(obj: any, key: string, langs: string[]): string {
     for (const lang of langs) {
         const langKey = `${key}_${lang}`
 
         if (obj[langKey]) {
-            return obj[langKey]
+            return `${obj[langKey]}`
         }
     }
 
