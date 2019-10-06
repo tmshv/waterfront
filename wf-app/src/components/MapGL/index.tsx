@@ -6,7 +6,7 @@ import { IMapFeatureProperties } from './types'
 
 type MapFeature = Feature<Point, IMapFeatureProperties>
 
-export interface IMapProps {
+export interface IMapGLProps {
     features: MapFeature[]
     mapStyle: string | object
     viewport: ViewState
@@ -15,7 +15,7 @@ export interface IMapProps {
     onClickFeature: (featureId: string) => void
 }
 
-export const Map: React.FC<IMapProps> = props => {
+export const MapGL: React.FC<IMapGLProps> = props => {
     const onClick = React.useCallback(event => {
         props.onClickMap(event.lngLat)
     }, [])

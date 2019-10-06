@@ -4,7 +4,7 @@ import { NextPage } from 'next'
 import { ViewState, Popup } from 'react-map-gl'
 import { Feature, Point } from 'geojson'
 
-import { Map } from '../src/components/Map'
+import { MapGL } from '../src/components/MapGL'
 import { MapLegend } from '../src/components/MapLegend'
 import { Menu } from '../src/components/Menu'
 import { getFeatureSettings } from '../src/app/api'
@@ -113,7 +113,7 @@ const Index: NextPage<IProps> = props => {
 
     return (
         <>
-            <Map
+            <MapGL
                 features={mapFeatures}
                 mapStyle={createMaptilerStyle()}
                 viewport={viewport}
@@ -143,7 +143,7 @@ const Index: NextPage<IProps> = props => {
                         />
                     </Popup>
                 )}
-            </Map>
+            </MapGL>
 
             <Content
                 head={(
