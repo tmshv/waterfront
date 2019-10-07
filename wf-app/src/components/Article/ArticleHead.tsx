@@ -25,15 +25,6 @@ export const ArticleHead: React.FC<IArticleHeadProps> = props => {
                     margin: 0 auto;
                 }
 
-                h1 {
-                    color: white;
-                    font-size: 5em;
-                    padding: 0 10px;
-                    margin: 0;
-
-                    text-shadow: 2px 2px 0px black;
-                }
-
                 .caption {
                     position: relative;
                     margin-left: 15px;
@@ -59,6 +50,21 @@ export const ArticleHead: React.FC<IArticleHeadProps> = props => {
 
                     background-color: rgb(90, 200, 240);
                     mix-blend-mode: hard-light;
+                }
+
+                h1 {
+                    color: white;
+                    font-size: 5em;
+                    padding: 0 10px;
+                    margin: 0;
+
+                    text-shadow: 2px 2px 0px black;
+                }
+
+                @media screen and (max-width: 31.25em) {
+                    h1 {
+                        font-size: 3em;
+                    }
                 }
             `}</style>
 
