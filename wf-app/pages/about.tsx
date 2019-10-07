@@ -11,51 +11,7 @@ import { withTranslation, i18n, useTranslation } from '../src/i18n'
 import { useLayout } from '../src/hooks/useLayout'
 import { IArticle, IPerson } from '../src/app/types'
 import { Header } from '../src/components/Header'
-
-const Person: React.FC<{ item: IPerson }> = props => (
-    <div className={'partner'}>
-        <style jsx>{`
-            .partner {
-                display: flex;
-
-                margin-bottom: 70px;
-            }
-
-            .preview {
-                flex: 1;
-            }
-
-            .content {
-                flex: 3;
-            }
-
-            .image {
-                width: 150px;
-            }
-
-            img {
-                display: block;
-                width: 100%;
-            }
-        `}</style>
-
-        <div className={'preview'}>
-            <div className={'image'}>
-                <img
-                    src={props.item.previewImage}
-                />
-            </div>
-        </div>
-
-        <div className={'content'}>
-            <strong>{props.item.name}</strong>
-
-            <div
-                dangerouslySetInnerHTML={{ __html: props.item.content }}
-            />
-        </div>
-    </div>
-)
+import { PersonsBlock } from '../src/components/PersonsBlock'
 
 interface IProps {
     article: IArticle
@@ -65,7 +21,6 @@ interface IProps {
 }
 
 const Page: NextPage<IProps> = props => {
-    const { t } = useTranslation()
     const layout = useLayout()
 
     return (
@@ -84,29 +39,20 @@ const Page: NextPage<IProps> = props => {
                     article={props.article}
                     after={(
                         <>
-                            <h2>{t('Team')}</h2>
-                            {props.team.map((x, i) => (
-                                <Person
-                                    key={i}
-                                    item={x}
-                                />
-                            ))}
+                            <PersonsBlock
+                                title={'Team'}
+                                items={props.team}
+                            />
 
-                            <h2>{t('Experts')}</h2>
-                            {props.partners.map((x, i) => (
-                                <Person
-                                    key={i}
-                                    item={x}
-                                />
-                            ))}
+                            <PersonsBlock
+                                title={'Experts'}
+                                items={props.team}
+                            />
 
-                            <h2>{t('Partners')}</h2>
-                            {props.partners.map((x, i) => (
-                                <Person
-                                    key={i}
-                                    item={x}
-                                />
-                            ))}
+                            <PersonsBlock
+                                title={'Partners'}
+                                items={props.team}
+                            />
                         </>
                     )}
                 />
