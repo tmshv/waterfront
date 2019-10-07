@@ -21,6 +21,8 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = props => (
             main {
                 width: 70%;
                 flex: 1;
+
+                margin-bottom: 50px;
             }
 
             section {
