@@ -1,7 +1,5 @@
 import * as React from 'react'
 import { IArticle } from '../../app/types'
-import { ArticleHead } from './ArticleHead'
-import { Image } from './Image'
 
 import './styles.css'
 
@@ -17,7 +15,6 @@ export const Article: React.FC<IArticleProps> = ({ showContent = true, showCapti
         <article>
             <style jsx>{`
                 div {
-                    width: 70%;
                     margin: 0 auto;
                     padding-top: 60px;
                 }
@@ -28,16 +25,6 @@ export const Article: React.FC<IArticleProps> = ({ showContent = true, showCapti
                     }
                 }
             `}</style>
-
-            <ArticleHead
-                title={props.article.name}
-                caption={props.article.short}
-            >
-                <Image
-                    src={props.article.previewImage}
-                    alt={''}
-                />
-            </ArticleHead>
 
             {!showContent ? null : (
                 <div

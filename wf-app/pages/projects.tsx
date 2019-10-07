@@ -34,6 +34,7 @@ export const Page: NextPage<IProps> = props => {
                     />
                 </Header>
             )}
+            head={(<></>)}
             main={(
                 <div>
                     <style jsx>{`

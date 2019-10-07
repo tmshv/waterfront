@@ -33,6 +33,7 @@ const Page: NextPage<IProps> = props => {
                     />
                 </Header>
             )}
+            head={(<></>)}
             main={(
                 <Article
                     article={props.article}

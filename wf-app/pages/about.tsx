@@ -12,6 +12,7 @@ import { useLayout } from '../src/hooks/useLayout'
 import { IArticle, IPerson } from '../src/app/types'
 import { Header } from '../src/components/Header'
 import { PersonsBlock } from '../src/components/PersonsBlock'
+import { PageHead } from '../src/components/PageHead'
 
 interface IProps {
     article: IArticle
@@ -33,6 +34,13 @@ const Page: NextPage<IProps> = props => {
                         layout={layout}
                     />
                 </Header>
+            )}
+            head={(
+                <PageHead
+                    title={props.article.name}
+                    caption={props.article.short}
+                    image={props.article.previewImage}
+                />
             )}
             main={(
                 <>

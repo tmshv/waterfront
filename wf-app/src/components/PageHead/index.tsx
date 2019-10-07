@@ -1,11 +1,15 @@
 import * as React from 'react'
+import { Image } from './Image'
 
-export interface IArticleHeadProps {
+export interface IPageHeadProps {
     title: string
     caption?: string
+    image: string | number
 }
 
-export const ArticleHead: React.FC<IArticleHeadProps> = props => {
+export const PageHead: React.FC<IPageHeadProps> = props => {
+    const imageSrc = props.image.toString()
+
     return (
         <section>
             <style jsx>{`
@@ -68,7 +72,10 @@ export const ArticleHead: React.FC<IArticleHeadProps> = props => {
                 }
             `}</style>
 
-            {props.children}
+            <Image
+                src={imageSrc}
+                alt={''}
+            />
 
             <div className={'overlay'}>
                 <h1>

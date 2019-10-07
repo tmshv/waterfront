@@ -16,7 +16,6 @@ export const PersonsBlock: React.FC<IPersonsBlockProps> = props => {
         <div>
             <style jsx>{`
                 div {
-                    padding: 0 15px;
                 }
 
                 h2 {
