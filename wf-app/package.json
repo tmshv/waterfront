@@ -6,10 +6,7 @@
   "scripts": {
     "ts-dev": "ts-node-dev --respawn --transpileOnly src/server/server.ts",
     "dev": "ts-node --project server.tsconfig.json src/server/server.ts",
-    "prod": "tsc && node ./build/server.js",
-    "build": "npm run build-next && npm run build-server",
-    "build-next": "next build",
-    "build-server": "tsc --project server.tsconfig.json",
+    "build": "next build && tsc --project server.tsconfig.json",
     "start": "NODE_ENV=production node build/server/server.js",
     "test": "jest --forceExit --coverage --verbose"
   },
