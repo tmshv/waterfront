@@ -16,7 +16,11 @@ export const PersonsBlock: React.FC<IPersonsBlockProps> = props => {
         <div>
             <style jsx>{`
                 div {
+                    padding: 0 15px;
+                }
 
+                h2 {
+                    font-size: 2em;
                 }
             `}</style>
 
@@ -26,6 +30,9 @@ export const PersonsBlock: React.FC<IPersonsBlockProps> = props => {
                 <Person
                     key={i}
                     item={x}
+                    style={{
+                        marginBottom: 50,
+                    }}
                 />
             ))}
         </div>

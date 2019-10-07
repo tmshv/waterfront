@@ -35,27 +35,25 @@ const Page: NextPage<IProps> = props => {
                 </Header>
             )}
             main={(
-                <Article
-                    article={props.article}
-                    after={(
-                        <>
-                            <PersonsBlock
-                                title={'Team'}
-                                items={props.team}
-                            />
+                <>
+                    <Article
+                        article={props.article}
+                    />
+                    <PersonsBlock
+                        title={'Team'}
+                        items={props.team}
+                    />
 
-                            <PersonsBlock
-                                title={'Experts'}
-                                items={props.team}
-                            />
+                    <PersonsBlock
+                        title={'Experts'}
+                        items={props.team}
+                    />
 
-                            <PersonsBlock
-                                title={'Partners'}
-                                items={props.team}
-                            />
-                        </>
-                    )}
-                />
+                    <PersonsBlock
+                        title={'Partners'}
+                        items={props.team}
+                    />
+                </>
             )}
             footer={(
                 <Footer />

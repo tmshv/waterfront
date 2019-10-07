@@ -2,13 +2,19 @@ import * as React from 'react'
 
 import { IPerson } from '../../app/types'
 
-export const Person: React.FC<{ item: IPerson }> = React.memo(props => (
-    <div className={'person'}>
+export interface IPersonProps {
+    style?: React.CSSProperties
+    item: IPerson
+}
+
+export const Person: React.FC<IPersonProps> = React.memo(props => (
+    <div
+        style={props.style}
+        className={'person'}
+    >
         <style jsx>{`
             .person {
                 display: flex;
-
-                margin-bottom: 70px;
             }
 
             .preview {
@@ -17,10 +23,18 @@ export const Person: React.FC<{ item: IPerson }> = React.memo(props => (
 
             .content {
                 flex: 3;
+
+                padding-left: 10px;
+            }
+
+            strong {
+                font-size: 1.5em;
             }
 
             .image {
-                width: 150px;
+                max-width: 150px;
+                min-width: 100px;
+                width: 100%;
             }
 
             img {
