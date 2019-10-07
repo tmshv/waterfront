@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 export interface IDefaultLayoutProps{
-    header: React.ReactNode
+    navigation: React.ReactNode
     main: React.ReactNode
     footer: React.ReactNode
 }
@@ -38,7 +38,7 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = props => (
         `}</style>
 
         <header>
-            {props.header}
+            {props.navigation}
         </header>
         <main>
             {props.main}

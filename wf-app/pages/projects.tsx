@@ -25,7 +25,7 @@ export const Page: NextPage<IProps> = props => {
 
     return (
         <DefaultLayout
-            header={(
+            navigation={(
                 <Header
                     layout={layout}
                 >
