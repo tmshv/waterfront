@@ -12,7 +12,7 @@ class MyApp extends App {
             <Container>
                 <style global jsx>{`
                     :root {
-                        --body-background-color: rgb(0, 83, 108);
+                        --body-background-color: white;
                         --footer-background-color: rgb(0, 83, 108);
                         --background-color: rgb(255, 255, 255);
                     }
