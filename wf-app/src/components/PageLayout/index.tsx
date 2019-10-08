@@ -18,6 +18,7 @@ interface IPageLayoutProps {
     wideBody?: boolean
     borderless?: boolean
     showFooter?: boolean
+    extraSidebar?: React.ReactNode
 }
 
 export const PageLayout: React.FC<IPageLayoutProps> = props => {
@@ -33,9 +34,15 @@ export const PageLayout: React.FC<IPageLayoutProps> = props => {
                             padding: 20px;
                         }
                     `}</style>
+
                     <Navigation
                         layout={'vertical'}
+                        style={{
+                            marginBottom: 15,
+                        }}
                     />
+
+                    {props.extraSidebar}
                 </div>
             )}
             open={showSide}

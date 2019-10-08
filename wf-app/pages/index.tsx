@@ -91,10 +91,22 @@ const Index: NextPage<IProps> = props => {
         }))
 
     return (
-        <PageLayout
-            showFooter={false}
-            wideBody={true}
-            borderless={true}
+        <AppLayout
+            side={(
+                <>
+                   <Select
+                        onChange={value => {
+                            setCity(value)
+                        }}
+                        value={city.key}
+                        options={cityOptions}
+                    />
+                    <MapLegend
+                        data={legend}
+                        onChangeItemSelected={dispatchLegend}
+                    />
+                </>
+            )}
         >
             <MapGL
                 features={mapFeatures}
@@ -129,68 +141,8 @@ const Index: NextPage<IProps> = props => {
                     </Popup>
                 )}
             </MapGL>
-        </PageLayout>
+        </AppLayout>
     )
-
-    // return (
-    //     <AppLayout
-    //         side={(
-    //             <div>
-    //                 <style jsx>{`
-    //                     div {
-    //                         padding: 15px;
-    //                     }
-    //                 `}</style>
-
-    //                 <Select
-    //                     onChange={value => {
-    //                         setCity(value)
-    //                     }}
-    //                     value={city.key}
-    //                     options={cityOptions}
-    //                 />
-    //                 <MapLegend
-    //                     data={legend}
-    //                     onChangeItemSelected={dispatchLegend}
-    //                 />
-    //             </div>
-    //         )}
-    //     >
-    //         <MapGL
-    //             features={mapFeatures}
-    //             mapStyle={createMaptilerStyle()}
-    //             viewport={viewport}
-    //             onChangeViewport={v => setViewport(v)}
-    //             onClickMap={coord => {
-    //                 console.log('click coord', coord)
-
-    //                 setSelectedFeatureId(undefined)
-    //             }}
-    //             onClickFeature={id => {
-    //                 setSelectedFeatureId(id)
-    //             }}
-    //         >
-    //             {!selectedFeature ? null : (
-    //                 <Popup
-    //                     key={`${lang}.${city}.${selectedFeature.properties.id}`}
-    //                     tipSize={5}
-    //                     anchor={'top'}
-    //                     longitude={selectedFeature.geometry.coordinates[0]}
-    //                     latitude={selectedFeature.geometry.coordinates[1]}
-    //                     closeOnClick={false}
-    //                 >
-    //                     <FeaturePreview
-    //                         href={createUrl(selectedFeature.properties.slug)}
-    //                         title={selectedFeature.properties.name}
-    //                         body={selectedFeature.properties.short}
-    //                         year={selectedFeature.properties.year}
-    //                         previewImageSrc={selectedFeature.properties.previewImage}
-    //                     />
-    //                 </Popup>
-    //             )}
-    //         </MapGL>
-    //     </AppLayout>
-    // )
 }
 
 Index.getInitialProps = async () => {

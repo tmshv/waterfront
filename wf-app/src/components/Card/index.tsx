@@ -64,7 +64,7 @@ export const Card: React.FC<ICardProps> = props => {
 
                     margin: 0.5em 0;
                 }
-
+                    
                 a {
                     display: block;
                     text-decoration: none;

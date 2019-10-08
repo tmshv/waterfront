@@ -12,6 +12,7 @@ const LangButton = dynamic(() => import('../LangButton'), {
 })
 
 export interface INavigationProps {
+    style?: React.CSSProperties
     layout: 'horizontal' | 'vertical'
 }
 
@@ -35,7 +36,7 @@ export const Navigation: React.FC<INavigationProps> = props => {
     )
 
     return (
-        <div className={cx(props.layout)}>
+        <div style={props.style} className={cx(props.layout)}>
             <style jsx>{`
                 div {
                     display: flex;
