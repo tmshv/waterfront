@@ -31,10 +31,11 @@ export const PageHead: React.FC<IPageHeadProps> = props => {
 
                 .caption {
                     position: relative;
-                    margin-left: 15px;
                     padding: 15px;
                     width: 50%;
-                    min-width: 300px;
+                    min-width: 200px;
+
+                    box-sizing: border-box;
                 }
 
                 .caption-text {
@@ -66,8 +67,17 @@ export const PageHead: React.FC<IPageHeadProps> = props => {
                 }
 
                 @media screen and (max-width: 31.25em) {
+                    .overlay {
+                        width: 90%;
+                        bottom: 50px;
+                    }
+
                     h1 {
                         font-size: 3em;
+                    }
+
+                    .caption {
+                        width: 100%;
                     }
                 }
             `}</style>
