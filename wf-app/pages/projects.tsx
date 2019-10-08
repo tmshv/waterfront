@@ -14,6 +14,8 @@ import { ArticleCard } from '../src/components/ArticleCard'
 import { HeadArticleCard } from '../src/components/ArticleCard/HeadArticleCard'
 import { Header } from '../src/components/Header'
 import { useLayout } from '../src/hooks/useLayout'
+import { PageLayout } from '../src/components/PageLayout'
+import { useMobile } from '../src/hooks/useMobile'
 
 interface IProps {
     features: AppPointFeature[]
@@ -21,53 +23,33 @@ interface IProps {
 
 export const Page: NextPage<IProps> = props => {
     const articleCards = props.features.map(featureToArticle)
-    const layout = useLayout()
+    const isMobile = useMobile()
+    const columns = isMobile ? 1 : 3
 
     return (
-        <DefaultLayout
-            navigation={(
-                <Header
-                    layout={layout}
-                >
-                    {/* <Menu
-                        layout={layout}
-                    /> */}
-                </Header>
-            )}
-            head={(<></>)}
-            main={(
-                <div>
-                    <style jsx>{`
-                        div {
-                            padding: 0 10px;
-                        }
-                    `}</style>
-
-                    <CardList
-                        columns={3}
-                        items={articleCards}
-                        highlightFirst={true}
-                        renderFirstItem={article => (
-                            <HeadArticleCard
-                                item={article}
-                            />
-                        )}
-                        renderItem={article => (
-                            <ArticleCard
-                                key={article.slug}
-                                article={article}
-                                style={{
-                                    marginBottom: '2em',
-                                }}
-                            />
-                        )}
+        <PageLayout
+            wideBody={true}
+        >
+            <CardList
+                columns={columns}
+                items={articleCards}
+                highlightFirst={true}
+                renderFirstItem={article => (
+                    <HeadArticleCard
+                        item={article}
                     />
-                </div>
-            )}
-            footer={(
-                <Footer />
-            )}
-        />
+                )}
+                renderItem={article => (
+                    <ArticleCard
+                        key={article.slug}
+                        article={article}
+                        style={{
+                            marginBottom: '2em',
+                        }}
+                    />
+                )}
+            />
+        </PageLayout>
     )
 }
 
