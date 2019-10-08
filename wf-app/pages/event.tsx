@@ -4,45 +4,29 @@ import { NextPage } from 'next'
 
 import { Article } from '../src/components/Article'
 import { eventToArticle } from '../src/app/factory'
-import { DefaultLayout } from '../src/components/DefaultLayout'
-import { Menu } from '../src/components/Menu'
-import Footer from '../src/components/Footer'
 import { i18n, withTranslation } from '../src/i18n'
 import { IArticle } from '../src/app/types'
 import { getJson, q } from '../src/lib/fetch'
 import { createApiUrl } from '../src/app/lib'
 import { IEvent } from '../src/types'
-import { useLayout } from '../src/hooks/useLayout'
-import { Header } from '../src/components/Header'
+import { PageLayout } from '../src/components/PageLayout'
 
 interface IProps {
     article: IArticle
 }
 
 const Page: NextPage<IProps> = props => {
-    const layout = useLayout()
-
     return (
-        <DefaultLayout
-            navigation={(
-                <Header
-                    layout={layout}
-                >
-                    {/* <Menu
-                        layout={layout}
-                    /> */}
-                </Header>
-            )}
-            head={(<></>)}
-            main={(
-                <Article
-                    article={props.article}
-                />
-            )}
-            footer={(
-                <Footer />
-            )}
-        />
+        <PageLayout
+            head={{
+                title: props.article.name,
+                image: props.article.previewImage,
+            }}
+        >
+            <Article
+                article={props.article}
+            />
+        </PageLayout>
     )
 }
 
