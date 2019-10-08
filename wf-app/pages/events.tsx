@@ -27,9 +27,9 @@ export const Page: NextPage<IProps> = props => {
                 <Header
                     layout={layout}
                 >
-                    <Menu
+                    {/* <Menu
                         layout={layout}
-                    />
+                    /> */}
                 </Header>
             )}
             head={(<></>)}

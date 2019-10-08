@@ -33,7 +33,6 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = props => (
             header {
                 width: 100%;
                 background-color: white;
-                display: none;
             }
 
             footer {

@@ -2,43 +2,31 @@ import * as React from 'react'
 
 import { useTranslation } from '../../i18n'
 import Link from 'next/link'
-import Icon from '@mdi/react'
 import cx from 'classnames'
-
-import { createDefaultMenuItems } from './lib'
-
-const target = (newTab?: boolean) => newTab ? '_blank' : undefined
 
 export interface IMenuItem {
     url: string
-    name?: string
-    icon?: string
-    newTab?: boolean
-    marginRight?: number
+    name: string
 }
 
 export interface IMenuProps {
+    style?: React.CSSProperties
     menuItemIconSize?: number
     menuItemMarginRight?: number
-    menuItems?: IMenuItem[]
+    items: IMenuItem[]
     layout: 'horizontal' | 'vertical'
 }
 
-export const Menu: React.FC<IMenuProps> = ({
-    menuItemIconSize = 1.2,
-    menuItemMarginRight = 40,
-    menuItems = createDefaultMenuItems(),
-    ...props
-}) => {
+export const Menu: React.FC<IMenuProps> = props => {
     const { t } = useTranslation()
 
     return (
-        <ul className={cx(props.layout)}>
+        <ul style={props.style} className={cx(props.layout)}>
             <style jsx>{`
                 ul {
                     list-style: none;
                     display: flex;
-                    //align-items: center;
+                    align-items: center;
 
                     flex-direction: column;
 
@@ -74,31 +62,15 @@ export const Menu: React.FC<IMenuProps> = ({
                 }
             `}</style>
 
-            {menuItems.map(x => (
+            {props.items.map(x => (
                 <li
                     key={x.url}
-                    // style={{
-                    //     marginRight: x.marginRight
-                    //         ? x.marginRight
-                    //         : menuItemMarginRight,
-                    // }}
                 >
                     <Link
                         href={x.url}
                     >
-                        <a
-                            target={target(x.newTab)}
-                        >
-                            {!x.name ? null : (
-                                <span>{t(x.name)}</span>
-                            )}
-
-                            {!x.icon ? null : (
-                                <Icon path={x.icon}
-                                    size={menuItemIconSize}
-                                    color={'rgb(0, 83, 108)'}
-                                />
-                            )}
+                        <a>
+                            <span>{t(x.name)}</span>
                         </a>
                     </Link>
                 </li>

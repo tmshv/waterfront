@@ -2,15 +2,9 @@ import * as React from 'react'
 
 import Link from 'next/link'
 import cx from 'classnames'
-import dynamic from 'next/dynamic'
-import Icon from '@mdi/react'
 
 import { Logo } from '../Logo'
-import { Menu } from '../Menu'
-
-const LangButton = dynamic(() => import('../LangButton'), {
-    ssr: false,
-})
+import { Navigation } from '../Navigation'
 
 export interface IHeaderProps {
     layout: 'vertical' | 'horizontal'
@@ -42,21 +36,7 @@ export const Header: React.FC<IHeaderProps> = props => {
                     display: block;
                     width: 100%;
                     min-width: 200px;
-                    max-width: 300px;
-                }
-                
-                section {
-                    display: flex;
-                    flex-direction: column;
-
-                    margin: 20px 0;
-                }
-
-                section.horizontal {
-                    margin: 0;
-
-                    flex-direction: row;
-                    align-items: center;
+                    max-width: 270px;
                 }
             `}</style>
 
@@ -70,11 +50,8 @@ export const Header: React.FC<IHeaderProps> = props => {
                 </a>
             </Link>
 
-            <section className={cx(props.layout)}>
-                <Menu
-                    layout={props.layout}
-                />
-                <LangButton />
+            <section>
+                {props.children}
             </section>
         </div>
     )

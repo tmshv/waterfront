@@ -18,9 +18,9 @@ export const AppLayout: React.FC<IAppLayoutProps> = props => {
         <Header
             layout={layout}
         >
-            <Menu
+            {/* <Menu
                 layout={layout}
-            />
+            /> */}
         </Header>
     )
 

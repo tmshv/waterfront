@@ -6,6 +6,7 @@ import { DefaultLayout } from '../DefaultLayout'
 import { useLayout } from '../../hooks/useLayout'
 import { Header } from '../Header'
 import { PageHead } from '../PageHead'
+import { Navigation } from '../Navigation'
 
 interface IPageLayoutProps {
     head?: {
@@ -22,11 +23,9 @@ export const PageLayout: React.FC<IPageLayoutProps> = props => {
         <DefaultLayout
             navigation={(
                 <Header
-                    layout={layout}
+                    layout={'horizontal'}
                 >
-                    <Menu
-                        layout={layout}
-                    />
+                    <Navigation />
                 </Header>
             )}
             head={!props.head ? null : (
