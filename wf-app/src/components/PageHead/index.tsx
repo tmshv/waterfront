@@ -68,12 +68,12 @@ export const PageHead: React.FC<IPageHeadProps> = props => {
 
                 @media screen and (max-width: 31.25em) {
                     .overlay {
-                        width: 90%;
+                        width: 100%;
                         bottom: 50px;
                     }
 
                     h1 {
-                        font-size: 3em;
+                        font-size: 2.5em;
                     }
 
                     .caption {
