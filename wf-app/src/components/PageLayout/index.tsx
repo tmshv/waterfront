@@ -1,12 +1,13 @@
 import * as React from 'react'
 
-import { Menu } from '../Menu'
 import Footer from '../Footer'
 import { DefaultLayout } from '../DefaultLayout'
-import { useLayout } from '../../hooks/useLayout'
 import { Header } from '../Header'
 import { PageHead } from '../PageHead'
 import { Navigation } from '../Navigation'
+import Sidebar from 'react-sidebar'
+import { useMobile } from '../../hooks/useMobile'
+import { MenuButton } from '../MenuButton'
 
 interface IPageLayoutProps {
     head?: {
@@ -17,28 +18,59 @@ interface IPageLayoutProps {
 }
 
 export const PageLayout: React.FC<IPageLayoutProps> = props => {
-    const layout = useLayout()
+    const isMobile = useMobile()
+    const [showSide, setShowSide] = React.useState(false)
 
     return (
-        <DefaultLayout
-            navigation={(
-                <Header
-                    layout={'horizontal'}
-                >
-                    <Navigation />
-                </Header>
+        <Sidebar
+            sidebar={(
+                <div>
+                    <style jsx>{`
+                        div {
+                            padding: 20px;
+                        }
+                    `}</style>
+                    <Navigation
+                        layout={'vertical'}
+                    />
+                </div>
             )}
-            head={!props.head ? null : (
-                <PageHead
-                    title={props.head.title}
-                    caption={props.head.caption}
-                    image={props.head.image}
-                />
-            )}
-            main={props.children}
-            footer={(
-                <Footer />
-            )}
-        />
+            open={showSide}
+            onSetOpen={(value) => {
+                setShowSide(value)
+            }}
+            styles={{ sidebar: { background: "white" } }}
+        >
+            <DefaultLayout
+                navigation={(
+                    <Header
+                        layout={'horizontal'}
+                    >
+                        {isMobile ? (
+                            <MenuButton
+                                onClick={() => {
+                                    setShowSide(true)
+                                }}
+                            />
+                        ) : (
+                                <Navigation
+                                    layout={'horizontal'}
+                                />
+                            )}
+                    </Header>
+                )}
+                head={!props.head ? null : (
+                    <PageHead
+                        title={props.head.title}
+                        caption={props.head.caption}
+                        image={props.head.image}
+                    />
+                )}
+                main={props.children}
+                footer={(
+                    <Footer />
+                )}
+            />
+        </Sidebar>
     )
 }

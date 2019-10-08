@@ -1,11 +1,9 @@
 import * as React from 'react'
 
 import dynamic from 'next/dynamic'
-import Icon from '@mdi/react'
-import { mdiMenu } from '@mdi/js'
+import cx from 'classnames'
 
 import { Menu } from '../Menu'
-import { useMobile } from '../../hooks/useMobile'
 import { Social } from '../Social'
 import { social, menu } from '../../app/const'
 
@@ -14,48 +12,61 @@ const LangButton = dynamic(() => import('../LangButton'), {
 })
 
 export interface INavigationProps {
+    layout: 'horizontal' | 'vertical'
 }
 
 export const Navigation: React.FC<INavigationProps> = props => {
-    const isMobile = useMobile()
+    const menuStyle = React.useMemo(() => props.layout === 'horizontal'
+        ? {
+            marginRight: 20,
+        } : {
+            marginBottom: 20,
+        },
+        [props.layout]
+    )
+
+    const socialStyle = React.useMemo(() => props.layout === 'horizontal'
+        ? {
+            marginRight: 25,
+        } : {
+            marginBottom: 20,
+        },
+        [props.layout]
+    )
 
     return (
-        <div>
+        <div className={cx(props.layout)}>
             <style jsx>{`
                 div {
                     display: flex;
+                }
+
+                div.horizontal {
+                    flex-direction: row;
                     align-items: center;
+                }
+
+                div.vertical {
+                    flex-direction: column;
+                    align-items: flex-start;
                 }
             `}</style>
 
-            {isMobile ? (
-                <Icon path={mdiMenu}
-                    size={1}
-                    color={'rgb(0, 83, 108)'}
-                />
-            ) : (
-                    <>
-                        <Menu
-                            layout={'horizontal'}
-                            items={menu}
-                            style={{
-                                marginRight: 20,
-                            }}
-                        />
+            <Menu
+                layout={'horizontal'}
+                items={menu}
+                style={menuStyle}
+            />
 
-                        <Social
-                            color={'rgb(0, 83, 108)'}
-                            iconSize={1}
-                            items={social}
-                            layout={'horizontal'}
-                            style={{
-                                marginRight: 25,
-                            }}
-                        />
+            <Social
+                color={'rgb(0, 83, 108)'}
+                iconSize={1}
+                items={social}
+                layout={'horizontal'}
+                style={socialStyle}
+            />
 
-                        <LangButton />
-                    </>
-                )}
+            <LangButton />
         </div>
     )
 }
