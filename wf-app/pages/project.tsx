@@ -5,42 +5,28 @@ import { NextPage } from 'next'
 import { getFeature } from '../src/app/api'
 import { Article } from '../src/components/Article'
 import { featureToArticle } from '../src/app/factory';
-import { DefaultLayout } from '../src/components/DefaultLayout'
-import { Menu } from '../src/components/Menu'
-import Footer from '../src/components/Footer'
 import { i18n, withTranslation } from '../src/i18n'
 import { IArticle } from '../src/app/types'
-import { Header } from '../src/components/Header';
 import { useLayout } from '../src/hooks/useLayout';
+import { PageLayout } from '../src/components/PageLayout';
 
 interface IProps {
     article: IArticle
 }
 
 const Page: NextPage<IProps> = props => {
-    const layout = useLayout()
-
     return (
-        <DefaultLayout
-            navigation={(
-                <Header
-                    layout={layout}
-                >
-                    {/* <Menu
-                        layout={layout}
-                    /> */}
-                </Header>
-            )}
-            head={(<></>)}
-            main={(
-                <Article
-                    article={props.article}
-                />
-            )}
-            footer={(
-                <Footer />
-            )}
-        />
+        <PageLayout
+            head={{
+                title: props.article.name,
+                caption: props.article.short,
+                image: props.article.previewImage,
+            }}
+        >
+            <Article
+                article={props.article}
+            />
+        </PageLayout>
     )
 }
 
