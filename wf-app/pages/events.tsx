@@ -24,6 +24,9 @@ export const Page: NextPage<IProps> = props => {
             wideBody={true}
         >
             <CardList
+                style={{
+                    padding: '0 10px',
+                }}
                 columns={columns}
                 items={props.events}
                 highlightFirst={false}

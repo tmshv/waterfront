@@ -53,7 +53,6 @@ export const Card: React.FC<ICardProps> = props => {
 
                 div {
                     line-height: 1.5em;
-                    padding: 0 10px;
                     
                     margin-top: 0.5em;
                     margin-bottom: 0.5em;

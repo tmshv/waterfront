@@ -1,12 +1,9 @@
 import * as React from 'react'
-import { head, tail, chunk } from 'lodash'
-import Link from 'next/link'
-import { IArticle } from '../../app/types'
-import { ArticleCard } from '../ArticleCard'
-import { Article } from '../Article'
+import { head, tail } from 'lodash'
 import { splitIntoColumns } from './lib'
 
 export interface ICardListProps<T> {
+    style?: React.CSSProperties
     highlightFirst: boolean
     items: T[]
     columns: number
@@ -20,7 +17,7 @@ export function CardList<T>(props: ICardListProps<T>) {
     const cardColumns = splitIntoColumns(cardItems, props.columns)
 
     return (
-        <div>
+        <div style={props.style}>
             <style jsx>{`
                 .column-container {
                     display: flex;

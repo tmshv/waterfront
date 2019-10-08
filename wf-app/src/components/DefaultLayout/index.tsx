@@ -4,21 +4,29 @@ import cx from 'classnames'
 
 export interface IDefaultLayoutProps {
     navigation: React.ReactNode
-    head: React.ReactNode
+    head?: React.ReactNode
     main: React.ReactNode
     footer: React.ReactNode
     wideMain?: boolean
+    borderless?: boolean
+    showFooter?: boolean
 }
 
-export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({ wideMain = false, ...props }) => (
-    <div>
-        <style jsx>{`
+export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({
+    borderless = false,
+    wideMain = false,
+    showFooter = true,
+    ...props
+}) => (
+        <div>
+            <style jsx>{`
             div {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
                 background-color: var(--background-color);
+                height: 100%;
             }
 
             main {
@@ -29,9 +37,12 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({ wideMain = false,
                 box-sizing: border-box;
             }
 
+            main.borderless {
+                margin-bottom: 0px;
+            }
+
             main.wide {
                 width: 100%;
-                padding: 0 10px;
             }
 
             section {
@@ -59,22 +70,31 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({ wideMain = false,
                     padding: 0 10px;
                     box-sizing: border-box;
                 }
+
+                main.borderless {
+                    padding: 0px;
+                }
             }
         `}</style>
 
-        <header>
-            {props.navigation}
-        </header>
-        <section>
-            {props.head}
-        </section>
-        <main className={cx({
-            wide: wideMain,
-        })}>
-            {props.main}
-        </main>
-        <footer>
-            {props.footer}
-        </footer>
-    </div>
-)
+            <header>
+                {props.navigation}
+            </header>
+            {!props.head ? null : (
+                <section>
+                    {props.head}
+                </section>
+            )}
+            <main className={cx({
+                wide: wideMain,
+                borderless,
+            })}>
+                {props.main}
+            </main>
+            {!showFooter ? null : (
+                <footer>
+                    {props.footer}
+                </footer>
+            )}
+        </div>
+    )
