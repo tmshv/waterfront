@@ -3,16 +3,10 @@ import * as React from 'react'
 import { NextPage } from 'next'
 
 import { getAbout, getPersons } from '../src/app/api'
-import { Menu } from '../src/components/Menu'
-import Footer from '../src/components/Footer'
-import { DefaultLayout } from '../src/components/DefaultLayout'
 import { Article } from '../src/components/Article'
 import { withTranslation, i18n, useTranslation } from '../src/i18n'
-import { useLayout } from '../src/hooks/useLayout'
 import { IArticle, IPerson } from '../src/app/types'
-import { Header } from '../src/components/Header'
 import { PersonsBlock } from '../src/components/PersonsBlock'
-import { PageHead } from '../src/components/PageHead'
 import { PageLayout } from '../src/components/PageLayout'
 
 interface IProps {
@@ -23,8 +17,6 @@ interface IProps {
 }
 
 const Page: NextPage<IProps> = props => {
-    const layout = useLayout()
-
     return (
         <PageLayout
             head={{
