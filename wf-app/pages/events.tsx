@@ -2,66 +2,42 @@ import * as React from 'react'
 
 import { NextPage } from 'next'
 
-import { Menu } from '../src/components/Menu'
-import Footer from '../src/components/Footer'
-import { DefaultLayout } from '../src/components/DefaultLayout'
 import { IEvent } from '../src/types'
 import { i18n, withTranslation } from '../src/i18n'
 import { CardList } from '../src/components/CardList'
 import { Card } from '../src/components/Card'
 import { createApiUrl } from '../src/app/lib'
 import { getJson } from '../src/lib/fetch'
-import { useLayout } from '../src/hooks/useLayout'
-import { Header } from '../src/components/Header'
+import { PageLayout } from '../src/components/PageLayout'
+import { useMobile } from '../src/hooks/useMobile'
 
 interface IProps {
     events: IEvent[]
 }
 
 export const Page: NextPage<IProps> = props => {
-    const layout = useLayout()
+    const isMobile = useMobile()
+    const columns = isMobile ? 1 : 3
 
     return (
-        <DefaultLayout
-            navigation={(
-                <Header
-                    layout={layout}
-                >
-                    {/* <Menu
-                        layout={layout}
-                    /> */}
-                </Header>
-            )}
-            head={(<></>)}
-            main={(
-                <div>
-                    <style jsx>{`
-                        div {
-                            padding: 0 10px;
-                        }
-                    `}</style>
-
-                    <CardList
-                        columns={3}
-                        items={props.events}
-                        highlightFirst={false}
-                        renderItem={item => (
-                            <Card
-                                title={item.name}
-                                // body={item.content}
-                                body={''}
-                                previewImage={item.imageId}
-                                tags={[]}
-                                href={item.href}
-                            />
-                        )}
+        <PageLayout
+            wideBody={true}
+        >
+            <CardList
+                columns={columns}
+                items={props.events}
+                highlightFirst={false}
+                renderItem={item => (
+                    <Card
+                        title={item.name}
+                        body={''}
+                        previewImage={item.imageId}
+                        tags={[]}
+                        href={item.href}
                     />
-                </div>
-            )}
-            footer={(
-                <Footer />
-            )}
-        />
+                )}
+            />
+        </PageLayout>
     )
 }
 
