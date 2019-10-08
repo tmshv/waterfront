@@ -1,13 +1,16 @@
 import * as React from 'react'
 
+import cx from 'classnames'
+
 export interface IDefaultLayoutProps {
     navigation: React.ReactNode
     head: React.ReactNode
     main: React.ReactNode
     footer: React.ReactNode
+    wideMain?: boolean
 }
 
-export const DefaultLayout: React.FC<IDefaultLayoutProps> = props => (
+export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({ wideMain = false, ...props }) => (
     <div>
         <style jsx>{`
             div {
@@ -23,6 +26,12 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = props => (
                 flex: 1;
 
                 margin-bottom: 50px;
+                box-sizing: border-box;
+            }
+
+            main.wide {
+                width: 100%;
+                padding: 0 10px;
             }
 
             section {
@@ -47,7 +56,7 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = props => (
             @media screen and (max-width: 31.25em) {
                 main {
                     width: 100%;
-                    padding: 0 15px;
+                    padding: 0 10px;
                     box-sizing: border-box;
                 }
             }
@@ -59,7 +68,9 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = props => (
         <section>
             {props.head}
         </section>
-        <main>
+        <main className={cx({
+            wide: wideMain,
+        })}>
             {props.main}
         </main>
         <footer>

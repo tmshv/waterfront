@@ -15,6 +15,7 @@ interface IPageLayoutProps {
         caption?: string
         image: string | number
     }
+    wideBody?: boolean
 }
 
 export const PageLayout: React.FC<IPageLayoutProps> = props => {
@@ -42,6 +43,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = props => {
             styles={{ sidebar: { background: "white" } }}
         >
             <DefaultLayout
+                wideMain={props.wideBody}
                 navigation={(
                     <Header
                         layout={'horizontal'}
