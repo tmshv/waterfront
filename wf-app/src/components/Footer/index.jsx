@@ -1,4 +1,6 @@
 import React from 'react'
+import { Social } from '../Social'
+import { social } from '../../app/const'
 
 const year = () => (new Date()).getFullYear()
 const Footer = (props) => (
@@ -8,6 +10,11 @@ const Footer = (props) => (
                 display: flex;
                 justify-content: space-between;
                 margin: 0 25px;
+            }
+
+            section {
+                display: flex;
+                align-items: center;
             }
 
             span {
@@ -27,7 +34,12 @@ const Footer = (props) => (
             {year()}
         </section>
         <section>
-            contacts
+            <Social
+                color={'white'}
+                iconSize={1}
+                items={social}
+                layout={'horizontal'}
+            />
         </section>
     </div>
 )
