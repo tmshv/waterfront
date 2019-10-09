@@ -29,7 +29,7 @@ const Footer = (props) => (
         `}</style>
 
         <section>
-            waterfront.tool
+            waterfront.tools
             <span>/</span>
             {year()}
         </section>
