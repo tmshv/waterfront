@@ -8,6 +8,7 @@ function useImage(param: string | number): string | undefined {
     const [src, setSrc] = React.useState<string>()
 
     React.useEffect(() => {
+        let mouted = true
         if (!param) {
             return
         } else if (typeof param === 'string') {
@@ -15,8 +16,15 @@ function useImage(param: string | number): string | undefined {
         } else {
             (async () => {
                 const image = await getImageUrl(param)
-                setSrc(image)
+                
+                if (mouted) {
+                    setSrc(image)
+                }
             })()
+        }
+
+        return () => {
+            mouted = false
         }
     }, [param])
 
