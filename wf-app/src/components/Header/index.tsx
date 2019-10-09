@@ -26,7 +26,7 @@ export const Header: React.FC<IHeaderProps> = props => {
                 }
 
                 div.horizontal {
-                    padding: 0 20px;
+                    padding: 0 10px;
                     height: 60px;
                     flex-direction: row;
                     align-items: center;
