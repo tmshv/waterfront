@@ -1,6 +1,6 @@
 import React from 'react'
-import { Social } from '../Social'
-import { social } from '../../app/const'
+import { Contact } from './Contact'
+import { ContactList } from './ContactList'
 
 const year = () => (new Date()).getFullYear()
 const Footer = (props) => (
@@ -14,7 +14,12 @@ const Footer = (props) => (
 
             section {
                 display: flex;
-                align-items: center;
+
+                margin-bottom: 20px;
+            }
+
+            section:last-child {
+                margin-bottom: 0px;
             }
 
             span {
@@ -24,6 +29,8 @@ const Footer = (props) => (
             @media screen and (max-width: 31.25em) {
                 div {
                     margin: 0 10px;
+
+                    flex-direction: column;
                 }
             }
         `}</style>
@@ -33,15 +40,24 @@ const Footer = (props) => (
             <span>/</span>
             {year()}
         </section>
+
         <section>
-            <Social
-                color={'white'}
-                iconSize={1}
-                items={social}
-                layout={'horizontal'}
+            <ContactList
+                items={[
+                    {
+                        tel: '+79500237093',
+                        email: 'coordinator@streetartinstitute.com',
+                        title: 'Полина Климовицкая, координатор проекта',
+                    },
+                    {
+                        tel: '+79817640984',
+                        email: 'ozzzzjet@mail.ru',
+                        title: 'Вика Григоренко, пресс-секретарь',
+                    }
+                ]}
             />
         </section>
-    </div>
+    </div >
 )
 
 export default Footer
