@@ -32,6 +32,7 @@ export const Page: NextPage<IProps> = props => {
                 highlightFirst={false}
                 renderItem={item => (
                     <Card
+                        key={item.slug}
                         title={item.name}
                         body={''}
                         previewImage={item.imageId}
