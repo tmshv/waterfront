@@ -4,11 +4,13 @@ import { Tag } from '../Tag'
 import { ImageBlock } from '../ArticleCard/ImageBlock'
 import { getImageUrl } from '../../app/api'
 
-function useImage(param: string | number): string {
+function useImage(param: string | number): string | undefined {
     const [src, setSrc] = React.useState<string>()
 
     React.useEffect(() => {
-        if (typeof param === 'string') {
+        if (!param) {
+            return
+        } else if (typeof param === 'string') {
             setSrc(param)
         } else {
             (async () => {
@@ -18,11 +20,15 @@ function useImage(param: string | number): string {
         }
     }, [param])
 
-    return src!
+    return src
 }
 
 const Img: React.FC<{ param: string | number }> = props => {
     const src = useImage(props.param)
+
+    if (!src) {
+        return null
+    }
 
     return (
         <ImageBlock src={src}>
