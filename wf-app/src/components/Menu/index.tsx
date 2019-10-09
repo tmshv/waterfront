@@ -37,6 +37,7 @@ export const Menu: React.FC<IMenuProps> = props => {
 
                 ul.horizontal {
                     flex-direction: row;
+                    flex-wrap: wrap;
                 }
                 
                 a {

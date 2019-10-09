@@ -31,7 +31,8 @@ export const PageLayout: React.FC<IPageLayoutProps> = props => {
                 <div>
                     <style jsx>{`
                         div {
-                            padding: 20px;
+                            padding: 10px;
+                            width: 60vw;
                         }
                     `}</style>
 
