@@ -36,12 +36,12 @@ const Page: NextPage<IProps> = props => {
 
             <PersonsBlock
                 title={'Experts'}
-                items={props.team}
+                items={props.experts}
             />
 
             <PersonsBlock
                 title={'Partners'}
-                items={props.team}
+                items={props.partners}
             />
         </PageLayout>
     )
