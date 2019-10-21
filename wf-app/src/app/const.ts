@@ -9,7 +9,7 @@ export const social: ISocialItem[] = [
     },
     {
         icon: mdiYoutube,
-        url: 'https://www.youtube.com/playlist?list=PL04bG7e-zbhB_pGj9UGQIgM8G34xo3hqj',
+        url: 'https://www.youtube.com/channel/UCuGZYvNOfbfIzZTlKZKYzqw',
     },
     {
         icon: mdiFacebookBox,
