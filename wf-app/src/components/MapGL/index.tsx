@@ -66,7 +66,7 @@ export const MapGL: React.FC<IMapGLProps> = props => {
 
                 @media only screen and (max-width: 480px) {
                     .mapboxgl-popup-content {
-                        max-width: 250px;
+                        //max-width: 250px;
                     }
                     .mapboxgl-popup-content div {
                         padding: 0em;
@@ -78,7 +78,7 @@ export const MapGL: React.FC<IMapGLProps> = props => {
 
                 @media (max-width: 31.25em) {
                     .mapboxgl-popup {
-                        display: none;
+                        //display: none;
                     }
                 }
             `}</style>
