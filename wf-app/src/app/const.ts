@@ -27,11 +27,11 @@ export const menu: IMenuItem[] = [
         url: '/about',
     },
     {
-        name: 'Projects',
-        url: '/projects',
-    },
-    {
         name: 'Events',
         url: '/events',
     },
+    {
+        name: 'Projects',
+        url: '/catalog',
+    }
 ]
