@@ -35,3 +35,16 @@ export const menu: IMenuItem[] = [
         url: '/catalog',
     }
 ]
+
+export const contacts = [
+    {
+        tel: '+79500237093',
+        email: 'coordinator@waterfront.tools',
+        title: 'Полина Климовицкая, координатор проекта',
+    },
+    {
+        tel: '+79817640984',
+        email: 'media@waterfront.tools',
+        title: 'Вика Григоренко, пресс-секретарь',
+    }
+]
