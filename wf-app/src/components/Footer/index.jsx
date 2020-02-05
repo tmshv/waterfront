@@ -1,6 +1,7 @@
 import React from 'react'
 import { Contact } from './Contact'
 import { ContactList } from './ContactList'
+import { contacts } from '../../app/const'
 
 const year = () => (new Date()).getFullYear()
 const Footer = (props) => (
@@ -43,18 +44,7 @@ const Footer = (props) => (
 
         <section>
             <ContactList
-                items={[
-                    {
-                        tel: '+79500237093',
-                        email: 'coordinator@streetartinstitute.com',
-                        title: 'Полина Климовицкая, координатор проекта',
-                    },
-                    {
-                        tel: '+79817640984',
-                        email: 'ozzzzjet@mail.ru',
-                        title: 'Вика Григоренко, пресс-секретарь',
-                    }
-                ]}
+                items={contacts}
             />
         </section>
     </div >
