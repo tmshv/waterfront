@@ -23,10 +23,10 @@ export const SvgCircles: React.FC<ISvgCirclesProps> = ({ size, ...props }) => {
             height={size}
             viewBox={`0 0 ${size} ${size}`}
             style={{
-                transform: `translate(${-size / 2},${-size / 2})`,
                 display: 'block',
                 cursor: 'pointer',
             }}
+            transform={`translate(${-size / 2},${-size / 2})`}
             onClick={onClick}
         >
             <g
