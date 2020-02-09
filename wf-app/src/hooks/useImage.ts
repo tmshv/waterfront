@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react'
 import { getImageUrl } from 'src/app/api'
 
+function isId(value: string | number) {
+    if (typeof value === 'number') {
+        return true
+    }
+
+    return /^([\d]+)$/.test(value)
+}
+
 export function useImage(param: string | number): string | undefined {
     const [src, setSrc] = useState<string>()
 
@@ -8,16 +16,16 @@ export function useImage(param: string | number): string | undefined {
         let mouted = true
         if (!param) {
             return
-        } else if (typeof param === 'string') {
-            setSrc(param)
-        } else {
+        } else if (isId(param)) {
             (async () => {
-                const image = await getImageUrl(param)
-                
+                const image = await getImageUrl(Number(param))
+
                 if (mouted) {
                     setSrc(image)
                 }
             })()
+        } else {
+            setSrc(`${param}`)
         }
 
         return () => {
