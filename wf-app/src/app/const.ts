@@ -23,6 +23,10 @@ export const social: ISocialItem[] = [
 
 export const menu: IMenuItem[] = [
     {
+        name: 'Map',
+        url: '/',
+    },
+    {
         name: 'About',
         url: '/about',
     },

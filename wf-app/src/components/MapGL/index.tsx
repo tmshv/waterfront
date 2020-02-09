@@ -40,7 +40,6 @@ export const MapGL: React.FC<IMapGLProps> = props => {
             // mapboxApiAccessToken={props.mapboxToken}
             onClick={onClick}
             // onMouseMove={props.onMouseMove}
-            attributionControl={false}
         >
             <style global jsx>{`
                 .mapboxgl-popup-close-button {
