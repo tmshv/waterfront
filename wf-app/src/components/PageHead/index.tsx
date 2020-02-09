@@ -54,7 +54,8 @@ export const PageHead: React.FC<IPageHeadProps> = props => {
                     right: 0;
 
                     background-color: rgb(90, 200, 240);
-                    mix-blend-mode: hard-light;
+                    opacity: 0.75;
+                    //mix-blend-mode: hard-light;
                 }
 
                 h1 {
