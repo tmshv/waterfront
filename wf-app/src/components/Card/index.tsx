@@ -1,49 +1,8 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { Tag } from '../Tag'
-import { ImageBlock } from '../ArticleCard/ImageBlock'
-import { getImageUrl } from '../../app/api'
-
-function useImage(param: string | number): string | undefined {
-    const [src, setSrc] = React.useState<string>()
-
-    React.useEffect(() => {
-        let mouted = true
-        if (!param) {
-            return
-        } else if (typeof param === 'string') {
-            setSrc(param)
-        } else {
-            (async () => {
-                const image = await getImageUrl(param)
-                
-                if (mouted) {
-                    setSrc(image)
-                }
-            })()
-        }
-
-        return () => {
-            mouted = false
-        }
-    }, [param])
-
-    return src
-}
-
-const Img: React.FC<{ param: string | number }> = props => {
-    const src = useImage(props.param)
-
-    if (!src) {
-        return null
-    }
-
-    return (
-        <ImageBlock src={src}>
-            {props.children}
-        </ImageBlock>
-    )
-}
+import { ImageBlock } from '../ImageBlock'
+import { useImage } from 'src/hooks/useImage'
 
 export interface ICardProps {
     style?: React.CSSProperties
@@ -56,6 +15,8 @@ export interface ICardProps {
 }
 
 export const Card: React.FC<ICardProps> = props => {
+    const src = useImage(props.previewImage)
+
     return (
         <div
             style={props.style}
@@ -100,13 +61,13 @@ export const Card: React.FC<ICardProps> = props => {
                 href={props.href}
             >
                 <a>
-                    <Img param={props.previewImage}>
+                    <ImageBlock src={src}>
                         {props.tags.map(x => (
                             <Tag key={x}>
                                 {x}
                             </Tag>
                         ))}
-                    </Img>
+                    </ImageBlock>
 
                     <h2>
                         {props.title}

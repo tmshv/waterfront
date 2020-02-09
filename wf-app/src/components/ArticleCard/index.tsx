@@ -2,7 +2,7 @@ import * as React from 'react'
 import Link from 'next/link'
 import { IArticle } from '../../app/types'
 import { Tag } from '../Tag'
-import { ImageBlock } from './ImageBlock'
+import { ImageBlock } from '../ImageBlock'
 
 export interface IArticleCardProps {
     style?: React.CSSProperties

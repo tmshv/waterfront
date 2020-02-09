@@ -1,8 +1,6 @@
-import * as React from 'react'
-
 export interface IImageBlockProps {
     style?: React.CSSProperties
-    src: string
+    src?: string
 }
 
 export const ImageBlock: React.FC<IImageBlockProps> = props => (
