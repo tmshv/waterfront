@@ -31,7 +31,7 @@ export const Page: NextPage<IProps> = props => {
             wideBody={true}
             head={{
                 title: 'Projects',
-                caption: 'Проекты команд',
+                // caption: 'Проекты команд',
                 image: 51,
             }}
         >
