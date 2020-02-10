@@ -29,9 +29,6 @@ body {
     margin: 0;
 }
 
-#__next {
-    height: 100%;
-
 /* MOBILE  */
 
 @media screen and (max-width: 31.25em) {

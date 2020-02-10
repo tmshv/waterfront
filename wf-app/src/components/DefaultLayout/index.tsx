@@ -27,10 +27,9 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({
             <header className={styles.header}>
                 {props.navigation}
             </header>
+
             {!props.head ? null : (
-                <section className={styles.head}>
-                    {props.head}
-                </section>
+                props.head
             )}
 
             <main className={cx(styles.main, {
