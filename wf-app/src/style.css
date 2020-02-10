@@ -16,6 +16,8 @@
     --font-family-main: 'Roboto', Helvetica, sans-serif;
     --font-family-second: 'Roboto Condensed', Helvetica, sans-serif;
     --font-family-accent: 'Roboto', Helvetica, sans-serif;
+
+    --width-main: 70%;
 }
 
 body {
@@ -29,4 +31,11 @@ body {
 
 #__next {
     height: 100%;
+
+/* MOBILE  */
+
+@media screen and (max-width: 31.25em) {
+    :root {
+        --width-main: 100%;
+    }
 }
