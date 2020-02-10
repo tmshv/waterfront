@@ -10,6 +10,9 @@ import { createApiUrl } from '../src/app/lib'
 import { getJson } from '../src/lib/fetch'
 import { PageLayout } from '../src/components/PageLayout'
 import { useMobile } from '../src/hooks/useMobile'
+import { HeadArticleCard } from 'src/components/ArticleCard/HeadArticleCard'
+import { eventToArticle } from 'src/app/factory'
+import { PageHead } from 'src/components/PageHead'
 
 interface IProps {
     events: IEvent[]
@@ -25,11 +28,19 @@ export const Page: NextPage<IProps> = props => {
         >
             <CardList
                 style={{
-                    padding: '0 10px',
+                    padding: '0 8px',
                 }}
                 columns={columns}
                 items={props.events}
-                highlightFirst={false}
+                // highlightFirst={false}
+                highlightFirst={true}
+                renderFirstItem={item => (
+                    <PageHead
+                        title={item.name}
+                        // caption={props.head.caption}
+                        image={item.imageId}
+                    />
+                )}
                 renderItem={item => (
                     <Card
                         key={item.slug}
