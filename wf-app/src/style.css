@@ -4,6 +4,8 @@
     --color-brand-light: rgb(90, 200, 240);
     --color-brand-dark: rgb(0, 83, 108);
 
+    --color-text: black;
+
     --body-background-color: hsla(196, 83%, 95%, 1);
     --footer-background-color: rgb(0, 83, 108);
     --header-background-color: white;
@@ -16,9 +18,17 @@
     --size-xl: 24px;
     --size-xxl: 48px;
 
-    --font-size-main: 1em;
-    --font-size-text: 1.25em;
-    --font-size-second: 0.9em;
+    --font-size-xs: 0.9em;
+    --font-size-s: 1em;
+    --font-size-m: 1.25em;
+    --font-size-l: 1.5em;
+    --font-size-xl: 2em;
+    --font-size-xxl: 4em;
+ 
+    --font-size-main: var(--font-size-s);
+    --font-size-text: var(--font-size-m);
+    --font-size-second: var(--font-size-xs);
+    --font-size-menu: var(--font-size-m);
 
     --font-family-main: 'Roboto', Helvetica, sans-serif;
     --font-family-second: 'Roboto Condensed', Helvetica, sans-serif;

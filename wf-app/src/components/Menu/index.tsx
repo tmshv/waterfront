@@ -23,6 +23,7 @@ export const Menu: React.FC<IMenuProps> = props => {
             <style jsx>{`
                 ul {
                     font-family: var(--font-family-second);
+                    font-size: var(--font-size-menu);
 
                     list-style: none;
                     display: flex;
