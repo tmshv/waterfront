@@ -21,6 +21,8 @@ export const ArticleCard: React.FC<IArticleCardProps> = props => {
             <style jsx>{`
                 div {
                     box-sizing: border-box;
+
+                    background-color: var(--background-color);
                 }
 
                 p {
