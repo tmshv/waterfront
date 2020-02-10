@@ -18,6 +18,7 @@ export const Map: React.FC = props => {
             screen: true,
             mainMarginTop: false,
             mainMarginBottom: false,
+            showFooter: false,
         }}>
             {props.children}
         </LayoutContext.Provider>

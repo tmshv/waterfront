@@ -43,7 +43,9 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({
                 {props.main}
             </main>
 
-            {props.footer}
+            {!showFooter ? null : (
+                props.footer
+            )}
         </div>
     )
 }
