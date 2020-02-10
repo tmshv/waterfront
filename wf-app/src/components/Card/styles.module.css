@@ -1,0 +1,35 @@
+.card {
+    box-sizing: border-box;
+
+    background-color: var(--background-color);
+}
+
+.card h2 {
+    /* padding: 0 10px; */
+    color: rgb(90, 200, 240);
+
+    /* margin: 0.5em 0; */
+    margin: 0;
+    margin-bottom: var(--size-m);
+}
+
+.body {
+    padding: var(--size-m) var(--size-l) var(--size-l);
+}
+
+.card:hover {
+    /* color: rgb(0, 83, 108); */
+    color: tomato;
+}
+
+.card:hover h2 {
+    color: rgb(0, 83, 108);
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    color: black;
+
+    position: relative;
+}

@@ -1,7 +1,6 @@
-import * as React from 'react'
-import { useMobile } from '../../hooks/useMobile'
+import { useMobile } from 'src/hooks/useMobile'
 import { PageLayout } from '../PageLayout'
-import { LayoutContext } from 'src/context/layout'
+import * as Layout from 'src/components/Layout'
 
 interface IAppLayoutProps {
     side: React.ReactNode
@@ -11,12 +10,8 @@ export const AppLayout: React.FC<IAppLayoutProps> = props => {
     const isMobile = useMobile()
 
     return (
-        <LayoutContext.Provider value={{
-            screen: true,
-            mainBottomMargin: false,
-        }}>
+        <Layout.Map>
             <PageLayout
-                showFooter={false}
                 wideBody={true}
                 extraSidebar={isMobile ? props.side : null}
             >
@@ -50,6 +45,6 @@ export const AppLayout: React.FC<IAppLayoutProps> = props => {
                     )}
                 </div>
             </PageLayout>
-        </LayoutContext.Provider>
+        </Layout.Map>
     )
 }

@@ -1,13 +1,11 @@
-import * as React from 'react'
-
 import { NextPage } from 'next'
-
-import { getAbout, getPersons } from '../src/app/api'
-import { Article } from '../src/components/Article'
-import { withTranslation, i18n, useTranslation } from '../src/i18n'
-import { IArticle, IPerson } from '../src/app/types'
-import { PersonsBlock } from '../src/components/PersonsBlock'
-import { PageLayout } from '../src/components/PageLayout'
+import { getAbout, getPersons } from 'src/app/api'
+import { Article } from 'src/components/Article'
+import { withTranslation, i18n, useTranslation } from 'src/i18n'
+import { IArticle, IPerson } from 'src/app/types'
+import { PersonsBlock } from 'src/components/PersonsBlock'
+import { PageLayout } from 'src/components/PageLayout'
+import { PageHead } from 'src/components/PageHead'
 
 interface IProps {
     article: IArticle
@@ -19,14 +17,16 @@ interface IProps {
 const Page: NextPage<IProps> = props => {
     return (
         <PageLayout
-            head={{
-                title: props.article.name,
-                caption: props.article.short,
-                image: props.article.previewImage,
-            }}
+            head={(
+                <PageHead
+                    title={props.article.name}
+                    caption={props.article.short}
+                    image={props.article.previewImage}
+                />
+            )}
         >
             <Article
-                article={props.article}
+                article={props.article.body}
             />
 
             <PersonsBlock

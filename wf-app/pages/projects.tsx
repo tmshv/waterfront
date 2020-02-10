@@ -1,21 +1,11 @@
-import * as React from 'react'
-
 import { NextPage } from 'next'
-
-import { getFeatures } from '../src/app/api'
-import { featureToArticle } from '../src/app/factory'
-import { CardList } from '../src/components/CardList'
-import { Menu } from '../src/components/Menu'
-import Footer from '../src/components/Footer'
-import { DefaultLayout } from '../src/components/DefaultLayout'
-import { AppPointFeature } from '../src/app/types'
-import { i18n } from '../src/i18n'
-import { ArticleCard } from '../src/components/ArticleCard'
-import { HeadArticleCard } from '../src/components/ArticleCard/HeadArticleCard'
-import { Header } from '../src/components/Header'
-import { useLayout } from '../src/hooks/useLayout'
-import { PageLayout } from '../src/components/PageLayout'
-import { useMobile } from '../src/hooks/useMobile'
+import { getFeatures } from 'src/app/api'
+import { featureToArticle } from 'src/app/factory'
+import { AppPointFeature } from 'src/app/types'
+import { i18n, useTranslation } from 'src/i18n'
+import { PageLayout } from 'src/components/PageLayout'
+import { useMobile } from 'src/hooks/useMobile'
+import { PageHead } from 'src/components/PageHead'
 
 interface IProps {
     features: AppPointFeature[]
@@ -24,16 +14,19 @@ interface IProps {
 export const Page: NextPage<IProps> = props => {
     const articleCards = props.features.map(featureToArticle)
     const isMobile = useMobile()
+    const { t } = useTranslation()
     const columns = isMobile ? 1 : 3
 
     return (
         <PageLayout
             wideBody={true}
-            head={{
-                title: 'Projects',
-                // caption: 'Проекты команд',
-                image: 51,
-            }}
+            head={(
+                <PageHead
+                    title={t('Projects')}
+                    // caption={t('Проекты команд')}
+                    image={51}
+                />
+            )}
         >
             {/* <CardList
                 style={{
@@ -57,7 +50,7 @@ export const Page: NextPage<IProps> = props => {
                     />
                 )}
             /> */}
-        </PageLayout>
+        </PageLayout >
     )
 }
 

@@ -2,6 +2,14 @@ import { mdiFacebookBox, mdiYoutube, mdiVkBox, mdiInstagram } from '@mdi/js'
 import { ISocialItem } from '../components/Social'
 import { IMenuItem } from '../components/Menu'
 
+export const defaultLayout = {
+    screen: false,
+    mainMarginTop: true,
+    mainMarginBottom: true,
+    showFooter: true,
+    backgroundColor: 'var(--backgound-color)',
+}
+
 export const social: ISocialItem[] = [
     {
         icon: mdiInstagram,

@@ -43,6 +43,10 @@
     height: 100%;
 }
 
-.bottomMargin {
+.marginBottom {
     margin-bottom: var(--size-xxl);
+} 
+
+.marginTop {
+    margin-top: var(--size-xxl);
 } 

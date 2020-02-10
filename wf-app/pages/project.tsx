@@ -1,14 +1,12 @@
-import * as React from 'react'
-
 import { NextPage } from 'next'
-
-import { getFeature } from '../src/app/api'
-import { Article } from '../src/components/Article'
-import { featureToArticle } from '../src/app/factory';
-import { i18n, withTranslation } from '../src/i18n'
-import { IArticle } from '../src/app/types'
-import { useLayout } from '../src/hooks/useLayout';
-import { PageLayout } from '../src/components/PageLayout';
+import { getFeature } from 'src/app/api'
+import { Article } from 'src/components/Article'
+import { featureToArticle } from 'src/app/factory';
+import { i18n, withTranslation } from 'src/i18n'
+import { IArticle } from 'src/app/types'
+import { PageLayout } from 'src/components/PageLayout'
+import { PageHead } from 'src/components/PageHead'
+import * as Layout from 'src/components/Layout'
 
 interface IProps {
     article: IArticle
@@ -16,17 +14,21 @@ interface IProps {
 
 const Page: NextPage<IProps> = props => {
     return (
-        <PageLayout
-            head={{
-                title: props.article.name,
-                caption: props.article.short,
-                image: props.article.previewImage,
-            }}
-        >
-            <Article
-                article={props.article}
-            />
-        </PageLayout>
+        <Layout.Article>
+            <PageLayout
+                head={(
+                    <PageHead
+                        title={props.article.name}
+                        caption={props.article.short}
+                        image={props.article.previewImage}
+                    />
+                )}
+            >
+                <Article
+                    article={props.article.body}
+                />
+            </PageLayout>
+        </Layout.Article>
     )
 }
 
