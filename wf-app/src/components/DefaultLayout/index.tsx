@@ -1,3 +1,5 @@
+import styles from './styles.module.css'
+
 import cx from 'classnames'
 import { LayoutContext } from 'src/context/layout'
 import { useContext } from 'react'
@@ -21,84 +23,23 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({
     const { screen } = useContext(LayoutContext)
 
     return (
-        <div className={cx({ screen })}>
-            <style jsx>{`
-                div {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    background-color: var(--background-color);
-                }
-
-                div.screen {
-                    height: 100%;
-                }
-
-                main {
-                    width: 70%;
-                    flex: 1;
-
-                    margin-bottom: 50px;
-                    box-sizing: border-box;
-                }
-
-                main.borderless {
-                    margin-bottom: 0px;
-                }
-
-                main.wide {
-                    width: 100%;
-                }
-
-                section {
-                    width: 100%;
-                    flex: 1;
-                }
-
-                header {
-                    width: 100%;
-                    background-color: white;
-                }
-
-                footer {
-                    width: 100%;
-
-                    background-color: var(--footer-background-color);
-                    color: white;
-
-                    padding: 20px 0;
-                }
-
-                @media screen and (max-width: 31.25em) {
-                    main {
-                        width: 100%;
-                        padding: 0 10px;
-                        box-sizing: border-box;
-                    }
-
-                    main.borderless {
-                        padding: 0px;
-                    }
-                }
-            `}</style>
-
-            <header>
+        <div className={cx(styles.container, { [styles.screen]: screen })}>
+            <header className={styles.header}>
                 {props.navigation}
             </header>
             {!props.head ? null : (
-                <section>
+                <section className={styles.head}>
                     {props.head}
                 </section>
             )}
-            <main className={cx({
-                wide: wideMain,
-                borderless,
+            <main className={cx(styles.main, {
+                [styles.wide]: wideMain,
+                [styles.borderless]: borderless,
             })}>
                 {props.main}
             </main>
             {!showFooter ? null : (
-                <footer>
+                <footer className={styles.footer}>
                     {props.footer}
                 </footer>
             )}

@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--background-color);
+    background-color: hsla(196, 83%, 95%, 1);
+}
+
+.screen {
+    height: 100%;
+}
+
+.main {
+    width: 70%;
+    flex: 1;
+
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.borderless {
+    margin-bottom: 0px;
+} 
+
+.wide {
+    width: 100%;
+}
+
+.head {
+    width: 100%;
+    flex: 1;
+}
+
+.header {
+    width: 100%;
+    background-color: white;
+}
+
+.footer {
+    width: 100%;
+
+    background-color: var(--footer-background-color);
+    color: white;
+
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 31.25em) {
+    .main {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .borderless {
+        padding: 0px;
+    }
+}
