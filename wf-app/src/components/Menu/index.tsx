@@ -1,6 +1,4 @@
-import * as React from 'react'
-
-import { useTranslation } from '../../i18n'
+import { useTranslation } from 'src/i18n'
 import Link from 'next/link'
 import cx from 'classnames'
 
@@ -32,7 +30,6 @@ export const Menu: React.FC<IMenuProps> = props => {
 
                     flex-direction: column;
 
-                    //margin: 0 50px;
                     margin: 0;
                     padding: 0;
                 }
@@ -43,17 +40,13 @@ export const Menu: React.FC<IMenuProps> = props => {
                 }
                 
                 a {
-                    font-size: 1.2em;
                     color: rgb(0, 83, 108);
 
-                    //padding-bottom: 3px;
-                    //text-decoration: none;
-                    //border-bottom: 2px solid rgb(0, 83, 108);
+                    text-decoration: none;
                 }
 
                 a:hover {
                     color: rgb(20, 120, 130);
-                    //border-bottom: 2px solid rgb(20, 120, 130);
                 }
 
                 li {

@@ -16,6 +16,10 @@
     --size-xl: 24px;
     --size-xxl: 48px;
 
+    --font-size-main: 1em;
+    --font-size-text: 1.25em;
+    --font-size-second: 0.9em;
+
     --font-family-main: 'Roboto', Helvetica, sans-serif;
     --font-family-second: 'Roboto Condensed', Helvetica, sans-serif;
     --font-family-accent: 'Roboto', Helvetica, sans-serif;
@@ -26,6 +30,7 @@
 
 body {
     font-family: var(--font-family-main);
+    font-size: var(--font-size-main);
 
     height: 100vh;
     padding: 0;
