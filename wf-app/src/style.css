@@ -18,6 +18,7 @@
     --font-family-accent: 'Roboto', Helvetica, sans-serif;
 
     --width-main: 70%;
+    --width-sidebar: 70vw;
 }
 
 body {

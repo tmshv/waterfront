@@ -1,3 +1,4 @@
+import styles from './styles.module.css'
 import * as React from 'react'
 
 import Footer from '../Footer'
@@ -27,14 +28,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = props => {
     return (
         <Sidebar
             sidebar={(
-                <div>
-                    <style jsx>{`
-                        div {
-                            padding: 10px;
-                            width: 60vw;
-                        }
-                    `}</style>
-
+                <div className={styles.sidebar}>
                     <Navigation
                         layout={'vertical'}
                         style={{
