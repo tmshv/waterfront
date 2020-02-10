@@ -24,6 +24,8 @@ export const Menu: React.FC<IMenuProps> = props => {
         <ul style={props.style} className={cx(props.layout)}>
             <style jsx>{`
                 ul {
+                    font-family: var(--font-family-second);
+
                     list-style: none;
                     display: flex;
                     align-items: center;
