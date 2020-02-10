@@ -23,7 +23,6 @@
     background-color: var(--header-backgound-color);
 }
 
-
 /* MODIFICATORS */
 
 .fullWidth {
@@ -36,17 +35,20 @@
 
 .marginBottom {
     margin-bottom: var(--size-xxl);
-} 
+}
 
 .marginTop {
     margin-top: var(--size-xxl);
-} 
-
+}
 
 /* MOBILE */
 
 @media screen and (max-width: 31.25em) {
     .main {
         padding: 0 var(--size-l);
+    }
+
+    .fullWidth {
+        padding: 0;
     }
 }
