@@ -1,6 +1,7 @@
 :root {
-    --body-background-color: white;
+    --body-background-color: hsla(196, 83%, 95%, 1);
     --footer-background-color: rgb(0, 83, 108);
+    --header-background-color: white;
     --background-color: rgb(255, 255, 255);
 
     --size-sx: 2px;
