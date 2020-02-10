@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Tag } from '../Tag'
 import { ImageBlock } from '../ImageBlock'
 import { useImage } from 'src/hooks/useImage'
+import { previewImageSize } from 'src/app/const'
 
 export interface ICardProps {
     style?: React.CSSProperties
@@ -15,7 +16,7 @@ export interface ICardProps {
 }
 
 export const Card: React.FC<ICardProps> = props => {
-    const src = useImage(props.previewImage)
+    const src = useImage(props.previewImage, previewImageSize)
 
     return (
         <section

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useImage } from 'src/hooks/useImage'
+import { imageSize } from 'src/app/const'
 
 export interface IImageProps {
     src: string
@@ -7,7 +8,7 @@ export interface IImageProps {
 }
 
 export const Image: React.FC<IImageProps> = props => {
-    const src = useImage(props.src)
+    const src = useImage(props.src, imageSize)
 
     return (
         <div>
