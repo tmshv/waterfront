@@ -1,6 +1,6 @@
-import * as React from 'react'
-
 import cx from 'classnames'
+import { LayoutContext } from 'src/context/layout'
+import { useContext } from 'react'
 
 export interface IDefaultLayoutProps {
     navigation: React.ReactNode
@@ -17,65 +17,71 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({
     wideMain = false,
     showFooter = true,
     ...props
-}) => (
-        <div>
+}) => {
+    const { screen } = useContext(LayoutContext)
+
+    return (
+        <div className={cx({ screen })}>
             <style jsx>{`
-            div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
 
-                background-color: var(--background-color);
-                height: 100%;
-            }
+                    background-color: var(--background-color);
+                }
 
-            main {
-                width: 70%;
-                flex: 1;
+                div.screen {
+                    height: 100%;
+                }
 
-                margin-bottom: 50px;
-                box-sizing: border-box;
-            }
-
-            main.borderless {
-                margin-bottom: 0px;
-            }
-
-            main.wide {
-                width: 100%;
-            }
-
-            section {
-                width: 100%;
-                flex: 1;
-            }
-
-            header {
-                width: 100%;
-                background-color: white;
-            }
-
-            footer {
-                width: 100%;
-
-                background-color: var(--footer-background-color);
-                color: white;
-
-                padding: 20px 0;
-            }
-
-            @media screen and (max-width: 31.25em) {
                 main {
-                    width: 100%;
-                    padding: 0 10px;
+                    width: 70%;
+                    flex: 1;
+
+                    margin-bottom: 50px;
                     box-sizing: border-box;
                 }
 
                 main.borderless {
-                    padding: 0px;
+                    margin-bottom: 0px;
                 }
-            }
-        `}</style>
+
+                main.wide {
+                    width: 100%;
+                }
+
+                section {
+                    width: 100%;
+                    flex: 1;
+                }
+
+                header {
+                    width: 100%;
+                    background-color: white;
+                }
+
+                footer {
+                    width: 100%;
+
+                    background-color: var(--footer-background-color);
+                    color: white;
+
+                    padding: 20px 0;
+                }
+
+                @media screen and (max-width: 31.25em) {
+                    main {
+                        width: 100%;
+                        padding: 0 10px;
+                        box-sizing: border-box;
+                    }
+
+                    main.borderless {
+                        padding: 0px;
+                    }
+                }
+            `}</style>
 
             <header>
                 {props.navigation}
@@ -98,3 +104,4 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({
             )}
         </div>
     )
+}
