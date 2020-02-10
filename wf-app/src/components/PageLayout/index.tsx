@@ -16,7 +16,6 @@ interface IPageLayoutProps {
         image: string | number
     }
     wideBody?: boolean
-    borderless?: boolean
     showFooter?: boolean
     extraSidebar?: React.ReactNode
 }
@@ -53,7 +52,6 @@ export const PageLayout: React.FC<IPageLayoutProps> = props => {
             styles={{ sidebar: { background: "white" } }}
         >
             <DefaultLayout
-                borderless={props.borderless}
                 wideMain={props.wideBody}
                 showFooter={props.showFooter}
                 navigation={(
