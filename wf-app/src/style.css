@@ -2,6 +2,13 @@
     --body-background-color: white;
     --footer-background-color: rgb(0, 83, 108);
     --background-color: rgb(255, 255, 255);
+
+    --size-sx: 2px;
+    --size-s: 4px;
+    --size-m: 8px;
+    --size-l: 16px;
+    --size-xl: 24px;
+    --size-xxl: 48px;
 }
 
 body {

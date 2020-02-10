@@ -13,11 +13,11 @@ export const AppLayout: React.FC<IAppLayoutProps> = props => {
     return (
         <LayoutContext.Provider value={{
             screen: true,
+            mainBottomMargin: false,
         }}>
             <PageLayout
                 showFooter={false}
                 wideBody={true}
-                borderless={true}
                 extraSidebar={isMobile ? props.side : null}
             >
                 <div>

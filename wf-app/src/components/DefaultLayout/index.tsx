@@ -10,20 +10,20 @@ export interface IDefaultLayoutProps {
     main: React.ReactNode
     footer: React.ReactNode
     wideMain?: boolean
-    borderless?: boolean
     showFooter?: boolean
 }
 
 export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({
-    borderless = false,
     wideMain = false,
     showFooter = true,
     ...props
 }) => {
-    const { screen } = useContext(LayoutContext)
+    const { screen, mainBottomMargin } = useContext(LayoutContext)
 
     return (
-        <div className={cx(styles.container, { [styles.screen]: screen })}>
+        <div className={cx(styles.container, {
+            [styles.fullHeight]: screen,
+        })}>
             <header className={styles.header}>
                 {props.navigation}
             </header>
@@ -32,12 +32,14 @@ export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({
                     {props.head}
                 </section>
             )}
+
             <main className={cx(styles.main, {
-                [styles.wide]: wideMain,
-                [styles.borderless]: borderless,
+                [styles.fullWidth]: wideMain,
+                [styles.bottomMargin]: mainBottomMargin,
             })}>
                 {props.main}
             </main>
+
             {!showFooter ? null : (
                 <footer className={styles.footer}>
                     {props.footer}
