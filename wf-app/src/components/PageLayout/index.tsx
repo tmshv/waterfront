@@ -1,6 +1,6 @@
 import styles from './styles.module.css'
 
-import Footer from '../Footer'
+import { Footer } from '../Footer'
 import { DefaultLayout } from '../DefaultLayout'
 import { Header } from '../Header'
 import { Navigation } from '../Navigation'
