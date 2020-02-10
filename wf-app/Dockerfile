@@ -19,7 +19,7 @@ RUN npm install --production
 
 COPY --from=build /app/.next ./.next
 COPY --from=build /app/build ./build
-COPY ./static ./static
+COPY ./public ./public
 
 EXPOSE 80
 ENV PORT 80
