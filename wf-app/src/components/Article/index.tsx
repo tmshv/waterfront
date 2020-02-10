@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { IArticle } from '../../app/types'
 
-import './styles.css'
-
 export interface IArticleProps {
     article: IArticle,
     showContent?: boolean,

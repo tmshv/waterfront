@@ -4,6 +4,7 @@ import { appWithTranslation } from 'src/i18n'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 import 'src/style.css'
+import 'src/article.css'
 
 class MyApp extends App {
     render() {
