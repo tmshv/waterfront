@@ -24,6 +24,8 @@ export const Card: React.FC<ICardProps> = props => {
             <style jsx>{`
                 div {
                     box-sizing: border-box;
+
+                    background-color: var(--background-color);
                 }
 
                 div {
