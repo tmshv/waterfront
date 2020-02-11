@@ -6,15 +6,17 @@
 }
 
 .horizontal {
-    padding: 0 10px;
-    height: 60px;
+    padding: 0 var(--size-m);
+    height: var(--height-header);
     flex-direction: row;
     align-items: center;
 }
 
 .logo {
     display: block;
-    width: 100%;
-    min-width: 200px;
-    max-width: 270px;
+    width: var(--width-logo);
+
+    /* SVG inside A compensation */
+    position: relative;
+    top: 2px;
 }

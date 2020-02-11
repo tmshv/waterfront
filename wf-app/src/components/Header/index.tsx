@@ -19,9 +19,7 @@ export const Header: React.FC<IHeaderProps> = props => {
                 href={logoUrl}
             >
                 <a className={styles.logo}>
-                    <Logo
-                        // width={'100%'}
-                    />
+                    <Logo />
                 </a>
             </Link>
 

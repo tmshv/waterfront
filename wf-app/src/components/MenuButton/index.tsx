@@ -20,18 +20,13 @@ export const MenuButton: React.FC<IMenuButtonProps> = props => {
 
                     display: flex;
                     align-items: center;
-                    //justify-content: center;
-
-                    //width: 24px;
-                    //height: 18px;
-                    //overflow: hidden;
                 }
             `}</style>
 
             <Icon
                 path={mdiMenu}
-                size={1}
-                color={'rgb(0, 83, 108)'}
+                size={1.5}
+                color={'var(--color-text-opposite)'}
             />
         </button>
     )

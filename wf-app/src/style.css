@@ -37,6 +37,8 @@
 
     --width-main: 70%;
     --width-sidebar: 70vw;
+    --height-header: 60px;
+    --width-logo: 250px;
 }
 
 body {
@@ -57,5 +59,10 @@ body {
 @media screen and (max-width: 31.25em) {
     :root {
         --width-main: 100%;
+        --height-header: 48px;
+        --width-logo: 200px;
+    }
+}
+
     }
 }
