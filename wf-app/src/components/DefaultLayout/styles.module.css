@@ -20,7 +20,7 @@
 
 .header {
     width: 100%;
-    background-color: var(--header-backgound-color);
+    background-color: var(--background-color-header);
 }
 
 /* MODIFICATORS */

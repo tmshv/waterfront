@@ -32,7 +32,7 @@ export const LangButton: React.FC<ILangButtonProps> = props => {
                     display: flex;
                     justify-content: center;
 
-                    box-shadow: 0 0 0 2px rgb(0, 83, 108);
+                    box-shadow: 0 0 0 2px var(--color-text-opposite);
 
                     width: 24px;
                     height: 18px;

@@ -41,7 +41,7 @@ export const Menu: React.FC<IMenuProps> = props => {
                 }
                 
                 a {
-                    color: rgb(0, 83, 108);
+                    color: var(--color-text-opposite);
 
                     text-decoration: none;
                 }

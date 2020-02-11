@@ -42,7 +42,7 @@ export const PageHead: React.FC<IPageHeadProps> = props => {
                     position: relative;
 
                     color: white;
-                    text-shadow: 0px 0px 1px #666;
+                    //text-shadow: 0px 0px 1px #666;
                     z-index: 1;
                 }
 
@@ -53,18 +53,18 @@ export const PageHead: React.FC<IPageHeadProps> = props => {
                     left: 0;
                     right: 0;
 
-                    background-color: rgb(90, 200, 240);
-                    opacity: 0.75;
+                    background-color: var(--color-brand-light);
+                    //opacity: 0.75;
                     //mix-blend-mode: hard-light;
                 }
 
                 h1 {
                     color: white;
-                    font-size: 5em;
-                    padding: 0 10px;
+                    font-size: var(--font-size-xxl);
                     margin: 0;
-
-                    text-shadow: 2px 2px 0px black;
+                    background-color: var(--color-brand-light);
+                    display: inline;
+                    line-height: 1.25em;
                 }
 
                 @media screen and (max-width: 31.25em) {
