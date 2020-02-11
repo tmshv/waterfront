@@ -1,11 +1,7 @@
-import * as React from 'react'
+import SVG from 'react-inlinesvg'
 
-export const Logo: React.FC<{ width?: number | string }> = ({ width = 100 }) => {
-    return <img
-        style={{
-            width,
-            display: 'block',
-        }}
+export const Logo: React.FC = () => (
+    <SVG
         src={'/static/waterfront.svg'}
     />
-}
+)

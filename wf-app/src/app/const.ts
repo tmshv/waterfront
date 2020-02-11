@@ -1,6 +1,25 @@
 import { mdiFacebookBox, mdiYoutube, mdiVkBox, mdiInstagram } from '@mdi/js'
 import { ISocialItem } from '../components/Social'
 import { IMenuItem } from '../components/Menu'
+import { IRect } from 'src/lib/types'
+
+export const defaultLayout = {
+    screen: false,
+    mainMarginTop: true,
+    mainMarginBottom: true,
+    showFooter: true,
+    backgroundColor: 'var(--backgound-color)',
+}
+
+export const previewImageSize: IRect = {
+    w: 500,
+    h: 500,
+}
+
+export const imageSize: IRect = {
+    w: 1500,
+    h: 1500,
+}
 
 export const social: ISocialItem[] = [
     {

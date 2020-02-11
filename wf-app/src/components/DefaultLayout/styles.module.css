@@ -1,0 +1,54 @@
+/* ELEMENTS */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main {
+    width: var(--width-main);
+    flex: 1;
+
+    box-sizing: border-box;
+}
+
+.head {
+    width: 100%;
+    flex: 1;
+}
+
+.header {
+    width: 100%;
+    background-color: var(--background-color-header);
+}
+
+/* MODIFICATORS */
+
+.fullWidth {
+    width: 100%;
+}
+
+.fullHeight {
+    height: 100%;
+}
+
+.marginBottom {
+    margin-bottom: var(--size-xxl);
+}
+
+.marginTop {
+    margin-top: var(--size-xxl);
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 31.25em) {
+    .main {
+        padding: 0 var(--size-l);
+    }
+
+    .fullWidth {
+        padding: 0;
+    }
+}

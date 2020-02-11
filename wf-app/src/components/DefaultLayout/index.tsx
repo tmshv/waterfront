@@ -1,6 +1,8 @@
-import * as React from 'react'
+import styles from './styles.module.css'
 
 import cx from 'classnames'
+import { LayoutContext } from 'src/context/layout'
+import { useContext } from 'react'
 
 export interface IDefaultLayoutProps {
     navigation: React.ReactNode
@@ -8,93 +10,42 @@ export interface IDefaultLayoutProps {
     main: React.ReactNode
     footer: React.ReactNode
     wideMain?: boolean
-    borderless?: boolean
-    showFooter?: boolean
 }
 
 export const DefaultLayout: React.FC<IDefaultLayoutProps> = ({
-    borderless = false,
     wideMain = false,
-    showFooter = true,
     ...props
-}) => (
-        <div>
-            <style jsx>{`
-            div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+}) => {
+    const { screen, mainMarginBottom, mainMarginTop, backgroundColor, showFooter } = useContext(LayoutContext)
 
-                background-color: var(--background-color);
-                height: 100%;
-            }
-
-            main {
-                width: 70%;
-                flex: 1;
-
-                margin-bottom: 50px;
-                box-sizing: border-box;
-            }
-
-            main.borderless {
-                margin-bottom: 0px;
-            }
-
-            main.wide {
-                width: 100%;
-            }
-
-            section {
-                width: 100%;
-                flex: 1;
-            }
-
-            header {
-                width: 100%;
-                background-color: white;
-            }
-
-            footer {
-                width: 100%;
-
-                background-color: var(--footer-background-color);
-                color: white;
-
-                padding: 20px 0;
-            }
-
-            @media screen and (max-width: 31.25em) {
-                main {
-                    width: 100%;
-                    padding: 0 10px;
-                    box-sizing: border-box;
-                }
-
-                main.borderless {
-                    padding: 0px;
-                }
-            }
-        `}</style>
-
-            <header>
+    return (
+        <div
+            className={cx(styles.container, {
+                [styles.fullHeight]: screen,
+            })}
+            style={{
+                backgroundColor,
+            }}
+        >
+            <header className={styles.header}>
                 {props.navigation}
             </header>
+
             {!props.head ? null : (
-                <section>
-                    {props.head}
-                </section>
+                props.head
             )}
-            <main className={cx({
-                wide: wideMain,
-                borderless,
+
+            <main className={cx(styles.main, {
+                [styles.fullWidth]: wideMain,
+                [styles.marginBottom]: mainMarginBottom,
+                [styles.marginTop]: mainMarginTop,
             })}>
                 {props.main}
             </main>
+
             {!showFooter ? null : (
-                <footer>
-                    {props.footer}
-                </footer>
+                props.footer
             )}
         </div>
     )
+}

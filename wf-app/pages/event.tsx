@@ -1,15 +1,13 @@
-import * as React from 'react'
-
 import { NextPage } from 'next'
-
-import { Article } from '../src/components/Article'
-import { eventToArticle } from '../src/app/factory'
-import { i18n, withTranslation } from '../src/i18n'
-import { IArticle } from '../src/app/types'
-import { getJson, q } from '../src/lib/fetch'
-import { createApiUrl } from '../src/app/lib'
-import { IEvent } from '../src/types'
-import { PageLayout } from '../src/components/PageLayout'
+import { Article } from 'src/components/Article'
+import { eventToArticle } from 'src/app/factory'
+import { i18n, withTranslation } from 'src/i18n'
+import { IArticle } from 'src/app/types'
+import { getJson, q } from 'src/lib/fetch'
+import { createApiUrl } from 'src/app/lib'
+import { IEvent } from 'src/types'
+import { PageLayout } from 'src/components/PageLayout'
+import { PageHead } from 'src/components/PageHead'
 
 interface IProps {
     article: IArticle
@@ -18,15 +16,17 @@ interface IProps {
 const Page: NextPage<IProps> = props => {
     return (
         <PageLayout
-            head={{
-                title: props.article.name,
-                image: props.article.previewImage,
-            }}
+            head={(
+                <PageHead
+                    title={props.article.name}
+                    image={props.article.previewImage}
+                />
+            )}
         >
             <Article
-                article={props.article}
+                article={props.article.body}
             />
-        </PageLayout>
+        </PageLayout >
     )
 }
 

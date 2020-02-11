@@ -1,45 +1,32 @@
-import * as React from 'react'
+import styles from './styles.module.css'
 
-import Footer from '../Footer'
+import { Footer } from '../Footer'
 import { DefaultLayout } from '../DefaultLayout'
 import { Header } from '../Header'
-import { PageHead } from '../PageHead'
 import { Navigation } from '../Navigation'
 import Sidebar from 'react-sidebar'
-import { useMobile } from '../../hooks/useMobile'
+import { useMobile } from 'src/hooks/useMobile'
 import { MenuButton } from '../MenuButton'
+import { useState } from 'react'
 
 interface IPageLayoutProps {
-    head?: {
-        title: string
-        caption?: string
-        image: string | number
-    }
+    head?: React.ReactNode
     wideBody?: boolean
-    borderless?: boolean
-    showFooter?: boolean
     extraSidebar?: React.ReactNode
 }
 
 export const PageLayout: React.FC<IPageLayoutProps> = props => {
     const isMobile = useMobile()
-    const [showSide, setShowSide] = React.useState(false)
+    const [showSide, setShowSide] = useState(false)
 
     return (
         <Sidebar
             sidebar={(
-                <div>
-                    <style jsx>{`
-                        div {
-                            padding: 10px;
-                            width: 60vw;
-                        }
-                    `}</style>
-
+                <div className={styles.sidebar}>
                     <Navigation
                         layout={'vertical'}
                         style={{
-                            marginBottom: 15,
+                            marginBottom: 'var(--size-xxl)',
                         }}
                     />
 
@@ -53,9 +40,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = props => {
             styles={{ sidebar: { background: "white" } }}
         >
             <DefaultLayout
-                borderless={props.borderless}
                 wideMain={props.wideBody}
-                showFooter={props.showFooter}
                 navigation={(
                     <Header
                         layout={'horizontal'}
@@ -73,13 +58,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = props => {
                             )}
                     </Header>
                 )}
-                head={!props.head ? null : (
-                    <PageHead
-                        title={props.head.title}
-                        caption={props.head.caption}
-                        image={props.head.image}
-                    />
-                )}
+                head={props.head}
                 main={props.children}
                 footer={(
                     <Footer />

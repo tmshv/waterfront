@@ -1,66 +1,32 @@
-import * as React from 'react'
+import styles from './styles.module.css'
+
 import Link from 'next/link'
 import { Tag } from '../Tag'
 import { ImageBlock } from '../ImageBlock'
 import { useImage } from 'src/hooks/useImage'
+import { previewImageSize } from 'src/app/const'
 
 export interface ICardProps {
     style?: React.CSSProperties
 
     href: string
     title: string
-    body: string
     previewImage: string | number
     tags: string[]
 }
 
 export const Card: React.FC<ICardProps> = props => {
-    const src = useImage(props.previewImage)
+    const src = useImage(props.previewImage, previewImageSize)
 
     return (
-        <div
+        <section
+            className={styles.card}
             style={props.style}
         >
-            <style jsx>{`
-                div {
-                    box-sizing: border-box;
-                }
-
-                div {
-                    line-height: 1.5em;
-                    
-                    margin-top: 0.5em;
-                    margin-bottom: 0.5em;
-                }
-
-                h2 {
-                    padding: 0 10px;
-                    color: rgb(90, 200, 240);
-
-                    margin: 0.5em 0;
-                }
-                    
-                a {
-                    display: block;
-                    text-decoration: none;
-                    color: black;
-
-                    position: relative;
-                }
-
-                a:hover {
-                    color: rgb(0, 83, 108);
-                }
-
-                a:hover h2 {
-                    color: rgb(0, 83, 108);
-                }
-            `}</style>
-
             <Link
                 href={props.href}
             >
-                <a>
+                <a className={styles.link}>
                     <ImageBlock src={src}>
                         {props.tags.map(x => (
                             <Tag key={x}>
@@ -69,15 +35,15 @@ export const Card: React.FC<ICardProps> = props => {
                         ))}
                     </ImageBlock>
 
-                    <h2>
-                        {props.title}
-                    </h2>
+                    <div className={styles.body}>
+                        <h2>
+                            {props.title}
+                        </h2>
 
-                    <div
-                        dangerouslySetInnerHTML={{ __html: props.body }}
-                    />
+                        {props.children}
+                    </div>
                 </a>
             </Link>
-        </div>
+        </section>
     )
 }

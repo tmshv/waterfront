@@ -1,0 +1,4 @@
+.sidebar {
+    padding: var(--size-l);
+    width: var(--width-sidebar);
+}

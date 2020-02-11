@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getImageUrl } from 'src/app/api'
+import { IRect } from 'src/lib/types'
 
 function isId(value: string | number) {
     if (typeof value === 'number') {
@@ -9,7 +10,11 @@ function isId(value: string | number) {
     return /^([\d]+)$/.test(value)
 }
 
-export function useImage(param: string | number): string | undefined {
+function resizeImage(src: string, options: IRect): string {
+    return `https://images.weserv.nl/?url=${src}&w=${options.w}&h=${options.h}&n=-1`
+}
+
+export function useImage(param: string | number, size: IRect): string | undefined {
     const [src, setSrc] = useState<string>()
 
     useEffect(() => {
@@ -20,12 +25,12 @@ export function useImage(param: string | number): string | undefined {
             (async () => {
                 const image = await getImageUrl(Number(param))
 
-                if (mouted) {
-                    setSrc(image)
+                if (mouted && image) {
+                    setSrc(resizeImage(image, size))
                 }
             })()
         } else {
-            setSrc(`${param}`)
+            setSrc(resizeImage(`${param}`, size))
         }
 
         return () => {

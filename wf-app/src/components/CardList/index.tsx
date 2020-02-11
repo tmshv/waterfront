@@ -1,19 +1,18 @@
 import * as React from 'react'
-import { head, tail } from 'lodash'
+import { head } from 'lodash'
 import { splitIntoColumns } from './lib'
 
 export interface ICardListProps<T> {
     style?: React.CSSProperties
-    highlightFirst: boolean
     items: T[]
     columns: number
-    renderItem: (item: T) => React.ReactNode
+    renderItem: (item: T, style: React.CSSProperties) => React.ReactNode
     renderFirstItem?: (item: T) => React.ReactNode
 }
 
 export function CardList<T>(props: ICardListProps<T>) {
     const width = 100 / props.columns
-    const cardItems = props.highlightFirst ? tail(props.items) : props.items
+    const cardItems = props.items
     const cardColumns = splitIntoColumns(cardItems, props.columns)
 
     return (
@@ -31,26 +30,13 @@ export function CardList<T>(props: ICardListProps<T>) {
                     width: ${width}%;
                     box-sizing: border-box;
 
-                    padding-right: 1px;
+                    padding-right: var(--size-l);
                 }
                 
                 .column:last-child {
                     padding-right: 0;
                 }
             `}</style>
-
-            {!props.highlightFirst ? null : (
-                <section
-                    style={{
-                        width: '100%',
-                        marginBottom: 1,
-                    }}
-                >
-                    {props.renderFirstItem!(
-                        head(props.items)!
-                    )}
-                </section>
-            )}
 
             <section className={'column-container'}>
                 {cardColumns.map((columnItems, i) => (
@@ -59,7 +45,9 @@ export function CardList<T>(props: ICardListProps<T>) {
                         className={'column'}
                     >
                         {columnItems.map(
-                            x => props.renderItem(x)
+                            x => props.renderItem(x, {
+                                marginBottom: 'var(--size-xl)',
+                            })
                         )}
                     </div>
                 ))}

@@ -60,7 +60,7 @@ export const Navigation: React.FC<INavigationProps> = props => {
             />
 
             <Social
-                color={'rgb(0, 83, 108)'}
+                color={'var(--color-text-opposite)'}
                 iconSize={1}
                 items={social}
                 layout={'horizontal'}

@@ -5,6 +5,7 @@ export interface IEvent {
     slug: string
     eventUrl: string
     content: string
+    short: string
     name: string
     imageId: number
     date: Date
