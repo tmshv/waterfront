@@ -1,11 +1,12 @@
 import { NextPage } from 'next'
 import { getAbout, getPersons } from 'src/app/api'
 import { Article } from 'src/components/Article'
-import { withTranslation, i18n, useTranslation } from 'src/i18n'
+import { withTranslation } from 'src/i18n'
 import { IArticle, IPerson } from 'src/app/types'
 import { PersonsBlock } from 'src/components/PersonsBlock'
 import { PageLayout } from 'src/components/PageLayout'
 import { PageHead } from 'src/components/PageHead'
+import { getLang } from 'src/server/lib'
 
 interface IProps {
     article: IArticle
@@ -47,14 +48,8 @@ const Page: NextPage<IProps> = props => {
     )
 }
 
-Page.getInitialProps = async ({ req }) => {
-    let lang: string | null = null
-    if (req) {
-        lang = (req as any).i18n.language
-    } else {
-        lang = i18n.language
-    }
-
+Page.getInitialProps = async ctx => {
+    const lang = getLang(ctx)
     const article = await getAbout(lang!)
     const persons = await getPersons(lang!)
 

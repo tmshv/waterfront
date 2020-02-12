@@ -3,14 +3,14 @@ import { getFeatures } from 'src/app/api'
 import { featureToArticle } from 'src/app/factory'
 import { CardList } from 'src/components/CardList'
 import { AppPointFeature } from 'src/app/types'
-import { i18n } from 'src/i18n'
 import { PageLayout } from 'src/components/PageLayout'
 import { useColumns } from 'src/hooks/useColumns'
 import * as Layout from 'src/components/Layout'
 import { Card } from 'src/components/Card'
 import { Short } from 'src/components/Short'
 import { PageHead } from 'src/components/PageHead'
-import { useTranslation } from 'src/i18n'
+import { withTranslation, useTranslation } from 'src/i18n'
+import { getLang } from 'src/server/lib'
 
 interface IProps {
     features: AppPointFeature[]
@@ -66,20 +66,16 @@ export const Page: NextPage<IProps> = props => {
     )
 }
 
-Page.getInitialProps = async ({ req }) => {
-    let lang: string | null = null
-    if (req) {
-        lang = (req as any).i18n.language
-    } else {
-        lang = i18n.language
-    }
+Page.getInitialProps = async ctx => {
+    const lang = getLang(ctx)
 
+    // const city = 'saint_petersburg'
     const city = 'all'
-    const data = await getFeatures(lang!, city, true)
+    const data = await getFeatures(lang, city, true)
 
     return {
         features: data,
     }
 }
 
-export default Page
+export default withTranslation('common')(Page as any)

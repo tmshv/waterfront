@@ -2,10 +2,11 @@ import { NextPage } from 'next'
 import { getFeatures } from 'src/app/api'
 import { featureToArticle } from 'src/app/factory'
 import { AppPointFeature } from 'src/app/types'
-import { i18n, useTranslation } from 'src/i18n'
+import { withTranslation, useTranslation } from 'src/i18n'
 import { PageLayout } from 'src/components/PageLayout'
 import { PageHead } from 'src/components/PageHead'
 import { useColumns } from 'src/hooks/useColumns'
+import { getLang } from 'src/server/lib'
 
 interface IProps {
     features: AppPointFeature[]
@@ -53,14 +54,8 @@ export const Page: NextPage<IProps> = props => {
     )
 }
 
-Page.getInitialProps = async ({ req }) => {
-    let lang: string | null = null
-    if (req) {
-        lang = (req as any).i18n.language
-    } else {
-        lang = i18n.language
-    }
-
+Page.getInitialProps = async ctx => {
+    const lang = getLang(ctx)
     const city = 'saint_petersburg'
     const data = await getFeatures(lang!, city, true)
 
@@ -69,4 +64,4 @@ Page.getInitialProps = async ({ req }) => {
     }
 }
 
-export default Page
+export default withTranslation('common')(Page as any)

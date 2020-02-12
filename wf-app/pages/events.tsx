@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 
 import { IEvent } from 'src/types'
-import { i18n, withTranslation } from 'src/i18n'
+import { withTranslation } from 'src/i18n'
 import { CardList } from 'src/components/CardList'
 import { Card } from 'src/components/Card'
 import { createApiUrl } from 'src/app/lib'
@@ -11,6 +11,7 @@ import { Short } from 'src/components/Short'
 import { PageHead } from 'src/components/PageHead'
 import * as Layout from 'src/components/Layout'
 import { useColumns } from 'src/hooks/useColumns'
+import { getLang } from 'src/server/lib'
 
 interface IProps {
     events: IEvent[]
@@ -57,16 +58,10 @@ export const Page: NextPage<IProps> = props => {
     )
 }
 
-Page.getInitialProps = async ({ req }) => {
-    let lang: string | null = null
-    if (req) {
-        lang = (req as any).i18n.language
-    } else {
-        lang = i18n.language
-    }
-
+Page.getInitialProps = async ctx => {
+    const lang = getLang(ctx)
     const events = await getJson<IEvent[]>(
-        createApiUrl(req, `/api/events`),
+        createApiUrl(ctx.req, `/api/events`),
         {
             lang,
         }
