@@ -1,5 +1,3 @@
-import * as React from 'react'
-import { head } from 'lodash'
 import { splitIntoColumns } from './lib'
 
 export interface ICardListProps<T> {
@@ -11,9 +9,7 @@ export interface ICardListProps<T> {
 }
 
 export function CardList<T>(props: ICardListProps<T>) {
-    const width = 100 / props.columns
-    const cardItems = props.items
-    const cardColumns = splitIntoColumns(cardItems, props.columns)
+    const columns = splitIntoColumns(props.items, props.columns)
 
     return (
         <div style={props.style}>
@@ -27,9 +23,7 @@ export function CardList<T>(props: ICardListProps<T>) {
                     display: flex;
                     flex-direction: column;
 
-                    width: ${width}%;
                     box-sizing: border-box;
-
                     padding-right: var(--size-l);
                 }
                 
@@ -39,12 +33,15 @@ export function CardList<T>(props: ICardListProps<T>) {
             `}</style>
 
             <section className={'column-container'}>
-                {cardColumns.map((columnItems, i) => (
+                {columns.map((items, i) => (
                     <div
                         key={i}
                         className={'column'}
+                        style={{
+                            flex: 1,
+                        }}
                     >
-                        {columnItems.map(
+                        {items.map(
                             x => props.renderItem(x, {
                                 marginBottom: 'var(--size-xl)',
                             })
