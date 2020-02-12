@@ -11,27 +11,7 @@ const handle = app.getRequestHandler()
 app.prepare()
     .then(() => {
         const server = express()
-
         server.use(nextI18NextMiddleware(nextI18next))
-
-        server.get('/projects', (req, res) => {
-            const actualPage = '/projects'
-            const queryParams = {
-                city: 'all'
-            }
-
-            app.render(req, res, actualPage, queryParams)
-        })
-
-        server.get('/projects/:city', (req, res) => {
-            const actualPage = '/projects'
-            const queryParams = {
-                city: req.params.city
-            }
-
-            app.render(req, res, actualPage, queryParams)
-        })
-
         server.get('*', (req, res) => {
             return handle(req, res)
         })

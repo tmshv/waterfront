@@ -74,7 +74,7 @@ Page.getInitialProps = async ({ req }) => {
         lang = i18n.language
     }
 
-    const city = 'saint_petersburg'
+    const city = 'all'
     const data = await getFeatures(lang!, city, true)
 
     return {
