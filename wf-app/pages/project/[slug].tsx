@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import { getFeature } from 'src/app/api'
 import { Article } from 'src/components/Article'
-import { featureToArticle } from 'src/app/factory';
+import { featureToArticle } from 'src/app/factory'
 import { i18n, withTranslation } from 'src/i18n'
 import { IArticle } from 'src/app/types'
 import { PageLayout } from 'src/components/PageLayout'
