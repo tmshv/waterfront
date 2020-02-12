@@ -41,15 +41,6 @@ app.prepare()
             app.render(req, res, actualPage, queryParams)
         })
         
-        server.get('/event/:slug', (req, res) => {
-            const actualPage = '/event'
-            const queryParams = {
-                slug: req.params.slug
-            }
-
-            app.render(req, res, actualPage, queryParams)
-        })
-
         server.get('*', (req, res) => {
             return handle(req, res)
         })
