@@ -1,7 +1,7 @@
 .card {
     box-sizing: border-box;
 
-    background-color: var(--background-color);
+    background-color: var(--color-back);
 }
 
 .card h2 {
@@ -23,13 +23,13 @@
 }
 
 .card:hover h2 {
-    color: rgb(0, 83, 108);
+    color: var(--color-text-hover);
 }
 
 .link {
     display: block;
     text-decoration: none;
-    color: black;
+    color: var(--color-text);
 
     position: relative;
 }

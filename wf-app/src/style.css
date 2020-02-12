@@ -7,11 +7,11 @@
     --color-text: black;
     --color-text-opposite: white;
 
-    --body-background-color: hsla(196, 83%, 95%, 1);
-    --footer-background-color: rgb(0, 83, 108);
-    --background-color-header: var(--color-brand-light);
+    --color-back-body: hsla(196, 83%, 95%, 1);
+    --color-back-footer: var(--color-brand-dark);
+    --color-back-header: var(--color-brand-light);
     --color-back-accent: var(--color-brand-light);
-    --background-color: rgb(255, 255, 255);
+    --color-back: rgb(255, 255, 255);
     --color-link-hover: var(--color-brand-dark);
 
     --size-xs: 2px;
@@ -49,6 +49,7 @@
 body {
     font-family: var(--font-family-main);
     font-size: var(--font-size-main);
+    color: var(--color-text);
 
     height: 100vh;
     padding: 0;
@@ -87,8 +88,13 @@ body {
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --background-color-header: var(--color-brand-dark);
+        --color-back: hsla(194, 100%, 21%, 1);
+        --color-back-body: hsla(194, 100%, 16%, 1);
+        --color-back-header: var(--color-brand-dark);
+        --color-back-footer: var(--color-brand-light);
         --color-text-opposite: var(--color-brand-light);
+        --color-text: white;
+
         --color-back-accent: var(--color-brand-dark);
         --color-link-hover: white;
     }

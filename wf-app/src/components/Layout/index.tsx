@@ -30,7 +30,7 @@ export const Cards: React.FC = props => {
         <LayoutContext.Provider value={{
             ...defaultLayout,
             mainMarginTop: false,
-            backgroundColor: 'var(--body-background-color)',
+            backgroundColor: 'var(--color-back-body)',
         }}>
             {props.children}
         </LayoutContext.Provider>

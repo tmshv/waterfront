@@ -13,7 +13,7 @@ export const Tag: React.FC<ITagProps> = props => (
             span {
                 display: inline-block;
 
-                background-color: var(--background-color);
+                background-color: var(--color-back);
                 padding: 3px 9px;
             }
         `}</style>

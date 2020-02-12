@@ -8,7 +8,7 @@ export const defaultLayout = {
     mainMarginTop: true,
     mainMarginBottom: true,
     showFooter: true,
-    backgroundColor: 'var(--backgound-color)',
+    backgroundColor: 'var(--color-back)',
 }
 
 export const previewImageSize: IRect = {

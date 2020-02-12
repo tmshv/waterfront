@@ -4,7 +4,7 @@
     width: 100%;
     box-sizing: border-box;
 
-    background-color: var(--footer-background-color);
+    background-color: var(--color-back-footer);
     color: white;
     padding: var(--size-l);
 
