@@ -83,5 +83,13 @@ body {
     }
 }
 
+/* DARK THEME */
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --background-color-header: var(--color-brand-dark);
+        --color-text-opposite: var(--color-brand-light);
+        --color-back-accent: var(--color-brand-dark);
+        --color-link-hover: white;
     }
 }

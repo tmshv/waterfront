@@ -20,13 +20,7 @@ import { ICity } from 'src/types'
 import { useCity } from 'src/hooks/useCity'
 import { Select } from 'src/components/Select'
 import { AppLayout } from 'src/components/AppLayout'
-
-function createMaptilerStyle() {
-    const key = 'BANyZrASqDKOtn6kEAe9'
-    const mapName = 'positron'
-
-    return `https://api.maptiler.com/maps/${mapName}/style.json?key=${key}`
-}
+import { useMapStyle } from 'src/hooks/useMapStyle'
 
 interface IProps {
     featureSettings: IFeatureSettings[]
@@ -50,6 +44,9 @@ const Index: NextPage<IProps> = props => {
     const [viewport, setViewport] = React.useState<ViewState>(city.viewport)
     const [selectedFeatureId, setSelectedFeatureId] = React.useState<string | undefined>(undefined)
     const colorMap = createColorMap(props.featureSettings)
+
+    const key = 'BANyZrASqDKOtn6kEAe9'
+    const mapStyle = useMapStyle(key)
 
     React.useEffect(() => {
         setViewport(city.viewport)
@@ -108,7 +105,7 @@ const Index: NextPage<IProps> = props => {
         >
             <MapGL
                 features={mapFeatures}
-                mapStyle={createMaptilerStyle()}
+                mapStyle={mapStyle}
                 viewport={viewport}
                 onChangeViewport={v => setViewport(v)}
                 onClickMap={coord => {
