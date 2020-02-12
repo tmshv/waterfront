@@ -41,6 +41,7 @@ export const Menu: React.FC<IMenuProps> = props => {
                 }
                 
                 a {
+                    transition: color var(--transition-link-hover-delay);
                     color: var(--color-text-opposite);
 
                     text-decoration: none;

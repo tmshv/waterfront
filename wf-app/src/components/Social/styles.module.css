@@ -4,6 +4,7 @@
 }
 
 .icon {
+    transition: fill var(--transition-link-hover-delay);
     fill: var(--color-text-opposite);
 }
 
