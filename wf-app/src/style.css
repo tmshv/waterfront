@@ -8,7 +8,7 @@
     --color-text-opposite: white;
 
     --color-back-body: hsla(196, 83%, 95%, 1);
-    --color-back-footer: var(--color-brand-dark);
+    --color-back-footer: var(--color-brand-light);
     --color-back-header: var(--color-brand-light);
     --color-back-accent: var(--color-brand-light);
     --color-back: rgb(255, 255, 255);

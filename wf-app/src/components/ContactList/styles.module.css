@@ -1,0 +1,25 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact span {
+    margin-bottom: var(--size-m);
+}
+
+.link {
+    padding-right: var(--size-l);
+    padding-bottom: var(--size-m);
+
+    color: var(--color-text-opposite);
+}
+
+.link:hover,
+.link:active,
+.link:focus {
+    color: var(--color-link-hover);
+}
+
+.link:last-child {
+    padding-right: 0px;
+}
