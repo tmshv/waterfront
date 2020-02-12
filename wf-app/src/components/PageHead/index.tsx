@@ -25,9 +25,9 @@ export const PageHead: React.FC<IPageHeadProps> = props => {
 
                 {!props.caption ? null : (
                     <div className={styles.block}>
-                        <p className={styles.caption}
-                            dangerouslySetInnerHTML={{ __html: props.caption }}
-                        />
+                        <p className={styles.caption}>
+                            {props.caption}
+                        </p>
                     </div>
                 )}
             </div>
