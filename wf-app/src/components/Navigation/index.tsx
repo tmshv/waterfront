@@ -54,7 +54,6 @@ export const Navigation: React.FC<INavigationProps> = props => {
             />
 
             <Social
-                color={'var(--color-text-opposite)'}
                 iconSize={1}
                 items={social}
                 layout={'horizontal'}

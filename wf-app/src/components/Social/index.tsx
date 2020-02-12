@@ -10,7 +10,6 @@ export interface ISocialItem {
 
 export interface ISocialProps {
     style?: React.CSSProperties
-    color: string
     iconSize: number
     items: ISocialItem[]
     layout: 'horizontal' | 'vertical'
@@ -51,7 +50,6 @@ export const Social: React.FC<ISocialProps> = props => {
                         href={x.url}
                         icon={x.icon}
                         size={props.iconSize}
-                        color={props.color}
                     />
                 </li>
             ))}

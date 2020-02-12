@@ -47,7 +47,7 @@ export const Menu: React.FC<IMenuProps> = props => {
                 }
 
                 a:hover {
-                    color: rgb(20, 120, 130);
+                    color: var(--color-link-hover);
                 }
 
                 li {

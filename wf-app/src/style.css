@@ -12,6 +12,7 @@
     --background-color-header: var(--color-brand-light);
     --color-back-accent: var(--color-brand-light);
     --background-color: rgb(255, 255, 255);
+    --color-link-hover: var(--color-brand-dark);
 
     --size-xs: 2px;
     --size-s: 4px;
@@ -56,6 +57,10 @@ body {
 
 .logo {
     fill: var(--color-text-opposite);
+}
+
+.logo:hover {
+    fill: var(--color-link-hover);
 }
 
 /* MOBILE  */
