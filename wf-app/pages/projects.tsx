@@ -4,8 +4,8 @@ import { featureToArticle } from 'src/app/factory'
 import { AppPointFeature } from 'src/app/types'
 import { i18n, useTranslation } from 'src/i18n'
 import { PageLayout } from 'src/components/PageLayout'
-import { useMobile } from 'src/hooks/useMobile'
 import { PageHead } from 'src/components/PageHead'
+import { useColumns } from 'src/hooks/useColumns'
 
 interface IProps {
     features: AppPointFeature[]
@@ -13,9 +13,8 @@ interface IProps {
 
 export const Page: NextPage<IProps> = props => {
     const articleCards = props.features.map(featureToArticle)
-    const isMobile = useMobile()
     const { t } = useTranslation()
-    const columns = isMobile ? 1 : 3
+    const columns = useColumns()
 
     return (
         <PageLayout

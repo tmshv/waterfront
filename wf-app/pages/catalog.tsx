@@ -5,7 +5,7 @@ import { CardList } from 'src/components/CardList'
 import { AppPointFeature } from 'src/app/types'
 import { i18n } from 'src/i18n'
 import { PageLayout } from 'src/components/PageLayout'
-import { useMobile } from 'src/hooks/useMobile'
+import { useColumns } from 'src/hooks/useColumns'
 import * as Layout from 'src/components/Layout'
 import { Card } from 'src/components/Card'
 import { Short } from 'src/components/Short'
@@ -19,8 +19,7 @@ interface IProps {
 export const Page: NextPage<IProps> = props => {
     const { t } = useTranslation()
     const items = props.features.map(featureToArticle)
-    const isMobile = useMobile()
-    const columns = isMobile ? 1 : 3
+    const columns = useColumns()
     const head = items[0]
 
     return (

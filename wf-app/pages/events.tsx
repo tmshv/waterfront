@@ -7,18 +7,17 @@ import { Card } from 'src/components/Card'
 import { createApiUrl } from 'src/app/lib'
 import { getJson } from 'src/lib/fetch'
 import { PageLayout } from 'src/components/PageLayout'
-import { useMobile } from 'src/hooks/useMobile'
 import { Short } from 'src/components/Short'
 import { PageHead } from 'src/components/PageHead'
 import * as Layout from 'src/components/Layout'
+import { useColumns } from 'src/hooks/useColumns'
 
 interface IProps {
     events: IEvent[]
 }
 
 export const Page: NextPage<IProps> = props => {
-    const isMobile = useMobile()
-    const columns = isMobile ? 1 : 3
+    const columns = useColumns()
     const head = props.events[0]
 
     return (
