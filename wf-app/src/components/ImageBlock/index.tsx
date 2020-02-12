@@ -1,39 +1,23 @@
+import styles from './styles.module.css'
+
 export interface IImageBlockProps {
     style?: React.CSSProperties
+    imageStyle?: React.CSSProperties
     src?: string
 }
 
 export const ImageBlock: React.FC<IImageBlockProps> = props => (
-    <div className={'block'}>
-        <style jsx>{`
-            .block {
-                position: relative;
-            }
-
-            .overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-
-                box-sizing: border-box;
-                padding: 10px;
-            }
-
-            img {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        `}</style>
-
+    <div
+        className={styles.block}
+        style={props.style}
+    >
         <img
+            className={styles.image}
+            style={props.imageStyle}
             src={props.src}
         />
 
-        <div className={'overlay'} style={{
+        <div className={styles.overlay} style={{
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-end',
