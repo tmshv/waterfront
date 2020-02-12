@@ -1,15 +1,9 @@
-import * as React from 'react'
-
-import dynamic from 'next/dynamic'
 import cx from 'classnames'
 
 import { Menu } from '../Menu'
 import { Social } from '../Social'
 import { social, menu } from '../../app/const'
-
-const LangButton = dynamic(() => import('../LangButton'), {
-    ssr: false,
-})
+import { useMemo } from 'react'
 
 export interface INavigationProps {
     style?: React.CSSProperties
@@ -17,7 +11,7 @@ export interface INavigationProps {
 }
 
 export const Navigation: React.FC<INavigationProps> = props => {
-    const menuStyle = React.useMemo(() => props.layout === 'horizontal'
+    const menuStyle = useMemo(() => props.layout === 'horizontal'
         ? {
             marginRight: 20,
         } : {
@@ -26,9 +20,9 @@ export const Navigation: React.FC<INavigationProps> = props => {
         [props.layout]
     )
 
-    const socialStyle = React.useMemo(() => props.layout === 'horizontal'
+    const socialStyle = useMemo(() => props.layout === 'horizontal'
         ? {
-            marginRight: 25,
+            marginRight: 0,
         } : {
             marginBottom: 20,
         },
@@ -66,8 +60,6 @@ export const Navigation: React.FC<INavigationProps> = props => {
                 layout={'horizontal'}
                 style={socialStyle}
             />
-
-            <LangButton />
         </div>
     )
 }

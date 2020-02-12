@@ -1,3 +1,5 @@
+/* ELEMENT */
+
 .container {
     width: 100%;
     box-sizing: border-box;
@@ -20,9 +22,22 @@
     margin-bottom: 0px;
 }
 
+.copyright {
+    margin-bottom: var(--size-l);
+}
+
 .delimiter {
     padding: 0 var(--size-m);
 }
+
+
+/* MODIFIER */
+
+.vertical {
+    flex-direction: column;
+}
+
+/* MOBILE */
 
 @media screen and (max-width: 31.25em) {
     .container {

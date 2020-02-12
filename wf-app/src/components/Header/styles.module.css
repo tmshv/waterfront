@@ -6,7 +6,7 @@
 }
 
 .horizontal {
-    padding: 0 var(--size-m);
+    padding: 0 var(--size-l);
     height: var(--height-header);
     flex-direction: row;
     align-items: center;
