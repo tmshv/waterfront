@@ -1,0 +1,66 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - var(--height-header));
+    min-height: 400px;
+}
+
+.overlay {
+    position: absolute;
+    width: var(--width-main);
+    bottom: var(--page-head-bottom);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.block {
+    position: relative;
+    width: var(--page-head-block-width);
+    min-width: 200px;
+
+    box-sizing: border-box;
+}
+
+.title {
+    color: var(--color-text-opposite);
+    font-size: var(--font-size-xxl);
+    margin: 0;
+    background-color: var(--color-back-accent);
+    display: inline;
+    line-height: 1.25em;
+
+    padding: 0 var(--size-s);
+    box-decoration-break: clone;
+}
+
+.caption {
+    display: inline;
+    white-space: pre-wrap;
+    box-decoration-break: clone;
+
+    font-size: var(--font-size-m);
+    line-height: 1.3em;
+    padding: var(--size-s) var(--size-m);
+    color: var(--color-text-opposite);
+    background-color: var(--color-back-accent);
+
+    /* hack: add 5 px for nice gap between rows */
+    position: relative;
+    top: 5px;
+}
+
+
+@media screen and (max-width: 31.25em) {
+    .overlay {
+        bottom: 50px;
+    }
+
+    /* .title {
+        font-size: 2.5em;
+    } */
+
+    /* .block {
+        width: 100%;
+    } */
+}

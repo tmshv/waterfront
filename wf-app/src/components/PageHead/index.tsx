@@ -1,4 +1,5 @@
-import * as React from 'react'
+import styles from './styles.module.css'
+
 import { Image } from './Image'
 
 export interface IPageHeadProps {
@@ -11,92 +12,20 @@ export const PageHead: React.FC<IPageHeadProps> = props => {
     const imageSrc = props.image.toString()
 
     return (
-        <section>
-            <style jsx>{`
-                section {
-                    position: relative;
-                    width: 100%;
-                    height: calc(100vh - 60px);
-                    min-height: 300px;
-                }
-
-                .overlay {
-                    position: absolute;
-                    width: 70%;
-                    bottom: 100px;
-                    left: 0;
-                    right: 0;
-                    margin: 0 auto;
-                }
-
-                .caption {
-                    position: relative;
-                    padding: 15px;
-                    width: 50%;
-                    min-width: 200px;
-
-                    box-sizing: border-box;
-                }
-
-                .caption-text {
-                    position: relative;
-
-                    color: white;
-                    //text-shadow: 0px 0px 1px #666;
-                    z-index: 1;
-                }
-
-                .caption-overlay {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    left: 0;
-                    right: 0;
-
-                    background-color: var(--color-brand-light);
-                    //opacity: 0.75;
-                    //mix-blend-mode: hard-light;
-                }
-
-                h1 {
-                    color: white;
-                    font-size: var(--font-size-xxl);
-                    margin: 0;
-                    background-color: var(--color-brand-light);
-                    display: inline;
-                    line-height: 1.25em;
-                }
-
-                @media screen and (max-width: 31.25em) {
-                    .overlay {
-                        width: 100%;
-                        bottom: 50px;
-                    }
-
-                    h1 {
-                        font-size: 2.5em;
-                    }
-
-                    .caption {
-                        width: 100%;
-                    }
-                }
-            `}</style>
-
+        <section className={styles.container}>
             <Image
                 src={imageSrc}
                 alt={''}
             />
 
-            <div className={'overlay'}>
-                <h1>
+            <div className={styles.overlay}>
+                <h1 className={styles.title}>
                     {props.title}
                 </h1>
 
                 {!props.caption ? null : (
-                    <div className={'caption'}>
-                        <div className={'caption-overlay'} />
-                        <p className={'caption-text'}
+                    <div className={styles.block}>
+                        <p className={styles.caption}
                             dangerouslySetInnerHTML={{ __html: props.caption }}
                         />
                     </div>
