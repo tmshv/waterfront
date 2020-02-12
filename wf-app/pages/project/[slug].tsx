@@ -7,6 +7,7 @@ import { IArticle } from 'src/app/types'
 import { PageLayout } from 'src/components/PageLayout'
 import { PageHead } from 'src/components/PageHead'
 import * as Layout from 'src/components/Layout'
+import { q } from 'src/lib/fetch'
 
 interface IProps {
     article: IArticle
@@ -40,9 +41,7 @@ Page.getInitialProps = async ({ req, query }) => {
         lang = i18n.language
     }
 
-    const slug = Array.isArray(query.slug)
-        ? query.slug[0]
-        : query.slug
+    const slug = q(query.slug)
     const feature = await getFeature(lang!, slug)
 
     return {
