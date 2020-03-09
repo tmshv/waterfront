@@ -33,6 +33,6 @@ export function getLang(ctx: NextPageContext): string {
     try {
         return (req as any).i18n.language
     } catch (error) {
-        return i18n.language
+        return i18n.language ?? 'ru'
     }
 }
