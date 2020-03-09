@@ -20,6 +20,7 @@ const Page: NextPage<IProps> = props => (
 Page.getInitialProps = async ({ res, err }) => {
     // let statusCode = null
 
+    const statusCode = res?.statusCode ?? err?.statusCode ?? 404
 //     if (res) {
 //         ({ statusCode } = res)
 //     } else if (err) {
@@ -28,7 +29,7 @@ Page.getInitialProps = async ({ res, err }) => {
 
     return {
         namespacesRequired: ['common'],
-        statusCode: 0,
+        statusCode,
     }
 }
 
