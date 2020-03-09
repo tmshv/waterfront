@@ -6,7 +6,6 @@
 
 .card h2 {
     /* padding: 0 10px; */
-    color: rgb(90, 200, 240);
 
     /* margin: 0.5em 0; */
     margin: 0;
@@ -17,13 +16,8 @@
     padding: var(--size-m) var(--size-l) var(--size-l);
 }
 
-.card:hover {
-    /* color: rgb(0, 83, 108); */
-    color: tomato;
-}
-
 .card:hover h2 {
-    color: var(--color-text-hover);
+    color: var(--color-link-hover);
 }
 
 .link {
