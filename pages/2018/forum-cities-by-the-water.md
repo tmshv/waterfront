@@ -1,7 +1,7 @@
 ---
 tags:
     - event
-cover: https://wf.tmshv.com/api/uploads/_/originals/_DSC9885_copy.jpg
+cover: /assets/_DSC9885_copy.jpg
 excerpt: 5 октября 2018
 ---
 
