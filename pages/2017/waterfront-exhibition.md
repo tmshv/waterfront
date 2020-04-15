@@ -1,7 +1,7 @@
 ---
 tags:
     - event
-cover: https://wf.tmshv.com/api/uploads/_/originals/_DSC8151_copy.jpg
+cover: https://wf.now.sh/assets/_DSC8151_copy.jpg
 excerpt: 21 сентября 2017
 ---
 
