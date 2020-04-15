@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: http://pravonavodu.ru
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/Право_на_воду.jpg
+cover: /assets/Право_на_воду.jpg
 excerpt: Образовательно-обменный проект. Цель сообщества — активация водной городской среды силами граждан через события, коммуникацию, изучение и совершенствование законодательства.
 ---
 
