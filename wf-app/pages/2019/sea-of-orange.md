@@ -1,4 +1,6 @@
 ---
+tags:
+    - event
 cover: https://wf.tmshv.com/api/uploads/_/originals/KQUXEsgCVW8-1.jpg
 excerpt: 17 декабря 2019
 ---

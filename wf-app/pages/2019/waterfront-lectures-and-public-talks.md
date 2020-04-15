@@ -1,4 +1,6 @@
 ---
+tags:
+    - event
 cover: https://wf.tmshv.com/api/uploads/_/originals/_DSC0754_copy.jpg
 excerpt: 2 февраля 2019
 ---
