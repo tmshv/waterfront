@@ -1,25 +1,33 @@
 import { NextPage } from 'next'
 
 import { IEvent } from 'src/types'
-import { withTranslation } from 'src/i18n'
 import { CardList } from 'src/components/CardList'
 import { Card } from 'src/components/Card'
-import { createApiUrl } from 'src/app/lib'
-import { getJson } from 'src/lib/fetch'
 import { PageLayout } from 'src/components/PageLayout'
 import { Short } from 'src/components/Short'
 import { PageHead } from 'src/components/PageHead'
 import * as Layout from 'src/components/Layout'
 import { useColumns } from 'src/hooks/useColumns'
-import { getLang } from 'src/server/lib'
+import { getPagesByTag } from 'src/api'
+
+type PageCardData = {
+    tags: string[],
+    title: string,
+    cover: string,
+    excerpt: string,
+    slug: string,
+}
 
 interface IProps {
-    events: IEvent[]
+    pages: PageCardData[]
 }
 
 export const Page: NextPage<IProps> = props => {
+    // return (
+    //     <div>{JSON.stringify(props, null, 4)}</div>
+    // )
     const columns = useColumns()
-    const head = props.events[0]
+    const head = props.pages[0]
 
     return (
         <Layout.Cards>
@@ -27,9 +35,9 @@ export const Page: NextPage<IProps> = props => {
                 wideBody={true}
                 head={(
                     <PageHead
-                        title={head.name}
-                        caption={head.short}
-                        image={head.imageId}
+                        title={head.title}
+                        caption={head.excerpt}
+                        image={head.cover}
                     />
                 )}
             >
@@ -39,17 +47,17 @@ export const Page: NextPage<IProps> = props => {
                         padding: '0 var(--size-l)',
                     }}
                     columns={columns}
-                    items={props.events}
+                    items={props.pages}
                     renderItem={(item, style) => (
                         <Card
                             style={style}
                             key={item.slug}
-                            title={item.name}
-                            previewImage={item.imageId}
+                            title={item.title}
+                            previewImage={item.cover}
                             tags={[]}
-                            href={item.href}
+                            href={item.slug}
                         >
-                            <Short text={item.short} />
+                            <Short text={item.excerpt} />
                         </Card>
                     )}
                 />
@@ -58,19 +66,16 @@ export const Page: NextPage<IProps> = props => {
     )
 }
 
-Page.getInitialProps = async ctx => {
-    const lang = getLang(ctx)
-    const events = await getJson<IEvent[]>(
-        createApiUrl(ctx.req, `/api/events`),
-        {
-            lang,
-        }
-    )
+export async function getStaticProps({ params }) {
+    const pages = await getPagesByTag('event', {
+        omitContent: true
+    })
 
     return {
-        events,
-        namespacesRequired: ['common'],
+        props: {
+            pages,
+        },
     }
 }
 
-export default withTranslation('common')(Page as any)
+export default Page
