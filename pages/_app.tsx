@@ -38,6 +38,11 @@ type PersonData = {
 }
 
 const components = {
+    wrapper: props => (
+        <article>
+            <main {...props} />
+        </article>
+    ),
     h1: H1,
     Person: (props: PersonData) => (
         <Person
@@ -76,9 +81,9 @@ class MyApp extends App {
             <PageConfig>
                 <PageLayout>
                     <MDXProvider components={components}>
-                        <article>
-                            <Component {...pageProps} />
-                        </article>
+                        {/* <article> */}
+                        <Component {...pageProps} />
+                        {/* </article> */}
                     </MDXProvider>
                 </PageLayout>
             </PageConfig>
