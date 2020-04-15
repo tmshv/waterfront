@@ -9,7 +9,7 @@ export async function json(url: string) {
 }
 
 export async function getFeatureSettings(): Promise<IFeatureSettings[]> {
-    const featureSettings = await json('/feature-settings.json')
+    const featureSettings = await json('https://wf.tmshv.com/api/_/items/feature_settings')
 
     return createFeatureSettingsList(featureSettings['data'])
 }
