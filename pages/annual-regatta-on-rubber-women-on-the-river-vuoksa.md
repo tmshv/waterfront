@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: http://www.bubblebabachallenge.ru
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/Zapluv_po_reke_Vuoksa.jpg
+cover: /assets/Zapluv_po_reke_Vuoksa.jpg
 excerpt: Шуточная регата, проходящая с 2003 года по 2017. Заплыв на резиновых бабах пользовался большой популярностью, однако местные власти запретили проведение дальнейших мероприятий.
 ---
 
