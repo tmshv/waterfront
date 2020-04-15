@@ -5,4 +5,6 @@ node_modules
 .next
 .idea
 .vscode
-
+coverage
+build
+dist
