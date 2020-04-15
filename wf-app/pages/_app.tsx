@@ -25,7 +25,7 @@ const H1: React.SFC<{ children: string }> = props => {
             <PageHead
                 title={props.children}
                 caption={config.excerpt}
-                image={config.coverImage}
+                image={config.cover}
             />
         </WideBlock>
     )

@@ -16,12 +16,12 @@ import { ISignal, BufferableSignal } from 'src/lib/Signal'
 // }
 
 export type PageConfigProps = {
-    coverImage: string
+    cover: string
     excerpt: string
 }
 
 export const defaultPageConfig: PageConfigProps = {
-    coverImage: '',
+    cover: '',
     excerpt: '',
 }
 
