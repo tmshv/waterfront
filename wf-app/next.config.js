@@ -1,4 +1,4 @@
-const withMDX = require('@next/mdx')({
+const withMDX = require('./next-mdx-plugin')({
     extension: /\.mdx?$/
 })
 
