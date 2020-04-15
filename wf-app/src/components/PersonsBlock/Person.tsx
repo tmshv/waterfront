@@ -57,6 +57,8 @@ export const Person: React.FC<IPersonProps> = React.memo(props => (
             <div
                 dangerouslySetInnerHTML={{ __html: props.item.content }}
             />
+
+            {props.children}
         </div>
     </div>
 ))

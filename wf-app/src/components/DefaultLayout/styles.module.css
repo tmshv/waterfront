@@ -38,7 +38,7 @@
 }
 
 .marginTop {
-    margin-top: var(--size-xxl);
+    /* margin-top: var(--size-xxl); */
 }
 
 /* MOBILE */
