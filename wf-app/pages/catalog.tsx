@@ -11,14 +11,32 @@ import { Short } from 'src/components/Short'
 import { PageHead } from 'src/components/PageHead'
 import { withTranslation, useTranslation } from 'src/i18n'
 import { getLang } from 'src/server/lib'
+import { getPagesByTag } from 'src/api'
+
+type PageCardData = {
+    tags: string[],
+    title: string,
+    cover: string,
+    excerpt: string,
+    slug: string,
+}
 
 interface IProps {
-    features: AppPointFeature[]
+    pages: PageCardData[]
 }
 
 export const Page: NextPage<IProps> = props => {
+    // return (
+    //     <div>
+    //         <pre>
+    //             {JSON.stringify(props, null, 4)}
+    //         </pre>
+    //     </div>
+    // )
+
     const { t } = useTranslation()
-    const items = props.features.map(featureToArticle)
+    // const items = props.features.map(featureToArticle)
+    const items = props.pages
     const columns = useColumns()
     const head = items[0]
 
@@ -29,8 +47,8 @@ export const Page: NextPage<IProps> = props => {
                 head={(
                     <PageHead
                         title={t('Catalog')}
-                        caption={head.short}
-                        image={head.previewImage}
+                        caption={head.excerpt}
+                        image={head.cover}
                     />
                 )}
             >
@@ -42,20 +60,22 @@ export const Page: NextPage<IProps> = props => {
                     columns={columns}
                     items={items}
                     renderItem={(article, style) => {
-                        const year = article.date?.getFullYear()
+                        // const year = article.date?.getFullYear()
+                        const year = null
                         const tags = year ? [`${year}`] : []
 
                         return (
                             <Card
                                 style={style}
                                 key={article.slug}
-                                title={article.name}
+                                // title={article.name}
+                                title={article.title}
                                 tags={tags}
-                                previewImage={article.previewImage}
-                                href={article.url}
+                                previewImage={article.cover}
+                                href={article.slug}
                             >
                                 <Short
-                                    text={article.short}
+                                    text={article.excerpt}
                                 />
                             </Card>
                         )
@@ -66,16 +86,61 @@ export const Page: NextPage<IProps> = props => {
     )
 }
 
-Page.getInitialProps = async ctx => {
-    const lang = getLang(ctx)
+// Page.getInitialProps = async ctx => {
+//     const lang = getLang(ctx)
 
-    // const city = 'saint_petersburg'
-    const city = 'all'
-    const data = await getFeatures(lang, city, true)
+//     // const city = 'saint_petersburg'
+//     const city = 'all'
+//     const data = await getFeatures(lang, city, true)
+
+//     return {
+//         features: data,
+//     }
+// }
+
+export async function getStaticProps({ params }) {
+    // const slug = params.page
+    // const post = getPostBySlug(slug, [
+    //     'title',
+    //     'date',
+    //     'slug',
+    //     'author',
+    //     'content',
+    //     'ogImage',
+    //     'coverImage',
+    // ])
+    // const content = await markdownToHtml(post.content || '')
+
+    const pages = await getPagesByTag('feature', {
+        omitContent: true
+    })
 
     return {
-        features: data,
+        props: {
+            pages,
+            // post: {
+            //     // ...post,
+            //     content,
+            // },
+        },
     }
 }
 
-export default withTranslation('common')(Page as any)
+// export async function getStaticPaths() {
+//     // const paths = await getAllSlugs()
+//     const pages = await getPagesByTag('feature')
+//     const paths = pages.map(x => x.slug)
+
+//     return {
+//         paths,
+//         // paths: urls.map(page => ({
+//         //     params: {
+//         //         page,
+//         //     },
+//         // })),
+//         fallback: false,
+//     }
+// }
+
+// export default withTranslation('common')(Page as any)
+export default Page
