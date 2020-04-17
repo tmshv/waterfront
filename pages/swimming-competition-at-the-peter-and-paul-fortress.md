@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: https://x-waters.com/events/saint-petersburg
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/X-Waters.jpg
+cover: /assets/X-Waters.jpg
 excerpt: Заплыв вокруг Петропавловской крепости – одного из главных символов Санкт-Петербурга. Старт и финиш на главном городском пляже с панорамным видом на Дворцовую набережную, Эрмитаж и стрелку Васильевского острова.
 ---
 
