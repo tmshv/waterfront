@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: http://fontankasup.ru
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/SupSerfing.jpg
+cover: /assets/SupSerfing.jpg
 excerpt: Городской портал «Фонтанка.ру» проводит фестиваль «Фонтанка-SUP», который знакомит горожан с сапсёрфингом во всем его великолепии и простоте!
 ---
 
