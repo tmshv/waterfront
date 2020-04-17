@@ -4,7 +4,7 @@ city: Stockholm
 permalink: https://www.stockholmwaterfront.com
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/Stockholm_Waterfront_Congress_Centre-2.jpg
+cover: /assets/Stockholm_Waterfront_Congress_Centre-2.jpg
 excerpt: White arkitekter, одно из самых известных архитектурных бюро современной Швеции, построило в центре Стокгольма конгресс-центр Waterfront. 
 ---
 
