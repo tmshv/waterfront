@@ -4,7 +4,7 @@ city: Stockholm
 permalink: https://www.visitstockholm.com/eat--drink/restaurants/malarpaviljongen/
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/Restaurants_Malarpaviljongen.jpg
+cover: /assets/Restaurants_Malarpaviljongen.jpg
 excerpt: Зеленый оазис с рестораном, баром и зоной на свежем воздухе, расположенный на пристани, набережной и барже в Норр Меларстранд с потрясающим видом на воды Риддарфьярдена. Атмосферный, уютный местный ресторан и энергичный бар с отличной музыкой. Открыт только в летний сезон.
 ---
 
