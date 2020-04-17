@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: https://vk.com/urbanroom
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/Borscheweek.jpg
+cover: /assets/Borscheweek.jpg
 excerpt: Студия городского дизайна "Urban Room" в сотрудничестве с молодежным центром "Квадрат" добровольно занявшаяся экологической проблемой распространения борщевика на городских прибрежных территориях.
 ---
 
