@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: http://www.kaunodokas.lt/?lang=en
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/Kaunas_Вock_business_centre.jpg
+cover: /assets/Kaunas_Вock_business_centre.jpg
 excerpt: Находящийся недалеко от берега реки Нерис, бизнес-центр "Kauno dokas" полностью построен в соответствии с философией производительности Green Building. 
 ---
 
