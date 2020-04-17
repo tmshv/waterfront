@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: https://lakhta.center/ru/
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/_DSC0911_copy.jpg
+cover: /assets/_DSC0911_copy.jpg
 excerpt: Лахта Центр – многофункциональный комплекс в Санкт-Петербурге со штаб-квартирой группы «Газпром» и общественными пространствами, занимающими около трети площадей
 ---
 
