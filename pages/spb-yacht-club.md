@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: https://yacht-club-spb.ru/index.php?cultureKey=&q=proektyi/regata
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/SPB_Yacht_Club.jpg
+cover: /assets/SPB_Yacht_Club.jpg
 excerpt: Санкт-Петербургская общественная спортивная организация Яхт-клуб Санкт-Петербурга создана в 2007 году и является преемником старейшего яхт-клуба мира – Невского флота, задуманного Петром Великим в начале XVIII века.
 ---
 
