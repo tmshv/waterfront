@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: https://78.ru/news/2018-11-23/pianist_sobiraetsya_vistupit_na_plotu_proplivaya_po_kanalam_peterburga
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/Pianoonthechanel.jpg
+cover: /assets/Pianoonthechanel.jpg
 excerpt: Петербургский пианист Павел Андреев, который уже прославился своими концертами в необычных местах, собирается на этот раз устроить необычный перфоманс на воде.
 ---
 
