@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: https://vk.com/karpovkafriends
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/Друзья_Карповки.jpg
+cover: /assets/Друзья_Карповки.jpg
 excerpt: Инициативная группа местных жителей и экспертов урбанистов, нацеленная на развитие общественного пространства вокруг реки Карповки.
 ---
 
