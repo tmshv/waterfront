@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: https://vk.com/fest
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/VKFest.jpg
+cover: /assets/VKFest.jpg
 excerpt: Ежегодный фестиваль проводимый на территории парка 300-летия Санкт-Петербурга. 
 ---
 
