@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: http://www.sevcableport.ru
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/8303D987-0DA2-4264-9260-93B45CCAC5CF.jpeg
+cover: /assets/8303D987-0DA2-4264-9260-93B45CCAC5CF.jpeg
 excerpt: Новый культурный кластер на территории бывшего кабельного завода, открывшийся в 2017 году презентацией первого проекта “Waterfront".
 ---
 
