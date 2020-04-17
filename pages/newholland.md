@@ -4,7 +4,7 @@ city: Saint Petersburg
 permalink: http://www.newhollandsp.ru/information/about-the-project/
 tags:
     - feature
-cover: https://wf.tmshv.com/api/uploads/_/originals/Novaya_Gollandia.jpg
+cover: /assets/Novaya_Gollandia.jpg
 excerpt: Новая Голландия - рукотворный остров в Санкт-Петербурге, который тесно связан с военно-морской историей города. 
 ---
 
