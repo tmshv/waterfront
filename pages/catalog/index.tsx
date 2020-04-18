@@ -7,19 +7,23 @@ import { Card } from 'src/components/Card'
 import { Short } from 'src/components/Short'
 import { PageHead } from 'src/components/PageHead'
 import { withTranslation, useTranslation } from 'src/i18n'
-import { getPagesByTag } from 'src/api'
 import { PageDescription } from 'src/types'
+import { getCatalogCards } from 'src/app/catalog'
 
-interface IProps {
+export type CatalogProps = {
     pages: PageDescription[]
 }
 
-export const Page: NextPage<IProps> = props => {
+export const Page: NextPage<CatalogProps> = props => {
     const { t } = useTranslation()
     // const items = props.features.map(featureToArticle)
     const items = props.pages
     const columns = useColumns()
     const head = items[0]
+
+    // return (
+    //     <div>{JSON.stringify(props)}</div>
+    // )
 
     return (
         <Layout.Cards>
@@ -71,17 +75,8 @@ export const Page: NextPage<IProps> = props => {
     )
 }
 
-export const getStaticProps: GetStaticProps<IProps> = async ({ params }) => {
-    const pages = await getPagesByTag(['feature'], {
-        omitContent: true,
-        sort: (a, b) => {
-            if (a.year && b.year) {
-                return b.year - a.year
-            }
-
-            return -1
-        }
-    })
+export const getStaticProps: GetStaticProps<CatalogProps> = async ({ params }) => {
+    const pages = await getCatalogCards('ru')
 
     return {
         props: {

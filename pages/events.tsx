@@ -64,7 +64,7 @@ export const Page: NextPage<IProps> = props => {
 }
 
 export async function getStaticProps({ params }) {
-    const pages = await getPagesByTag(['event'], {
+    const pages = await getPagesByTag('ru', ['event'], {
         omitContent: true,
         sort: (a, b) => {
             if (a.date && b.date) {

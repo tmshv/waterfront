@@ -1,11 +1,14 @@
-import fs from 'fs'
+import { readFileSync } from 'fs'
 import { join, relative } from 'path'
 import matter from 'gray-matter'
 import { parse } from 'date-fns'
 import glob from 'glob'
-import { PageConfigProps } from './context/page'
 import { includes } from './lib/set'
 import { PageDefinition } from './types'
+
+export type Lang = 'ru' | 'en'
+const defaultLang: Lang = 'ru'
+const otherLangs: Lang[] = ['en']
 
 type SortFunction<T> = (a: T, b: T) => number
 const postsDirectory = join(process.cwd(), 'pages')
@@ -22,29 +25,45 @@ async function getFilesByPattern(pattern: string, options: any) {
     })
 }
 
-function createLangFilter(lang: string) {
+function slugHasSuffix(slug: string, suffixes: string[]): boolean {
+    for (const suffix of suffixes) {
+        if (slug.endsWith(suffix)) {
+            return true
+        }
+    }
+    return false
+}
+
+function createLangFilter(lang: Lang) {
+    if (lang === defaultLang) {
+        const langSuffixes = otherLangs.map(x => `/${x}`)
+        return (path: string) => {
+            const slug = getSlugFromPath(path)
+
+            return !slugHasSuffix(slug, langSuffixes)
+        }
+    }
+
     return (path: string) => {
         const slug = getSlugFromPath(path)
-        if (slug.startsWith(`/${lang}/`)) {
-            return false
-        }
-
-        return true
+        return slug.endsWith(`/${lang}`)
     }
 }
 
-async function getPages(lang: 'ru' | 'en') {
+async function getPages(lang: Lang) {
     const pattern = join(process.cwd(), 'pages', '**/*.md?(x)')
     const files = await getFilesByPattern(pattern, {})
+    const langFilter = createLangFilter(lang)
+    return files.filter(langFilter)
 
-    return files.filter(path => {
-        const slug = getSlugFromPath(path)
-        if (slug.endsWith('/en')) {
-            return false
-        }
+    // return files.filter(path => {
+    //     const slug = getSlugFromPath(path)
+    //     if (slug.endsWith('/en')) {
+    //         return false
+    //     }
 
-        return true
-    })
+    //     return true
+    // })
 }
 
 function getSlugFromPath(path: string) {
@@ -72,7 +91,7 @@ function getTitle(data: string) {
 async function getPage(path: string): Promise<PageDefinition> {
     // const realSlug = slug.replace(/\.md$/, '')
     // const fullPath = join(postsDirectory, `${realSlug}.md`)
-    const fileContents = fs.readFileSync(path, 'utf8')
+    const fileContents = readFileSync(path, 'utf8')
     const { data, content } = matter(fileContents)
 
     // return data['url']
@@ -105,8 +124,8 @@ type GetPagesByTagOptions<T> = {
     sort: SortFunction<T>
 }
 
-export async function getPagesByTag(tags: string[], options: GetPagesByTagOptions<PageDefinition>) {
-    const files = await getPages('ru')
+export async function getPagesByTag(lang: Lang, tags: string[], options: GetPagesByTagOptions<PageDefinition>) {
+    const files = await getPages(lang)
     const pages = await Promise.all(files.map(getPage))
     const tagsSubset = new Set(tags)
 
