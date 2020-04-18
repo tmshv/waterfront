@@ -5,7 +5,7 @@ permalink: https://vk.com/urbanroom
 tags:
     - feature
 cover: /assets/Borscheweek.jpg
-excerpt: "Urban Room" design studio in cooperation with "Kvadrat" youth center voluntarily engaged in the environmental problem of borschivka spread in the urban coastal areas.
+excerpt: «Urban Room» design studio in cooperation with "Kvadrat" youth center voluntarily engaged in the environmental problem of borschivka spread in the urban coastal areas.
 ---
 
 # BorscheWeek Project
