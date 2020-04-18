@@ -39,7 +39,7 @@ async function getPages(lang: 'ru' | 'en') {
 
     return files.filter(path => {
         const slug = getSlugFromPath(path)
-        if (slug.startsWith('/en/')) {
+        if (slug.endsWith('/en')) {
             return false
         }
 

@@ -1,5 +1,6 @@
 ---
 year: 2018
+city: Saint Petersburg
 tags:
     - feature
 cover: /assets/IMG_3643.jpg

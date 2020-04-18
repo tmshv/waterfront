@@ -1,6 +1,6 @@
 ---
 year: 2018
-city: Saint Petersburg
+city: Kaunas
 permalink: http://www.kaunodokas.lt/?lang=en
 tags:
     - feature
