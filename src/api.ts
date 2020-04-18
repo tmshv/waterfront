@@ -1,16 +1,16 @@
 import fs from 'fs'
 import { join, relative } from 'path'
 import matter from 'gray-matter'
+import { parse } from 'date-fns'
 import glob from 'glob'
+import { PageConfigProps } from './context/page'
+import { includes } from './lib/set'
+import { PageDefinition } from './types'
 
+type SortFunction<T> = (a: T, b: T) => number
 const postsDirectory = join(process.cwd(), 'pages')
 
-async function getPages() {
-    const pattern = join(process.cwd(), 'pages', '**/*.md?(x)')
-    const options = {
-
-    }
-
+async function getFilesByPattern(pattern: string, options: any) {
     return new Promise<string[]>((resolve, reject) => {
         glob(pattern, options, function (er, files: string[]) {
             if (er) {
@@ -19,6 +19,31 @@ async function getPages() {
 
             resolve(files)
         })
+    })
+}
+
+function createLangFilter(lang: string) {
+    return (path: string) => {
+        const slug = getSlugFromPath(path)
+        if (slug.startsWith(`/${lang}/`)) {
+            return false
+        }
+
+        return true
+    }
+}
+
+async function getPages(lang: 'ru' | 'en') {
+    const pattern = join(process.cwd(), 'pages', '**/*.md?(x)')
+    const files = await getFilesByPattern(pattern, {})
+
+    return files.filter(path => {
+        const slug = getSlugFromPath(path)
+        if (slug.startsWith('/en/')) {
+            return false
+        }
+
+        return true
     })
 }
 
@@ -44,7 +69,7 @@ function getTitle(data: string) {
     return null
 }
 
-async function getPage(path: string) {
+async function getPage(path: string): Promise<PageDefinition> {
     // const realSlug = slug.replace(/\.md$/, '')
     // const fullPath = join(postsDirectory, `${realSlug}.md`)
     const fileContents = fs.readFileSync(path, 'utf8')
@@ -55,9 +80,19 @@ async function getPage(path: string) {
     const title = getTitle(content)
 
     const tags: string[] = data.tags ?? []
+    const excerpt: string = data.excerpt ?? ''
+    const cover: string = data.cover ?? ''
+
+    const date = data.date ?
+        parse(data.date, 'dd.MM.yyyy', new Date())
+            .toString()
+        : null
 
     return {
         ...data,
+        date,
+        cover,
+        excerpt,
         tags,
         title,
         slug,
@@ -65,56 +100,38 @@ async function getPage(path: string) {
     }
 }
 
-type GetPagesByTagOptions = {
-    omitContent: boolean
+type GetPagesByTagOptions<T> = {
+    omitContent: boolean,
+    sort: SortFunction<T>
 }
 
-export async function getPagesByTag(tag: string, options: GetPagesByTagOptions) {
-    const files = await getPages()
+export async function getPagesByTag(tags: string[], options: GetPagesByTagOptions<PageDefinition>) {
+    const files = await getPages('ru')
     const pages = await Promise.all(files.map(getPage))
+    const tagsSubset = new Set(tags)
 
     const taggedPages = pages
         .filter(page => {
-            const tags = new Set<string>(page.tags)
+            const tags = new Set(page.tags)
 
-            return tags.has(tag)
+            return includes(tags, tagsSubset)
         })
 
     if (!options.omitContent) {
-        return taggedPages
+        return taggedPages.sort(options.sort)
     }
 
-    return taggedPages.map(x => {
-        const { content, ...page } = x
+    return taggedPages
+        .map(x => {
+            const { content, ...page } = x
 
-        return page
-    })
-    // const realSlug = slug.replace(/\.md$/, '')
-    // const fullPath = join(postsDirectory, `${realSlug}.md`)
-    // const fileContents = fs.readFileSync(fullPath, 'utf8')
-    // const { data, content } = matter(fileContents)
-
-    // const items = {}
-
-    // // Ensure only the minimal needed data is exposed
-    // fields.forEach(field => {
-    //     if (field === 'slug') {
-    //         items[field] = realSlug
-    //     }
-    //     if (field === 'content') {
-    //         items[field] = content
-    //     }
-
-    //     if (data[field]) {
-    //         items[field] = data[field]
-    //     }
-    // })
-
-    // return items
+            return page
+        })
+        .sort(options.sort)
 }
 
 export async function getAllSlugs() {
-    const files = await getPages()
+    const files = await getPages('ru')
 
     const slugs = files
         .map(getSlugFromPath)

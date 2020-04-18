@@ -2,6 +2,7 @@
 tags:
     - event
 cover: https://wf.tmshv.com/api/uploads/_/originals/_DSC0754_copy.jpg
+date: 02.02.2019
 excerpt: 2 февраля 2019
 ---
 

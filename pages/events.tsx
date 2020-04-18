@@ -1,6 +1,4 @@
 import { NextPage } from 'next'
-
-import { IEvent } from 'src/types'
 import { CardList } from 'src/components/CardList'
 import { Card } from 'src/components/Card'
 import { PageLayout } from 'src/components/PageLayout'
@@ -23,11 +21,7 @@ interface IProps {
 }
 
 export const Page: NextPage<IProps> = props => {
-    // return (
-    //     <div>{JSON.stringify(props, null, 4)}</div>
-    // )
     const columns = useColumns()
-    const head = props.pages[0]
 
     return (
         <Layout.Cards>
@@ -35,9 +29,12 @@ export const Page: NextPage<IProps> = props => {
                 wideBody={true}
                 head={(
                     <PageHead
-                        title={head.title}
-                        caption={head.excerpt}
-                        image={head.cover}
+                        // title={head.title}
+                        // caption={head.excerpt}
+                        // image={head.cover}
+                        title={'Events'}
+                        caption={'Some waterfront events'}
+                        image={'/assets/wf_about_head.jpg'}
                     />
                 )}
             >
@@ -67,8 +64,18 @@ export const Page: NextPage<IProps> = props => {
 }
 
 export async function getStaticProps({ params }) {
-    const pages = await getPagesByTag('event', {
-        omitContent: true
+    const pages = await getPagesByTag(['event'], {
+        omitContent: true,
+        sort: (a, b) => {
+            if (a.date && b.date) {
+                const ad = new Date(a.date)
+                const bd = new Date(b.date)
+
+                return bd.getTime() - ad.getTime()
+            }
+
+            return 1
+        },
     })
 
     return {

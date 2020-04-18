@@ -3,7 +3,10 @@ tags:
     - event
 cover: https://wf.tmshv.com/api/uploads/_/originals/KQUXEsgCVW8-1.jpg
 excerpt: 17 декабря 2019
+date: 17.12.2019
 ---
+
+# Презентация проекта «Sea of Orange»
 
 17 декабря в АРХКЛУБЕ пройдет презентация проекта «Sea of Orange».
 

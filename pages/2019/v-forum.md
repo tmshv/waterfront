@@ -3,6 +3,7 @@ tags:
     - event
 cover: https://wf.tmshv.com/api/uploads/_/originals/_DSC0500_copy.jpg
 excerpt: 17 апреля 2019
+date: 17.04.2019
 ---
 
 # «Waterfront / Водная линия» и V Форум пространственного развития

@@ -2,6 +2,7 @@
 tags:
     - event
 cover: /assets/_DSC9885_copy.jpg
+date: 05.10.2018
 excerpt: 5 октября 2018
 ---
 

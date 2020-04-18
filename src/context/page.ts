@@ -18,11 +18,13 @@ import { ISignal, BufferableSignal } from 'src/lib/Signal'
 export type PageConfigProps = {
     cover: string
     excerpt: string
+    tags: string[]
 }
 
 export const defaultPageConfig: PageConfigProps = {
     cover: '',
     excerpt: '',
+    tags: [],
 }
 
 export const pageSignal: ISignal<PageConfigProps> = new BufferableSignal<PageConfigProps>()

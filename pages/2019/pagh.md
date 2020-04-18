@@ -3,6 +3,7 @@ tags:
     - event
 cover: https://wf.tmshv.com/api/uploads/_/originals/Christian-Pagh_V2.jpg
 excerpt: 21 ноября 2019
+date: 21.11.2019
 ---
 
 # Открытая встреча с Кристианом Пагом — экспертом в области ко-дизайна и соучастного проектирования городской среды

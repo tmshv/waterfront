@@ -3,6 +3,7 @@ tags:
     - event
 cover: /assets/_DSC8151_copy.jpg
 excerpt: 21 сентября 2017
+date: 21.09.2017
 ---
 
 # Выставка «Waterfront / Водная линия»
