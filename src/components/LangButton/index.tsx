@@ -8,7 +8,9 @@ export interface ILangButtonProps {
 }
 
 export const LangButton: React.FC<ILangButtonProps> = props => {
-    const code = useFlagCode('ru')
+    const code = useFlagCode({
+        fallback: 'ru',
+    })
     const { i18n } = useTranslation()
     const lang = i18n.language
     const onClick = React.useCallback(() => {

@@ -1,9 +1,13 @@
-import * as React from 'react'
+import { useRef } from 'react'
 import { useLanguage } from './useLanguage'
 
-export function useFlagCode(fallback: string): string {
+export type UseFlagCodeOptions = {
+    fallback: string
+}
+
+export function useFlagCode({ fallback }: UseFlagCodeOptions): string {
     const lang = useLanguage()
-    const codeRef = React.useRef(new Map([
+    const codeRef = useRef(new Map([
         ['ru', 'ru'],
         ['en', 'gb'],
     ]))
