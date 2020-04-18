@@ -1,6 +1,6 @@
 import { mdiFacebookBox, mdiYoutube, mdiVkBox, mdiInstagram } from '@mdi/js'
 import { ISocialItem } from '../components/Social'
-import { IMenuItem } from '../components/Menu'
+import { IMenuItem } from 'src/context/menu'
 import { IRect } from 'src/lib/types'
 
 export const defaultLayout = {

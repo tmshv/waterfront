@@ -49,7 +49,6 @@ export const Navigation: React.FC<INavigationProps> = props => {
 
             <Menu
                 layout={'horizontal'}
-                items={menu}
                 style={menuStyle}
             />
 

@@ -1,22 +1,19 @@
 import { useTranslation } from 'src/i18n'
 import Link from 'next/link'
 import cx from 'classnames'
-
-export interface IMenuItem {
-    url: string
-    name: string
-}
+import { useContext } from 'react'
+import { MenuContext } from 'src/context/menu'
 
 export interface IMenuProps {
     style?: React.CSSProperties
     menuItemIconSize?: number
     menuItemMarginRight?: number
-    items: IMenuItem[]
     layout: 'horizontal' | 'vertical'
 }
 
 export const Menu: React.FC<IMenuProps> = props => {
     const { t } = useTranslation()
+    const items = useContext(MenuContext)
 
     return (
         <ul style={props.style} className={cx(props.layout)}>
@@ -60,7 +57,7 @@ export const Menu: React.FC<IMenuProps> = props => {
                 }
             `}</style>
 
-            {props.items.map(x => (
+            {items.map(x => (
                 <li
                     key={x.url}
                 >
