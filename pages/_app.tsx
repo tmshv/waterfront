@@ -1,4 +1,4 @@
-import App from 'next/app'
+import { AppProps } from 'next/app'
 import Head from 'next/head'
 // import { appWithTranslation } from 'src/i18n'
 import { MDXProvider } from '@mdx-js/react'
@@ -7,6 +7,7 @@ import { PageLayout } from 'src/components/PageLayout'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import 'src/style.css'
 import 'src/article.css'
+
 import { useContext, useEffect } from 'react'
 import { PageSignalContext, PageContext } from 'src/context/page'
 import { PageConfig } from 'src/components/PageConfig'
@@ -74,44 +75,38 @@ const components = {
     }
 }
 
-class MyApp extends App {
-    render() {
-        const { Component, pageProps } = this.props
-        const content = (
-            <PageConfig>
-                <PageLayout>
-                    <MDXProvider components={components}>
-                        {/* <article> */}
-                        <Component {...pageProps} />
-                        {/* </article> */}
-                    </MDXProvider>
-                </PageLayout>
-            </PageConfig>
-        )
+export default function MyApp({ Component, pageProps }: AppProps) {
+    const content = (
+        <PageConfig>
+            <PageLayout>
+                <MDXProvider components={components}>
+                    {/* <article> */}
+                    <Component {...pageProps} />
+                    {/* </article> */}
+                </MDXProvider>
+            </PageLayout>
+        </PageConfig>
+    )
 
-        // let content = page
-        // const isMdx = Component.hasOwnProperty('isMDXComponent') ? (Component as any).isMDXComponent : false
-        // if (isMdx) {
-        //     content = (
-        //         // head={(
-        //         //     <div>head</div>
-        //         // )}
-        //         >
-        //         { page }
-        //     )
-        // }
+    // let content = page
+    // const isMdx = Component.hasOwnProperty('isMDXComponent') ? (Component as any).isMDXComponent : false
+    // if (isMdx) {
+    //     content = (
+    //         // head={(
+    //         //     <div>head</div>
+    //         // )}
+    //         >
+    //         { page }
+    //     )
+    // }
 
-        return (
-            <>
-                <Head>
-                    <meta name={'viewport'} content={'initial-scale=1,maximum-scale=1,user-scalable=no'} />
-                </Head>
+    return (
+        <>
+            <Head>
+                <meta name={'viewport'} content={'initial-scale=1,maximum-scale=1,user-scalable=no'} />
+            </Head>
 
-                {content}
-            </>
-        )
-    }
+            {content}
+        </>
+    )
 }
-
-// export default appWithTranslation(MyApp)
-export default MyApp
