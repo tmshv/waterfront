@@ -16,14 +16,9 @@ export type CatalogProps = {
 
 export const Page: NextPage<CatalogProps> = props => {
     const { t } = useTranslation()
-    // const items = props.features.map(featureToArticle)
     const items = props.pages
     const columns = useColumns()
     const head = items[0]
-
-    // return (
-    //     <div>{JSON.stringify(props)}</div>
-    // )
 
     return (
         <Layout.Cards>
