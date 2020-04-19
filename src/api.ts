@@ -68,7 +68,9 @@ async function getPages(lang: Lang) {
 
 function getSlugFromPath(path: string) {
     const rel = relative(postsDirectory, path)
-    const realSlug = rel.replace(/\.mdx?$/, '')
+    const realSlug = rel
+        .replace(/\.mdx?$/, '')
+        .replace(/\/index$/, '')
 
     return `/${realSlug}`
 }
