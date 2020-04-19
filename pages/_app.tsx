@@ -14,6 +14,7 @@ import { PageConfig } from 'src/components/PageConfig'
 import { PageHead } from 'src/components/PageHead'
 import { Person } from 'src/components/PersonsBlock/Person'
 import { WideBlock } from 'src/components/WideBlock'
+import { LangContext } from 'src/context/lang'
 
 // const H1 = props => <h1 style={{ color: 'tomato' }} {...props} />
 const H1: React.SFC<{ children: string }> = props => {
@@ -67,7 +68,6 @@ const components = {
         const signal = useContext(PageSignalContext)
 
         useEffect(() => {
-            // console.log('Meta', props, signal)
             signal.trigger(props)
         }, [props])
 
@@ -75,17 +75,21 @@ const components = {
     }
 }
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps, router }: AppProps) {
+    const lang = router.asPath.endsWith('/en') ? 'en' : 'ru'
+
     const content = (
-        <PageConfig>
-            <PageLayout>
-                <MDXProvider components={components}>
-                    {/* <article> */}
-                    <Component {...pageProps} />
-                    {/* </article> */}
-                </MDXProvider>
-            </PageLayout>
-        </PageConfig>
+        <LangContext.Provider value={lang}>
+            <PageConfig>
+                <PageLayout>
+                    <MDXProvider components={components}>
+                        {/* <article> */}
+                        <Component {...pageProps} />
+                        {/* </article> */}
+                    </MDXProvider>
+                </PageLayout>
+            </PageConfig>
+        </LangContext.Provider>
     )
 
     // let content = page

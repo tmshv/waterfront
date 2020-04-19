@@ -1,6 +1,6 @@
-import { useTranslation } from '../i18n'
+import { useContext } from 'react'
+import { LangContext } from 'src/context/lang'
 
-export function useLanguage(): string {
-    const { i18n } = useTranslation()
-    return i18n.language
+export function useLanguage() {
+    return useContext(LangContext)
 }
