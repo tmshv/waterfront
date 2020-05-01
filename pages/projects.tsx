@@ -1,12 +1,10 @@
 import { NextPage } from 'next'
-import { getFeatures } from 'src/app/api'
 import { featureToArticle } from 'src/app/factory'
 import { AppPointFeature } from 'src/app/types'
 import { useTranslation } from 'src/hooks/useTranslation'
 import { PageLayout } from 'src/components/PageLayout'
 import { PageHead } from 'src/components/PageHead'
 import { useColumns } from 'src/hooks/useColumns'
-import { getLang } from 'src/server/lib'
 
 interface IProps {
     features: AppPointFeature[]
@@ -55,12 +53,8 @@ export const Page: NextPage<IProps> = props => {
 }
 
 Page.getInitialProps = async ctx => {
-    const lang = getLang(ctx)
-    const city = 'saint_petersburg'
-    const data = await getFeatures(lang!, city, true)
-
     return {
-        features: data,
+        features: [],
     }
 }
 
