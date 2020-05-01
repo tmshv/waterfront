@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useTranslation } from '../i18n'
+import { useTranslation } from './useTranslation'
 import { ILegend, IFeatureSettings } from '../app/types'
 import legendReducer, { LegendAction } from '../app/reducers/legendReducer'
 import { TFunction } from 'next-i18next'

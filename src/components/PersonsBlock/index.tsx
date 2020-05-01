@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Person } from './Person'
 import { IPerson } from '../../app/types'
-import { useTranslation } from '../../i18n'
+import { useTranslation } from 'src/hooks/useTranslation'
 
 interface IPersonsBlockProps {
     title: string

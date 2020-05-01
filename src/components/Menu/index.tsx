@@ -1,4 +1,4 @@
-import { useTranslation } from 'src/i18n'
+import { useTranslation } from 'src/hooks/useTranslation'
 import Link from 'next/link'
 import cx from 'classnames'
 import { useContext } from 'react'

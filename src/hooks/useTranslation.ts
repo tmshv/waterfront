@@ -1,5 +1,5 @@
 import { useContext, useRef } from 'react'
-import { LangContext } from './context/lang'
+import { LangContext } from '../context/lang'
 
 export function useTranslation() {
     const { dict } = useContext(LangContext)

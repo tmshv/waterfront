@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 import ReactSelect from 'react-select'
-import { useTranslation } from '../../i18n'
-import { useLanguage } from '../../hooks/useLanguage'
+import { useTranslation } from 'src/hooks/useTranslation'
+import { useLanguage } from 'src/hooks/useLanguage'
 
 interface ISelectProps {
     value: string

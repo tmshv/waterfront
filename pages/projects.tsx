@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import { getFeatures } from 'src/app/api'
 import { featureToArticle } from 'src/app/factory'
 import { AppPointFeature } from 'src/app/types'
-import { withTranslation, useTranslation } from 'src/i18n'
+import { useTranslation } from 'src/hooks/useTranslation'
 import { PageLayout } from 'src/components/PageLayout'
 import { PageHead } from 'src/components/PageHead'
 import { useColumns } from 'src/hooks/useColumns'
@@ -64,4 +64,4 @@ Page.getInitialProps = async ctx => {
     }
 }
 
-export default withTranslation('common')(Page as any)
+export default Page

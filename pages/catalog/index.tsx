@@ -6,7 +6,7 @@ import * as Layout from 'src/components/Layout'
 import { Card } from 'src/components/Card'
 import { Short } from 'src/components/Short'
 import { PageHead } from 'src/components/PageHead'
-import { useTranslation } from 'src/i18n'
+import { useTranslation } from 'src/hooks/useTranslation'
 import { PageDescription } from 'src/types'
 import { getCatalogCards } from 'src/app/catalog'
 
