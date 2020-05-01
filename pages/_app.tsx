@@ -15,6 +15,8 @@ import { PageHead } from 'src/components/PageHead'
 import { Person } from 'src/components/PersonsBlock/Person'
 import { WideBlock } from 'src/components/WideBlock'
 import { LangContext } from 'src/context/lang'
+import ru from 'src/ru.json'
+import en from 'src/en.json'
 
 // const H1 = props => <h1 style={{ color: 'tomato' }} {...props} />
 const H1: React.SFC<{ children: string }> = props => {
@@ -77,7 +79,7 @@ const components = {
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
     const lang = router.asPath.endsWith('/en') ? 'en' : 'ru'
-    const dict = require(`../public/static/locales/${lang}/common.json`)
+    const dict = { en, ru }[lang]
 
     const content = (
         <LangContext.Provider value={{

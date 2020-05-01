@@ -1,0 +1,35 @@
+{
+    "art_intervention": "Art Intervention",
+    "urban_intervention": "Urban Intervention",
+    "installation": "Installation",
+    "public_research": "Public Research",
+    "private_research": "Private Research",
+    "academic_research": "Academic Research",
+    "private_project": "Private Project",
+    "public_project": "Public Project",
+    "academic_project": "Academic Project",
+    "complex": "Complex",
+    "scientist": "Scientists",
+    "artist": "Artists",
+    "developer": "Developers",
+    "authority": "Authorities",
+    "designer": "Designers",
+    "activist": "Activists",
+
+    "Saint Petersburg": "Saint Petersburg",
+    "Stockholm": "Stockholm",
+    "Oslo": "Oslo",
+
+    "Actor Type": "Actor Type",
+    "Project Type": "Project Type",
+
+    "contacts": "contacts",
+    "Team": "Team",
+    "Partners": "Partners",
+    "Experts": "Experts",
+    "Map": "Map",
+    "About": "About",
+    "Projects": "Projects",
+    "Catalog": "Catalog",
+    "Events": "Events"
+}
