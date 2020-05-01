@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { NextPage } from 'next'
 
-import { withTranslation } from '../src/i18n'
-
 interface IProps {
     namespacesRequired: string[]
     statusCode: number
@@ -33,4 +31,4 @@ Page.getInitialProps = async ({ res, err }) => {
     }
 }
 
-export default withTranslation('common')(Page as any)
+export default Page

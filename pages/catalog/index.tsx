@@ -6,7 +6,7 @@ import * as Layout from 'src/components/Layout'
 import { Card } from 'src/components/Card'
 import { Short } from 'src/components/Short'
 import { PageHead } from 'src/components/PageHead'
-import { withTranslation, useTranslation } from 'src/i18n'
+import { useTranslation } from 'src/i18n'
 import { PageDescription } from 'src/types'
 import { getCatalogCards } from 'src/app/catalog'
 
@@ -80,5 +80,4 @@ export const getStaticProps: GetStaticProps<CatalogProps> = async ({ params }) =
     }
 }
 
-// export default withTranslation('common')(Page as any)
 export default Page

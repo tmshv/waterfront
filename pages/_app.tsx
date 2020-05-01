@@ -77,9 +77,13 @@ const components = {
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
     const lang = router.asPath.endsWith('/en') ? 'en' : 'ru'
+    const dict = require(`../public/static/locales/${lang}/common.json`)
 
     const content = (
-        <LangContext.Provider value={lang}>
+        <LangContext.Provider value={{
+            lang,
+            dict,
+        }}>
             <PageConfig>
                 <PageLayout>
                     <MDXProvider components={components}>

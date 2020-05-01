@@ -1,4 +1,14 @@
 import { createContext } from 'react'
 import { Lang } from 'src/api'
 
-export const LangContext = createContext<Lang>('ru')
+export type LangContextType = {
+    lang: Lang,
+    dict: {
+        [name: string]: string
+    }
+}
+
+export const LangContext = createContext<LangContextType>({
+    lang: 'ru',
+    dict: {},
+})

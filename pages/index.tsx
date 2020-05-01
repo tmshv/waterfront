@@ -8,7 +8,6 @@ import { MapGL } from 'src/components/MapGL'
 import { MapLegend } from 'src/components/MapLegend'
 import { getFeatureSettings } from 'src/app/api'
 import { isLayerVisible } from 'src/app/map'
-import { withTranslation } from 'src/i18n'
 import { IFeatureSettings, IFeatureProperties } from 'src/app/types'
 import { useLegend } from 'src/hooks/useLegend'
 import { createColorMap } from 'src/app/featureSettings'
@@ -178,4 +177,4 @@ Index.getInitialProps = async () => {
     }
 }
 
-export default withTranslation('common')(Index as any)
+export default Index 

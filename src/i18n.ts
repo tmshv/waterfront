@@ -1,32 +1,17 @@
-import NextI18Next from 'next-i18next'
+import { useContext, useRef } from 'react'
+import { LangContext } from './context/lang'
 
-const instance = new NextI18Next({
-    defaultLanguage: 'ru',
-    otherLanguages: ['en'],
+export function useTranslation() {
+    const { dict } = useContext(LangContext)
+    const ref = useRef({
+        t: (value: string) => {
+            if (value in dict) {
+                return dict[value]
+            }
 
-    // defaultLanguage: 'en',
-    // otherLanguages: ['ru']
+            return value
+        }
+    })
 
-    defaultNS:	'common',
-    browserLanguageDetection: true,
-    serverLanguageDetection: true,
-    // defaultLanguage	'en'
-    // ignoreRoutes['/_next/', '/static/']
-    // otherLanguages(required)	[]
-    // localeExtension	'json'
-    // localePath	'static/locales'
-    // localeStructure	'{{lng}}/{{ns}}'
-    // localeSubpaths	{}
-    // strictMode	true
-    // use(for plugins) []
-    // customDetectors[]
-})
-
-export default instance
-
-export const {
-    appWithTranslation,
-    withTranslation,
-    useTranslation,
-    i18n,
-} = instance
+    return ref.current
+}
