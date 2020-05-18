@@ -4,6 +4,7 @@ import { Menu } from '../Menu'
 import { Social } from '../Social'
 import { social, menu } from '../../app/const'
 import { useMemo } from 'react'
+import LangButton from '../LangButton'
 
 export interface INavigationProps {
     style?: React.CSSProperties
@@ -22,7 +23,7 @@ export const Navigation: React.FC<INavigationProps> = props => {
 
     const socialStyle = useMemo(() => props.layout === 'horizontal'
         ? {
-            marginRight: 0,
+            marginRight: 20,
         } : {
             marginBottom: 20,
         },
@@ -58,6 +59,8 @@ export const Navigation: React.FC<INavigationProps> = props => {
                 layout={'horizontal'}
                 style={socialStyle}
             />
+
+            <LangButton />
         </div>
     )
 }
