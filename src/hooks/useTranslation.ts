@@ -1,9 +1,10 @@
-import { useContext, useRef } from 'react'
+import { useContext } from 'react'
 import { LangContext } from '../context/lang'
 
 export function useTranslation() {
     const { dict } = useContext(LangContext)
-    const ref = useRef({
+
+    return {
         t: (value: string) => {
             if (value in dict) {
                 return dict[value]
@@ -11,7 +12,5 @@ export function useTranslation() {
 
             return value
         }
-    })
-
-    return ref.current
+    }
 }
