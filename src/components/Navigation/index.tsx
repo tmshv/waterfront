@@ -1,10 +1,13 @@
 import cx from 'classnames'
-
+import dynamic from 'next/dynamic'
 import { Menu } from '../Menu'
 import { Social } from '../Social'
 import { social, menu } from '../../app/const'
 import { useMemo } from 'react'
-import LangButton from '../LangButton'
+
+const LangButton = dynamic(() => import('../LangButton'), {
+    ssr: false,
+})
 
 export interface INavigationProps {
     style?: React.CSSProperties
