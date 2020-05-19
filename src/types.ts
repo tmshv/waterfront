@@ -1,18 +1,6 @@
 import { ViewState } from 'react-map-gl'
 import { PageConfigProps } from './context/page'
 
-export interface IEvent {
-    id: number
-    slug: string
-    eventUrl: string
-    content: string
-    short: string
-    name: string
-    imageId: number
-    date: Date
-    href: string
-}
-
 export interface ICity {
     key: string
     title: string
