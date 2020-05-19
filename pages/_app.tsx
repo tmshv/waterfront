@@ -36,6 +36,7 @@ const H1: React.SFC<{ children: string }> = props => {
 }
 
 type PersonData = {
+    shape?: string
     name: string
     image: string
     children: React.ReactNode
@@ -50,6 +51,7 @@ const components = {
     h1: H1,
     Person: (props: PersonData) => (
         <Person
+            shape={props.shape ?? 'default'}
             item={{
                 name: props.name,
                 content: '',
