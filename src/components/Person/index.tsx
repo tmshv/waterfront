@@ -1,6 +1,6 @@
 import s from './person.module.css'
 
-import { IPerson } from '../../app/types'
+import { IPerson } from '@/app/types'
 import { memo } from 'react'
 import cx from 'classnames'
 
