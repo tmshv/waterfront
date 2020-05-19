@@ -12,7 +12,7 @@ import { useContext, useEffect } from 'react'
 import { PageSignalContext, PageContext } from 'src/context/page'
 import { PageConfig } from 'src/components/PageConfig'
 import { PageHead } from 'src/components/PageHead'
-import { Person } from 'src/components/PersonsBlock/Person'
+import { Person } from 'src/components/Person'
 import { WideBlock } from 'src/components/WideBlock'
 import { LangContext } from 'src/context/lang'
 import ru from 'src/ru.json'
@@ -36,6 +36,7 @@ const H1: React.SFC<{ children: string }> = props => {
 }
 
 type PersonData = {
+    shape?: string
     name: string
     image: string
     children: React.ReactNode
@@ -50,6 +51,7 @@ const components = {
     h1: H1,
     Person: (props: PersonData) => (
         <Person
+            shape={props.shape ?? 'default'}
             item={{
                 name: props.name,
                 content: '',

@@ -1,0 +1,32 @@
+.person {
+    display: flex;
+}
+
+.preview {
+    flex: 1;
+}
+
+.content {
+    flex: 3;
+
+    padding-left: 10px;
+}
+
+.content strong {
+    font-size: 1.5em;
+}
+
+.image {
+    max-width: 150px;
+    min-width: 100px;
+    width: 100%;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+}
+
+.shape_circle img {
+    border-radius: 100px;
+}
