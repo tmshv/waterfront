@@ -1,5 +1,5 @@
-import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto, AboutDto, PersonDto } from './types'
-import { IFeatureSettings, IFeatureProperties, IArticle, IPerson } from '../types'
+import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto } from './types'
+import { IFeatureSettings, IFeatureProperties } from '../types'
 import { Point, Feature } from 'geojson'
 import { cleanText } from '../../lib/text'
 
