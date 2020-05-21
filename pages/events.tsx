@@ -33,7 +33,7 @@ export const Page: NextPage<IProps> = props => {
                         // caption={head.excerpt}
                         // image={head.cover}
                         title={'Events'}
-                        caption={'Some waterfront events'}
+                        caption={'Архив событий'}
                         image={'/assets/wf_about_head.jpg'}
                     />
                 )}
