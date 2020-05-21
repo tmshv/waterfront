@@ -3,34 +3,6 @@ import { IFeatureSettings, IFeatureProperties, IArticle, IPerson } from '../type
 import { Point, Feature } from 'geojson'
 import { cleanText } from '../../lib/text'
 
-export function createAboutArticle(lang: string, about: AboutDto, previewImage: string): IArticle {
-    const name = lang === 'en'
-        ? about.name_en
-        : about.name_ru
-    const content = lang === 'en'
-        ? about.content_en
-        : about.content_ru
-
-    return {
-        ...about,
-        url: '',
-        short: '',
-        slug: '/about',
-        name,
-        previewImage,
-        body: cleanText(content),
-    }
-}
-
-export function createPersons(dto: PersonDto[]): IPerson[] {
-    return dto.map(person => ({
-        content: cleanText(person.content),
-        name: person.name,
-        previewImage: person.previewImage,
-        role: person.role,
-    }))
-}
-
 export function createFeatureSettingsList(dto: FeatureSettingsDto[]): IFeatureSettings[] {
     return dto.map(x => ({
         color: x.color,
@@ -44,12 +16,6 @@ export function createFeatureSettingsList(dto: FeatureSettingsDto[]): IFeatureSe
 
 export function createFeaturePointList(dto: FeatureCollectionDto): Feature<Point, IFeatureProperties>[] {
     return dto.features.map(createPointFeature)
-}
-
-export function createFeature(dto: FeatureCollectionDto): Feature<Point, IFeatureProperties> {
-    const feature = dto.features[0]
-
-    return createPointFeature(feature)
 }
 
 function createPointFeature(dto: FeatureDto): Feature<Point, IFeatureProperties> {

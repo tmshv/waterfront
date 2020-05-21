@@ -11,7 +11,7 @@ export interface ICardProps {
 
     href: string
     title: string
-    previewImage: string | number
+    previewImage: string
     tags: string[]
 }
 
