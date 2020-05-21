@@ -8,11 +8,12 @@
     --color-text-opposite: white;
 
     --color-back: rgb(255, 255, 255);
-    --color-back-body: hsla(196, 83%, 95%, 1);
     --color-back-footer: var(--color-brand-light);
     --color-back-header: var(--color-brand-light);
     --color-back-accent: var(--color-brand-light);
     --color-link-hover: var(--color-brand-dark);
+
+    --color-back-card: var(--color-brand-light);
 
     --size-xs: 2px;
     --size-s: 4px;
@@ -92,7 +93,6 @@ body {
 @media screen and (prefers-color-scheme: dark) {
     :root {
         --color-back: hsla(194, 100%, 21%, 1);
-        --color-back-body: hsla(194, 100%, 16%, 1);
         --color-back-header: var(--color-brand-dark);
         --color-back-footer: var(--color-brand-light);
         --color-text: white;
