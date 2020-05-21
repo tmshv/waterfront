@@ -27,7 +27,7 @@ export const Page: NextPage<CatalogProps> = props => {
                 head={(
                     <PageHead
                         title={t('Catalog')}
-                        caption={head.excerpt}
+                        caption={'Здесь можно посмотреть подборку тематически близких нам проектов и событий со всего мира, так или иначе связанных с водой'}
                         image={head.cover}
                     />
                 )}

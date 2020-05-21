@@ -66,12 +66,17 @@ export const menu: IMenuItem[] = [
 export const contacts = [
     {
         tel: '+79500237093',
-        email: 'coordinator@waterfront.tools',
+        email: 'coordinator@streetartinstitute.com',
         title: 'Полина Климовицкая, координатор проекта',
     },
     {
+        tel: '++79213951389',
+        email: 'asprrronina@gmail.com',
+        title: 'Анастасия Пронина, пресс-секретарь',
+    },
+    {
         tel: '+79817640984',
-        email: 'media@waterfront.tools',
-        title: 'Вика Григоренко, пресс-секретарь',
+        email: 'ozzzzjet@mail.ru',
+        title: 'Вика Григоренко, редактор сайта',
     }
 ]
