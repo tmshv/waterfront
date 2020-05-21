@@ -21,12 +21,34 @@ import { Select } from 'src/components/Select'
 import { AppLayout } from 'src/components/AppLayout'
 import { useMapStyle } from 'src/hooks/useMapStyle'
 
+
+function useFeatureSettings() {
+    const [x, set] = React.useState<IFeatureSettings[]>([])
+    React.useEffect(() => {
+        let mounted = true;
+
+        (async () => {
+            const featureSettings = await getFeatureSettings()
+
+            if (mounted) {
+                set(featureSettings)
+            }
+        })()
+
+        return () => {
+            mounted = false
+        }
+
+    }, [])
+    return x
+}
 interface IProps {
-    featureSettings: IFeatureSettings[]
+    // featureSettings: IFeatureSettings[]
     cities: ICity[]
 }
 
 const Index: NextPage<IProps> = props => {
+    const featureSettings = useFeatureSettings()
     const lang = useLanguage()
     const cityOptions = React.useMemo(
         () => props.cities
@@ -39,10 +61,10 @@ const Index: NextPage<IProps> = props => {
 
     const [city, setCity] = useCity(props.cities)
     const features = useFeatures(city.key)
-    const [legend, dispatchLegend] = useLegend(props.featureSettings)
+    const [legend, dispatchLegend] = useLegend(featureSettings)
     const [viewport, setViewport] = React.useState<ViewState>(city.viewport)
     const [selectedFeatureId, setSelectedFeatureId] = React.useState<string | undefined>(undefined)
-    const colorMap = createColorMap(props.featureSettings)
+    const colorMap = createColorMap(featureSettings)
 
     const key = 'BANyZrASqDKOtn6kEAe9'
     const mapStyle = useMapStyle(key)
@@ -88,7 +110,7 @@ const Index: NextPage<IProps> = props => {
         <AppLayout
             side={(
                 <>
-                   <Select
+                    <Select
                         onChange={value => {
                             setCity(value)
                         }}
@@ -140,7 +162,6 @@ const Index: NextPage<IProps> = props => {
 }
 
 Index.getInitialProps = async () => {
-    const featureSettings = await getFeatureSettings()
     const cities: ICity[] = [
         {
             key: 'saint_petersburg',
@@ -173,7 +194,6 @@ Index.getInitialProps = async () => {
 
     return {
         cities,
-        featureSettings,
     }
 }
 
