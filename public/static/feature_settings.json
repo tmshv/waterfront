@@ -1,1 +1,133 @@
-{"data":[{"id":1,"created_by":1,"created_on":"2019-04-16 10:27:44","field_target":"actor_type","color":"#F19698","field_value":"artist"},{"id":2,"created_by":1,"created_on":"2019-04-16 15:15:10","field_target":"actor_type","color":"#9898CB","field_value":"activist"},{"id":3,"created_by":1,"created_on":"2019-04-16 15:15:29","field_target":"actor_type","color":"#FACB99","field_value":"developer"},{"id":4,"created_by":1,"created_on":"2019-04-16 15:15:48","field_target":"actor_type","color":"#EDCCE3","field_value":"designer"},{"id":5,"created_by":1,"created_on":"2019-04-16 15:16:11","field_target":"actor_type","color":"#EB6568","field_value":"scientist"},{"id":6,"created_by":1,"created_on":"2019-04-16 15:16:39","field_target":"actor_type","color":"#CDE3C2","field_value":"authority"},{"id":7,"created_by":1,"created_on":"2019-04-16 15:16:57","field_target":"actor_type","color":"#996767","field_value":"complex"},{"id":8,"created_by":1,"created_on":"2019-04-16 15:40:07","field_target":"project_type","color":"#009FDB","field_value":"art_intervention"},{"id":9,"created_by":1,"created_on":"2019-04-16 15:41:07","field_target":"project_type","color":"#2F46D1","field_value":"urban_intervention"},{"id":10,"created_by":1,"created_on":"2019-04-16 15:41:25","field_target":"project_type","color":"#9F1F80","field_value":"installation"},{"id":11,"created_by":1,"created_on":"2019-04-16 15:41:42","field_target":"project_type","color":"#E44892","field_value":"public_research"},{"id":12,"created_by":1,"created_on":"2019-04-16 15:42:00","field_target":"project_type","color":"#E21D2F","field_value":"private_research"},{"id":13,"created_by":1,"created_on":"2019-04-16 15:42:16","field_target":"project_type","color":"#EC7C23","field_value":"academic_research"},{"id":14,"created_by":1,"created_on":"2019-04-16 15:42:32","field_target":"project_type","color":"#99BC36","field_value":"public_project"},{"id":15,"created_by":1,"created_on":"2019-04-16 15:42:50","field_target":"project_type","color":"#FFE800","field_value":"private_project"},{"id":16,"created_by":1,"created_on":"2019-04-16 15:43:06","field_target":"project_type","color":"#009447","field_value":"academic_project"}],"public":true}
+{
+    "data": [
+        {
+            "id": 1,
+            "created_by": 1,
+            "created_on": "2019-04-16 10:27:44",
+            "field_target": "actor_type",
+            "color": "#F19698",
+            "field_value": "artist"
+        },
+        {
+            "id": 2,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:15:10",
+            "field_target": "actor_type",
+            "color": "#9898CB",
+            "field_value": "activist"
+        },
+        {
+            "id": 3,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:15:29",
+            "field_target": "actor_type",
+            "color": "#FACB99",
+            "field_value": "developer"
+        },
+        {
+            "id": 4,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:15:48",
+            "field_target": "actor_type",
+            "color": "#EDCCE3",
+            "field_value": "designer"
+        },
+        {
+            "id": 5,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:16:11",
+            "field_target": "actor_type",
+            "color": "#EB6568",
+            "field_value": "scientist"
+        },
+        {
+            "id": 6,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:16:39",
+            "field_target": "actor_type",
+            "color": "#CDE3C2",
+            "field_value": "authority"
+        },
+        {
+            "id": 7,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:16:57",
+            "field_target": "actor_type",
+            "color": "#996767",
+            "field_value": "complex"
+        },
+        {
+            "id": 8,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:40:07",
+            "field_target": "project_type",
+            "color": "#009FDB",
+            "field_value": "art_intervention"
+        },
+        {
+            "id": 9,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:41:07",
+            "field_target": "project_type",
+            "color": "#2F46D1",
+            "field_value": "urban_intervention"
+        },
+        {
+            "id": 10,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:41:25",
+            "field_target": "project_type",
+            "color": "#9F1F80",
+            "field_value": "installation"
+        },
+        {
+            "id": 11,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:41:42",
+            "field_target": "project_type",
+            "color": "#E44892",
+            "field_value": "public_research"
+        },
+        {
+            "id": 12,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:42:00",
+            "field_target": "project_type",
+            "color": "#E21D2F",
+            "field_value": "private_research"
+        },
+        {
+            "id": 13,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:42:16",
+            "field_target": "project_type",
+            "color": "#EC7C23",
+            "field_value": "academic_research"
+        },
+        {
+            "id": 14,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:42:32",
+            "field_target": "project_type",
+            "color": "#99BC36",
+            "field_value": "public_project"
+        },
+        {
+            "id": 15,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:42:50",
+            "field_target": "project_type",
+            "color": "#FFE800",
+            "field_value": "private_project"
+        },
+        {
+            "id": 16,
+            "created_by": 1,
+            "created_on": "2019-04-16 15:43:06",
+            "field_target": "project_type",
+            "color": "#009447",
+            "field_value": "academic_project"
+        }
+    ],
+    "public": true
+}
