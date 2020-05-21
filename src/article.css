@@ -3,6 +3,15 @@ article {
     color: var(--color-text);
 }
 
+article a {
+    transition: color 200ms;
+    color: var(--color-text);
+}
+
+article a:hover {
+    color: var(--color-link-hover);
+}
+
 article p {
     width: 100%;
     line-height: 1.5em;
