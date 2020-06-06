@@ -5,10 +5,12 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: ''
+  path: pages
   label: pages
   create: all
   match: "**/*.md"
+  templates:
+  - default
 upload_dir: public/assets
 public_path: "/assets"
 front_matter_path: ''
