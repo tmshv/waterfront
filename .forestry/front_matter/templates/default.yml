@@ -1,0 +1,22 @@
+---
+label: Default
+hide_body: false
+fields:
+- type: number
+  name: year
+  label: year
+- type: text
+  name: city
+  label: city
+- type: text
+  name: permalink
+  label: permalink
+- type: list
+  name: tags
+  label: tags
+- type: file
+  name: cover
+  label: cover
+- type: textarea
+  name: excerpt
+  label: excerpt
