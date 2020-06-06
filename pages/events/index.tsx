@@ -31,7 +31,7 @@ export const Page: NextPage<IProps> = props => {
                 wideBody={true}
                 head={(
                     <PageHead
-                        title={t('events')}
+                        title={t('Events')}
                         caption={t('events_excerpt')}
                         image={'/assets/wf_about_head.jpg'}
                     />

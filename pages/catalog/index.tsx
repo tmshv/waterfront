@@ -26,7 +26,7 @@ export const Page: NextPage<CatalogProps> = props => {
                 wideBody={true}
                 head={(
                     <PageHead
-                        title={t('catalog')}
+                        title={t('Catalog')}
                         caption={t('catalog_excerpt')}
                         image={head.cover}
                     />
