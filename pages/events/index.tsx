@@ -7,6 +7,7 @@ import { PageHead } from 'src/components/PageHead'
 import * as Layout from 'src/components/Layout'
 import { useColumns } from 'src/hooks/useColumns'
 import { getPagesByTag } from 'src/api'
+import { useTranslation } from 'src/hooks/useTranslation'
 
 type PageCardData = {
     tags: string[],
@@ -21,6 +22,7 @@ interface IProps {
 }
 
 export const Page: NextPage<IProps> = props => {
+    const { t } = useTranslation()
     const columns = useColumns()
 
     return (
@@ -29,11 +31,8 @@ export const Page: NextPage<IProps> = props => {
                 wideBody={true}
                 head={(
                     <PageHead
-                        // title={head.title}
-                        // caption={head.excerpt}
-                        // image={head.cover}
-                        title={'Events'}
-                        caption={'Архив событий'}
+                        title={t('events')}
+                        caption={t('events_excerpt')}
                         image={'/assets/wf_about_head.jpg'}
                     />
                 )}

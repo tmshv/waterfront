@@ -30,6 +30,8 @@
     "Map": "Map",
     "About": "About",
     "Projects": "Projects",
-    "Catalog": "Catalog",
-    "Events": "Events"
+    "catalog": "Catalog",
+    "catalog_exceprt": "Здесь можно посмотреть подборку тематически близких нам проектов и событий со всего мира, так или иначе связанных с водой",
+    "events": "Events",
+    "events_excerpt": "Events archive"
 }
