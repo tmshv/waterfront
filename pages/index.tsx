@@ -1,56 +1,27 @@
-import * as React from 'react'
-
+import dynamic from 'next/dynamic'
 import { NextPage } from 'next'
-import { ViewState, Popup } from 'react-map-gl'
-import { Feature, Point } from 'geojson'
+import { ViewState } from 'react-map-gl'
+import { MapLegend } from '@/components/MapLegend'
+import { useLegend } from '@/hooks/useLegend'
+import { ICity } from '@/types'
+import { useCity } from '@/hooks/useCity'
+import { Select } from '@/components/Select'
+import { AppLayout } from '@/components/AppLayout'
+import { useState, useEffect, useMemo, useContext } from 'react'
+import { MapContext, defaultMapOptions } from '@/context/map'
+import { useFeatures } from '@/hooks/useFeatures'
 
-import { MapGL } from 'src/components/MapGL'
-import { MapLegend } from 'src/components/MapLegend'
-import { getFeatureSettings } from 'src/app/api'
-import { isLayerVisible } from 'src/app/map'
-import { IFeatureSettings, IFeatureProperties } from 'src/app/types'
-import { useLegend } from 'src/hooks/useLegend'
-import { createColorMap } from 'src/app/featureSettings'
-import { FeaturePreview } from 'src/components/FeaturePreview'
-import { createUrl } from 'src/app/feature'
-import { useFeatures } from 'src/hooks/useFeatures'
-import { useLanguage } from 'src/hooks/useLanguage'
-import { ICity } from 'src/types'
-import { useCity } from 'src/hooks/useCity'
-import { Select } from 'src/components/Select'
-import { AppLayout } from 'src/components/AppLayout'
-import { useMapStyle } from 'src/hooks/useMapStyle'
-
-function useFeatureSettings() {
-    const [x, set] = React.useState<IFeatureSettings[]>([])
-    React.useEffect(() => {
-        let mounted = true;
-
-        (async () => {
-            const featureSettings = await getFeatureSettings()
-
-            if (mounted) {
-                set(featureSettings)
-            }
-        })()
-
-        return () => {
-            mounted = false
-        }
-
-    }, [])
-    return x
-}
+const WaterfontMap = dynamic(import('@/components/WaterfrontMap').then(m => m.WaterfontMap), {
+    ssr: false,
+})
 
 interface IProps {
-    // featureSettings: IFeatureSettings[]
     cities: ICity[]
 }
 
-const Index: NextPage<IProps> = props => {
-    const featureSettings = useFeatureSettings()
-    const lang = useLanguage()
-    const cityOptions = React.useMemo(
+const Main: React.FC<IProps> = props => {
+    const { featureSettings } = useContext(MapContext)
+    const cityOptions = useMemo(
         () => props.cities
             .map(x => ({
                 value: x.key,
@@ -60,106 +31,48 @@ const Index: NextPage<IProps> = props => {
     )
 
     const [city, setCity] = useCity(props.cities)
-    const features = useFeatures(city.key)
     const [legend, dispatchLegend] = useLegend(featureSettings)
-    const [viewport, setViewport] = React.useState<ViewState>(city.viewport)
-    const [selectedFeatureId, setSelectedFeatureId] = React.useState<string | undefined>(undefined)
-    const colorMap = createColorMap(featureSettings)
+    const [viewport, setViewport] = useState<ViewState>(city.viewport)
+    const features = useFeatures(city.key)
 
-    const key = 'BANyZrASqDKOtn6kEAe9'
-    const mapStyle = useMapStyle(key)
-
-    React.useEffect(() => {
+    useEffect(() => {
         setViewport(city.viewport)
     }, [city])
 
-    const actorTypeBlock = legend.blocks.find(x => x.type === 'actorType')!
-    const actorTypeVisible = actorTypeBlock.items.reduce((acc, item) => {
-        acc[item.type] = isLayerVisible(item.id, legend.visible)
-
-        return acc
-    }, {})
-
-    const projectTypeBlock = legend.blocks.find(x => x.type === 'projectType')!
-    const projectTypeVisible = projectTypeBlock.items.reduce((acc, item) => {
-        acc[item.type] = isLayerVisible(item.id, legend.visible)
-
-        return acc
-    }, {})
-
-    const isFeatureVisible = (feature: Feature<Point, IFeatureProperties>) => {
-        const projectType = projectTypeVisible[feature.properties.projectType]
-        const actorType = actorTypeVisible[feature.properties.actorType]
-
-        return projectType && actorType
-    }
-
-    const selectedFeature = features.find(f => f.properties.id === selectedFeatureId)
-    const mapFeatures = features
-        .filter(isFeatureVisible)
-        .map(f => ({
-            ...f,
-            id: f.properties.id,
-            properties: {
-                color1: colorMap.get(`actor_type.${f.properties.actorType}`)!,
-                color2: colorMap.get(`project_type.${f.properties.projectType}`)!,
-            }
-        }))
-
     return (
-        <AppLayout
-            side={(
-                <>
-                    <Select
-                        onChange={value => {
-                            setCity(value)
-                        }}
-                        value={city.key}
-                        options={cityOptions}
-                    />
-                    <MapLegend
-                        data={legend}
-                        onChangeItemSelected={dispatchLegend}
-                    />
-                </>
-            )}
-        >
-            <MapGL
-                features={mapFeatures}
-                mapStyle={mapStyle}
-                viewport={viewport}
-                onChangeViewport={v => setViewport(v)}
-                onClickMap={coord => {
-                    console.log('click coord', coord)
-
-                    setSelectedFeatureId(undefined)
-                }}
-                onClickFeature={id => {
-                    setSelectedFeatureId(id)
-                }}
-            >
-                {!selectedFeature ? null : (
-                    <Popup
-                        key={`${lang}.${city}.${selectedFeature.properties.id}`}
-                        tipSize={5}
-                        anchor={'top'}
-                        longitude={selectedFeature.geometry.coordinates[0]}
-                        latitude={selectedFeature.geometry.coordinates[1]}
-                        closeOnClick={false}
-                    >
-                        <FeaturePreview
-                            href={createUrl(selectedFeature.properties.slug)}
-                            title={selectedFeature.properties.name}
-                            body={selectedFeature.properties.short}
-                            year={selectedFeature.properties.year}
-                            previewImageSrc={selectedFeature.properties.previewImage}
+        <MapContext.Provider value={defaultMapOptions}>
+            <AppLayout
+                side={(
+                    <>
+                        <Select
+                            onChange={value => {
+                                setCity(value)
+                            }}
+                            value={city.key}
+                            options={cityOptions}
                         />
-                    </Popup>
+                        <MapLegend
+                            data={legend}
+                            onChangeItemSelected={dispatchLegend}
+                        />
+                    </>
                 )}
-            </MapGL>
-        </AppLayout>
+            >
+                <WaterfontMap
+                    legend={legend}
+                    features={features}
+                    viewport={viewport}
+                    onChangeViewport={v => setViewport(v)}
+                />
+            </AppLayout>
+        </MapContext.Provider>
     )
 }
+const Index: NextPage<IProps> = props => (
+    <MapContext.Provider value={defaultMapOptions}>
+        <Main {...props} />
+    </MapContext.Provider>
+)
 
 Index.getInitialProps = async () => {
     const cities: ICity[] = [

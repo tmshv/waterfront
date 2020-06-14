@@ -1,18 +1,7 @@
-import { FeatureSettingsDto, FeatureCollectionDto, FeatureDto } from './types'
-import { IFeatureSettings, IFeatureProperties } from '../types'
+import { FeatureCollectionDto, FeatureDto } from './types'
+import { IFeatureProperties } from '../types'
 import { Point, Feature } from 'geojson'
 import { cleanText } from '../../lib/text'
-
-export function createFeatureSettingsList(dto: FeatureSettingsDto[]): IFeatureSettings[] {
-    return dto.map(x => ({
-        color: x.color,
-        createdBy: x.created_by,
-        createdOn: new Date(x.created_on),
-        fieldTarget: x.field_target,
-        fieldValue: x.field_value,
-        id: x.id,
-    }))
-}
 
 export function createFeaturePointList(dto: FeatureCollectionDto): Feature<Point, IFeatureProperties>[] {
     return dto.features.map(createPointFeature)

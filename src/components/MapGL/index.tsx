@@ -1,28 +1,18 @@
-import * as React from 'react'
-import { Feature, Point } from 'geojson'
-import ReactMapGL, { ViewState, Marker } from 'react-map-gl'
-import { SvgCircles } from './SvgCircles'
-import { IMapFeatureProperties } from './types'
+import { useCallback } from 'react'
+import ReactMapGL, { ViewState } from 'react-map-gl'
 
-type MapFeature = Feature<Point, IMapFeatureProperties>
-
+export type OnChangeViewport = (viewport: ViewState) => void
 export interface IMapGLProps {
-    features: MapFeature[]
     mapStyle: string | object
     viewport: ViewState
-    onChangeViewport: (viewport: ViewState) => void
+    onChangeViewport: OnChangeViewport
     onClickMap: (coord: [number, number]) => void
-    onClickFeature: (featureId: string) => void
 }
 
 export const MapGL: React.FC<IMapGLProps> = props => {
-    const onClick = React.useCallback(event => {
+    const onClick = useCallback(event => {
         props.onClickMap(event.lngLat)
     }, [])
-
-    const onFeatureClick = React.useCallback((id) => {
-        props.onClickFeature(id)
-    }, [props.onClickFeature])
 
     return (
         <ReactMapGL
@@ -39,7 +29,7 @@ export const MapGL: React.FC<IMapGLProps> = props => {
             // }}
             // mapboxApiAccessToken={props.mapboxToken}
             onClick={onClick}
-            // onMouseMove={props.onMouseMove}
+        // onMouseMove={props.onMouseMove}
         >
             <style global jsx>{`
                 .mapboxgl-popup-close-button {
@@ -81,31 +71,6 @@ export const MapGL: React.FC<IMapGLProps> = props => {
                     }
                 }
             `}</style>
-
-            {props.features.map((f, i) => (
-                <Marker
-                    key={i}
-                    longitude={f.geometry.coordinates[0]}
-                    latitude={f.geometry.coordinates[1]}
-                >
-                    <SvgCircles
-                        size={32}
-                        value={f.id ? `${f.id}` : undefined}
-                        onClick={onFeatureClick}
-                    >
-                        {[
-                            {
-                                size: 32,
-                                color: f.properties.color1,
-                            },
-                            {
-                                size: 16,
-                                color: f.properties.color2,
-                            },
-                        ]}
-                    </SvgCircles>
-                </Marker>
-            ))}
 
             {props.children}
         </ReactMapGL>
