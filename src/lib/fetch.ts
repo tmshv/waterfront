@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-unfetch'
-
 export async function getJson<T>(jsonUrl: string, query?: { [name: string]: any }): Promise<T> {
     const url = new URL(jsonUrl)
 
