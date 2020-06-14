@@ -19,11 +19,8 @@ export interface IPerson {
 
 export interface IFeatureSettings {
     color: string
-    createdBy: number
-    createdOn: Date
     fieldTarget: string
     fieldValue: string
-    id: number
 }
 
 export interface ILegendBlock {
