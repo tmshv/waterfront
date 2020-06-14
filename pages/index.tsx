@@ -21,7 +21,6 @@ import { Select } from 'src/components/Select'
 import { AppLayout } from 'src/components/AppLayout'
 import { useMapStyle } from 'src/hooks/useMapStyle'
 
-
 function useFeatureSettings() {
     const [x, set] = React.useState<IFeatureSettings[]>([])
     React.useEffect(() => {
@@ -42,6 +41,7 @@ function useFeatureSettings() {
     }, [])
     return x
 }
+
 interface IProps {
     // featureSettings: IFeatureSettings[]
     cities: ICity[]
