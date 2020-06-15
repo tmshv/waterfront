@@ -221,11 +221,11 @@ export async function getFeatures(lang: Lang, city: string): Promise<FeatureColl
         }
 
         const page = pd.get(slug)
+        feature.properties.id = slug
         feature.properties.excerpt = page.excerpt
         feature.properties.title = page.title
         feature.properties.cover = page.cover
         feature.properties.year = page.year
-        feature.properties.id = page.slug
     })
 
     return featureCollection
