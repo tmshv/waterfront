@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Link from 'next/link'
-import { renderMarkdown } from '../../lib'
+import { renderMarkdown } from '@/lib'
 
 export interface IFeaturePreviewProps {
     href: string

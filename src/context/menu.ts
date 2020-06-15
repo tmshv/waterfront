@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { menu } from 'src/app/const'
+import { menu } from '@/app/const'
 
 export interface IMenuItem {
     url: string

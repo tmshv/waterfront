@@ -5,7 +5,6 @@ import { isLayerVisible } from '@/app/map'
 import { IFeatureProperties, AppPointFeature, ILegend } from '@/app/types'
 import { createColorMap } from '@/app/featureSettings'
 import { FeaturePreview } from '@/components/FeaturePreview'
-import { createUrl } from '@/app/feature'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useMapStyle } from '@/hooks/useMapStyle'
 import { useContext, useState } from 'react'
@@ -54,7 +53,7 @@ export const WaterfontMap: React.FC<Props> = props => {
         .filter(isFeatureVisible)
         .map(f => ({
             ...f,
-            id: f.properties.id,
+            id: f.properties.slug,
             properties: {
                 color1: colorMap.get(`actor_type.${f.properties.actorType}`)!,
                 color2: colorMap.get(`project_type.${f.properties.projectType}`)!,
@@ -97,7 +96,7 @@ export const WaterfontMap: React.FC<Props> = props => {
             {!selectedFeature ? null : (
                 <Popup
                     // key={`${lang}.${city}.${selectedFeature.properties.id}`}
-                    key={`${lang}.${selectedFeature.properties.id}`}
+                    key={`${lang}.${selectedFeature.properties.slug}`}
                     tipSize={5}
                     anchor={'top'}
                     longitude={selectedFeature.geometry.coordinates[0]}
@@ -105,11 +104,11 @@ export const WaterfontMap: React.FC<Props> = props => {
                     closeOnClick={false}
                 >
                     <FeaturePreview
-                        href={createUrl(selectedFeature.properties.slug)}
-                        title={selectedFeature.properties.name}
-                        body={selectedFeature.properties.short}
+                        href={selectedFeature.properties.slug}
+                        title={selectedFeature.properties.title}
+                        body={selectedFeature.properties.excerpt}
                         year={selectedFeature.properties.year}
-                        previewImageSrc={selectedFeature.properties.previewImage}
+                        previewImageSrc={selectedFeature.properties.cover}
                     />
                 </Popup>
             )}

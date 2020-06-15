@@ -10,6 +10,7 @@ import { AppLayout } from '@/components/AppLayout'
 import { useState, useEffect, useMemo, useContext } from 'react'
 import { MapContext, defaultMapOptions } from '@/context/map'
 import { useFeatures } from '@/hooks/useFeatures'
+import { cities } from '@/app/const'
 
 const WaterfontMap = dynamic(import('@/components/WaterfrontMap').then(m => m.WaterfontMap), {
     ssr: false,
@@ -68,46 +69,13 @@ const Main: React.FC<IProps> = props => {
         </MapContext.Provider>
     )
 }
-const Index: NextPage<IProps> = props => (
+
+const Index: NextPage = props => (
     <MapContext.Provider value={defaultMapOptions}>
-        <Main {...props} />
+        <Main
+            cities={[...cities.values()]}
+        />
     </MapContext.Provider>
 )
-
-Index.getInitialProps = async () => {
-    const cities: ICity[] = [
-        {
-            key: 'saint_petersburg',
-            title: 'Saint Petersburg',
-            viewport: {
-                latitude: 59.932924,
-                longitude: 30.344087,
-                zoom: 11,
-            }
-        },
-        {
-            key: 'stockholm',
-            title: 'Stockholm',
-            viewport: {
-                latitude: 59.32477835068242,
-                longitude: 18.071174590117273,
-                zoom: 12,
-            }
-        },
-        {
-            key: 'oslo',
-            title: 'Oslo',
-            viewport: {
-                latitude: 59.912112881280706,
-                longitude: 10.741096809260386,
-                zoom: 12,
-            }
-        },
-    ]
-
-    return {
-        cities,
-    }
-}
 
 export default Index 

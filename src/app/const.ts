@@ -2,6 +2,7 @@ import { mdiFacebookBox, mdiYoutube, mdiVkBox, mdiInstagram } from '@mdi/js'
 import { ISocialItem } from '../components/Social'
 import { IMenuItem } from 'src/context/menu'
 import { IRect } from 'src/lib/types'
+import { ICity } from '@/types'
 
 export const defaultLayout = {
     screen: false,
@@ -80,3 +81,33 @@ export const contacts = [
         title: 'Вика Григоренко, редактор сайта',
     }
 ]
+
+export const cities = new Map<string, ICity>([
+    ['saint_petersburg', {
+        key: 'saint_petersburg',
+        title: 'Saint Petersburg',
+        viewport: {
+            latitude: 59.932924,
+            longitude: 30.344087,
+            zoom: 11,
+        }
+    }],
+    ['stockholm', {
+        key: 'stockholm',
+        title: 'Stockholm',
+        viewport: {
+            latitude: 59.32477835068242,
+            longitude: 18.071174590117273,
+            zoom: 12,
+        }
+    }],
+    ['oslo', {
+        key: 'oslo',
+        title: 'Oslo',
+        viewport: {
+            latitude: 59.912112881280706,
+            longitude: 10.741096809260386,
+            zoom: 12,
+        }
+    }]
+])
