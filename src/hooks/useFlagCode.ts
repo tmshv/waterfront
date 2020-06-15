@@ -1,5 +1,9 @@
-import { useRef } from 'react'
 import { useLanguage } from './useLanguage'
+
+const code = new Map([
+    ['ru', 'ru'],
+    ['en', 'gb'],
+])
 
 export type UseFlagCodeOptions = {
     fallback: string
@@ -7,11 +11,7 @@ export type UseFlagCodeOptions = {
 
 export function useFlagCode({ fallback }: UseFlagCodeOptions): string {
     const lang = useLanguage()
-    const codeRef = useRef(new Map([
-        ['ru', 'ru'],
-        ['en', 'gb'],
-    ]))
-    const value = codeRef.current.get(lang)
+    const value = code.get(lang)
 
     return value ? value : fallback
 }
