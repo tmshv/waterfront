@@ -169,7 +169,7 @@
         {
             "type": "Feature",
             "properties": {
-                "slug": "/man-made-island-of-new-holland",
+                "slug": "/newholland",
                 "actorType": "developer",
                 "projectType": "private_project"
             },
