@@ -104,7 +104,7 @@ export const WaterfontMap: React.FC<Props> = props => {
                     closeOnClick={false}
                 >
                     <FeaturePreview
-                        href={selectedFeature.properties.slug}
+                        href={selectedFeature.properties.href}
                         title={selectedFeature.properties.title}
                         body={selectedFeature.properties.excerpt}
                         year={selectedFeature.properties.year}

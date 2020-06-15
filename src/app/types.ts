@@ -45,6 +45,7 @@ export interface ILegendItem {
 
 export interface IFeatureProperties {
     id: string
+    href: string
     actorType: string
     city: string
     title: string

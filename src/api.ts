@@ -7,6 +7,7 @@ import glob from 'glob'
 import { includes } from './lib/set'
 import { PageDefinition, ICity } from './types'
 import { FeatureCollection } from 'geojson'
+import { changeLangPathSuffix } from './lib/lang'
 
 const exists = promisify(fs.exists)
 const readFile = promisify(fs.readFile)
@@ -222,6 +223,7 @@ export async function getFeatures(lang: Lang, city: string): Promise<FeatureColl
 
         const page = pd.get(slug)
         feature.properties.id = slug
+        feature.properties.href = changeLangPathSuffix(lang, slug)
         feature.properties.excerpt = page.excerpt
         feature.properties.title = page.title
         feature.properties.cover = page.cover
