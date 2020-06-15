@@ -6,19 +6,8 @@ excerpt: 21 November 2019
 date: 21.11.2019
 ---
 
-# Открытая встреча с Кристианом Пагом — экспертом в области ко-дизайна и соучастного проектирования городской среды
+# Open meeting with Christian Pugh, an expert in co-design and participatory urban planning
 
-21 ноября в Петербурге пройдет лекция Кристиана Пага. Кристиан — сооснователь и креативный директор компании Urgent. Agency (Копенгаген, Осло), принципы работы которой сочетают в себе теорию и практику градостроительства и архитектурного проектирования. В своей лекции «Urgent placemaking — общественное строительство и создание городских ценностей» Кристиан объяснит, что такое плэйсмейкинг и какое значение эта практика имеет для развития комфортной городской среды, расскажет, почему в сфере планирования и архитектуры особенно важно совмещать практический и гуманитарный подходы, и поделится своими размышлениями о практике городского планирования в свете повседневной культуры и социальной синергии.
+On November 21, a lecture by Christian Pagh was held at the HSE School of Design in Saint Petersburg. Christian is the co-founder and creative Director of Urgent. Agency (Copenhagen, Oslo), which combines the theory and practice of urban planning and architectural design. In his lecture "Urgent placemaking — public construction and creation of urban values", Christian explained what placemaking is and what significance this practice has for the development of a comfortable urban environment. He also explained why it is especially important to combine practical and humanitarian approaches in the field of planning and architecture, and shared his thoughts on the practice of urban planning in the light of everyday culture and social synergy.
 
-Как архитектура объединяет людей? Почему те или иные пространства становятся значимыми для нас? Это одни из немногих вопросов, на которые постарается ответить Кристиан.
-
-Регистрация на [событие по ссылке](http://bit.ly/34NvizY)
-
-Лекция пройдет в формате открытой дискуссии. Это означает, что даже если что-то останется непонятным, у гостей встречи будет возможность задать дополнительные вопросы и принять участие в обсуждении выдвинутых Кристианом идей.
-
-Язык лекции — английский с последовательным переводом на русский.
-
-Когда: 21 ноября, 19.00  
-Где: Корпус НИУ ВШЭ на канале Грибоедова (набережная канала Грибоедова, 123, аудитория 401, 4 этаж).
-
-**ВАЖНО!** При себе необходимо иметь удостоверение личности! Это нужно для того, чтобы попасть на территорию НИУ ВШЭ.
+How does architecture bring people together? Why do certain spaces become important to us? These questions formed the basis of Christian's lecture.
