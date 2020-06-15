@@ -21,7 +21,7 @@
             "properties": {
                 "slug": "/stockholm-waterfront-congress-centre",
                 "actorType": "developer",
-                "projectType": "private_project",
+                "projectType": "private_project"
             },
             "geometry": {
                 "type": "Point",
