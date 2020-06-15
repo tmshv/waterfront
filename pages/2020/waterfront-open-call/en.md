@@ -20,7 +20,8 @@ of citizens to the problem of using embankments and the development of urban coa
 **Implementation:** August 2020 — July 2021 (depends on the epidemiological situation).
 
 **Who can apply:** individual authors and / or creative groups working with different forms of artistic practices*.
-Geography of participants: North-Western region of the Russian Federation (Saint Petersburg, Leningrad, Arkhangelsk, 
+
+**Participants'geography:** North-Western region of the Russian Federation (Saint Petersburg, Leningrad, Arkhangelsk, 
 Murmansk regions, Republic of Karelia). We also welcome representatives of the Nordic countries (Denmark, Iceland, Norway, 
 Finland and Sweden). 
 
@@ -43,7 +44,7 @@ architecture, art history, sociology, ecology, art management, consultants for t
 as well as of active participants in the previous stages of the project.
 
 **What kind of projects do we expect? In order to facilitate the tasks of applicants, we offer several specific 
-areas (nominations), so the applicants can choose one or more of them:
+areas (nominations), so the applicants can choose one or more of them:**
 
 **1. Universal design solution (replicable and scalable) that solves a specific task: to mark the location of a city 
 either lost or existing boat station or recreation areas near the water. The information pointer method must be original 
@@ -121,4 +122,5 @@ taking into account the conditions and challenges that we have faced in 2019 / 2
 File format support: pdf, doc, jpeg; links to video in youtube or vimeo
 
 **How to apply:** send an email to waterfront.tools@gmail.com
+
 **Application submission ends on July 15, 2020 at 23: 59 Moscow time.**
