@@ -1,5 +1,4 @@
 import { NextPage } from 'next'
-import { featureToArticle } from 'src/app/factory'
 import { AppPointFeature } from 'src/app/types'
 import { useTranslation } from 'src/hooks/useTranslation'
 import { PageLayout } from 'src/components/PageLayout'
@@ -11,7 +10,6 @@ interface IProps {
 }
 
 export const Page: NextPage<IProps> = props => {
-    const articleCards = props.features.map(featureToArticle)
     const { t } = useTranslation()
     const columns = useColumns()
 
