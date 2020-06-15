@@ -47,10 +47,10 @@ export interface IFeatureProperties {
     id: string
     actorType: string
     city: string
-    name: string
-    previewImage: string
+    title: string
+    cover: string
     projectType: string
-    short: string
+    excerpt: string
     slug: string
     year: number
     content?: string

@@ -1,10 +1,15 @@
-import { readFileSync } from 'fs'
+import * as fs from 'fs'
+import { promisify } from 'util'
 import { join, relative } from 'path'
 import matter from 'gray-matter'
 import { parse } from 'date-fns'
 import glob from 'glob'
 import { includes } from './lib/set'
-import { PageDefinition } from './types'
+import { PageDefinition, ICity } from './types'
+import { FeatureCollection } from 'geojson'
+
+const exists = promisify(fs.exists)
+const readFile = promisify(fs.readFile)
 
 export type Lang = 'ru' | 'en'
 const defaultLang: Lang = 'ru'
@@ -12,6 +17,31 @@ const otherLangs: Lang[] = ['en']
 
 type SortFunction<T> = (a: T, b: T) => number
 const postsDirectory = join(process.cwd(), 'pages')
+
+const cityLabels = new Map([
+    ['saint_petersburg', 'Saint Petersburg'],
+    ['oslo', 'Oslo'],
+    ['stockholm', 'Stockholm'],
+    ['kaunas', 'Kaunas'],
+])
+
+function getLangAgnosticSlug(slug: string): string {
+    return slug.replace(/\/en$/, '')
+}
+
+async function readJson<T>(filename: string): Promise<T | null> {
+    const e = await exists(filename)
+    if (!e) {
+        return null
+    }
+
+    try {
+        const data = await readFile(filename, 'utf8')
+        return JSON.parse(data)
+    } catch (error) {
+        return null
+    }
+}
 
 async function getFilesByPattern(pattern: string, options: any) {
     return new Promise<string[]>((resolve, reject) => {
@@ -93,7 +123,7 @@ function getTitle(data: string) {
 async function getPage(path: string): Promise<PageDefinition> {
     // const realSlug = slug.replace(/\.md$/, '')
     // const fullPath = join(postsDirectory, `${realSlug}.md`)
-    const fileContents = readFileSync(path, 'utf8')
+    const fileContents = await readFile(path, 'utf8')
     const { data, content } = matter(fileContents)
 
     // return data['url']
@@ -158,4 +188,45 @@ export async function getAllSlugs() {
         .map(getSlugFromPath)
 
     return slugs
+}
+
+export async function getFeatures(lang: Lang, city: string): Promise<FeatureCollection | null> {
+    // Find a geojson file of city
+    const filename = join(process.cwd(), 'public/static', `${city}.geojson`)
+    const featureCollection = await readJson<FeatureCollection>(filename)
+    if (!featureCollection) {
+        return null
+    }
+
+    // Populate it with data from pages
+    const pages = await getPagesByTag(lang, ['feature'], {
+        omitContent: true,
+        sort: (a, b) => 0,
+    })
+    const pd = pages.reduce((pd, page) => {
+        const slug = getLangAgnosticSlug(page.slug)
+        return pd.set(slug, page)
+    }, new Map<string, any>())
+
+    const cityLabel = cityLabels.get(city)
+
+    featureCollection.features.forEach(feature => {
+        if (!feature.properties) {
+            feature.properties = {}
+        }
+
+        const slug = feature.properties.slug
+        if (!pd.has(slug)) {
+            return
+        }
+
+        const page = pd.get(slug)
+        feature.properties.excerpt = page.excerpt
+        feature.properties.title = page.title
+        feature.properties.cover = page.cover
+        feature.properties.year = page.year
+        feature.properties.id = page.slug
+    })
+
+    return featureCollection
 }

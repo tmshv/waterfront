@@ -3,5 +3,5 @@ const withMDX = require('./next-mdx-plugin')({
 })
 
 module.exports = withMDX({
-    pageExtensions: ['tsx', 'md', 'mdx'],
+    pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 })
