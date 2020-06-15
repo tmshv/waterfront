@@ -29,7 +29,7 @@ export const AppLayout: React.FC<IAppLayoutProps> = props => {
                             top: 0;
                             left: 0;
                             max-width: 300px;
-                            min-width: 200px;
+                            min-width: 270px;
                             width: 30%;
 
                             padding: 10px;
