@@ -2,7 +2,9 @@ import { useTranslation } from 'src/hooks/useTranslation'
 import Link from 'next/link'
 import cx from 'classnames'
 import { useContext } from 'react'
-import { MenuContext } from 'src/context/menu'
+import { MenuContext } from '@/context/menu'
+import { useLanguage } from '@/hooks/useLanguage'
+import { changeLangPathSuffix } from '@/lib/lang'
 
 export interface IMenuProps {
     style?: React.CSSProperties
@@ -13,7 +15,13 @@ export interface IMenuProps {
 
 export const Menu: React.FC<IMenuProps> = props => {
     const { t } = useTranslation()
+    const lang = useLanguage()
     const items = useContext(MenuContext)
+
+    const xs = items.map(item => ({
+        href: changeLangPathSuffix(lang, item.url),
+        label: t(item.name),
+    }))
 
     return (
         <ul style={props.style} className={cx(props.layout)}>
@@ -57,15 +65,15 @@ export const Menu: React.FC<IMenuProps> = props => {
                 }
             `}</style>
 
-            {items.map(x => (
+            {xs.map(x => (
                 <li
-                    key={x.url}
+                    key={x.href}
                 >
                     <Link
-                        href={x.url}
+                        href={x.href}
                     >
                         <a>
-                            <span>{t(x.name)}</span>
+                            <span>{x.label}</span>
                         </a>
                     </Link>
                 </li>
