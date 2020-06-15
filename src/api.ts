@@ -192,7 +192,7 @@ export async function getAllSlugs() {
 
 export async function getFeatures(lang: Lang, city: string): Promise<FeatureCollection | null> {
     // Find a geojson file of city
-    const filename = join(process.cwd(), 'public/static', `${city}.geojson`)
+    const filename = join(process.cwd(), 'src', `${city}.geojson`)
     const featureCollection = await readJson<FeatureCollection>(filename)
     if (!featureCollection) {
         return null
