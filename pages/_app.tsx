@@ -18,11 +18,18 @@ import { LangContext } from 'src/context/lang'
 import ru from 'src/ru.json'
 import en from 'src/en.json'
 
-const Opengraph: React.SFC = props => {
+type OpengraphProps = {
+    url: string
+}
+
+const Opengraph: React.SFC<OpengraphProps> = props => {
     const config = useContext(PageContext)
     if (!config.title) {
         return null
     }
+
+    const url = `https://waterfront.tools${props.url}`
+    const image = `https://waterfront.tools${config.cover}`
 
     return (
         <Head>
@@ -33,15 +40,15 @@ const Opengraph: React.SFC = props => {
             {/* Schema.org for Google */}
             <meta itemProp="name" content={config.title} />
             <meta itemProp="description" content={config.excerpt} />
-            <meta itemProp="image" content={config.cover} />
+            <meta itemProp="image" content={image} />
 
             {/* Open Graph general (Facebook, Pinterest & Google+) */}
             <meta property="og:title" content={config.title} />
             <meta property="og:description" content={config.excerpt} />
-            <meta property="og:image" content={config.cover} />
+            <meta property="og:image" content={image} />
             {/* <meta property="og:image:width" content={config.imageWidth.toString()} /> */}
             {/* <meta property="og:image:height" content={config.imageHeight.toString()} /> */}
-            {/* <meta property="og:url" content={config.url} /> */}
+            <meta property="og:url" content={url} />
             {/* <meta property="og:site_name" content={config.siteName} /> */}
             {/* <meta property="og:locale" content={config.locale} /> */}
             {/* <meta property="og:type" content={config.type} /> */}
@@ -130,7 +137,9 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
             dict,
         }}>
             <PageConfig>
-                <Opengraph />
+                <Opengraph
+                    url={router.asPath}
+                />
                 <PageLayout>
                     <MDXProvider components={components}>
                         {/* <article> */}
