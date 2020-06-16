@@ -1,5 +1,19 @@
 const fm = require('front-matter')
 
+function findTitle(md) {
+    const lines = md.split('\n')
+    for (const line of lines) {
+        const m = /^#\s?(.*)$/.exec(line)
+        if (!m) {
+            continue
+        }
+
+        const title = m[1]
+        return title
+    }
+    return null
+}
+
 function createMeta(values) {
     const kv = []
     for (const [key, value] of Object.entries(values)) {
@@ -19,7 +33,10 @@ module.exports = async function (content) {
     //     attributes.push(`export const ${key} = ${JSON.stringify(value)}`)
     // }
 
-    const meta = createMeta(output.attributes)
+    const meta = createMeta({
+        title: findTitle(output.body),
+        ...output.attributes,
+    })
     const results = `${meta}\n\n${output.body}\n`
 
     // const results = `${output.body}\n\n${attributes.join('\n\n')}\n`
