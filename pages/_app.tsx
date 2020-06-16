@@ -18,6 +18,52 @@ import { LangContext } from 'src/context/lang'
 import ru from 'src/ru.json'
 import en from 'src/en.json'
 
+const Opengraph: React.SFC = props => {
+    const config = useContext(PageContext)
+
+    useEffect(() => {
+        console.log('og effect', config)
+    })
+
+    // title={props.children}
+    // caption={config.excerpt}
+    // image={config.cover}
+
+    return (
+        <Head>
+            {/* Search Engine */}
+            <meta name="description" content={config.excerpt} />
+            <meta name="image" content={config.cover} />
+
+            {/* Schema.org for Google */}
+            <meta itemProp="name" content={config.title} />
+            <meta itemProp="description" content={config.excerpt} />
+            <meta itemProp="image" content={config.cover} />
+
+            {/* Open Graph general (Facebook, Pinterest & Google+) */}
+            <meta property="og:title" content={config.title} />
+            <meta property="og:description" content={config.excerpt} />
+            <meta property="og:image" content={config.cover} />
+            {/* <meta property="og:image:width" content={config.imageWidth.toString()} /> */}
+            {/* <meta property="og:image:height" content={config.imageHeight.toString()} /> */}
+            {/* <meta property="og:url" content={config.url} /> */}
+            {/* <meta property="og:site_name" content={config.siteName} /> */}
+            {/* <meta property="og:locale" content={config.locale} /> */}
+            {/* <meta property="og:type" content={config.type} /> */}
+
+            {/* Twitter */}
+            {/* <meta name="twitter:card" content={config.twitterCard} /> */}
+            {/* <meta name="twitter:title" content={config.title} /> */}
+            {/* <meta name="twitter:description" content={config.excerpt} /> */}
+            {/* <meta name="twitter:image:src" content={config.image} /> */}
+            {/* <meta name="twitter:domain" content={config.domain} /> */}
+            {/* <meta name="twitter:url" content={config.url} /> */}
+            {/* <meta name="twitter:site" content={config.twitterSite} /> */}
+            {/* <meta name="twitter:creator" content={config.twitterCreator} /> */}
+        </Head>
+    )
+}
+
 // const H1 = props => <h1 style={{ color: 'tomato' }} {...props} />
 const H1: React.SFC<{ children: string }> = props => {
     const config = useContext(PageContext)
@@ -89,6 +135,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
             dict,
         }}>
             <PageConfig>
+                <Opengraph />
                 <PageLayout>
                     <MDXProvider components={components}>
                         {/* <article> */}
