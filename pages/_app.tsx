@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { PageLayout } from 'src/components/PageLayout'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
+import 'flag-icon-css/css/flag-icon.min.css'
 import 'src/style.css'
 import 'src/article.css'
 
