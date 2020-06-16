@@ -1,4 +1,4 @@
-import s from './styles.module.css'
+import s from './button.module.css'
 
 import { useFlagCode } from 'src/hooks/useFlagCode'
 import cx from 'classnames'
