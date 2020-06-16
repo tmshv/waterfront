@@ -1,7 +1,10 @@
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.ANALYZE === 'true',
+})
 const withMDX = require('./next-mdx-plugin')({
     extension: /\.mdx?$/
 })
 
-module.exports = withMDX({
+module.exports = withBundleAnalyzer(withMDX({
     pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
-})
+}))
