@@ -16,7 +16,7 @@ import { ISignal, BufferableSignal } from 'src/lib/Signal'
 // }
 
 export type PageConfigProps = {
-    title: string
+    title: string | null
     cover: string
     excerpt: string
     tags: string[]
