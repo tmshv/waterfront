@@ -21,9 +21,6 @@ import en from 'src/en.json'
 const Opengraph: React.SFC = props => {
     const config = useContext(PageContext)
 
-    useEffect(() => {
-        console.log('og effect', config)
-    })
 
     // title={props.children}
     // caption={config.excerpt}
