@@ -1,7 +1,7 @@
 import s from './styles.module.css'
 
-import Flag from 'react-world-flags'
 import { useFlagCode } from 'src/hooks/useFlagCode'
+import cx from 'classnames'
 import Link from 'next/link'
 import { useOtherLangHref } from 'src/hooks/useOtherLangHref'
 
@@ -17,12 +17,7 @@ export const LangButton: React.FC<ILangButtonProps> = props => {
 
     return (
         <Link href={otherLink}>
-            <a className={s.button}>
-                <Flag
-                    code={code}
-                    height={18}
-                />
-            </a>
+            <a className={cx(s.button, 'flag-icon-background', `flag-icon-${code}`)} />
         </Link>
     )
 }

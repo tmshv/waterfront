@@ -20,6 +20,7 @@
         "@rehooks/local-storage": "^1.7.0",
         "classnames": "^2.2.6",
         "date-fns": "^2.14.0",
+        "flag-icon-css": "^3.5.0",
         "geojson": "^0.5.0",
         "glob": "^7.1.6",
         "gray-matter": "^4.0.2",
