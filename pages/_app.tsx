@@ -35,7 +35,7 @@ const Opengraph: React.SFC<OpengraphProps> = props => {
         <Head>
             {/* Search Engine */}
             <meta name="description" content={config.excerpt} />
-            <meta name="image" content={config.cover} />
+            <meta name="image" content={image} />
 
             {/* Schema.org for Google */}
             <meta itemProp="name" content={config.title} />
