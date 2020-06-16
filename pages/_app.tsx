@@ -20,11 +20,9 @@ import en from 'src/en.json'
 
 const Opengraph: React.SFC = props => {
     const config = useContext(PageContext)
-
-
-    // title={props.children}
-    // caption={config.excerpt}
-    // image={config.cover}
+    if (!config.title) {
+        return null
+    }
 
     return (
         <Head>
