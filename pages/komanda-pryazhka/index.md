@@ -2,7 +2,7 @@
 year: 2019
 city: Saint Petersburg
 tags:
-    - feature
+    - project
 cover: /assets/_MG_8928.jpg
 excerpt: >
      Команда Пряжки проводила свои исследования в историческом центре Санкт-Петербурга. Объектом их изучения стала река 

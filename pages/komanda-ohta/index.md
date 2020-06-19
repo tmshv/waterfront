@@ -2,7 +2,7 @@
 year: 2019
 city: Saint Petersburg
 tags:
-    - feature
+    - project
 cover: /assets/DJI_0390.JPG
 excerpt: >
      Команда Охты взялась за исследование одноименной реки, протекающей на северо-востоке Санкт-Петербурга. Одной из 

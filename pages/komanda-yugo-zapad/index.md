@@ -2,7 +2,7 @@
 year: 2019
 city: Saint Petersburg
 tags:
-    - feature
+    - project
 cover: /assets/CwNkIjC68B0.jpg
 excerpt: >
      Побережье Юго-Запада — нетронутая благоустройством береговая линия на намыве в историческом районе Петербурга, который

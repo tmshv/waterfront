@@ -2,7 +2,7 @@
 year: 2019
 city: Saint Petersburg
 tags:
-    - feature
+    - project
 cover: /assets/LVexY4NOXpw.jpg
 excerpt: >
      Основным местом действия команды Галерной гавани стал одноименный водный объект. Галерная гавань — небольшой залив 
