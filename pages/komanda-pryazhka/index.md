@@ -81,3 +81,5 @@ excerpt: >
 них важно, чтобы Пряжка оставалась такой, какая она есть (минус мусор). 
 
 [Группа команды Пряжки.](https://vk.com/rekapryazhka)
+
+[Презентация команды.](https://drive.google.com/file/d/1aIz317pIb0zsrHBDPUIHjT50qdztx73E/view?usp=sharing)
