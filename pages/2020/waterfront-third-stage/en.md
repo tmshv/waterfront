@@ -1,7 +1,7 @@
 ---
 tags:
     - event
-cover: /assets/_DSC8151_copy.jpg
+cover: /assets/rerXHlY4zGA.jpg
 excerpt: 15 february 2020
 date: 15.02.2020
 ---
