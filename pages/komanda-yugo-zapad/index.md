@@ -77,4 +77,4 @@ excerpt: >
 что они хотели бы видеть в будущем проекте набережной. Таким образом, социальный дизайн и плейсмэйкинг помогли начать 
 создавать сообщество вокруг места  и активизировать его.
 
-[Презентация команды.](https://drive.google.com/file/d/1aIz317pIb0zsrHBDPUIHjT50qdztx73E/view?usp=sharing)
+[Презентация команды.](https://drive.google.com/file/d/1P2xZ6ZU18_4RsEoQ9kXm-8MDcIVsDmCM/view?usp=sharing)
