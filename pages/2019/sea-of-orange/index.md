@@ -13,3 +13,5 @@ date: 17.12.2019
 Местом действия проекта стал Янтарный пляж на северо-востоке Ломоносова. Именно тут состоялась первая встреча участников проекта: архитекторов из бюро «Observatorium» и местных жителей города. В рамках трехдневного воркшопа участники исследовали береговую линию Ломоносова, обсуждали историю пляжа и возможные варианты его развития. Результатом совместной работы будет создание масштабного паблик-арт объекта.
  
 «Sea of Orange» организован «Waterfront/ Водная линия» совместно с голландским архитектурным бюро «Observatorium» при поддержке Creative Industries Fund NL.
+
+<iframe width="1280" height="800" src="https://www.youtube.com/embed/8fta_muHcm0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
