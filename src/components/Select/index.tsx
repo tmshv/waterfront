@@ -53,6 +53,10 @@ export const Select: React.FC<ISelectProps> = props => {
                 control: style => ({
                     ...style,
                     borderRadius: 0,
+                }),
+                option: style => ({
+                    ...style,
+                    color: 'black',
                 })
             }}
             // className="basic-single"
