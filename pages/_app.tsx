@@ -15,6 +15,7 @@ import { PageConfig } from '@/components/PageConfig'
 import { PageHead } from '@/components/PageHead'
 import { Person } from '@/components/Person'
 import { WideBlock } from '@/components/WideBlock'
+import { Video } from '@/components/Video'
 import ru from '@/ru.json'
 import en from '@/en.json'
 
@@ -103,6 +104,7 @@ const components = {
             {props.children}
         </Person>
     ),
+    Video,
     Demo: props => (
         <h1>This is a component</h1>
     ),
