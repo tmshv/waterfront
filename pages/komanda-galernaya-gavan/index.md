@@ -79,3 +79,5 @@ Nutschool и проводила там свои мастер-классы с д�
 [Группа команды Галерной гавани.](https://vk.com/ggavanfm)
 
 [Презентация команды.](https://drive.google.com/file/d/1L7gANbFd3ltw8nk0lSf-ob_S9GE_n1Hk/view?usp=sharing)
+
+Прибрежную территорию Васильевского острова также исследовала компания MLA+. Подробнее об этом можно почитать [здесь](https://www.mlaplus.com/portfolio/spbwaterfront/) и [здесь](https://www.mlaplus.com/wp-content/uploads/2019/11/Undiscovered_St.Petersburg_water_MLA.pdf).
