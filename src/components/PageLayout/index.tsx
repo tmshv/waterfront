@@ -40,7 +40,11 @@ export const PageLayout: React.FC<IPageLayoutProps> = props => {
                 onSetOpen={(value) => {
                     setShowSide(value)
                 }}
-                styles={{ sidebar: { background: "white" } }}
+                styles={{
+                    sidebar: {
+                        background: 'var(--color-back)'
+                    }
+                }}
             >
                 <DefaultLayout
                     wideMain={props.wideBody}
