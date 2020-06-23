@@ -2,11 +2,11 @@
 tags:
     - event
 cover: /assets/KQUXEsgCVW8-1.jpg
-excerpt: 17 december 2019
+excerpt: 'Launch of the Sea of Orange project in Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019'
 date: 17.12.2019
 ---
 
-# Launch of the Sea of Orange project in Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
+# «Sea of Orange» 
 
 <Video src="https://www.youtube.com/embed/8fta_muHcm0" />
 

@@ -2,11 +2,11 @@
 tags:
     - event
 cover: /assets/KQUXEsgCVW8-1.jpg
-excerpt: 17 декабря 2019
+excerpt: 'Старт проекта «Sea of Orange» в Ломоносове: совместный воркшоп «Waterfront / Водная линия» и ахитектурного бюро Observatorium. 2019'
 date: 17.12.2019
 ---
 
-# Старт проекта «Sea of Orange» в Ломоносове: совместный воркшоп «Waterfront / Водная линия» и ахитектурного бюро Observatorium. 2019
+# «Sea of Orange» 
 
 <Video src="https://www.youtube.com/embed/8fta_muHcm0" />
 
