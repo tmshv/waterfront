@@ -10,7 +10,7 @@
 }
 
 .checkbox input:checked + span {
-    background-color: black;
+    background-color: var(--color-brand-dark);
     box-shadow: 0 0 0 2px white inset;
 }
 
