@@ -1,9 +1,7 @@
 import { AppProps } from 'next/app'
 import { YMInitializer } from 'react-yandex-metrika'
 import Head from 'next/head'
-// import { appWithTranslation } from 'src/i18n'
 import { MDXProvider } from '@mdx-js/react'
-import { PageLayout } from 'src/components/PageLayout'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 import 'flag-icon-css/css/flag-icon.min.css'
@@ -11,14 +9,14 @@ import 'src/style.css'
 import 'src/article.css'
 
 import { useContext, useEffect } from 'react'
-import { PageSignalContext, PageContext } from 'src/context/page'
-import { PageConfig } from 'src/components/PageConfig'
-import { PageHead } from 'src/components/PageHead'
-import { Person } from 'src/components/Person'
-import { WideBlock } from 'src/components/WideBlock'
-import { LangContext } from 'src/context/lang'
-import ru from 'src/ru.json'
-import en from 'src/en.json'
+import { PageSignalContext, PageContext } from '@/context/page'
+import { PageLayout } from '@/components/PageLayout'
+import { PageConfig } from '@/components/PageConfig'
+import { PageHead } from '@/components/PageHead'
+import { Person } from '@/components/Person'
+import { WideBlock } from '@/components/WideBlock'
+import ru from '@/ru.json'
+import en from '@/en.json'
 
 type OpengraphProps = {
     url: string
@@ -54,16 +52,6 @@ const Opengraph: React.SFC<OpengraphProps> = props => {
             {/* <meta property="og:site_name" content={config.siteName} /> */}
             {/* <meta property="og:locale" content={config.locale} /> */}
             {/* <meta property="og:type" content={config.type} /> */}
-
-            {/* Twitter */}
-            {/* <meta name="twitter:card" content={config.twitterCard} /> */}
-            {/* <meta name="twitter:title" content={config.title} /> */}
-            {/* <meta name="twitter:description" content={config.excerpt} /> */}
-            {/* <meta name="twitter:image:src" content={config.image} /> */}
-            {/* <meta name="twitter:domain" content={config.domain} /> */}
-            {/* <meta name="twitter:url" content={config.url} /> */}
-            {/* <meta name="twitter:site" content={config.twitterSite} /> */}
-            {/* <meta name="twitter:creator" content={config.twitterCreator} /> */}
         </Head>
     )
 }
