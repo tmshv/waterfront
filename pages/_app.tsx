@@ -1,4 +1,5 @@
 import { AppProps } from 'next/app'
+import { YMInitializer } from 'react-yandex-metrika'
 import Head from 'next/head'
 // import { appWithTranslation } from 'src/i18n'
 import { MDXProvider } from '@mdx-js/react'
@@ -163,6 +164,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
     //         { page }
     //     )
     // }
+    const metrika = process.env.METRIKA
 
     return (
         <>
@@ -170,6 +172,10 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
                 <meta name={'viewport'} content={'initial-scale=1,maximum-scale=1,user-scalable=no'} />
                 <meta name="yandex-verification" content="6db21bf07b5a1c67" />
             </Head>
+
+            {!metrika ? null : (
+                <YMInitializer accounts={[Number(metrika)]} />
+            )}
 
             {content}
         </>
