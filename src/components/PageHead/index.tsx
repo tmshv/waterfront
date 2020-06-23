@@ -1,31 +1,29 @@
-import styles from './styles.module.css'
+import s from './pagehead.module.css'
 
 import { Image } from './Image'
 
 export interface IPageHeadProps {
     title: string
     caption?: string
-    image: string | number
+    image: string
 }
 
 export const PageHead: React.FC<IPageHeadProps> = props => {
-    const imageSrc = props.image.toString()
-
     return (
-        <section className={styles.container}>
+        <section className={s.container}>
             <Image
-                src={imageSrc}
+                src={props.image}
                 alt={''}
             />
 
-            <div className={styles.overlay}>
-                <h1 className={styles.title}>
+            <div className={s.overlay}>
+                <h1 className={s.title}>
                     {props.title}
                 </h1>
 
                 {!props.caption ? null : (
-                    <div className={styles.block}>
-                        <p className={styles.caption}>
+                    <div className={s.block}>
+                        <p className={s.caption}>
                             {props.caption}
                         </p>
                     </div>
