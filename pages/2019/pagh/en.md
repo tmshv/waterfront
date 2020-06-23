@@ -2,11 +2,11 @@
 tags:
     - event
 cover: /assets/Christian-Pagh_V2.jpg
-excerpt: 21 November 2019
+excerpt: Open meeting with Christian Pugh, an expert in co-design and participatory urban planning
 date: 21.11.2019
 ---
 
-# Open meeting with Christian Pugh, an expert in co-design and participatory urban planning
+# Lecture by Christian Pagh
 
 On November 21, a lecture by Christian Pagh was held at the HSE School of Design in Saint Petersburg. Christian is the co-founder and creative Director of Urgent. Agency (Copenhagen, Oslo), which combines the theory and practice of urban planning and architectural design. In his lecture "Urgent placemaking — public construction and creation of urban values", Christian explained what placemaking is and what significance this practice has for the development of a comfortable urban environment. He also explained why it is especially important to combine practical and humanitarian approaches in the field of planning and architecture, and shared his thoughts on the practice of urban planning in the light of everyday culture and social synergy.
 
