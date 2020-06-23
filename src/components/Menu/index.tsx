@@ -1,8 +1,8 @@
 import s from './menu.module.css'
 
-import Link from 'next/link'
 import cx from 'classnames'
 import { useMenuItems } from './lib'
+import { Link } from './Link'
 
 const layoutClass = new Map([
     ['horizontal', s.horizontal],
@@ -26,10 +26,9 @@ export const Menu: React.FC<IMenuProps> = props => {
                 >
                     <Link
                         href={item.href}
+                        active={item.isCurrent}
                     >
-                        <a>
-                            <span>{item.label}</span>
-                        </a>
+                        {item.label}
                     </Link>
                 </li>
             ))}
