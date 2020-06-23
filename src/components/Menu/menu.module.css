@@ -1,0 +1,37 @@
+.menu {
+    font-family: var(--font-family-second);
+    font-size: var(--font-size-menu);
+
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+}
+
+.menu.horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    margin-right: 20px;
+}
+
+.item:last-child {
+    margin-right: 0;
+}
+
+.item a {
+    transition: color var(--transition-link-hover-delay);
+    color: var(--color-text-opposite);
+
+    text-decoration: none;
+}
+
+.item a:hover {
+    color: var(--color-link-hover);
+}
