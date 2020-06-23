@@ -37,8 +37,8 @@ export const MapGL: React.FC<IMapGLProps> = props => {
                 }
 
                 .mapboxgl-popup {
-                    min-width: 300px;
-                    max-width: 400px;
+                    min-width: 200px;
+                    max-width: 300px;
 
                     border: 1px solid black;
                 }
