@@ -63,3 +63,5 @@ excerpt: >
 совместными усилиями создать проект общественного пространства на берегу реки. 
 
 [Презентация команды.](https://drive.google.com/file/d/12wNX6dikthvW0JiH8FCoRD4PjqfhB9Z2/view?usp=sharing)
+
+Территорию вокруг р. Охта также исследовала компания MLA+. Подробнее об этом можно узнать [здесь.](https://www.mlaplus.com/portfolio/ohtariver-spb-ru/)
