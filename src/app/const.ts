@@ -72,7 +72,7 @@ export const contacts = [
     },
     {
         tel: '+79213951389',
-        email: 'asprrronina@gmail.com',
+        email: 'pr@waterfront.tools',
         title: 'Анастасия Пронина, пресс-секретарь',
     },
     {
