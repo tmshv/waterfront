@@ -16,6 +16,7 @@ import { PageHead } from '@/components/PageHead'
 import { Person } from '@/components/Person'
 import { WideBlock } from '@/components/WideBlock'
 import { Video } from '@/components/Video'
+import { LangContext } from '@/context/lang'
 import ru from '@/ru.json'
 import en from '@/en.json'
 
