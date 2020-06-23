@@ -8,6 +8,17 @@ import * as Layout from 'src/components/Layout'
 import { useColumns } from 'src/hooks/useColumns'
 import { getPagesByTag } from 'src/api'
 import { useTranslation } from 'src/hooks/useTranslation'
+import { formatDate } from '@/app/lib'
+
+function getCardTags(item: PageCardData): string[] {
+    const date = new Date(item.date)
+    if (!date) {
+        return []
+    }
+    const f = formatDate(date)
+
+    return [f]
+}
 
 type PageCardData = {
     tags: string[],
@@ -15,6 +26,7 @@ type PageCardData = {
     cover: string,
     excerpt: string,
     slug: string,
+    date: string,
 }
 
 interface IProps {
@@ -50,7 +62,7 @@ export const Page: NextPage<IProps> = props => {
                             key={item.slug}
                             title={item.title}
                             previewImage={item.cover}
-                            tags={[]}
+                            tags={getCardTags(item)}
                             href={item.slug}
                         >
                             <Short text={item.excerpt} />
