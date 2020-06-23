@@ -23,7 +23,7 @@ export const LegendBlock: React.FC<ILegendBlockProps> = props => {
             <style jsx>{`
                 header {
                     font-size: 1.2em;
-                    color: black;
+                    color: var(--color-text);
 
                     padding: 2px 5px;
                     margin-bottom: 5px;
