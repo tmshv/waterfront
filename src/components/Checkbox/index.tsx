@@ -1,4 +1,4 @@
-import * as React from 'react'
+import s from './checkbox.module.css'
 
 export interface ICheckboxProps {
     checked: boolean
@@ -7,19 +7,14 @@ export interface ICheckboxProps {
 }
 
 export const Checkbox: React.FC<ICheckboxProps> = props => (
-    <label>
-        <style jsx>{`
-            label {
-                flex; 1;
-                cursor: pointer;
-            }
-        `}</style>
-
+    <label className={s.checkbox}>
         <input
             type={'checkbox'}
             checked={props.checked}
             onChange={props.onChange}
         />
+
+        <span />
 
         {props.label}
     </label>

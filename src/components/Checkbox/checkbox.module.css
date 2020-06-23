@@ -1,0 +1,33 @@
+.checkbox {
+    cursor: pointer;
+
+    padding-left: 1.2em;
+}
+
+.checkbox input {
+    position: absolute;
+    appearance: none;
+}
+
+.checkbox input:checked + span {
+    background-color: black;
+    box-shadow: 0 0 0 2px white inset;
+}
+
+.checkbox input:hover + span {
+    box-shadow: 0 0 0 2px var(--color-brand-light) inset;
+}
+
+.checkbox input:focus + span {
+    box-shadow: 0 0 0 2px var(--color-brand-light) inset;
+}
+
+.checkbox span {
+    position: absolute;
+    margin-top: 3px;
+    margin-left: -1.2em;
+    width: 13px;
+    height: 13px;
+    overflow: hidden;
+    background-color: white;
+}
