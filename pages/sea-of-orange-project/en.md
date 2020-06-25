@@ -12,7 +12,7 @@ excerpt: >
 
 ---
 
-#Sea of Oranhe project
+# Sea of Orange project
 
 The Sea of Orange project was launched in December 2019. The main place of its action is the so-called Amber beach in the North-East of the city of Lomonosov. 
 This is where the first meeting of the participants took place. The Waterfront project team architects from the bureau Observatorium and residents of the city, 
