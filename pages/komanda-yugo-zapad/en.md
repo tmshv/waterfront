@@ -15,26 +15,30 @@ excerpt: >
 **Team members:**
 
 Ksenia Gavrikova — coordinator of educational projects
+
 Lucas Calavera — industrial designer
+
 Polina Karakulina — designer of the urban environment
+
 Valeria Rumiantseva — organizer of the urban projects
+
 Anastasia Sergeeva — theatre researcher 
 
 **Stages of team work:**
 
-- ground-level observations, observations on the ground, primary analysis of the territory (historical, legal, urban planning information, image of the location 
+- Ground-level observations, observations on the ground, primary analysis of the territory (historical, legal, urban planning information, image of the location 
 in the artistic space of the city)
 - development of sociological research, creation of a hypothesis
-- launch of an online survey and Vkontakte group — a platform for interaction and involvement of all concerned in the process; in-depth interviews, activation of 
+- Launch of an online survey and Vkontakte group — a platform for interaction and involvement of all concerned in the process; in-depth interviews, activation of 
 growth points — the first lecture in the urban club of The Intellect Library
-- study trip, continuation of lectures in the urban club, first meetings with residents
-- meetings/presentations of successful cases on the formation of public spaces on embankments in St. Petersburg, participation in the festival of temporary water 
+- Study trip, continuation of lectures in the urban club, first meetings with residents
+- Meetings/presentations of successful cases on the formation of public spaces on embankments in St. Petersburg, participation in the festival of temporary water 
 navigation
-- prototyping with residents (confirmation of the hypothesis), analysis of residents' proposals, establishing communication with the municipality, district 
+- Prototyping with residents (confirmation of the hypothesis), analysis of residents' proposals, establishing communication with the municipality, district 
 administration, negotiations with the CAA, development of proposals for temporary solutions in the format of tactical urbanism, working with cartography
-- joint work with Neighborhood workshop to a group of residents united by a desire to make the South-West coast (directly to the Stone beach), the approval of a 
+- Joint work with Neighborhood workshop to a group of residents united by a desire to make the South-West coast (directly to the Stone beach), the approval of a 
 number of temporary objects, design with measurements, calculating estimates, design of sociological research
-- creation of temporary landscaping together with the residents, the Foundation Good city St. Petersburg Foundation and the Neighborhood workshop project, presentation of the study
+- Creation of temporary landscaping together with the residents, the Foundation Good city St. Petersburg Foundation and the Neighborhood workshop project, presentation of the study
 
 **Data collection and analysis methods:**
 
@@ -50,7 +54,7 @@ number of temporary objects, design with measurements, calculating estimates, de
 **Events:**
 
 - Meeting with residents. Getting to know the Waterfront project 
-- “Water in the city” meeting
+- “Water in the City” meeting
 - The second meeting with the residents. Identifying problems and finding solutions
 - Environmental action "Monitoring of marine debris on the beach along the Baltic Boulevard" (together with the Friends of the Baltic and the 
 Marine debris in the Gulf of Finland project)
