@@ -53,6 +53,6 @@ For the experiment, a group of 32 volunteers was formed, which interacted with s
 <iframe width="725" height="521" src="https://www.youtube.com/embed/7-hPvJpMQyI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Credits:
-Conceptmaker — Dmitry Otyakovsky
-AR artist — Yegor Pshenichny
-Composer — Rustam Sagdiev
+- Conceptmaker — Dmitry Otyakovsky
+- AR artist — Yegor Pshenichny
+- Composer — Rustam Sagdiev
