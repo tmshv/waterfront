@@ -2,7 +2,7 @@
 tags:
     - event
 cover: /assets/68SIEkHepF8.jpg
-excerpt: 5 августа 2020
+excerpt: 24 августа 2020
 date: 24.08.2020
 ---
 
