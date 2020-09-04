@@ -4,7 +4,7 @@ city: Saint Petersburg
 tags:
     - feature
 cover: /assets/silent_city_emb1.jpg
-excerpt: Performative mocumentary research.
+excerpt: Performative mocumentary research
 ---
 
 # «Silent City»
@@ -16,7 +16,7 @@ If you are reading this text, it means that your access level allows you to join
 - Pryazhka river, Berdov Bridge
 - 26 Nakhimov street (the object is located on the Central pier of the Galernaya Harbor)
 
-[GooglePlay](https://play.google.com/store/apps/details?id=com.THEATRE_MAN.SILENTCITY)
+[![Google Play](/assets/but_googleplay.png "Google Play")](https://play.google.com/store/apps/details?id=com.THEATRE_MAN.SILENTCITY) [![App Store](/assets/but_appstore.png "App Store")](https://apps.apple.com/us/app/%D1%82%D0%B8%D1%85%D0%B8%D0%B9-%D0%B3%D0%BE%D1%80%D0%BE%D0%B4/id1527404472)
 
 After studying the psychoacoustic properties of AAO-type objects, you must submit a report (e-mail of the research group department: silentcity@waterfront.tools), the authors of selected reports will have temporary access to the study of AAN objects during the second phase of the study.
 
