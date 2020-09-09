@@ -5,7 +5,7 @@ import { CardsPage } from '@/components/CardsPage'
 import { getProjectCards } from '@/app/catalog'
 import { PageDescription } from '@/types'
 
-interface IProps {
+export interface IProps {
     pages: PageDescription[]
 }
 
