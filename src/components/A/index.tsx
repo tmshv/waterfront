@@ -1,5 +1,7 @@
+import s from './store.module.css'
+
 import Link from 'next/link'
-import MobileStoreButton from 'react-mobile-store-button'
+import cx from 'classnames'
 
 const androidPattern = /https:\/\/play\.google\.com\/store\/apps\/details\?id=.+/
 const iosPattern = /https:\/\/apps\.apple\.com\/.{2}\/app\/.+/
@@ -21,27 +23,13 @@ export const A: React.FC<AProps> = props => {
         )
     }
 
-    if (isIos(props.href)) {
-        return (
-            <MobileStoreButton
-                store={'ios'}
-                url={props.href}
-            />
-        )
-    }
-
-    if (isGooglePlay(props.href)) {
-        return (
-            <MobileStoreButton
-                store={'android'}
-                url={props.href}
-            />
-        )
-    }
-
     return (
         <Link href={props.href}>
-            <a>{props.children}</a>
+            <a className={cx({
+                [s.ios]: isIos(props.href),
+                [s.android]: isGooglePlay(props.href),
+            })}
+            >{props.children}</a>
         </Link>
     )
 }
