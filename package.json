@@ -36,7 +36,7 @@
         "react-map-gl": "^5.2.7",
         "react-select": "^3.1.0",
         "react-sidebar": "^3.0.2",
-        "react-use": "^13.24.0",
+        "react-use": "^17.1.1",
         "react-yandex-metrika": "^2.6.0",
         "swr": "^0.2.3"
     },
