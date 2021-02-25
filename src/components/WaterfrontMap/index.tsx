@@ -1,4 +1,5 @@
-import { ViewState, Marker, Popup } from 'react-map-gl'
+import { Marker, Popup } from 'react-map-gl'
+import { ViewState } from 'react-map-gl/src/mapbox/mapbox'
 import { Feature, Point } from 'geojson'
 import { MapGL, OnChangeViewport } from '@/components/MapGL'
 import { isLayerVisible } from '@/app/map'
