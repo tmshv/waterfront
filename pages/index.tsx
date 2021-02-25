@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import { NextPage, GetStaticProps } from 'next'
-import { ViewState } from 'react-map-gl'
+import { ViewState } from 'react-map-gl/src/mapbox/mapbox'
 import { MapLegend } from '@/components/MapLegend'
 import { useLegend } from '@/hooks/useLegend'
 import { ICity } from '@/types'

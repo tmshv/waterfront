@@ -1,4 +1,4 @@
-import { ViewState } from 'react-map-gl'
+import { ViewState } from 'react-map-gl/src/mapbox/mapbox'
 import { PageConfigProps } from './context/page'
 
 export interface ICity {

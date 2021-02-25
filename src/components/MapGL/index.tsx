@@ -1,5 +1,6 @@
 import { useCallback } from 'react'
-import ReactMapGL, { ViewState } from 'react-map-gl'
+import ReactMapGL from 'react-map-gl'
+import { ViewState } from 'react-map-gl/src/mapbox/mapbox'
 
 export type OnChangeViewport = (viewport: ViewState) => void
 export interface IMapGLProps {
