@@ -20,6 +20,7 @@ export type PageConfigProps = {
     cover: string
     excerpt: string
     tags: string[]
+    baseUrl: string
 }
 
 export const defaultPageConfig: PageConfigProps = {
@@ -27,6 +28,7 @@ export const defaultPageConfig: PageConfigProps = {
     cover: '',
     excerpt: '',
     tags: [],
+    baseUrl: 'https://waterfront.tools',
 }
 
 export const pageSignal: ISignal<PageConfigProps> = new BufferableSignal<PageConfigProps>()
