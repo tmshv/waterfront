@@ -7,7 +7,4 @@ const withMDX = require('./next-mdx-plugin')({
 
 module.exports = withBundleAnalyzer(withMDX({
     pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
-    env: {
-        METRIKA: '65047396',
-    }
 }))
