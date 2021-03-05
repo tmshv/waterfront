@@ -1,23 +1,19 @@
 import { AppProps } from 'next/app'
 import { YMInitializer } from 'react-yandex-metrika'
 import Head from 'next/head'
-import { MDXProvider } from '@mdx-js/react'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 import 'flag-icon-css/css/flag-icon.min.css'
 import 'src/style.css'
 import 'src/article.css'
 
-import { useContext, useEffect } from 'react'
-import { PageSignalContext, PageContext } from '@/context/page'
+import { useContext } from 'react'
+import { MdxRoot } from '@/components/MdxRoot'
+import { PageContext } from '@/context/page'
 import { PageLayout } from '@/components/PageLayout'
 import { PageConfig } from '@/components/PageConfig'
-import { PageHead } from '@/components/PageHead'
-import { Person } from '@/components/Person'
-import { WideBlock } from '@/components/WideBlock'
-import { Video } from '@/components/Video'
-import { A } from '@/components/A'
 import { LangContext } from '@/context/lang'
+
 import ru from '@/ru.json'
 import en from '@/en.json'
 
@@ -59,105 +55,10 @@ const Opengraph: React.SFC<OpengraphProps> = props => {
     )
 }
 
-// const H1 = props => <h1 style={{ color: 'tomato' }} {...props} />
-const H1: React.SFC<{ children: string }> = props => {
-    const config = useContext(PageContext)
-
-    return (
-        <WideBlock style={{
-            marginBottom: 'var(--size-xxl)'
-        }}>
-            <PageHead
-                title={props.children}
-                caption={config.excerpt}
-                image={config.cover}
-            />
-        </WideBlock>
-    )
-}
-
-type PersonData = {
-    shape?: string
-    name: string
-    image: string
-    children: React.ReactNode
-}
-
-const components = {
-    wrapper: props => (
-        <article>
-            <main {...props} />
-        </article>
-    ),
-    h1: H1,
-    a: A,
-    Person: (props: PersonData) => (
-        <Person
-            shape={props.shape ?? 'default'}
-            item={{
-                name: props.name,
-                content: '',
-                previewImage: props.image,
-                role: 'team',
-            }}
-            style={{
-                marginBottom: 50,
-            }}
-        >
-            {props.children}
-        </Person>
-    ),
-    Video,
-    Demo: props => (
-        <h1>This is a component</h1>
-    ),
-    Meta: props => {
-        const signal = useContext(PageSignalContext)
-
-        useEffect(() => {
-            signal.trigger(props)
-        }, [props])
-
-        return null
-    }
-}
-
 export default function MyApp({ Component, pageProps, router }: AppProps) {
+    const metrika = process.env.NEXT_PUBLIC_METRIKA
     const lang = router.asPath.endsWith('/en') ? 'en' : 'ru'
     const dict = { en, ru }[lang]
-
-    const content = (
-        <LangContext.Provider value={{
-            lang,
-            dict,
-        }}>
-            <PageConfig>
-                <Opengraph
-                    url={router.asPath}
-                />
-                <PageLayout>
-                    <MDXProvider components={components}>
-                        {/* <article> */}
-                        <Component {...pageProps} />
-                        {/* </article> */}
-                    </MDXProvider>
-                </PageLayout>
-            </PageConfig>
-        </LangContext.Provider>
-    )
-
-    // let content = page
-    // const isMdx = Component.hasOwnProperty('isMDXComponent') ? (Component as any).isMDXComponent : false
-    // if (isMdx) {
-    //     content = (
-    //         // head={(
-    //         //     <div>head</div>
-    //         // )}
-    //         >
-    //         { page }
-    //     )
-    // }
-    const metrika = process.env.NEXT_PUBLIC_METRIKA
 
     return (
         <>
@@ -170,7 +71,23 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
                 <YMInitializer accounts={[Number(metrika)]} />
             )}
 
-            {content}
+            <LangContext.Provider value={{
+                lang,
+                dict,
+            }}>
+                <PageConfig>
+                    <Opengraph
+                        url={router.asPath}
+                    />
+                    <PageLayout>
+                        <MdxRoot>
+                            {/* <article> */}
+                            <Component {...pageProps} />
+                            {/* </article> */}
+                        </MdxRoot>
+                    </PageLayout>
+                </PageConfig>
+            </LangContext.Provider>
         </>
     )
 }
