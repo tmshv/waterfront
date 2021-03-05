@@ -157,7 +157,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
     //         { page }
     //     )
     // }
-    const metrika = process.env.METRIKA
+    const metrika = process.env.NEXT_PUBLIC_METRIKA
 
     return (
         <>
