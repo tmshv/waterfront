@@ -4,10 +4,14 @@
 }
 
 .icon {
-    transition: fill var(--transition-link-hover-delay);
+    transition: fill var(--transition-link-hover-delay),
+                color var(--transition-link-hover-delay);
+
+    color: var(--color-text-opposite);
     fill: var(--color-text-opposite);
 }
 
 .icon:hover {
+    color: var(--color-link-hover);
     fill: var(--color-link-hover);
 }
