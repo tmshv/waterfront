@@ -71,11 +71,6 @@ export const contacts = [
         title: 'Полина Климовицкая, координатор проекта',
     },
     {
-        tel: '+79213951389',
-        email: 'pr@waterfront.tools',
-        title: 'Анастасия Пронина, пресс-секретарь',
-    },
-    {
         tel: '+79817640984',
         email: 'media@waterfront.tools',
         title: 'Вика Григоренко, редактор сайта',
