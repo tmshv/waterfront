@@ -82,7 +82,7 @@ On February 15, we held an open meeting at the Mayakovsky Library's Center for A
     shape='circle'
 >
 
-Political scientist, Deputy Director for development and information at the Danish Institute of Сulture in St. Petersburg
+Deputy Director at the Danish Institute of Сulture in St. Petersburg
 
 «Our goal is to explore how industrial areas in the Baltic sea region are transformed into new cultural and public spaces. We strive to create continuous contacts between experts from Northern Europe and experts from the North-West of Russia and to build a dialogue that will lead to creation of comfortable coastal spaces in Russia».
 
