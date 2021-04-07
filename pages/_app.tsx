@@ -26,13 +26,11 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
             <Head>
                 <meta name={'viewport'} content={'initial-scale=1,maximum-scale=1,user-scalable=no'} />
                 <meta name="yandex-verification" content="6db21bf07b5a1c67" />
-
             </Head>
 
             <Opengraph
                 url={router.asPath}
             />
-
 
             {!metrika ? null : (
                 <YMInitializer accounts={[Number(metrika)]} />
@@ -44,9 +42,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
             }}>
                 <PageLayout>
                     <MdxRoot>
-                        {/* <article> */}
                         <Component {...pageProps} />
-                        {/* </article> */}
                     </MdxRoot>
                 </PageLayout>
             </LangContext.Provider>
