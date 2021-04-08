@@ -12,12 +12,13 @@ import { changeLangPathSuffix } from './lib/lang'
 const exists = promisify(fs.exists)
 const readFile = promisify(fs.readFile)
 
-export type Lang = 'ru' | 'en'
+// export type Lang = 'ru' | 'en'
+export type Lang = string
 const defaultLang: Lang = 'ru'
 const otherLangs: Lang[] = ['en']
 
 type SortFunction<T> = (a: T, b: T) => number
-const postsDirectory = join(process.cwd(), 'pages')
+const postsDirectory = join(process.cwd(), 'data')
 
 const cityLabels = new Map([
     ['saint_petersburg', 'Saint Petersburg'],
@@ -65,7 +66,7 @@ function slugHasSuffix(slug: string, suffixes: string[]): boolean {
     return false
 }
 
-function createLangFilter(lang: Lang) {
+function createLangFilter(lang: Lang = defaultLang) {
     if (lang === defaultLang) {
         const langSuffixes = otherLangs.map(x => `/${x}`)
         return (path: string) => {
@@ -81,8 +82,8 @@ function createLangFilter(lang: Lang) {
     }
 }
 
-async function getPages(lang: Lang) {
-    const pattern = join(process.cwd(), 'pages', '**/*.md?(x)')
+async function getPages(lang?: Lang) {
+    const pattern = join(process.cwd(), 'data', '**/*.md?(x)')
     const files = await getFilesByPattern(pattern, {})
     const langFilter = createLangFilter(lang)
     return files.filter(langFilter)
@@ -157,7 +158,7 @@ type GetPagesByTagOptions<T> = {
     sort: SortFunction<T>
 }
 
-export async function getPagesByTag(lang: Lang, tags: string[], options: GetPagesByTagOptions<PageDefinition>) {
+export async function getPagesByTag(lang: Lang | undefined, tags: string[], options: GetPagesByTagOptions<PageDefinition>) {
     const files = await getPages(lang)
     const pages = await Promise.all(files.map(getPage))
     const tagsSubset = new Set(tags)

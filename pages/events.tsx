@@ -1,13 +1,13 @@
-import { NextPage } from 'next'
-import { CardList } from 'src/components/CardList'
-import { Card } from 'src/components/Card'
-import { PageLayout } from 'src/components/PageLayout'
-import { Short } from 'src/components/Short'
-import { PageHead } from 'src/components/PageHead'
-import * as Layout from 'src/components/Layout'
-import { useColumns } from 'src/hooks/useColumns'
-import { getPagesByTag } from 'src/api'
-import { useTranslation } from 'src/hooks/useTranslation'
+import { GetStaticProps, NextPage } from 'next'
+import { CardList } from '@/components/CardList'
+import { Card } from '@/components/Card'
+import { PageLayout } from '@/components/PageLayout'
+import { Short } from '@/components/Short'
+import { PageHead } from '@/components/PageHead'
+import * as Layout from '@/components/Layout'
+import { useColumns } from '@/hooks/useColumns'
+import { getPagesByTag } from '@/api'
+import { useTranslation } from '@/hooks/useTranslation'
 import { formatDate } from '@/app/lib'
 
 function getCardTags(item: PageCardData): string[] {
@@ -74,8 +74,8 @@ export const Page: NextPage<IProps> = props => {
     )
 }
 
-export async function getStaticProps({ params }) {
-    const pages = await getPagesByTag('ru', ['event'], {
+export const getStaticProps: GetStaticProps<IProps> = async ctx => {
+    const pages = await getPagesByTag(ctx.locale, ['event'], {
         omitContent: true,
         sort: (a, b) => {
             if (a.date && b.date) {
@@ -91,7 +91,7 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            pages,
+            pages: pages as any
         },
     }
 }

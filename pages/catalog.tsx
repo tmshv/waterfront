@@ -1,14 +1,14 @@
 import { NextPage, GetStaticProps } from 'next'
-import { CardList } from 'src/components/CardList'
-import { PageLayout } from 'src/components/PageLayout'
-import { useColumns } from 'src/hooks/useColumns'
-import * as Layout from 'src/components/Layout'
-import { Card } from 'src/components/Card'
-import { Short } from 'src/components/Short'
-import { PageHead } from 'src/components/PageHead'
-import { useTranslation } from 'src/hooks/useTranslation'
-import { PageDescription } from 'src/types'
-import { getCatalogCards } from 'src/app/catalog'
+import { CardList } from '@/components/CardList'
+import { PageLayout } from '@/components/PageLayout'
+import { useColumns } from '@/hooks/useColumns'
+import * as Layout from '@/components/Layout'
+import { Card } from '@/components/Card'
+import { Short } from '@/components/Short'
+import { PageHead } from '@/components/PageHead'
+import { useTranslation } from '@/hooks/useTranslation'
+import { PageDescription } from '@/types'
+import { getCatalogCards } from '@/app/catalog'
 
 export type CatalogProps = {
     pages: PageDescription[]
@@ -70,8 +70,8 @@ export const Page: NextPage<CatalogProps> = props => {
     )
 }
 
-export const getStaticProps: GetStaticProps<CatalogProps> = async ({ params }) => {
-    const pages = await getCatalogCards('ru')
+export const getStaticProps: GetStaticProps<CatalogProps> = async ctx => {
+    const pages = await getCatalogCards(ctx.locale)
 
     return {
         props: {

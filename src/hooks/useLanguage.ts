@@ -1,8 +1,7 @@
-import { useContext } from 'react'
-import { LangContext } from 'src/context/lang'
+import { useRouter } from 'next/router'
 
 export function useLanguage() {
-    const { lang } = useContext(LangContext)
+    const router = useRouter()
 
-    return lang
+    return router.locale!
 }
