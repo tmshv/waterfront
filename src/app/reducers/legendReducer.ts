@@ -25,7 +25,7 @@ export type LegendAction =
         }
     }
 
-export default (state: ILegend = initialState, action: LegendAction) => {
+const legendReducer = (state: ILegend = initialState, action: LegendAction) => {
     switch (action.type) {
         case LEGEND_BLOCKS_UPDATE: {
             return {
@@ -52,3 +52,5 @@ export default (state: ILegend = initialState, action: LegendAction) => {
         }
     }
 }
+
+export default legendReducer
