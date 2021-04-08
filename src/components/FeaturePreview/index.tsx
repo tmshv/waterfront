@@ -1,6 +1,7 @@
-import * as React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { renderMarkdown } from '@/lib'
+import { memo } from 'react'
 
 export interface IFeaturePreviewProps {
     href: string
@@ -10,14 +11,14 @@ export interface IFeaturePreviewProps {
     previewImageSrc: string
 }
 
-export const FeaturePreview: React.FC<IFeaturePreviewProps> = React.memo(props => {
+export const FeaturePreview: React.FC<IFeaturePreviewProps> = memo(props => {
     return (
         <Link href={props.href}>
             <a>
                 <style jsx>{`
                     a {
                         display: block;
-                        
+
                         color: black;
                         text-decoration: none;
                     }
@@ -40,13 +41,8 @@ export const FeaturePreview: React.FC<IFeaturePreviewProps> = React.memo(props =
                     .wf-popup-content {
                         padding: 10px;
                     }
-
-                    .preview-image img{
-                        display: block;
-                        width: 100%;
-                    }
                 `}</style>
-                
+
                 <div className={'wf-popup-content'}>
                     {!props.year ? null : (
                         <p className={'date'}>
@@ -63,9 +59,13 @@ export const FeaturePreview: React.FC<IFeaturePreviewProps> = React.memo(props =
                     )}
                 </div>
 
-                <div className="preview-image">
-                    <img src={props.previewImageSrc} />
-                </div>
+                <Image
+                    src={props.previewImageSrc}
+                    width={1}
+                    height={1}
+                    layout={'responsive'}
+                    objectFit={'cover'}
+                />
             </a>
         </Link>
     )
