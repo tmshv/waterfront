@@ -1,9 +1,9 @@
 import s from './button.module.css'
 
-import { useFlagCode } from 'src/hooks/useFlagCode'
 import cx from 'classnames'
 import Link from 'next/link'
 import { useOppositeLocale } from '@/hooks/useOppositeLocale'
+import { useFlagCode } from '@/hooks/useFlagCode'
 
 export interface ILangButtonProps {
     style?: React.CSSProperties
