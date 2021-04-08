@@ -6,7 +6,7 @@ export type OpengraphProps = {
     url: string
 }
 
-export const Opengraph: React.SFC<OpengraphProps> = props => {
+export const Opengraph: React.FC<OpengraphProps> = props => {
     const config = useContext(PageContext)
     if (!config.title) {
         return null
