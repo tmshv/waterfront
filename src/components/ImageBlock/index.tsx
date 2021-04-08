@@ -1,8 +1,9 @@
 import styles from './styles.module.css'
 
+import Image from 'next/image'
+
 export interface IImageBlockProps {
     style?: React.CSSProperties
-    imageStyle?: React.CSSProperties
     src?: string
 }
 
@@ -11,10 +12,13 @@ export const ImageBlock: React.FC<IImageBlockProps> = props => (
         className={styles.block}
         style={props.style}
     >
-        <img
-            className={styles.image}
-            style={props.imageStyle}
-            src={props.src}
+        <Image
+            src={props.src!}
+            width={3}
+            height={4}
+            alt={''}
+            layout={'responsive'}
+            objectFit={'cover'}
         />
 
         <div className={styles.overlay} style={{
