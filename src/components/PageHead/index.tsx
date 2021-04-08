@@ -1,6 +1,6 @@
 import s from './pagehead.module.css'
 
-import { Image } from './Image'
+import Image from 'next/image'
 
 export interface IPageHeadProps {
     title: string
@@ -14,6 +14,8 @@ export const PageHead: React.FC<IPageHeadProps> = props => {
             <Image
                 src={props.image}
                 alt={''}
+                layout={'fill'}
+                objectFit={'cover'}
             />
 
             <div className={s.overlay}>
