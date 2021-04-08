@@ -1,14 +1,13 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
 })
-const withMDX = require('./next-mdx-plugin')({
-    extension: /\.mdx?$/
-})
 
-module.exports = withBundleAnalyzer(withMDX({
-    pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+module.exports = withBundleAnalyzer({
     i18n: {
         locales: ['ru', 'en'],
         defaultLocale: 'ru',
     },
-}))
+    future: {
+        webpack5: true,
+    }
+})
