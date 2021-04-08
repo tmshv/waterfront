@@ -12,8 +12,9 @@ export const Opengraph: React.SFC<OpengraphProps> = props => {
         return null
     }
 
-    const url = `${config.baseUrl}${props.url}`
-    const image = `${config.baseUrl}${config.cover}`
+    const baseUrl = 'https://waterfront.tools'
+    const url = `${baseUrl}${props.url}`
+    const image = `${baseUrl}${config.cover}`
 
     return (
         <Head>
