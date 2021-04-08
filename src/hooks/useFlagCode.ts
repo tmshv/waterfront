@@ -1,4 +1,4 @@
-import { useLanguage } from './useLanguage'
+import { useRouter } from 'next/router'
 
 const code = new Map([
     ['ru', 'ru'],
@@ -10,8 +10,9 @@ export type UseFlagCodeOptions = {
 }
 
 export function useFlagCode({ fallback }: UseFlagCodeOptions): string {
-    const lang = useLanguage()
-    const value = code.get(lang)
+    const router = useRouter()
+
+    const value = code.get(router.locale!)
 
     return value ? value : fallback
 }

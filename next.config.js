@@ -7,4 +7,8 @@ const withMDX = require('./next-mdx-plugin')({
 
 module.exports = withBundleAnalyzer(withMDX({
     pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+    i18n: {
+        locales: ['ru', 'en'],
+        defaultLocale: 'ru',
+    },
 }))

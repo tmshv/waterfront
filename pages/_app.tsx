@@ -18,7 +18,7 @@ import en from '@/en.json'
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
     const metrika = process.env.NEXT_PUBLIC_METRIKA
-    const lang = router.asPath.endsWith('/en') ? 'en' : 'ru'
+    const lang = router.locale!
     const dict = { en, ru }[lang]
 
     return (

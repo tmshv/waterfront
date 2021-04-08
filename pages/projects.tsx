@@ -29,8 +29,8 @@ export const Page: NextPage<IProps> = props => {
     )
 }
 
-export const getStaticProps: GetStaticProps<IProps> = async ({ params }) => {
-    const pages = await getProjectCards('ru')
+export const getStaticProps: GetStaticProps<IProps> = async ctx => {
+    const pages = await getProjectCards(ctx.locale)
 
     return {
         props: {
