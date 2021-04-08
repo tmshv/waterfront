@@ -90,10 +90,11 @@ const Index: NextPage<Props> = props => (
     </MapContext.Provider>
 )
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-    const spb = await getFeatures('ru', 'saint_petersburg')
-    const oslo = await getFeatures('ru', 'oslo')
-    const stockholm = await getFeatures('ru', 'stockholm')
+export const getStaticProps: GetStaticProps<Props> = async ctx => {
+    const locale = ctx.locale ?? 'ru'
+    const spb = await getFeatures(locale, 'saint_petersburg')
+    const oslo = await getFeatures(locale, 'oslo')
+    const stockholm = await getFeatures(locale, 'stockholm')
 
     return {
         props: {
@@ -106,4 +107,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     }
 }
 
-export default Index 
+export default Index
