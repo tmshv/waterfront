@@ -34,9 +34,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
                 dict,
             }}>
                 <PageLayout>
-                    {/* <MdxRoot> */}
                     <Component {...pageProps} />
-                    {/* </MdxRoot> */}
                 </PageLayout>
             </LangContext.Provider>
         </>
