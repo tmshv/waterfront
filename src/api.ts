@@ -18,7 +18,7 @@ const defaultLang: Lang = 'ru'
 const otherLangs: Lang[] = ['en']
 
 type SortFunction<T> = (a: T, b: T) => number
-const postsDirectory = join(process.cwd(), 'data')
+const postsDirectory = join(process.cwd(), 'pages')
 
 const cityLabels = new Map([
     ['saint_petersburg', 'Saint Petersburg'],
@@ -83,7 +83,7 @@ function createLangFilter(lang: Lang = defaultLang) {
 }
 
 async function getPages(lang?: Lang) {
-    const pattern = join(process.cwd(), 'data', '**/*.md?(x)')
+    const pattern = join(process.cwd(), 'pages', '**/*.md?(x)')
     const files = await getFilesByPattern(pattern, {})
     const langFilter = createLangFilter(lang)
     return files.filter(langFilter)
