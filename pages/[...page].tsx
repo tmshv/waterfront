@@ -1,5 +1,6 @@
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
+import { MdxRemote } from 'next-mdx-remote/types'
 import { components } from '@/components/MdxRoot'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { getPages, getPageBySlug } from '@/api'
@@ -9,7 +10,7 @@ import { useRouter } from 'next/router'
 import { Opengraph } from '@/components/Opengraph'
 
 type Props = Omit<PageDefinition, 'content'> & {
-    source: any
+    source: MdxRemote.Source
 }
 
 const Page: NextPage<Props> = props => {
@@ -42,14 +43,14 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
     }
 
     const { content, ...def } = page
-    const mdxSource = await renderToString(content, {
+    const source = await renderToString(content, {
         components,
     })
 
     return {
         props: {
             ...def,
-            source: mdxSource
+            source,
         }
     }
 }
