@@ -45,6 +45,14 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
     const { content, ...def } = page
     const source = await renderToString(content, {
         components,
+        provider: {
+            component: PageContext.Provider,
+            props: {
+                value: {
+                   ...def,
+                }
+            }
+        }
     })
 
     return {
