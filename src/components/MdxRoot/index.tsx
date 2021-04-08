@@ -31,7 +31,7 @@ type PersonData = {
     children: React.ReactNode
 }
 
-const components = {
+export const components = {
     wrapper: props => (
         <article>
             <main {...props} />

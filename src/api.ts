@@ -5,17 +5,15 @@ import matter from 'gray-matter'
 import { parse } from 'date-fns'
 import glob from 'glob'
 import { includes } from './lib/set'
-import { PageDefinition, ICity } from './types'
+import { PageDefinition } from './types'
 import { FeatureCollection } from 'geojson'
 import { changeLangPathSuffix } from './lib/lang'
 
 const exists = promisify(fs.exists)
 const readFile = promisify(fs.readFile)
 
-// export type Lang = 'ru' | 'en'
 export type Lang = string
-const defaultLang: Lang = 'ru'
-const otherLangs: Lang[] = ['en']
+const defaultLocale: Lang = 'ru'
 
 type SortFunction<T> = (a: T, b: T) => number
 const postsDirectory = join(process.cwd(), 'data')
@@ -57,54 +55,38 @@ async function getFilesByPattern(pattern: string, options: any) {
     })
 }
 
-function slugHasSuffix(slug: string, suffixes: string[]): boolean {
-    for (const suffix of suffixes) {
-        if (slug.endsWith(suffix)) {
-            return true
-        }
-    }
-    return false
-}
-
-function createLangFilter(lang: Lang = defaultLang) {
-    if (lang === defaultLang) {
-        const langSuffixes = otherLangs.map(x => `/${x}`)
-        return (path: string) => {
-            const slug = getSlugFromPath(path)
-
-            return !slugHasSuffix(slug, langSuffixes)
-        }
-    }
-
-    return (path: string) => {
-        const slug = getSlugFromPath(path)
-        return slug.endsWith(`/${lang}`)
-    }
-}
-
-async function getPages(lang?: Lang) {
+export async function getPages() {
     const pattern = join(process.cwd(), 'data', '**/*.md?(x)')
     const files = await getFilesByPattern(pattern, {})
-    const langFilter = createLangFilter(lang)
-    return files.filter(langFilter)
 
-    // return files.filter(path => {
-    //     const slug = getSlugFromPath(path)
-    //     if (slug.endsWith('/en')) {
-    //         return false
-    //     }
+    return files.map(path => {
+        const slug = getSlugFromPath(path)
+        const locale = getLocaleFromPath(path)
 
-    //     return true
-    // })
+        return {
+            path,
+            slug,
+            locale,
+        }
+    })
 }
 
 function getSlugFromPath(path: string) {
     const rel = relative(postsDirectory, path)
     const realSlug = rel
-        .replace(/\.mdx?$/, '')
-        .replace(/\/index$/, '')
+        .replace(/\.\w{2}\.mdx?$/, '')
 
     return `/${realSlug}`
+}
+
+function getLocaleFromPath(path: string) {
+    const pattern = /\.(.{2})\.mdx?$/
+    const m = pattern.exec(path)
+    if (!m) {
+        return defaultLocale
+    }
+
+    return m[1]
 }
 
 function getTitle(data: string) {
@@ -158,9 +140,20 @@ type GetPagesByTagOptions<T> = {
     sort: SortFunction<T>
 }
 
+export async function getPageBySlug(lang: Lang | undefined, slug: string) {
+    const name = `${slug}.${lang}.md`
+    const path = join(postsDirectory, name)
+
+    return getPage(path)
+}
+
 export async function getPagesByTag(lang: Lang | undefined, tags: string[], options: GetPagesByTagOptions<PageDefinition>) {
-    const files = await getPages(lang)
-    const pages = await Promise.all(files.map(getPage))
+    const files = await getPages()
+    const pages = await Promise.all(files
+        .filter(({ locale }) => locale === lang)
+        .map(({ path }) => path)
+        .map(getPage)
+    )
     const tagsSubset = new Set(tags)
 
     const taggedPages = pages
@@ -181,15 +174,6 @@ export async function getPagesByTag(lang: Lang | undefined, tags: string[], opti
             return page
         })
         .sort(options.sort)
-}
-
-export async function getAllSlugs() {
-    const files = await getPages('ru')
-
-    const slugs = files
-        .map(getSlugFromPath)
-
-    return slugs
 }
 
 export async function getFeatures(lang: Lang, city: string): Promise<FeatureCollection | null> {

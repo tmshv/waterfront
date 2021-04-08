@@ -7,10 +7,7 @@ import 'flag-icon-css/css/flag-icon.min.css'
 import 'src/style.css'
 import 'src/article.css'
 
-import { MdxRoot } from '@/components/MdxRoot'
-import { Opengraph } from '@/components/Opengraph'
 import { PageLayout } from '@/components/PageLayout'
-import { PageConfig } from '@/components/PageConfig'
 import { LangContext } from '@/context/lang'
 
 import ru from '@/ru.json'
@@ -22,15 +19,11 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
     const dict = { en, ru }[lang]!
 
     return (
-        <PageConfig>
+        <>
             <Head>
                 <meta name={'viewport'} content={'initial-scale=1,maximum-scale=1,user-scalable=no'} />
                 <meta name="yandex-verification" content="6db21bf07b5a1c67" />
             </Head>
-
-            <Opengraph
-                url={router.asPath}
-            />
 
             {!metrika ? null : (
                 <YMInitializer accounts={[Number(metrika)]} />
@@ -41,11 +34,11 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
                 dict,
             }}>
                 <PageLayout>
-                    <MdxRoot>
-                        <Component {...pageProps} />
-                    </MdxRoot>
+                    {/* <MdxRoot> */}
+                    <Component {...pageProps} />
+                    {/* </MdxRoot> */}
                 </PageLayout>
             </LangContext.Provider>
-        </PageConfig>
+        </>
     )
 }
