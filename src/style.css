@@ -17,10 +17,10 @@
 
     --size-xs: 2px;
     --size-s: 4px;
-    --size-m: 8px;
-    --size-l: 16px;
-    --size-xl: 24px;
-    --size-xxl: 48px;
+    --size-m: 0.5em;
+    --size-l: 1em;
+    --size-xl: 2em;
+    --size-xxl: 4em;
 
     --font-size-xs: 0.9em;
     --font-size-s: 1em;
