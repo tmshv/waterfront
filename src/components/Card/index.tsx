@@ -12,11 +12,12 @@ export interface ICardProps {
     href: string
     title: string
     previewImage: string
-    tags: string[]
+    tags?: string[]
 }
 
 export const Card: React.FC<ICardProps> = props => {
     const src = useImage(props.previewImage, previewImageSize)
+    const tags = props.tags ?? []
 
     return (
         <section
@@ -28,7 +29,7 @@ export const Card: React.FC<ICardProps> = props => {
             >
                 <a className={styles.link}>
                     <ImageBlock src={src}>
-                        {props.tags.map(x => (
+                        {tags.map(x => (
                             <Tag key={x}>
                                 {x}
                             </Tag>
