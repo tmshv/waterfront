@@ -3,7 +3,7 @@ year: 2019
 city: Saint Petersburg
 tags:
     - project
-cover: /assets/_DSC7078 copy.jpg
+cover: /assets/_DSC7078_copy.jpg
 excerpt: >
      «Sea of Orange / Янтарный пляж» — это архитектурно-художественный проект, реализуемый командой проекта 
      «Waterfront/ Водная линия» совместно с партнерами из голландского архитектурного бюро «Observatorium» (Роттердам). 

@@ -3,7 +3,7 @@ year: 2019
 city: Saint Petersburg
 tags:
     - project
-cover: /assets/_DSC7078 copy.jpg
+cover: /assets/_DSC7078_copy.jpg
 excerpt: >
      Sea of Orange is an architectural and artistic project implemented by the Waterfront project team together with partners from the Dutch architectural 
      bureau Observatorium (Rotterdam). The project, aimed at integrating public art into public spaces, is based on the ideas of co-design and placemaking, 
