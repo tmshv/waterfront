@@ -333,7 +333,7 @@ Creative Industries NL is a Dutch Foundation that supports initiatives in archit
 
 </Person>
 
-<Person src="/assets/unnamed.png">
+<Person src="/assets/archclub.jpg">
 
 **Archclub**
 
