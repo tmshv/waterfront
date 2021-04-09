@@ -36,7 +36,7 @@ At the beginning of 2019, the teams began field research in order to identify th
 
 The key of the project is the constant exchange of experience between experts and participants. Working non-stop, we managed to conduct workshops with representatives of the Dutch studio Observatorium, as well as made a trip to Northern Europe, where we got acquainted with the strategies for the development of industrial areas and embankments.
 
-During the study-trip teams: 
+During the study-trip teams:
 
 - Met with representatives of the administration of the Finnish city of Turku and learned about the long-term strategy of working with coastal areas, designed for 50 years
 
@@ -68,7 +68,7 @@ On February 15, we held an open meeting at the Mayakovsky Library's Center for A
 
 [Facebook](https://www.facebook.com/waterfront.tools)
 
-[Instagram](https://www.instagram.com/waterfront.tools/) 
+[Instagram](https://www.instagram.com/waterfront.tools/)
 
 [Youtube](https://www.youtube.com/channel/UCuGZYvNOfbfIzZTlKZKYzqw)
 
@@ -76,11 +76,9 @@ On February 15, we held an open meeting at the Mayakovsky Library's Center for A
 
 ### Producers
 
-<Person
-    name='Andrey Anisimov'
-    image='/assets/pers_andreya.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_andreya.jpg">
+
+**Andrey Anisimov**
 
 Deputy Director at the Danish Institute of Сulture in St. Petersburg
 
@@ -88,11 +86,9 @@ Deputy Director at the Danish Institute of Сulture in St. Petersburg
 
 </Person>
 
-<Person
-    name='Albina Motor'
-    image='/assets/pers_albina.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_albina.jpg">
+
+**Albina Motor**
 
 Initiator of the project, philologist, researcher of urban everyday culture, author of artistic and educational projects, co-founder and curator of urban programs in the Street Art Research Institute
 
@@ -104,21 +100,17 @@ She strives to make the city a more human-friendly space and has all the necessa
 
 ### Project Coordinators
 
-<Person
-    name='Polina Klimovitskaya'
-    image='/assets/pers_polina.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_polina.jpg" shape="circle">
+
+**Polina Klimovitskaya**
 
 **Project coordinator, Sociologist, Street Art Research Institute**
 
 </Person>
 
-<Person
-    name='Maria Shatunova'
-    image='/assets/pers_mshatunova.jpeg'
-    shape='circle'
->
+<Person src="/assets/pers_mshatunova.jpeg" shape="circle">
+
+**Maria Shatunova**
 
 **Journal coordinator, Sociologist**
 
@@ -126,11 +118,9 @@ She strives to make the city a more human-friendly space and has all the necessa
 
 ### Designer
 
-<Person
-    name='Ilya Davydov'
-    image='/assets/pers_ilyad.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_ilyad.jpg" shape="circle">
+
+**Ilya Davydov**
 
 **Photographer, videographer**
 
@@ -138,57 +128,43 @@ She strives to make the city a more human-friendly space and has all the necessa
 
 ### Website editor
 
-<Person
-    name='Viktoriia Grigorenko'
-    image='/assets/pers_vikag.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_vikag.jpg" shape="circle">
+
+**Viktoriia Grigorenko**
 
 </Person>
-
-
 
 ### Active participants
 
-<Person
-    name='Ekaterina Kuznechikova'
-    image='/assets/pers_kuznechikova_e.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_kuznechikova_e.jpg" shape="circle">
+
+**Ekaterina Kuznechikova**
 
 </Person>
 
-<Person
-    name='Dmitry Letunovsky'
-    image='/assets/pers_letunovsky.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_letunovsky.jpg" shape="circle">
+
+**Dmitry Letunovsky**
 
 </Person>
 
-<Person
-    name='Polina Shtanko'
-    image='/assets/pers_shtanko_p.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_shtanko_p.jpg" shape='circle'>
+
+**Polina Shtanko**
 
 </Person>
 
-<Person
-    name='Tatyana Kiskina'
-    image='/assets/pers_kiskina_t.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_kiskina_t.jpg" shape="circle">
+
+**Tatyana Kiskina**
 
 </Person>
 
 ## Our experts
 
-<Person
-    name='Daniyar Yusupov'
-    image='/assets/pers_daniyar.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_daniyar.jpg" shape="circle">
+
+**Daniyar Yusupov**
 
 **Architect, urbanist**
 
@@ -198,11 +174,9 @@ Since 2004 specializes in the development of the urban environment of post-Sovie
 
 </Person>
 
-<Person
-    name='Dmitry Pilikin'
-    image='/assets/pers_pilikin.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_pilikin.jpg" shape="circle">
+
+**Dmitry Pilikin**
 
 **Curator, art critic, art historian**
 
@@ -212,11 +186,9 @@ Dmitry has been working in the field of contemporary art since 1989. Since 1995 
 
 </Person>
 
-<Person
-    name='Ksenia Kuzmina'
-    image='/assets/pers_kseniyak.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_kseniyak.jpg" shape="circle">
+
+**Ksenia Kuzmina**
 
 **Sociologist, associate Professor at the HSE in St. Petersburg**
 
@@ -224,11 +196,9 @@ Dmitry has been working in the field of contemporary art since 1989. Since 1995 
 
 </Person>
 
-<Person
-    name='Olga Mnishko'
-    image='/assets/pers_olgam.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_olgam.jpg" shape="circle">
+
+**Olga Mnishko**
 
 **City activist, co-creator and coordinator of the Cycling of St. Petersburg, the festival Living streets and the educational project Right to water**
 
@@ -236,11 +206,8 @@ Over the years, I have managed to implement several important city initiatives, 
 
 </Person>
 
-<Person
-    name='Angelina Davydova'
-    image='/assets/pers_davydova_a.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_davydova_a.jpg" shape="circle">
+**Angelina Davydova**
 
 **Ecologist, environmental journalist**
 
@@ -248,11 +215,9 @@ Angelina writes for Russian and international media. She is director of the Bure
 
 </Person>
 
-<Person
-    name='Maria Tinika'
-    image='/assets/pers_tinika_m.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_tinika_m.jpg" shape="circle">
+
+**Maria Tinika**
 
 **City activist, founder of the initiative group Trees of St. Petersburg**
 
@@ -262,11 +227,9 @@ Angelina writes for Russian and international media. She is director of the Bure
 
 ## Our consultants
 
-<Person
-    name='Roman Borozdin'
-    image='/assets/pers_romanb.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_romanb.jpg" shape="circle">
+
+**Roman Borozdin**
 
 Port 78, "St. Petersburg — the sea capital»
 
@@ -274,11 +237,9 @@ The founder of the management company Port 78, which aims to improve the yacht a
 
 </Person>
 
-<Person
-    name='Olga Pridorogina'
-    image='/assets/pers_olgap.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_olgap.jpg" shape="circle">
+
+**Olga Pridorogina**
 
 Port 78
 
@@ -288,7 +249,7 @@ Director of sales and marketing of the management company Port 78.
 
 ## Web-platform
 
-**Daniyar Yusupov**  architect, urbanist
+**Daniyar Yusupov** architect, urbanist
 
 **Ilya Davydov** designer
 
@@ -300,7 +261,7 @@ Director of sales and marketing of the management company Port 78.
 
 **Vika Grigorenko** website editor
 
-## Contact us 
+## Contact us
 
 **Polina Klimovitskaya** project coordinator
 
@@ -312,19 +273,17 @@ Director of sales and marketing of the management company Port 78.
 
 ## Organizers
 
-<Person
-    name='Street Art Research Institute'
-    image='/assets/logo_institute.jpg'
->
+<Person src="/assets/logo_institute.jpg">
+
+**Street Art Research Institute**
 
 The Institute is an open platform for research and educational activities in the field of art in the public urban environment. In the center of attention are three equivalent concepts: people, art, street. Supporting initiatives related to the phenomenon of art in public space, specialists from the Institute design changes in the urban environment and work with cultural policy: create platforms for discussion, establish a dialogue with public regulators and provide expert support for projects.
 
 </Person>
 
-<Person
-    name='Danish Cultural Institute in St. Petersburg'
-    image='/assets/logo_dansk_institute.jpg'
->
+<Person src="/assets/logo_dansk_institute.jpg">
+
+**Danish Cultural Institute in St. Petersburg**
 
 The Danish Cultural Institute was founded in 1940. It is a self-governing organization under the auspices of the Danish Ministry of culture. The main objectives of the Danish Institute of Culture are to promote dialogue, exchange of experience and ideas in the field of culture between Denmark and other countries and, through international cooperation between cultural institutions and artists, to promote cultural values both in Denmark and abroad.
 
@@ -334,55 +293,49 @@ The Institute cooperates with cultural institutions of other countries under the
 
 ## Our partners
 
-<Person
-    name='HSE in St. Petersburg '
-    image='/assets/logo_hse_spb.jpg'
->
+<Person src="/assets/logo_hse_spb.jpg">
+
+**HSE in St. Petersburg**
 
 One of the leading universities in Russia, consistently getting to the first positions in the rankings. HSE is a research University that carries out its mission through scientific and educational, project, expert-analytical and socio-cultural activities based on international scientific and organizational standards.
 
 </Person>
 
-<Person
-    name='The Nordics'
-    image='/assets/logo_nordics.jpg'
->
+<Person src="/assets/logo_nordics.jpg">
+
+**The Nordics**
 
 A project created by the Nordic Council of Ministers. The idea of the Nordics is to get acquainted with the Scandinavian way of thinking and value system through international cultural exchange.
 
 </Person>
 
-<Person
-    name='Observatorium (NL)'
-    image='/assets/logo_observatorium.jpg'
->
+<Person src="/assets/logo_observatorium.jpg">
+
+**Observatorium (NL)**
 
 Dutch studio working with public spaces. Using architectural and artistic solutions, Observatorium integrates meanings into functional objects and creates a new format, Art+Architecture=Artitecture.
 
 </Person>
 
-<Person
-    name='Center for art and music of V. V. Mayakovsky Library'
-    image='/assets/logo_centre_mayakovskogo.jpg'
->
+<Person src="/assets/logo_centre_mayakovskogo.jpg">
+
+**Center for art and music of V. V. Mayakovsky Library**
 
 Library, information and cultural center of art and music of V. V. Mayakovsky Library is a center of a new format. Its activities are aimed at informing visitors about trends in contemporary art and assisting in educational processes related to art.
 
 </Person>
 
-<Person
-    name='Creative Industries NL'
-    image='/assets/logo_creative_fund.jpg'
->
+<Person src="/assets/logo_creative_fund.jpg">
+
+**Creative Industries NL**
 
 Creative Industries NL is a Dutch Foundation that supports initiatives in architecture, design, digital culture and other creative practices. The purpose of the Foundation is interdisciplinary interaction between cultural, social and economic spheres and the development and implementation of project solutions for socio-cultural problems through grants.
 
 </Person>
 
-<Person
-    name='Archclub'
-    image='/assets/unnamed.png'
->
+<Person src="/assets/archclub.jpg">
+
+**Archclub**
 
 Archclub is a multipurpose loft with a unique view of the Gulf of Finland in the Sevkabel Port on Vasilievsky island. The Archclub provides a platform for various events and discussions, and serves as a place of communication for architects, designers and anyone interested in the development of the city.
 

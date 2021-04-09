@@ -1,10 +1,13 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { PageContext } from '@/context/page'
 import { PageHead } from '@/components/PageHead'
-import { Person } from '@/components/Person'
+import { Person, PersonProps } from '@/components/Person'
 import { WideBlock } from '@/components/WideBlock'
 import { Video } from '@/components/Video'
+import { Carousel } from '@/ui/Carousel'
+import { Columns } from '@/ui/Columns'
 import { A } from '@/components/A'
+import Image from 'next/image'
 
 const H1: React.FC<{ children: string }> = props => {
     const config = useContext(PageContext)
@@ -22,36 +25,33 @@ const H1: React.FC<{ children: string }> = props => {
     )
 }
 
-type PersonData = {
-    shape?: string
-    name: string
-    image: string
-    children: React.ReactNode
+const Img: React.FC<{ src: string }> = props => {
+    const config = useContext(PageContext)
+
+    return (
+        <Image
+            src={props.src}
+            alt={config.excerpt}
+            width={4}
+            height={3}
+            layout={'responsive'}
+            objectFit={'cover'}
+        />
+    )
 }
 
 export const components = {
-    wrapper: props => (
-        <article>
-            <main {...props} />
-        </article>
-    ),
     h1: H1,
     a: A,
-    Person: (props: PersonData) => (
-        <Person
-            shape={props.shape ?? 'default'}
-            item={{
-                name: props.name,
-                content: '',
-                previewImage: props.image,
-                role: 'team',
-            }}
+    img: Img,
+    Person: (props: PersonProps) => (
+        <Person {...props}
             style={{
                 marginBottom: 50,
             }}
-        >
-            {props.children}
-        </Person>
+        />
     ),
+    Carousel,
     Video,
+    Columns,
 }

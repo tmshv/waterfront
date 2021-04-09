@@ -1,13 +1,20 @@
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
 import { MdxRemote } from 'next-mdx-remote/types'
-import { components } from '@/components/MdxRoot'
+import { components } from '@/mdx'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { getPages, getPageBySlug } from '@/api'
 import { PageDefinition } from '@/types'
 import { PageContext } from '@/context/page'
 import { useRouter } from 'next/router'
 import { Opengraph } from '@/components/Opengraph'
+import { PageLayout } from '@/components/PageLayout'
+
+const BasicProvider = props => (
+    <article>
+        {props.children}
+    </article>
+)
 
 type Props = Omit<PageDefinition, 'content'> & {
     source: MdxRemote.Source
@@ -15,7 +22,13 @@ type Props = Omit<PageDefinition, 'content'> & {
 
 const Page: NextPage<Props> = props => {
     const router = useRouter()
-    const content = hydrate(props.source, { components })
+    const content = hydrate(props.source, {
+        components,
+        provider: {
+            component: BasicProvider,
+            props: {}
+        }
+    })
 
     return (
         <PageContext.Provider value={props as any}>
@@ -23,7 +36,9 @@ const Page: NextPage<Props> = props => {
                 url={router.asPath}
             />
 
-            {content}
+            <PageLayout>
+                {content}
+            </PageLayout>
         </PageContext.Provider>
     )
 }
@@ -49,7 +64,7 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
             component: PageContext.Provider,
             props: {
                 value: {
-                   ...def,
+                    ...def,
                 }
             }
         }

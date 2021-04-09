@@ -73,13 +73,15 @@ export async function getPages() {
 function getSlugFromPath(path: string) {
     const rel = relative(postsDirectory, path)
     const realSlug = rel
-        .replace(/\.\w{2}\.mdx?$/, '')
+        .replace(/\w{2}\.mdx?$/, '')
+        .replace(/\.$/, '')
+        .replace(/\/$/, '')
 
     return `/${realSlug}`
 }
 
 function getLocaleFromPath(path: string) {
-    const pattern = /\.(.{2})\.mdx?$/
+    const pattern = /(.{2})\.mdx?$/
     const m = pattern.exec(path)
     if (!m) {
         return defaultLocale
@@ -103,34 +105,37 @@ function getTitle(data: string) {
     return null
 }
 
-async function getPage(path: string): Promise<PageDefinition> {
-    // const realSlug = slug.replace(/\.md$/, '')
-    // const fullPath = join(postsDirectory, `${realSlug}.md`)
-    const fileContents = await readFile(path, 'utf8')
-    const { data, content } = matter(fileContents)
+async function getPage(path: string): Promise<PageDefinition | null> {
+    try {
 
-    // return data['url']
-    const slug = getSlugFromPath(path)
-    const title = getTitle(content)
+        const fileContents = await readFile(path, 'utf8')
+        const { data, content } = matter(fileContents)
 
-    const tags: string[] = data.tags ?? []
-    const excerpt: string = data.excerpt ?? ''
-    const cover: string = data.cover ?? ''
+        // return data['url']
+        const slug = getSlugFromPath(path)
+        const title = getTitle(content)
 
-    const date = data.date ?
-        parse(data.date, 'dd.MM.yyyy', new Date())
-            .toString()
-        : null
+        const tags: string[] = data.tags ?? []
+        const excerpt: string = data.excerpt ?? ''
+        const cover: string = data.cover ?? ''
 
-    return {
-        ...data,
-        date,
-        cover,
-        excerpt,
-        tags,
-        title,
-        slug,
-        content,
+        const date = data.date ?
+            parse(data.date, 'dd.MM.yyyy', new Date())
+                .toString()
+            : null
+
+        return {
+            ...data,
+            date,
+            cover,
+            excerpt,
+            tags,
+            title,
+            slug,
+            content,
+        }
+    } catch (error) {
+        return null
     }
 }
 
@@ -140,19 +145,29 @@ type GetPagesByTagOptions<T> = {
 }
 
 export async function getPageBySlug(lang: Lang | undefined, slug: string) {
-    const name = `${slug}.${lang}.md`
-    const path = join(postsDirectory, name)
+    const paths = [
+        join(postsDirectory, `${slug}.${lang}.md`),
+        join(postsDirectory, `${slug}/${lang}.md`),
+    ]
 
-    return getPage(path)
+    for (const path of paths) {
+        const page = await getPage(path)
+        if (page) {
+            return page
+        }
+    }
+
+    return null
 }
 
 export async function getPagesByTag(lang: Lang | undefined, tags: string[], options: GetPagesByTagOptions<PageDefinition>) {
     const files = await getPages()
-    const pages = await Promise.all(files
+    const pagesOfNulls = await Promise.all(files
         .filter(({ locale }) => locale === lang)
         .map(({ path }) => path)
         .map(getPage)
     )
+    const pages = pagesOfNulls.filter(Boolean) as PageDefinition[]
     const tagsSubset = new Set(tags)
 
     const taggedPages = pages
