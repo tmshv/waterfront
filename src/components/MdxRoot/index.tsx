@@ -4,6 +4,8 @@ import { PageHead } from '@/components/PageHead'
 import { Person, PersonProps } from '@/components/Person'
 import { WideBlock } from '@/components/WideBlock'
 import { Video } from '@/components/Video'
+import { Carousel } from '@/ui/Carousel'
+import { Columns } from '@/ui/Columns'
 import { A } from '@/components/A'
 import Image from 'next/image'
 
@@ -49,5 +51,7 @@ export const components = {
             }}
         />
     ),
+    Carousel,
     Video,
+    Columns,
 }
