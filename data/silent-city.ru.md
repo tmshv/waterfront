@@ -23,11 +23,10 @@ excerpt: Перформативное мокьюментари исследов�
 
 ***
 
-<Person
-    name='Флуктус К. Б.'
-    image='/assets/scientist_silentcity.jpg'
-    shape='circle'
->
+<Person src="/assets/scientist_silentcity.jpg" shape="circle">
+
+**Флуктус К. Б.**
+
 зав. лаб. экспериментальной нелинейной акустики НИИАА
 </Person>
 

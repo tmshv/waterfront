@@ -74,11 +74,9 @@ cover: /assets/wf_about_head.jpg
 
 ### Продюсеры
 
-<Person
-    name='Андрей Анисимов'
-    image='/assets/pers_andreya.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_andreya.jpg">
+
+**Андрей Анисимов**
 
 **Заместитель директора Датского института культуры в Санкт-Петербурге**
 
@@ -86,11 +84,9 @@ cover: /assets/wf_about_head.jpg
 
 </Person>
 
-<Person
-    name='Альбина Мотор'
-    image='/assets/pers_albina.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_albina.jpg">
+
+**Альбина Мотор**
 
 **Инициатор  проекта, исследователь культуры городской повседневности, инициатор и автор художественных и просветительских проектов, сооснователь Института исследования стрит-арта**
 
@@ -102,21 +98,17 @@ cover: /assets/wf_about_head.jpg
 
 ### Координаторы проекта
 
-<Person
-    name='Полина Климовицкая'
-    image='/assets/pers_polina.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_polina.jpg" shape="circle">
+
+**Полина Климовицкая**
 
 **Координатор проекта, социолог, Институт исследования стрит-арта**
 
 </Person>
 
-<Person
-    name='Мария Шатунова'
-    image='/assets/pers_mshatunova.jpeg'
-    shape='circle'
->
+<Person src="/assets/pers_mshatunova.jpeg" shape="circle">
+
+**Мария Шатунова**
 
 **Координатор журнала, социолог**
 
@@ -125,11 +117,9 @@ cover: /assets/wf_about_head.jpg
 
 ### Дизайнер
 
-<Person
-    name='Илья Давыдов'
-    image='/assets/pers_ilyad.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_ilyad.jpg" shape="circle">
+
+**Илья Давыдов**
 
 **Фотограф, видеограф**
 
@@ -138,11 +128,9 @@ cover: /assets/wf_about_head.jpg
 
 ### Редактор сайта
 
-<Person
-    name='Вика Григоренко'
-    image='/assets/pers_vikag.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_vikag.jpg" shape="circle">
+
+**Вика Григоренко**
 
 </Person>
 
@@ -150,45 +138,35 @@ cover: /assets/wf_about_head.jpg
 
 ### Актив участников
 
-<Person
-    name='Екатерина Кузнечикова'
-    image='/assets/pers_kuznechikova_e.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_kuznechikova_e.jpg" shape="circle">
+
+**Екатерина Кузнечикова**
 
 </Person>
 
-<Person
-    name='Дмитрий Летуновский'
-    image='/assets/pers_letunovsky.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_letunovsky.jpg" shape="circle">
+
+**Дмитрий Летуновский**
 
 </Person>
 
-<Person
-    name='Полина Штанько'
-    image='/assets/pers_shtanko_p.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_shtanko_p.jpg" shape='circle'>
+
+**Полина Штанько**
 
 </Person>
 
-<Person
-    name='Татьяна Кискина'
-    image='/assets/pers_kiskina_t.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_kiskina_t.jpg" shape="circle">
+
+**Татьяна Кискина**
 
 </Person>
 
 ## Эксперты
 
-<Person
-    name='Данияр Юсупов'
-    image='/assets/pers_daniyar.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_daniyar.jpg" shape="circle">
+
+**Данияр Юсупов**
 
 **Архитектор, урбанист**
 
@@ -198,11 +176,9 @@ cover: /assets/wf_about_head.jpg
 
 </Person>
 
-<Person
-    name='Дмитрий Пиликин'
-    image='/assets/pers_pilikin.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_pilikin.jpg" shape="circle">
+
+**Дмитрий Пиликин**
 
 **Куратор, арт-критик, историк искусств**
 
@@ -212,11 +188,9 @@ cover: /assets/wf_about_head.jpg
 
 </Person>
 
-<Person
-    name='Ксения Кузьмина'
-    image='/assets/pers_kseniyak.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_kseniyak.jpg" shape="circle">
+
+**Ксения Кузьмина**
 
 **Социолог, доцент НИУ ВШЭ в Санкт-Петербурге**
 
@@ -224,11 +198,9 @@ cover: /assets/wf_about_head.jpg
 
 </Person>
 
-<Person
-    name='Ольга Мнишко'
-    image='/assets/pers_olgam.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_olgam.jpg" shape="circle">
+
+**Ольга Мнишко**
 
 **Городской активист, со-создательница и координатор «Велосипедизации Петербурга», фестиваля «Живые улицы» и образовательного проекта «Право на воду»**
 
@@ -236,11 +208,9 @@ cover: /assets/wf_about_head.jpg
 
 </Person>
 
-<Person
-    name='Ангелина Давыдова'
-    image='/assets/pers_davydova_a.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_davydova_a.jpg" shape="circle">
+
+**Ангелина Давыдова**
 
 **Эколог, экологический журналист**
 
@@ -248,11 +218,9 @@ cover: /assets/wf_about_head.jpg
 
 </Person>
 
-<Person
-    name='Мария Тиника'
-    image='/assets/pers_tinika_m.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_tinika_m.jpg" shape="circle">
+
+**Мария Тиника**
 
 **Городской активист, создательница инициативной группы «Деревья Петербурга»**
 
@@ -262,11 +230,9 @@ cover: /assets/wf_about_head.jpg
 
 ## Консультанты
 
-<Person
-    name='Роман Бороздин'
-    image='/assets/pers_romanb.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_romanb.jpg" shape="circle">
+
+**Роман Бороздин**
 
 Port 78, «Петербург — морская столица»
 
@@ -274,11 +240,9 @@ Port 78, «Петербург — морская столица»
 
 </Person>
 
-<Person
-    name='Ольга Придорогина'
-    image='/assets/pers_olgap.jpg'
-    shape='circle'
->
+<Person src="/assets/pers_olgap.jpg" shape="circle">
+
+**Ольга Придорогина**
 
 Port 78
 
@@ -312,19 +276,17 @@ Port 78
 
 ## Организаторы
 
-<Person
-    name='Институт исследования стрит-арта'
-    image='/assets/logo_institute.jpg'
->
+<Person src="/assets/logo_institute.jpg">
+
+**Институт исследования стрит-арта**
 
 Институт — открытая платформа для исследований и просветительской деятельности в области искусства в публичной городской среде. В центре внимания — три равнозначных объекта: человек, искусство, улица. Поддерживая инициативы, связанные с феноменом искусства в общественном пространстве, специалисты ИИРС проектируют изменения в городской среде и работают с культурной политикой: создают дискуссионные площадки, устанавливают диалог с общественными регуляторами и оказывают экспертную поддержку проектов.
 
 </Person>
 
-<Person
-    name='Датский институт культуры'
-    image='/assets/logo_dansk_institute.jpg'
->
+<Person src="/assets/logo_dansk_institute.jpg">
+
+**Датский институт культуры**
 
 Датский институт культуры основан в 1940 году. Это самоуправляемая организация под эгидой Министерства культуры Дании. Основные задачи Датского института культуры – содействовать укреплению диалога, обмена опытом и идеями в области культуры между Данией и другими странами и посредством международного сотрудничества учреждений и деятелей культуры и искусства способствовать продвижению культурных ценностей как в Дании, так и за рубежом.
 
@@ -334,55 +296,49 @@ Port 78
 
 ## Партнёры
 
-<Person
-    name='НИУ ВШЭ в Санкт-Петербурге'
-    image='/assets/logo_hse_spb.jpg'
->
+<Person src="/assets/logo_hse_spb.jpg">
+
+**НИУ ВШЭ в Санкт-Петербурге**
 
 Один из ведущих вузов России, стабильно попадающий на первые позиции в рейтингах. НИУ ВШЭ — исследовательский университет, осуществляющий свою миссию через научно-образовательную, проектную, экспертно-аналитическую и социокультурную деятельности на основе международных научных и организационных стандартов.
 
 </Person>
 
-<Person
-    name='The Nordics'
-    image='/assets/logo_nordics.jpg'
->
+<Person src="/assets/logo_nordics.jpg">
+
+**The Nordics**
 
 Проект, созданный Советом министров Северных стран. Идея The Nordics — знакомство со скандинавским образом мысли и системой ценностей через международный культурный обмен.
 
 </Person>
 
-<Person
-    name='Observatorium (NL)'
-    image='/assets/logo_observatorium.jpg'
->
+<Person src="/assets/logo_observatorium.jpg">
+
+**Observatorium (NL)**
 
 Голландская студия, работающая с общественными пространствами. С помощью архитектурных и художественных решений Observatorium интегрирует смыслы в функциональные объекты и создает новый формат Art+Architecture=Artitecture.
 
 </Person>
 
-<Person
-    name='Центр искусства и музыки ЦГПБ им. В.В. Маяковского'
-    image='/assets/logo_centre_mayakovskogo.jpg'
->
+<Person src="/assets/logo_centre_mayakovskogo.jpg">
+
+**Центр искусства и музыки ЦГПБ им. В.В. Маяковского**
 
 Библиотечно-информационный и культурный центр искусства и музыки ЦГПБ им. В.В. Маяковского (БИКЦИМ) – библиотечный центр нового формата. Его деятельность направлена на информирование посетителей о тенденциях в современном искусстве и помощь в образовательных процессах, связанных с искусством.
 
 </Person>
 
-<Person
-    name='Creative Industries NL'
-    image='/assets/logo_creative_fund.jpg'
->
+<Person src="/assets/logo_creative_fund.jpg">
+
+**Creative Industries NL**
 
 Creative Industries NL — голландский фонд, поддерживающий инициативы в сфере архитектуры, дизайна,  digital-культуры и прочие креативные практики. Цель фонда — междисциплинарное взаимодействие между культурной, социальной и экономической сферами и разработка и реализация проектных решений для социокультурных проблем с помощью грантов.
 
 </Person>
 
-<Person
-    name='Архклуб'
-    image='/assets/unnamed.png'
->
+<Person src="/assets/unnamed.png">
+
+**Архклуб**
 
 Архклуб — универсальный лофт с уникальным видом на Финский залив в пространстве Севкабель Порт на Васильевском острове. Архклуб предоставляет площадку для проведения различных мероприятий и дискуссий, а также служит местом коммуникации для архитекторов, дизайнеров и всех интересующихся развитием города.
 
