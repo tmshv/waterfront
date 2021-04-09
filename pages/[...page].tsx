@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
             component: PageContext.Provider,
             props: {
                 value: {
-                   ...def,
+                    ...def,
                 }
             }
         }
