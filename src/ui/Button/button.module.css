@@ -86,7 +86,7 @@
     border-radius: 50%;
 }
 
-@media screen and (max-width : 480px) {
+@media screen and (max-width: 480px) {
     .button {
         width: 100%;
     }
@@ -96,7 +96,18 @@
     }
 
     .themeDefault {
-        background:rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.7);
+    }
+}
+
+/* DARK THEME */
+
+@media screen and (prefers-color-scheme: dark) {
+    .button {
+        --color-button: var(--color-brand-light);
     }
 
+    .button:hover:not([disabled]) {
+        --color-button: white;
+    }
 }
