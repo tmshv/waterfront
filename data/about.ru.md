@@ -336,7 +336,7 @@ Creative Industries NL — голландский фонд, поддержива
 
 </Person>
 
-<Person src="/assets/unnamed.png">
+<Person src="/assets/archclub.jpg">
 
 **Архклуб**
 
