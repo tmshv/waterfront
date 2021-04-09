@@ -1,7 +1,7 @@
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
 import { MdxRemote } from 'next-mdx-remote/types'
-import { components } from '@/components/MdxRoot'
+import { components } from '@/mdx'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { getPages, getPageBySlug } from '@/api'
 import { PageDefinition } from '@/types'

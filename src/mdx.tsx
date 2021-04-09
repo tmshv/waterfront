@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { PageContext } from '@/context/page'
 import { PageHead } from '@/components/PageHead'
 import { Person, PersonProps } from '@/components/Person'
