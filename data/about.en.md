@@ -36,7 +36,7 @@ At the beginning of 2019, the teams began field research in order to identify th
 
 The key of the project is the constant exchange of experience between experts and participants. Working non-stop, we managed to conduct workshops with representatives of the Dutch studio Observatorium, as well as made a trip to Northern Europe, where we got acquainted with the strategies for the development of industrial areas and embankments.
 
-During the study-trip teams: 
+During the study-trip teams:
 
 - Met with representatives of the administration of the Finnish city of Turku and learned about the long-term strategy of working with coastal areas, designed for 50 years
 
@@ -68,7 +68,7 @@ On February 15, we held an open meeting at the Mayakovsky Library's Center for A
 
 [Facebook](https://www.facebook.com/waterfront.tools)
 
-[Instagram](https://www.instagram.com/waterfront.tools/) 
+[Instagram](https://www.instagram.com/waterfront.tools/)
 
 [Youtube](https://www.youtube.com/channel/UCuGZYvNOfbfIzZTlKZKYzqw)
 
@@ -288,7 +288,7 @@ Director of sales and marketing of the management company Port 78.
 
 ## Web-platform
 
-**Daniyar Yusupov**  architect, urbanist
+**Daniyar Yusupov** architect, urbanist
 
 **Ilya Davydov** designer
 
@@ -300,7 +300,7 @@ Director of sales and marketing of the management company Port 78.
 
 **Vika Grigorenko** website editor
 
-## Contact us 
+## Contact us
 
 **Polina Klimovitskaya** project coordinator
 
