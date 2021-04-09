@@ -53,7 +53,7 @@ export const Carousel: React.FC<CarouselProps> = props => {
                 <Button onClick={() => slide(PREV)}>
                     Prev
                 </Button>
-                <Button theme={'primary' }onClick={() => slide(NEXT)}>
+                <Button onClick={() => slide(NEXT)}>
                     Next
                 </Button>
             </div>
