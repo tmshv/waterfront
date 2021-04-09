@@ -7,7 +7,6 @@ import 'flag-icon-css/css/flag-icon.min.css'
 import 'src/style.css'
 import 'src/article.css'
 
-import { PageLayout } from '@/components/PageLayout'
 import { LangContext } from '@/context/lang'
 
 import ru from '@/ru.json'
@@ -33,9 +32,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
                 lang,
                 dict,
             }}>
-                <PageLayout>
-                    <Component {...pageProps} />
-                </PageLayout>
+                <Component {...pageProps} />
             </LangContext.Provider>
         </>
     )
