@@ -39,11 +39,6 @@ const Img: React.FC<{ src: string }> = props => {
 }
 
 export const components = {
-    wrapper: props => (
-        <article>
-            <main {...props} />
-        </article>
-    ),
     h1: H1,
     a: A,
     img: Img,
