@@ -1,8 +1,8 @@
 import s from './person.module.css'
 
 import { memo } from 'react'
-import cx from 'classnames'
 import { Columns } from '@/ui/Columns'
+import Image from 'next/image'
 
 export type PersonProps = {
     style?: React.CSSProperties
@@ -12,13 +12,13 @@ export type PersonProps = {
 
 export const Person: React.FC<PersonProps> = memo(({ shape = 'default', ...props }) => (
     <Columns layout={'1fr 3fr'} style={props.style}>
-        <div>
-            <div className={cx(s.image, s[`shape_${shape}`])}>
-                <img
-                    src={props.src}
-                />
-            </div>
-        </div>
+        <Image
+            src={props.src}
+            width={1}
+            height={1}
+            layout={'responsive'}
+            className={s[`shape_${shape}`]}
+        />
 
         <div>
             {props.children}
