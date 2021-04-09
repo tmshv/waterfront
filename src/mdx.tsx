@@ -7,6 +7,7 @@ import { Video } from '@/components/Video'
 import { Carousel } from '@/ui/Carousel'
 import { Columns } from '@/ui/Columns'
 import { Card } from '@/ui/Card'
+import { Menu } from '@/ui/Menu'
 import { A } from '@/components/A'
 import Image from 'next/image'
 
@@ -62,4 +63,5 @@ export const components = {
     Video,
     Columns,
     Card,
+    Menu,
 }

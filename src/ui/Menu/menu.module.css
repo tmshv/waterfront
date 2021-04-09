@@ -1,0 +1,30 @@
+.menu {
+    font-family: var(--font-family-second);
+    font-size: var(--font-size-menu);
+
+    list-style: none;
+    display: flex;
+
+    flex-direction: column;
+
+    margin: 0 0 var(--size-xl);
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    max-width: 100px;
+}
+
+.menu span {
+    color: var(--color-brand-light);
+    max-width: 100px;
+}
+
+.menu.horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+
+    justify-content: space-between;
+}

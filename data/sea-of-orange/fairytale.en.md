@@ -12,6 +12,16 @@ excerpt: >
 
 # FAIRYTALE
 
+<Menu>
+<a href="/sea-of-orange">SEA OF ORANGE</a>
+<a href="/sea-of-orange/stories-and-ideas">STORIES & IDEAS</a>
+<a href="/sea-of-orange/fairytale">FAIRY TALE</a>
+<a href="/sea-of-orange/dune-of-orange">DUNE OF ORANGE</a>
+<a href="/sea-of-orange/dreamrocks">DREAM ROCKS</a>
+<a href="/sea-of-orange/events-and-news">EVENTS & NEWS</a>
+<a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
+</Menu>
+
 Place-making starts with a conversation on finding shared ambitions and dreams. Story-telling triggers the imagination and is one way to share the project in the community.
 
 ![](/assets/sea-of-orange/sorange_4_I9.jpg)

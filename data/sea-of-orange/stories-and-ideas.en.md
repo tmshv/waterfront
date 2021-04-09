@@ -10,7 +10,17 @@ excerpt: >
      so its main feature is cooperation with local residents, their involvement in the process of planning and creating an art object.
 ---
 
-# Stories and Ideas
+# STORIES AND IDEAS
+
+<Menu>
+<a href="/sea-of-orange">SEA OF ORANGE</a>
+<a href="/sea-of-orange/stories-and-ideas">STORIES & IDEAS</a>
+<a href="/sea-of-orange/fairytale">FAIRY TALE</a>
+<a href="/sea-of-orange/dune-of-orange">DUNE OF ORANGE</a>
+<a href="/sea-of-orange/dreamrocks">DREAM ROCKS</a>
+<a href="/sea-of-orange/events-and-news">EVENTS & NEWS</a>
+<a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
+</Menu>
 
 The first phase of the project was to get to know the area and ask the local residents to share their memories and dreams for the future of this region by means of workshops and a walking conference. These memories, fairytales, drawings, dreams, stories and ideas were made by participants of the workshops who came from Lomonosov and St Petersburg and were a start of the imaginitive transformation of this site.
 
