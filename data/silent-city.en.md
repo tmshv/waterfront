@@ -9,7 +9,7 @@ excerpt: Performative mocumentary research
 
 # «Silent City»
 
-«Silent City» is an app developed by specialists of the Institute of acoustic anomalies research for the study of objects AAO-, AAN- and AAZ-types. 
+«Silent City» is an app developed by specialists of the Institute of acoustic anomalies research for the study of objects AAO-, AAN- and AAZ-types.
 
 If you are reading this text, it means that your access level allows you to join the research group. You need to download the app to your mobile device and visit AAO-type objects at the following addresses:
 - 41 Chernaya Rechka nab. (the object is located on the bridge)
@@ -21,11 +21,11 @@ If you are reading this text, it means that your access level allows you to join
 
 After studying the psychoacoustic properties of AAO-type objects, you must submit a report (e-mail of the research group department: silentcity@waterfront.tools), the authors of selected reports will have temporary access to the study of AAN objects during the second phase of the study.
 
-The following is the introduction of the dissertation on the topic "A comprehensive study of the origin, perception and psychological impact of acoustic anomalies of urban type on a person" by senior researcher Fluctus K. B. 
+The following is the introduction of the dissertation on the topic "A comprehensive study of the origin, perception and psychological impact of acoustic anomalies of urban type on a person" by senior researcher Fluctus K. B.
 
 ***
 
-<Person src="/assets/scientist_silentcity.jpg" shape="circle">
+<Person src="/assets/scientist_silentcity.jpg">
 
 **Fluctus K. B.**
 
