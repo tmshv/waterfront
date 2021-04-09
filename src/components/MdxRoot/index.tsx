@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import { PageContext } from '@/context/page'
 import { PageHead } from '@/components/PageHead'
-import { Person } from '@/components/Person'
+import { Person, PersonProps } from '@/components/Person'
 import { WideBlock } from '@/components/WideBlock'
 import { Video } from '@/components/Video'
 import { A } from '@/components/A'
@@ -38,13 +38,6 @@ const Img: React.FC<{ src: string }> = props => {
     )
 }
 
-type PersonData = {
-    shape?: string
-    name: string
-    image: string
-    children: React.ReactNode
-}
-
 export const components = {
     wrapper: props => (
         <article>
@@ -54,21 +47,12 @@ export const components = {
     h1: H1,
     a: A,
     img: Img,
-    Person: (props: PersonData) => (
-        <Person
-            shape={props.shape ?? 'default'}
-            item={{
-                name: props.name,
-                content: '',
-                previewImage: props.image,
-                role: 'team',
-            }}
+    Person: (props: PersonProps) => (
+        <Person {...props}
             style={{
                 marginBottom: 50,
             }}
-        >
-            {props.children}
-        </Person>
+        />
     ),
     Video,
 }

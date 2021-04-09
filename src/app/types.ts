@@ -10,13 +10,6 @@ export interface IArticle {
     body: string
 }
 
-export interface IPerson {
-    content: string
-    name: string
-    previewImage: string
-    role: 'partner' | 'expert' | 'team'
-}
-
 export interface IFeatureSettings {
     color: string
     fieldTarget: string

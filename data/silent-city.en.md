@@ -25,11 +25,10 @@ The following is the introduction of the dissertation on the topic "A comprehens
 
 ***
 
-<Person
-    name='Fluctus K. B.'
-    image='/assets/scientist_silentcity.jpg'
-    shape='circle'
->
+<Person src="/assets/scientist_silentcity.jpg" shape="circle">
+
+**Fluctus K. B.**
+
 Head lab. experimental nonlinear acoustics NIIAA
 </Person>
 
