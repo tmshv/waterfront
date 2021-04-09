@@ -9,6 +9,7 @@ import { PageContext } from '@/context/page'
 import { useRouter } from 'next/router'
 import { Opengraph } from '@/components/Opengraph'
 import { PageLayout } from '@/components/PageLayout'
+import { ControlsContext } from '@/context/controls'
 
 const BasicProvider = props => (
     <article>
@@ -36,9 +37,11 @@ const Page: NextPage<Props> = props => {
                 url={router.asPath}
             />
 
-            <PageLayout>
-                {content}
-            </PageLayout>
+            <ControlsContext.Provider value={{ size: 'default', shape: 'default' }}>
+                <PageLayout>
+                    {content}
+                </PageLayout>
+            </ControlsContext.Provider>
         </PageContext.Provider>
     )
 }

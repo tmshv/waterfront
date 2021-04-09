@@ -1,24 +1,31 @@
-import React, { useReducer } from "react";
-import { useSwipeable } from "react-swipeable";
-import { Wrapper, CarouselContainer, CarouselSlot, PREV, NEXT } from "./c";
+import s from './carousel.module.css'
+
+import React, { useReducer } from "react"
+import { useSwipeable } from "react-swipeable"
+import { Wrapper, CarouselContainer, CarouselSlot, PREV, NEXT } from "./c"
+import { Button } from "@/ui/Button"
 
 const getOrder = ({ index, pos, numItems }) => {
     return index - pos < 0
         ? numItems - Math.abs(index - pos)
-        : index - pos;
-};
-const initialState = { pos: 0, sliding: false, dir: NEXT };
+        : index - pos
+}
+const initialState = { pos: 0, sliding: false, dir: NEXT }
 
-export const Carousel = (props) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
-    const numItems = React.Children.count(props.children);
+export type CarouselProps = {
+    style?: React.CSSProperties
+}
+
+export const Carousel: React.FC<CarouselProps> = props => {
+    const [state, dispatch] = useReducer(reducer, initialState)
+    const numItems = React.Children.count(props.children)
 
     const slide = (dir) => {
-        dispatch({ type: dir, numItems });
+        dispatch({ type: dir, numItems })
 
         setTimeout(() => {
-            dispatch({ type: "stopSliding" });
-        }, 100);
+            dispatch({ type: "stopSliding" })
+        }, 100)
     };
 
     const handlers = useSwipeable({
@@ -26,10 +33,10 @@ export const Carousel = (props) => {
         onSwipedRight: () => slide(PREV),
         preventDefaultTouchmoveEvent: true,
         trackMouse: true
-    });
+    })
 
     return (
-        <div {...handlers} className={'carousel'}>
+        <div {...handlers} style={props.style}>
             <Wrapper>
                 <CarouselContainer dir={state.dir} sliding={state.sliding}>
                     {React.Children.map(props.children, (child, index) => (
@@ -42,12 +49,14 @@ export const Carousel = (props) => {
                     ))}
                 </CarouselContainer>
             </Wrapper>
-            <button onClick={() => slide(PREV)}>
-                Prev
-            </button>
-            <button onClick={() => slide(NEXT)}>
-                Next
-            </button>
+            <div className={s.controls}>
+                <Button onClick={() => slide(PREV)}>
+                    Prev
+                </Button>
+                <Button theme={'primary' }onClick={() => slide(NEXT)}>
+                    Next
+                </Button>
+            </div>
         </div>
     );
 }
