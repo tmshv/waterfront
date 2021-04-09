@@ -12,6 +12,16 @@ excerpt: >
 
 # DUNE OF ORANGE
 
+<Menu>
+<a href="/sea-of-orange">SEA OF ORANGE</a>
+<a href="/sea-of-orange/stories-and-ideas">STORIES & IDEAS</a>
+<a href="/sea-of-orange/fairytale">FAIRY TALE</a>
+<a href="/sea-of-orange/dune-of-orange">DUNE OF ORANGE</a>
+<a href="/sea-of-orange/dreamrocks">DREAM ROCKS</a>
+<a href="/sea-of-orange/events-and-news">EVENTS & NEWS</a>
+<a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
+</Menu>
+
 Two parks, two uses but one dream. The Menchikov Palace Park and the Sea of Orange both celebrate nature and the imagination. One is from the past, the other for the future. Nowadays, the Sea of Orange is noman’s land. How can you turn this ‘space into a place?’.
 
 The first impuls is the Dune of Orange. A free for all landart project to mark a new future for the Amber Beach aka Sea of Orange. A place-making project with and for the people of Lomonosov in order to create an imaginative public space. The Dune of Orange is an impuls for creating ‘your own park by the sea’ and celebrate what is ‘already there’; history, mystery, landschaft and people.

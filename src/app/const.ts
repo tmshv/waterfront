@@ -43,6 +43,10 @@ export const social: ISocialItem[] = [
 
 export const menu: IMenuItem[] = [
     {
+        name: 'Sea of Orange',
+        url: '/sea-of-orange',
+    },
+    {
         name: 'Map',
         url: '/',
     },
