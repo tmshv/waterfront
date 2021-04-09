@@ -1,6 +1,7 @@
 import s from './card.module.css'
 
 import Link from 'next/link'
+import cx from 'classnames'
 import Image from 'next/image'
 
 function parseRatio(value: string | undefined, w: number, h: number): [number, number] {
@@ -20,7 +21,7 @@ function parseRatio(value: string | undefined, w: number, h: number): [number, n
 }
 
 export type CardProps = {
-    href: string
+    href?: string
     title: string
     src: string
     ratio?: string
@@ -29,33 +30,44 @@ export type CardProps = {
 }
 
 export const Card: React.FC<CardProps> = props => {
+    const active = !!props.href
     const [width, height] = parseRatio(props.ratio, 1, 1)
+
+    const content = (
+        <>
+            <Image
+                src={props.src}
+                width={width}
+                height={height}
+                alt={''}
+                layout={'responsive'}
+                objectFit={'cover'}
+            />
+
+            <div className={s.body}>
+                <h2>
+                    {props.title}
+                </h2>
+
+                {props.children}
+            </div>
+        </>
+    )
 
     return (
         <section
-            className={s.card}
+            className={cx(s.card, {
+                [s.active]: active,
+            })}
             style={props.style}
         >
-            <Link href={props.href}>
-                <a className={s.link}>
-                    <Image
-                        src={props.src}
-                        width={width}
-                        height={height}
-                        alt={''}
-                        layout={'responsive'}
-                        objectFit={'cover'}
-                    />
-
-                    <div className={s.body}>
-                        <h2>
-                            {props.title}
-                        </h2>
-
-                        {props.children}
-                    </div>
-                </a>
-            </Link>
+            {!props.href ? content : (
+                <Link href={props.href}>
+                    <a className={s.link}>
+                        {content}
+                    </a>
+                </Link>
+            )}
         </section>
     )
 }

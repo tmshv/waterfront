@@ -5,7 +5,7 @@
     position: relative;
     transition: background-color 200ms;
 }
-.card:hover {
+.card.active:hover {
     --box-shadow: 0px 0px 0px 5px var(--color-back-card);
 }
 
