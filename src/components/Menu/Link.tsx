@@ -1,6 +1,7 @@
 import s from './link.module.css'
 
 import NextLink from 'next/link'
+import cx from 'classnames'
 
 export interface ILinkProps {
     href: string
@@ -10,7 +11,7 @@ export interface ILinkProps {
 export const Link: React.FC<ILinkProps> = props => {
     if (props.active) {
         return (
-            <span className={s.active}>{props.children}</span>
+            <span className={cx(s.item, { [s.active]: props.active })}>{props.children}</span>
         )
     }
     return (
