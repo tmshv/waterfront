@@ -40,29 +40,15 @@ The first phase of the project was to get to know the area and ask the local res
 
 On this page you can find an overview of stories and ideas collected during the process of the project.
 
-<Columns>
-<div>
-    <Card title="the sail" href="/sea-of-orange" src="/assets/sea-of-orange/sorange_3_I8.jpg" ratio="4/3">
-        Launch of the Sea of Orange project in Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-    <Card title="the sail" href="/sea-of-orange" src="/assets/sea-of-orange/sorange_3_I8.jpg" ratio="4/3">
-        Launch of the Sea of Orange project in Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-</div>
-<div>
-    <Card title="the sail" href="/sea-of-orange" src="/assets/sea-of-orange/sorange_3_I8.jpg" ratio="4/3">
-        Launch of the Sea of Orange project in Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-    <Card title="the sail" href="/sea-of-orange" src="/assets/sea-of-orange/sorange_3_I8.jpg" ratio="4/3">
-        Launch of the Sea of Orange project in Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-</div>
-<div>
-    <Card title="the sail" href="/sea-of-orange" src="/assets/sea-of-orange/sorange_3_I8.jpg" ratio="4/3">
-        Launch of the Sea of Orange project in Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-    <Card title="the sail" href="/sea-of-orange" src="/assets/sea-of-orange/sorange_3_I8.jpg" ratio="4/3">
-        Launch of the Sea of Orange project in Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-</div>
-</Columns>
+<Grid columns="3">
+    <Card title="The Ancient Fish" href="/sea-of-orange/the-ancient-fish" src="/assets/sea-of-orange/sorange_si_1.jpg" ratio="4/3" />
+    <Card title="Marine Animals" href="/sea-of-orange/marine-animals" src="/assets/sea-of-orange/sorange_si_2.jpg" ratio="4/3" />
+    <Card title="Lights and Light" href="/sea-of-orange/lights-and-light" src="/assets/sea-of-orange/sorange_si_3.jpg" ratio="4/3" />
+    <Card title="Two Angels" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
+    <Card title="A Ship of Corals" href="/sea-of-orange/ship-of-corals" src="/assets/sea-of-orange/sorange_si_5.jpg" ratio="4/3" />
+    <Card title="Storytelling" href="/sea-of-orange/storytelling" src="/assets/sea-of-orange/sorange_si_6.jpg" ratio="4/3" />
+    <Card title="The Fountain" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />
+    <Card title="Park Objects" href="/sea-of-orange/park-objects" src="/assets/sea-of-orange/sorange_si_8.jpg" ratio="4/3" />
+    <Card title="Amber" href="/sea-of-orange/amber" src="/assets/sea-of-orange/sorange_si_9.jpg" ratio="4/3" />
+    <Card title="The Lighthouse" href="/sea-of-orange/the-lighthouse" src="/assets/sea-of-orange/sorange_si_10.jpg" ratio="4/3" />
+</Grid>
