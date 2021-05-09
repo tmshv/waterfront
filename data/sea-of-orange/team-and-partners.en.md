@@ -30,19 +30,19 @@ The Sea of Orange project has several teammembers and partners and on this page 
     Curator<br/>
     Waterfront<br/>
     St. Petersburg<br/>
-    www.waterfront.tools
+    <a href="https://waterfront.tools">waterfront.tools</a>
     </Card>
     <Card title="Ruud" src="/assets/sea-of-orange/sorange_10_I32.jpg" ratio="4/3">
     Artist<br/>
     Observatorium<br/>
     Rotterdam<br/>
-    www.observatorium.org
+    <a href="https://observatorium.org">observatorium.org</a>
     </Card>
     <Card title="Yevgeni" src="/assets/sea-of-orange/sorange_10_I33.jpg" ratio="4/3">
     Entepreneur<br/>
     Oranienbaum Maritime festival<br/>
     Lomonosov<br/>
-    www.observatorium.org
+    <a href="https://observatorium.org">observatorium.org</a>
     </Card>
 </div>
 <div>
@@ -50,13 +50,13 @@ The Sea of Orange project has several teammembers and partners and on this page 
     Designer<br/>
     Waterfront<br/>
     St. Petersburg<br/>
-    www.waterfront.tools
+    <a href="https://waterfront.tools">waterfront.tools</a>
     </Card>
     <Card title="Dimitri" src="/assets/sea-of-orange/sorange_10_I35.jpg" ratio="4/3">
     Curator<br/>
     Waterfront<br/>
     St. Petersburg<br/>
-    www.waterfront.tools
+    <a href="https://waterfront.tools">waterfront.tools</a>
     </Card>
 </div>
 <div>
@@ -64,13 +64,13 @@ The Sea of Orange project has several teammembers and partners and on this page 
     Artist<br/>
     Observatorium<br/>
     Rotterdam<br/>
-    www.observatorium.org
+    <a href="https://observatorium.org">observatorium.org</a>
     </Card>
     <Card title="Polina" src="/assets/sea-of-orange/sorange_10_I37.jpg" ratio="4/3">
     Project Coordinator<br/>
     Waterfront<br/>
     St. Petersburg<br/>
-    www.waterfront.tools
+    <a href="https://waterfront.tools">waterfront.tools</a>
     </Card>
 </div>
 </Columns>
