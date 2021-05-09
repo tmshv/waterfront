@@ -3,7 +3,7 @@ year: 2019
 city: Saint Petersburg
 tags:
     - sea-of-orage
-cover: /assets/sea-of-orange/sorange_6_I20.jpg
+cover: /assets/sea-of-orange/sorange_7_11.jpg
 ---
 
 # The bridge
