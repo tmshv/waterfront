@@ -25,9 +25,17 @@ excerpt: >
 The first phase of the project was to get to know the area and ask the local residents to share their memories and dreams for the future of this region by means of workshops and a walking conference. These memories, fairytales, drawings, dreams, stories and ideas were made by participants of the workshops who came from Lomonosov and St Petersburg and were a start of the imaginitive transformation of this site.
 
 <Carousel>
-    <img src="/assets/sea-of-orange/sorange_2_I4.jpg" />
-    <img src="/assets/sea-of-orange/sorange_2_I4.jpg" />
-    <img src="/assets/sea-of-orange/sorange_2_I4.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_1.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_2.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_3.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_4.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_5.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_6.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_7.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_8.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_9.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_10.jpg" />
+    <img src="/assets/sea-of-orange/sorange_2_11.jpg" />
 </Carousel>
 
 On this page you can find an overview of stories and ideas collected during the process of the project.
