@@ -6,6 +6,7 @@ import { WideBlock } from '@/components/WideBlock'
 import { Video } from '@/components/Video'
 import { Carousel } from '@/ui/Carousel'
 import { Columns } from '@/ui/Columns'
+import { Grid } from '@/ui/Grid'
 import { Card } from '@/ui/Card'
 import { Menu } from '@/ui/Menu'
 import { A } from '@/components/A'
@@ -62,6 +63,7 @@ export const components = {
     ),
     Video,
     Columns,
+    Grid,
     Card,
     Menu,
 }
