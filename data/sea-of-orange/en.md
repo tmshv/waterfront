@@ -46,7 +46,7 @@ The goal of the project is to raise curiosity for contemporary public art and it
 
 The Sea of Orange is the prelude to the future transformation of the site into a recreational and cultural spot on the waterfront with a new kind of biodiversity (what is good for flora & fauna is good for people).
 
-Note:
+**Note**:<br/>
 Although we had to postpone the project for over a year, the world wide Covid 19 pandemic made us realise, all the more so, how important it is to ’take care of our planet and our fellow citizen’s’.
 
 ![](/assets/sea-of-orange/sorange_1_I3.jpg)
@@ -61,3 +61,5 @@ The objective is to create a ‘tidal park’ in which a new kind of biotope app
 ![](/assets/sea-of-orange/sorange_1_I0.jpg)
 
 The Sea of Orange project is also a cultural exchange between Russia and the Netherlands, Between the sister-city’s St. Petersburg and Rotterdam, Between the Waterfront project and Observatorium. It is a project to learn from eachother and give new insights in how to deal with waterfronts around city’s and how to transform them with local residents into attractive, inclusive and sustainable public spaces.
+
+One day a fantastic ship appeared on the horizon of the sea. It was in 2020, near the city of Lomonosov, that once was called Oranienbaum. The ship was loaded with color, light, sound and crazy people. The ship’s name was: the Sea of Orange. The people set foot on the beach and started to build a fire, a tree, a slide and at night they had a festive barbeque. After one week more ships arrived and people from all over the world came to admire all the ships and boats. The Sea of Orange attracted many people, and they wondered about the imaginative way how the ‘crazy people’ turned a once desolated and dirty beach from ‘a space into a place’.
