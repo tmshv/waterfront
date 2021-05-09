@@ -42,7 +42,7 @@
         "swr": "^0.4.2"
     },
     "devDependencies": {
-        "@next/bundle-analyzer": "^9.4.4",
+        "@next/bundle-analyzer": "^10.2.0",
         "@types/classnames": "^2.2.9",
         "@types/geojson": "^7946.0.7",
         "@types/jest": "^25.1.2",
