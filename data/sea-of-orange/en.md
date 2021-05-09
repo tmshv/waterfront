@@ -25,9 +25,12 @@ excerpt: >
 How can the shoreline of the city of Lomonosov (aka Amber Beach) be transformed into an attractive, inclusive and sustainable public space? The coastline at Lomonosov, a city near St Petersburg, is an isolated area that lacks a sense of ownership. The local residents want to turn this ‘space into a place’.
 
 <Carousel>
-<img src="/assets/sea-of-orange/sorange_1_I2.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_I2.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_I2.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_1.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_2.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_3.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_4.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_5.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_6.jpg"/>
 </Carousel>
 
 By using the language of imagination, the methodology of place-making and through storytelling, the Waterfront project (Street Art Research Institute) in St Petersburg and artist collective Observatorium from Rotterdam, are, step-by-step, transforming the present and future of the Amber Beach and together with local residents turn it into the Sea of Orange.
