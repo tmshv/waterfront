@@ -3,7 +3,7 @@ year: 2019
 city: Saint Petersburg
 tags:
     - sea-of-orage
-cover: /assets/sea-of-orange/sorange_7_I27.jpg
+cover: /assets/sea-of-orange/sorange_7_1.jpg
 # excerpt: >
 #      The local slope, on which the city is built, is a kind of hourglass or a clock...
 ---

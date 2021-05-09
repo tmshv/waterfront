@@ -3,7 +3,7 @@ year: 2019
 city: Saint Petersburg
 tags:
     - sea-of-orage
-cover: /assets/sea-of-orange/sorange_6_I22.jpg
+cover: /assets/sea-of-orange/sorange_7_3.jpg
 ---
 
 # A fire on the beach
