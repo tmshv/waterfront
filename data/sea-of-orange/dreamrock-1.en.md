@@ -4,8 +4,6 @@ city: Saint Petersburg
 tags:
     - sea-of-orage
 cover: /assets/sea-of-orange/sorange_7_1.jpg
-# excerpt: >
-#      The local slope, on which the city is built, is a kind of hourglass or a clock...
 ---
 
 # Sand is often associated with time
