@@ -4,10 +4,6 @@ city: Saint Petersburg
 tags:
     - sea-of-orage
 cover: /assets/_DSC7078_copy.jpg
-excerpt: >
-     Sea of Orange is an architectural and artistic project implemented by the Waterfront project team together with partners from the Dutch architectural
-     bureau Observatorium (Rotterdam). The project, aimed at integrating public art into public spaces, is based on the ideas of co-design and placemaking,
-     so its main feature is cooperation with local residents, their involvement in the process of planning and creating an art object.
 ---
 
 # FAIRYTALE
@@ -29,6 +25,7 @@ Place-making starts with a conversation on finding shared ambitions and dreams. 
 ## THE SEA OF ORANGE AND IT’S MANY STORIES UND USES!
 
 Once upon a time, not so long ago, in a small village on the coast of the Neva Bay business- men thought up great plans. “Let’s create some new land and build a harbor, so we can profit from the goods that are transported to the neighbouring rich big city.” They visited Rotterdam, this famous city in the Netherlands, just like Tsar Peter once visited Rotterdam. They were amazed by the big port and terminals and celebrated their idea in the Oranienbaum Beer Brewery. “Yes, that is what we want”. No sooner said than done. They searched all over the country to find good sand, they took and shipped it and started dumping it in the sea. !
+
 The local citizens did not realize what was happening. What are they doing? What is happening to our seashore? Soon they found out the business-men planned a containerterminal in their village. Was it already too late to stop this, in their eyes, megolomanic madness? The protest began. !
 
 As the locals came into action an elderly woman strolled through the park of the Palace. She was thinking about the past. How was it in the early days? People then also had big plans. One man in particular thought: “I will build a palace just as large and beautiful as the one of the Tsar, so he can visit me and I will profit from his wealth” No sooner said than done. Next to a small settlement wit- hout a name the grand construction began and nobody protested. !
