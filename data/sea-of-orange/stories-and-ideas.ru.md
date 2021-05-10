@@ -46,5 +46,5 @@ cover: /assets/_DSC7078_copy.jpg
     <Card title="Фонтан" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />
     <Card title="Парковые объекты" href="/sea-of-orange/park-objects" src="/assets/sea-of-orange/sorange_si_8.jpg" ratio="4/3" />
     <Card title="Янтарь" href="/sea-of-orange/amber" src="/assets/sea-of-orange/sorange_si_9.jpg" ratio="4/3" />
-    <Card title="The Lighthouse" href="/sea-of-orange/the-lighthouse" src="/assets/sea-of-orange/sorange_si_10.jpg" ratio="4/3" />
+    <Card title="Маяк" href="/sea-of-orange/the-lighthouse" src="/assets/sea-of-orange/sorange_si_10.jpg" ratio="4/3" />
 </Grid>
