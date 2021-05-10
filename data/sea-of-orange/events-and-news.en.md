@@ -4,10 +4,6 @@ city: Saint Petersburg
 tags:
     - sea-of-orage
 cover: /assets/_DSC7078_copy.jpg
-excerpt: >
-     Sea of Orange is an architectural and artistic project implemented by the Waterfront project team together with partners from the Dutch architectural
-     bureau Observatorium (Rotterdam). The project, aimed at integrating public art into public spaces, is based on the ideas of co-design and placemaking,
-     so its main feature is cooperation with local residents, their involvement in the process of planning and creating an art object.
 ---
 
 # EVENTS & NEWS
@@ -22,25 +18,10 @@ excerpt: >
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
-The Sea of Orange is a growing project and there will be severel events organized together with local residents and partners.
+## ORANGE NIGHT
 
-<Columns>
-<div>
-    <Card title="orange night" href="/sea-of-orange" src="/assets/sea-of-orange/sorange_9_I29.jpg" ratio="4/3">
-        Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-    <Card title="digital brigde" href="/sea-of-orange" src="/assets/_DSC7078_copy.jpg" ratio="4/3">
-        Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-</div>
-<div>
-    <Card title="ecology and sustainability" href="/sea-of-orange" src="/assets/_DSC7078_copy.jpg" ratio="4/3">
-        Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-</div>
-<div>
-    <Card title="local arts" href="/sea-of-orange" src="/assets/_DSC7078_copy.jpg" ratio="4/3">
-        Lomonosov: a joint workshop of Waterfront project and the architectural studio Observatorium. 2019
-    </Card>
-</div>
-</Columns>
+The Sea of Orange project was launched in December 2019. The main place of its action is the so-called Amber beach in the North-East of the city of Lomonosov. This is where the first meeting of the participants took place. The Waterfront project team, architects from the bureau Observatorium and residents of the city, all together, during the three-day workshop, we explored the coastline of Lomonosov, discussed the history of the beach and possible options for its further development. Each of the participants created their own ‘map of ideas’ and presented their own vision of how the beach area might look in the future.
+
+On May, 22 2020,  an open online presentation of the project was held. Project producer Albina Motor and the Observatorium architects Lieven Poutsma and Ruud Reutelingsperger presented the concept of the art object to be installed on the beach. The sketches of the object are based on the results of the winter workshop. After the presentation, the project was discussed with the residents of Lomonosov and other participants of the online conference.
+
+[Youtube](https://www.youtube.com/watch?v=8fta_muHcm0)
