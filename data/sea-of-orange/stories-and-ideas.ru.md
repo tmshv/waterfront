@@ -40,7 +40,7 @@ cover: /assets/_DSC7078_copy.jpg
     <Card title="Древние рыбы" href="/sea-of-orange/the-ancient-fish" src="/assets/sea-of-orange/sorange_si_1.jpg" ratio="4/3" />
     <Card title="Морские животные" href="/sea-of-orange/marine-animals" src="/assets/sea-of-orange/sorange_si_2.jpg" ratio="4/3" />
     <Card title="Огни" href="/sea-of-orange/lights-and-light" src="/assets/sea-of-orange/sorange_si_3.jpg" ratio="4/3" />
-    <Card title="Two Angels" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
+    <Card title="Два ангела" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
     <Card title="A Ship of Corals" href="/sea-of-orange/ship-of-corals" src="/assets/sea-of-orange/sorange_si_5.jpg" ratio="4/3" />
     <Card title="Storytelling" href="/sea-of-orange/storytelling" src="/assets/sea-of-orange/sorange_si_6.jpg" ratio="4/3" />
     <Card title="The Fountain" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />
