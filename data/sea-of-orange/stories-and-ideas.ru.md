@@ -43,7 +43,7 @@ cover: /assets/_DSC7078_copy.jpg
     <Card title="Два ангела" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
     <Card title="Коралловый корабль" href="/sea-of-orange/ship-of-corals" src="/assets/sea-of-orange/sorange_si_5.jpg" ratio="4/3" />
     <Card title="Истории" href="/sea-of-orange/storytelling" src="/assets/sea-of-orange/sorange_si_6.jpg" ratio="4/3" />
-    <Card title="The Fountain" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />
+    <Card title="Фонтан" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />
     <Card title="Park Objects" href="/sea-of-orange/park-objects" src="/assets/sea-of-orange/sorange_si_8.jpg" ratio="4/3" />
     <Card title="Amber" href="/sea-of-orange/amber" src="/assets/sea-of-orange/sorange_si_9.jpg" ratio="4/3" />
     <Card title="The Lighthouse" href="/sea-of-orange/the-lighthouse" src="/assets/sea-of-orange/sorange_si_10.jpg" ratio="4/3" />
