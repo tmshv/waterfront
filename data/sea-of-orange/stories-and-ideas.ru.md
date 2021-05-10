@@ -37,7 +37,7 @@ cover: /assets/_DSC7078_copy.jpg
 На этой странице представлен обзор историй и идей, собранных в процессе мастер-классов.
 
 <Grid columns="3">
-    <Card title="The Ancient Fish" href="/sea-of-orange/the-ancient-fish" src="/assets/sea-of-orange/sorange_si_1.jpg" ratio="4/3" />
+    <Card title="Древние рыбы" href="/sea-of-orange/the-ancient-fish" src="/assets/sea-of-orange/sorange_si_1.jpg" ratio="4/3" />
     <Card title="Marine Animals" href="/sea-of-orange/marine-animals" src="/assets/sea-of-orange/sorange_si_2.jpg" ratio="4/3" />
     <Card title="Lights and Light" href="/sea-of-orange/lights-and-light" src="/assets/sea-of-orange/sorange_si_3.jpg" ratio="4/3" />
     <Card title="Two Angels" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
