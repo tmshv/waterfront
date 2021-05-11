@@ -1,6 +1,7 @@
 import s from './grid.module.css'
 
 import React, { memo } from 'react'
+import { useMobile } from '@/hooks/useMobile'
 
 export type GridProps = {
     columns: string
@@ -8,7 +9,10 @@ export type GridProps = {
 }
 
 export const Grid: React.FC<GridProps> = memo(props => {
-    let gridTemplateColumns = `repeat(${props.columns}, 1fr)`
+    const isMobile = useMobile()
+    let gridTemplateColumns = isMobile
+        ? '1fr'
+        : `repeat(${props.columns}, 1fr)`
 
     return (
         <div
