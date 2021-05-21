@@ -18,15 +18,15 @@ cover: /assets/_DSC7078_copy.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
-Two parks, two uses but one dream. The Menchikov Palace Park and the Sea of Orange both celebrate nature and the imagination. One is from the past, the other for the future. Nowadays, the Sea of Orange is noman’s land. How can you turn this ‘space into a place?’.
+Two parks, two uses but one dream. The Menshikov Palace Park and the Sea of Orange both celebrate nature and the imagination. One is from the past, the other is for the future. Nowadays, the Sea of Orange is no man’s land. How can you turn this 'space into a place'?
 
-The first impuls is the Dune of Orange. A free for all landart project to mark a new future for the Amber Beach aka Sea of Orange. A place-making project with and for the people of Lomonosov in order to create an imaginative public space. The Dune of Orange is an impuls for creating ‘your own park by the sea’ and celebrate what is ‘already there’; history, mystery, landschaft and people.
+The first impulse is the Dune of Orange. A free for all land art project to mark a new future for the Amber Beach aka Sea of Orange. A place-making project with and for the people of Lomonosov in order to create an imaginative public space. The Dune of Orange is an impulse for creating 'your own park by the sea' to celebrate what is 'already there': history, mystery, landschaft, and people.
 
 ![](/assets/sea-of-orange/sorange_5_1.jpg)
 
-During the first Orange Day and Night event, that is NOT A LOUD event, we stand on a man- made dune overlooking a garden with plants that clean the earth, we think of a future for art and culture and we standstill to look at the world in peace and quiet. The Dune of Orange is a first artistic impuls that hopefully creates an impact for the future.
+During the first Orange Day and Night event, that is NOT A LOUD event, we stand on a manmade dune overlooking a garden with plants that clean the earth, we think of a future for art and culture and we standstill to look at the world in peace and quiet. The Dune of Orange is a first artistic impulse that hopefully creates an impact for the future.
 
-On an around the Dune of Orange we learn about the 15 Dreamrocks that talk about ‘crazy’ but also realistic ideas that could become the first small steps for this new future.
+On and around the Dune of Orange we learn about the 15 Dreamrocks that talk about 'crazy' but also realistic ideas that could become the first small steps for this new future.
 
 From no man’s land to an observatory to look at the world around us.
 
