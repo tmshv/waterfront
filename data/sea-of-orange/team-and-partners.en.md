@@ -22,55 +22,44 @@ excerpt: >
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
-The Sea of Orange project has several teammembers and partners and on this page you can see an overview of them. It is a local and global project with participating members and partners from St Petersburg, Lomonosov and Rotterdam.
+The Sea of Orange project has several team members and partners and on this page you can see an overview of them. It is a local and global project with participating members and partners from St Petersburg, Lomonosov and Rotterdam.
 
-<Columns>
-<div>
-    <Card title="Albina" src="/assets/sea-of-orange/sorange_10_I31.jpg" ratio="4/3">
-    Curator<br/>
-    Waterfront<br/>
-    St. Petersburg<br/>
-    <a href="https://waterfront.tools">waterfront.tools</a>
-    </Card>
-    <Card title="Ruud" src="/assets/sea-of-orange/sorange_10_I32.jpg" ratio="4/3">
-    Artist<br/>
-    Observatorium<br/>
-    Rotterdam<br/>
-    <a href="https://observatorium.org">observatorium.org</a>
-    </Card>
-    <Card title="Yevgeni" src="/assets/sea-of-orange/sorange_10_I33.jpg" ratio="4/3">
-    Entepreneur<br/>
-    Oranienbaum Maritime festival<br/>
-    Lomonosov<br/>
-    <a href="https://observatorium.org">observatorium.org</a>
-    </Card>
-</div>
-<div>
-    <Card title="Ilya" src="/assets/sea-of-orange/sorange_10_I34.jpg" ratio="4/3">
-    Designer<br/>
-    Waterfront<br/>
-    St. Petersburg<br/>
-    <a href="https://waterfront.tools">waterfront.tools</a>
-    </Card>
-    <Card title="Dimitri" src="/assets/sea-of-orange/sorange_10_I35.jpg" ratio="4/3">
-    Curator<br/>
-    Waterfront<br/>
-    St. Petersburg<br/>
-    <a href="https://waterfront.tools">waterfront.tools</a>
-    </Card>
-</div>
-<div>
-    <Card title="Lieven" src="/assets/sea-of-orange/sorange_10_I36.jpg" ratio="4/3">
-    Artist<br/>
-    Observatorium<br/>
-    Rotterdam<br/>
-    <a href="https://observatorium.org">observatorium.org</a>
-    </Card>
-    <Card title="Polina" src="/assets/sea-of-orange/sorange_10_I37.jpg" ratio="4/3">
-    Project Coordinator<br/>
-    Waterfront<br/>
-    St. Petersburg<br/>
-    <a href="https://waterfront.tools">waterfront.tools</a>
-    </Card>
-</div>
-</Columns>
+**TEAM**
+
+**Albina Motor**, producer, Director of the Street Art Research Institute
+**Lieven Poutsma**, artist and partner of the architectural bureau Observatorium
+**Ruud Reutelingsperger**, artist and partner of the architectural bureau Observatorium
+**Polina Shtanko**, coordinator
+**Vika Grigorenko**, website editor
+**Valery Solovyov**, SMM and PR specialist
+**Ilya Davydov**, technical director, designer, videographer
+**Anton Demidov**, technical manager
+**Nikita Tryapkin**, merchandise-manager
+**Dmitry Pilikin**, art consultant
+**Polina Klimovitskaya**, coordinator-consultant
+**Lilit Akopian**, promotion consultant
+
+**PARTNERS** 
+
+Financial support:
+
+**Creative Industries Fund NL**
+
+*This project is funded by the Creative Industries Fund NL through the international program Inclusive cities and societies through design in Russia, Morocco, Turkey and Egypt*
+
+Information partner:
+
+**Newspaper ["Paper"](https://paperpaper.ru/)**
+
+Project partners:
+
+**Danish Сultural Institute**
+
+**"Oranienbaum Maritime Festival"**
+
+**Autonomous non-profit environmental organization "Friends of the Baltic Sea"**
+
+**National Research University Higher School of Economics**
+
+**Melanie Post van Ophem (Council Rotterdam-St Petersburg)**
+
