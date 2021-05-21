@@ -27,39 +27,50 @@ The Sea of Orange project has several team members and partners and on this page
 **TEAM**
 
 **Albina Motor**, producer, Director of the Street Art Research Institute
+
 **Lieven Poutsma**, artist and partner of the architectural bureau Observatorium
+
 **Ruud Reutelingsperger**, artist and partner of the architectural bureau Observatorium
+
 **Polina Shtanko**, coordinator
+
 **Vika Grigorenko**, website editor
+
 **Valery Solovyov**, SMM and PR specialist
+
 **Ilya Davydov**, technical director, designer, videographer
+
 **Anton Demidov**, technical manager
+
 **Nikita Tryapkin**, merchandise-manager
+
 **Dmitry Pilikin**, art consultant
+
 **Polina Klimovitskaya**, coordinator-consultant
+
 **Lilit Akopian**, promotion consultant
 
 **PARTNERS** 
 
-Financial support:
+**Financial support:**
 
-**Creative Industries Fund NL**
+Creative Industries Fund NL
 
 *This project is funded by the Creative Industries Fund NL through the international program Inclusive cities and societies through design in Russia, Morocco, Turkey and Egypt*
 
-Information partner:
+**Information partner:**
 
-**Newspaper ["Paper"](https://paperpaper.ru/)**
+Newspaper ["Paper"](https://paperpaper.ru/)
 
-Project partners:
+**Project partners:**
 
-**Danish Сultural Institute**
+Danish Сultural Institute
 
-**"Oranienbaum Maritime Festival"**
+"Oranienbaum Maritime Festival"
 
-**Autonomous non-profit environmental organization "Friends of the Baltic Sea"**
+Autonomous non-profit environmental organization "Friends of the Baltic Sea"
 
-**National Research University Higher School of Economics**
+National Research University Higher School of Economics
 
-**Melanie Post van Ophem (Council Rotterdam-St Petersburg)**
+Melanie Post van Ophem (Council Rotterdam-St Petersburg)
 
