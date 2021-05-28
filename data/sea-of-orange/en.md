@@ -35,12 +35,12 @@ How can the shoreline of the city of Lomonosov (aka Amber Beach) be transformed 
 
 By using the language of imagination, the methodology of place-making and through storytelling, the Waterfront project (Street Art Research Institute) in St Petersburg and artist collective Observatorium from Rotterdam are, step-by-step, transforming the present and future of the Amber Beach and together with local residents turn it into the Sea of Orange.
 
-> Stories become objects.
-> Objects turn a space into a place.
-> The place is owned by the local people.
-> The people clean up the beach.
-> The beach becomes an new waterfront park.
-> The park is called ‘Sea of Orange’
+> Stories become objects.<br/>
+> Objects turn a space into a place.<br/>
+> The place is owned by the local people.<br/>
+> The people clean up the beach.<br/>
+> The beach becomes a new waterfront park.<br/>
+> The park is called 'Sea of Orange'.<br/>
 
 The goal of the project is to raise curiosity for contemporary public art and its different meanings and to adress a new urban ecology. It is about providing knowledge and hands-on tools for creating works in public space of a high quality in accordance with local dreams and experiences. We subscribe to the UN Sustainable Development Goals.
 
