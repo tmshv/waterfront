@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_8.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_8.jpg)
+
 I see lights in the distance. In the sand, in the snow, on the water. I see a light on the beach. Light in the darkness. Light in our lives. A lighthouse with an orange light.
