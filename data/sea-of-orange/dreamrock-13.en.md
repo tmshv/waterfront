@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_13.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_13.jpg)
+
 Energy is for sharing. Energy is hidden under the sand, in the water and in the people. Succinic acid, also called the Spirit of Amber, looks like a string of connected dots and lines. What would a Succinic energy sculpture look like?
