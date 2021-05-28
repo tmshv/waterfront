@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_2.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_2.jpg)
+
 Nature has the power to clean itself. Flowers and plants can give a helping hand. Brassica Juncea (Indian Mustard) and Amaranthus for Cesium 137, Brassica and willows for heavy metal such as Nickel, Led and Cadmium. The oil from the Sea Buckthorn is used for healing wounds and said to protect against radiation and is a host for butterflies.
