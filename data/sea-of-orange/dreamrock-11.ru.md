@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_11.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_11.jpg)
+
 Для людей и для природы. Люди переходят улицу и идут к пляжу. Облепиха идет в город и парки. Если люди не идут к природе, то природа идет к людям.
