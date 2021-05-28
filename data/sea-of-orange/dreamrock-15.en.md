@@ -18,6 +18,8 @@ cover: /assets/sea-of-orange/sorange_7_15.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_15.jpg)
+
 I was born in 2008<br/>
 I was supposed to be a Container Terminal<br/>
 But people didn’t want me<br/>
@@ -33,6 +35,7 @@ Inspired by the sense of place<br/>
 That they join me in thinking about the other<br/>
 side and put their feet in the water and wonder<br/>
 what does the other side of the sea looks like<br/>
+
 I was born in 1977<br/>
 I travel and see the world by bicycle<br/>
 I dream of one-world, one people<br/>
