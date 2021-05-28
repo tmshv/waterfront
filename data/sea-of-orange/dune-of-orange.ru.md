@@ -33,4 +33,7 @@ cover: /assets/_DSC7078_copy.jpg
 <Carousel>
 <img src="/assets/sea-of-orange/sorange_5_2.jpg"/>
 <img src="/assets/sea-of-orange/sorange_5_3.jpg"/>
+<img src="/assets/DJI_0113 copy.jpg"/>
+<img src="/assets/DJI_0118 copy.jpg"/>
+<img src="/assets/DJI_0169 copy.jpg"/>    
 </Carousel>
