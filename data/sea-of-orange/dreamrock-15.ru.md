@@ -18,6 +18,8 @@ cover: /assets/sea-of-orange/sorange_7_15.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_15.jpg)
+
 Я родился в 2008 году.<br/>
 Я должен был быть контейнерным терминалом,<br/>
 Но люди не хотели меня видеть.<br/>
