@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_10.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_10.jpg)
+
 The image at the entrance hall of the hotel near the beach tells about the language of imagination: painting, architecture, music, literature, performing arts. The Menshikov palace and park also celebrate the arts. The Sea of Orange talks about the art and culture of this century.
