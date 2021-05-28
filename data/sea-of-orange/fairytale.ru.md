@@ -20,7 +20,7 @@ cover: /assets/_DSC7078_copy.jpg
 
 Создание места начинается с разговора о поиске общих устремлений и мечтаний. Рассказывание историй дает волю нашему воображению, а также является одним из способов общения в сообществе.
 
-<iframe width="725" height="521" src="https://www.youtube.com/watch?v=Q3GWF61HWZM" frameborder="0" 
+<iframe width="725" height="521" src="https://youtu.be/Q3GWF61HWZM" frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## THE SEA OF ORANGE AND ITS MANY STORIES UND USES!
