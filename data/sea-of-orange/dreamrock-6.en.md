@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_6.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_6.jpg)
+
 Many people enjoy the sea. Sailing and playing with and on the water. There is a new town, with new activities, and flourishing like never before. St Petersburg, Kronstadt, who wants to go there? Lomonosov, Make it Happen!
