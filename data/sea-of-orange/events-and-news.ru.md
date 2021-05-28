@@ -40,4 +40,9 @@ cover: /assets/_DSC7078_copy.jpg
 
 **20:30-21:00** Уборка мусора на Янтарном пляже.
 
+<Carousel>
+<img src="/assets/DJI_0174 copy.jpg"/>
+<img src="/assets/DJI_0188 copy.jpg"/>
+<img src="/assets/DJI_0196 copy.jpg"/>    
+</Carousel>
 
