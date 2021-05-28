@@ -40,5 +40,9 @@ For the presentation of the project, we chose the format of a public picnic — 
 
 **20:30-21:00** Garbage collection on the Amber Beach.
 
-
+<Carousel>
+<img src="/assets/DJI_0174 copy.jpg"/>
+<img src="/assets/DJI_0188 copy.jpg"/>
+<img src="/assets/DJI_0196 copy.jpg"/>    
+</Carousel>
 
