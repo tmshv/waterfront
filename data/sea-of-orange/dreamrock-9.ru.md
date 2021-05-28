@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_9.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_9.jpg)
+
 Послания из другого мира. Из прошлого или настоящего. От таких, как мы, или от людей из другого времени? Жаркие места, где снег тает холодной зимой. Следы на земле, которые могли бы быть посланием.
