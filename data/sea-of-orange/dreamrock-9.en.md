@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_9.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_9.jpg)
+
 Messages from another world. From the past or the present. From people like us or people from another time? Warm places where the snow melts in the cold winter. Tracks in the dirt that could be a message.
