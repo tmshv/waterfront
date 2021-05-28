@@ -22,7 +22,6 @@ Place-making starts with a conversation on finding shared ambitions and dreams. 
 
 ![](/assets/sea-of-orange/sorange_4_I9.jpg)
 
-<iframe width="725" height="521" src="https://drive.google.com/file/d/1PCSmfhJ-g1tOY_98LJ6RDDNySCvT4J-U/view" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## THE SEA OF ORANGE AND ITS MANY STORIES UND USES!
 
