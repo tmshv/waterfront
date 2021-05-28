@@ -20,7 +20,8 @@ cover: /assets/_DSC7078_copy.jpg
 
 Place-making starts with a conversation on finding shared ambitions and dreams. Story-telling triggers the imagination and is one way of sharing the project in the community.
 
-![](/assets/sea-of-orange/sorange_4_I9.jpg)
+<iframe width="725" height="521" src="https://www.youtube.com/watch?v=pJ_0Tp1e3rg" frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## THE SEA OF ORANGE AND ITS MANY STORIES UND USES!
