@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_11.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_11.jpg)
+
 For people and nature. People cross the street and railways to the beach. The sea buckthorn goes to the city and the parks. If people don’t go to nature, nature goes to the people.
