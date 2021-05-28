@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_12.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
-“He came up to me and looked me in the eyes. It made me cry. He turned his head and swam away. I want a place where he can come back to and where the water is clean”. If whales come, they raise awareness for the fight against environmental pollution and the damage that it causes to wild animals.
+![](/assets/sea-of-orange/sorange_7_12.jpg)
+
+"He came up to me and looked me in the eyes. It made me cry. He turned his head and swam away. I want a place where he can come back to and where the water is clean". If whales come, they raise awareness for the fight against environmental pollution and the damage that it causes to wild animals.
