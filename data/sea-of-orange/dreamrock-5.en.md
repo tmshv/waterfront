@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_5.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_5.jpg)
+
 It seems so evident that there is a beach and that there is a sea. People take it for granted. The walk through the labyrinth is a way to slow down and to think about where you are going. How did it become like this and how will it look in the future?
