@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_14.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_14.jpg)
+
 My name is Alexander Danilovich. I look for things. What kind of things? I don’t know. I don’t seek, I find. What is hidden and what is on the other side?
