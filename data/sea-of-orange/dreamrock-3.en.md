@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_3.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_3.jpg)
+
 Not a fire that destroys things but a fire that celebrates the imagination. Out of this fire something beautiful appears. Sand becomes solid again in the shape of a human figure or an orange tree.
