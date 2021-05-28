@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_3.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_3.jpg)
+
 Не огонь, который разрушает вещи, но огонь, который поражает воображение. Из этого огня появляется нечто прекрасное. Песок снова становится твердым, принимая форму человеческой фигуры или апельсинового дерева.
