@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_7_8.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_7_8.jpg)
+
 Вдалеке я вижу огни. На песке, на снегу, на воде. Я вижу свет на берегу. Свет во тьме. Свет в нашей жизни. Это оранжевый свет маяка.
