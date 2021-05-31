@@ -50,6 +50,8 @@ cover: /assets/_DSC7078_copy.jpg
     <Card title="Наблюдение #2" href="/sea-of-orange/observation-2" src="/assets/sea-of-orange/sorange_si_12.jpg" ratio="4/3" />
     <Card title="Вопрос #6" href="/sea-of-orange/question-6" src="/assets/sea-of-orange/questions_12.jpg" ratio="4/3" />
     <Card title="Коралловый корабль" href="/sea-of-orange/ship-of-corals" src="/assets/sea-of-orange/sorange_si_5.jpg" ratio="4/3" />
+    <Card title="Вопрос #7" href="/sea-of-orange/question-7" src="/assets/sea-of-orange/questions_14.jpg" ratio="4/3" />
+    <Card title="Вопрос #8" href="/sea-of-orange/question-8" src="/assets/sea-of-orange/questions_16.jpg" ratio="4/3" />
     <Card title="Истории" href="/sea-of-orange/storytelling" src="/assets/sea-of-orange/sorange_si_6.jpg" ratio="4/3" />
     <Card title="Фонтан" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />
     <Card title="Парковые объекты" href="/sea-of-orange/park-objects" src="/assets/sea-of-orange/sorange_si_8.jpg" ratio="4/3" />
