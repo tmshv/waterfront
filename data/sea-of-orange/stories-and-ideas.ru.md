@@ -38,6 +38,7 @@ cover: /assets/_DSC7078_copy.jpg
 
 <Grid columns="3">
     <Card title="Древние рыбы" href="/sea-of-orange/the-ancient-fish" src="/assets/sea-of-orange/sorange_si_1.jpg" ratio="4/3" />
+    <Card title="Вопрос #1" href="/sea-of-orange/question-1" src="/assets/sea-of-orange/questions_2.jpg" ratio="4/3" />
     <Card title="Морские животные" href="/sea-of-orange/marine-animals" src="/assets/sea-of-orange/sorange_si_2.jpg" ratio="4/3" />
     <Card title="Огни" href="/sea-of-orange/lights-and-light" src="/assets/sea-of-orange/sorange_si_3.jpg" ratio="4/3" />
     <Card title="Два ангела" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
