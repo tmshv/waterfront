@@ -55,6 +55,8 @@ On this page you can find an overview of stories and ideas collected during the 
     <Card title="Storytelling" href="/sea-of-orange/storytelling" src="/assets/sea-of-orange/sorange_si_6.jpg" ratio="4/3" />
     <Card title="Question #9" href="/sea-of-orange/question-9" src="/assets/sea-of-orange/questions_17.jpg" ratio="4/3" />
     <Card title="The Fountain" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />
+    <Card title="Question #10" href="/sea-of-orange/question-10" src="/assets/sea-of-orange/questions_19.jpg" ratio="4/3" />
+    <Card title="Question #11" href="/sea-of-orange/question-11" src="/assets/sea-of-orange/questions_21.jpg" ratio="4/3" />
     <Card title="Park Objects" href="/sea-of-orange/park-objects" src="/assets/sea-of-orange/sorange_si_8.jpg" ratio="4/3" />
     <Card title="Amber" href="/sea-of-orange/amber" src="/assets/sea-of-orange/sorange_si_9.jpg" ratio="4/3" />
     <Card title="The Lighthouse" href="/sea-of-orange/the-lighthouse" src="/assets/sea-of-orange/sorange_si_10.jpg" ratio="4/3" />
