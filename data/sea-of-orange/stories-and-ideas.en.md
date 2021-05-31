@@ -46,6 +46,9 @@ On this page you can find an overview of stories and ideas collected during the 
     <Card title="Lights and Light" href="/sea-of-orange/lights-and-light" src="/assets/sea-of-orange/sorange_si_3.jpg" ratio="4/3" />
     <Card title="Question #4" href="/sea-of-orange/question-4" src="/assets/sea-of-orange/questions_7.jpg" ratio="4/3" />
     <Card title="Two Angels" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
+    <Card title="Question #5" href="/sea-of-orange/question-5" src="/assets/sea-of-orange/questions_9.jpg" ratio="4/3" />
+    <Card title="Observation #2" href="/sea-of-orange/observation-2" src="/assets/sea-of-orange/sorange_si_12.jpg" ratio="4/3" />
+    <Card title="Question #6" href="/sea-of-orange/question-6" src="/assets/sea-of-orange/questions_11.jpg" ratio="4/3" />
     <Card title="A Ship of Corals" href="/sea-of-orange/ship-of-corals" src="/assets/sea-of-orange/sorange_si_5.jpg" ratio="4/3" />
     <Card title="Storytelling" href="/sea-of-orange/storytelling" src="/assets/sea-of-orange/sorange_si_6.jpg" ratio="4/3" />
     <Card title="The Fountain" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />

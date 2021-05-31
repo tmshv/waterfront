@@ -46,6 +46,9 @@ cover: /assets/_DSC7078_copy.jpg
     <Card title="Огни" href="/sea-of-orange/lights-and-light" src="/assets/sea-of-orange/sorange_si_3.jpg" ratio="4/3" />
     <Card title="Вопрос #4" href="/sea-of-orange/question-4" src="/assets/sea-of-orange/questions_8.jpg" ratio="4/3" />
     <Card title="Два ангела" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
+    <Card title="Вопрос #5" href="/sea-of-orange/question-5" src="/assets/sea-of-orange/questions_10.jpg" ratio="4/3" />
+    <Card title="Наблюдение #2" href="/sea-of-orange/observation-2" src="/assets/sea-of-orange/sorange_si_12.jpg" ratio="4/3" />
+    <Card title="Вопрос #6" href="/sea-of-orange/question-6" src="/assets/sea-of-orange/questions_12.jpg" ratio="4/3" />
     <Card title="Коралловый корабль" href="/sea-of-orange/ship-of-corals" src="/assets/sea-of-orange/sorange_si_5.jpg" ratio="4/3" />
     <Card title="Истории" href="/sea-of-orange/storytelling" src="/assets/sea-of-orange/sorange_si_6.jpg" ratio="4/3" />
     <Card title="Фонтан" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />
