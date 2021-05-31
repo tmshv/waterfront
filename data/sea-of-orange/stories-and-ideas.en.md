@@ -42,6 +42,7 @@ On this page you can find an overview of stories and ideas collected during the 
     <Card title="Observation #1" href="/sea-of-orange/observation-1" src="/assets/sea-of-orange/sorange_si_11.jpg" ratio="4/3" />
     <Card title="Question #2" href="/sea-of-orange/question-2" src="/assets/sea-of-orange/questions_3.jpg" ratio="4/3" />
     <Card title="Marine Animals" href="/sea-of-orange/marine-animals" src="/assets/sea-of-orange/sorange_si_2.jpg" ratio="4/3" />
+    <Card title="Question #3" href="/sea-of-orange/question-3" src="/assets/sea-of-orange/questions_5.jpg" ratio="4/3" />
     <Card title="Lights and Light" href="/sea-of-orange/lights-and-light" src="/assets/sea-of-orange/sorange_si_3.jpg" ratio="4/3" />
     <Card title="Two Angels" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
     <Card title="A Ship of Corals" href="/sea-of-orange/ship-of-corals" src="/assets/sea-of-orange/sorange_si_5.jpg" ratio="4/3" />

@@ -42,6 +42,7 @@ cover: /assets/_DSC7078_copy.jpg
     <Card title="Наблюдение #1" href="/sea-of-orange/observation-1" src="/assets/sea-of-orange/sorange_si_11.jpg" ratio="4/3" />
     <Card title="Вопрос #2" href="/sea-of-orange/question-2" src="/assets/sea-of-orange/questions_4.jpg" ratio="4/3" />
     <Card title="Морские животные" href="/sea-of-orange/marine-animals" src="/assets/sea-of-orange/sorange_si_2.jpg" ratio="4/3" />
+    <Card title="Вопрос #3" href="/sea-of-orange/question-3" src="/assets/sea-of-orange/questions_6.jpg" ratio="4/3" />
     <Card title="Огни" href="/sea-of-orange/lights-and-light" src="/assets/sea-of-orange/sorange_si_3.jpg" ratio="4/3" />
     <Card title="Два ангела" href="/sea-of-orange/two-angels" src="/assets/sea-of-orange/sorange_si_4.jpg" ratio="4/3" />
     <Card title="Коралловый корабль" href="/sea-of-orange/ship-of-corals" src="/assets/sea-of-orange/sorange_si_5.jpg" ratio="4/3" />
