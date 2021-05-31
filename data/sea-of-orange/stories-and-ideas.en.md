@@ -53,6 +53,7 @@ On this page you can find an overview of stories and ideas collected during the 
     <Card title="Question #7" href="/sea-of-orange/question-7" src="/assets/sea-of-orange/questions_13.jpg" ratio="4/3" />
     <Card title="Question #8" href="/sea-of-orange/question-8" src="/assets/sea-of-orange/questions_15.jpg" ratio="4/3" />
     <Card title="Storytelling" href="/sea-of-orange/storytelling" src="/assets/sea-of-orange/sorange_si_6.jpg" ratio="4/3" />
+    <Card title="Question #9" href="/sea-of-orange/question-9" src="/assets/sea-of-orange/questions_17.jpg" ratio="4/3" />
     <Card title="The Fountain" href="/sea-of-orange/the-fountain" src="/assets/sea-of-orange/sorange_si_7.jpg" ratio="4/3" />
     <Card title="Park Objects" href="/sea-of-orange/park-objects" src="/assets/sea-of-orange/sorange_si_8.jpg" ratio="4/3" />
     <Card title="Amber" href="/sea-of-orange/amber" src="/assets/sea-of-orange/sorange_si_9.jpg" ratio="4/3" />
