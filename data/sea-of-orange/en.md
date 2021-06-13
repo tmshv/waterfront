@@ -24,14 +24,7 @@ excerpt: >
 
 How can the shoreline of the city of Lomonosov (aka Amber Beach) be transformed into an attractive, inclusive and sustainable public space? The coastline at Lomonosov, a city near St Petersburg, is an isolated area that lacks a sense of ownership. The local residents want to turn this 'space into a place'.
 
-<Carousel>
-<img src="/assets/sea-of-orange/sorange_1_1.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_2.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_3.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_4.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_5.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_6.jpg"/>
-</Carousel>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9kY0QMP-ylw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 By using the language of imagination, the methodology of place-making and through storytelling, the Waterfront project (Street Art Research Institute) in St Petersburg and artist collective Observatorium from Rotterdam are, step-by-step, transforming the present and future of the Amber Beach and together with local residents turn it into the Sea of Orange.
 
@@ -45,6 +38,15 @@ By using the language of imagination, the methodology of place-making and throug
 The goal of the project is to raise curiosity for contemporary public art and its different meanings and to adress a new urban ecology. It is about providing knowledge and hands-on tools for creating works in public space of a high quality in accordance with local dreams and experiences. We subscribe to the UN Sustainable Development Goals.
 
 The Sea of Orange is the prelude to the future transformation of the site into a recreational and cultural spot on the waterfront with a new kind of biodiversity (what is good for flora & fauna is good for people).
+
+<Carousel>
+<img src="/assets/sea-of-orange/sorange_1_1.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_2.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_3.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_4.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_5.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_6.jpg"/>
+</Carousel>
 
 **Note**:<br/>
 Although we had to postpone the project for over a year, the world wide Covid 19 pandemic made us realise, all the more so, how important it is to take care of our planet and our fellow citizens.
