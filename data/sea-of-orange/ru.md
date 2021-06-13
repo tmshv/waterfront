@@ -22,14 +22,7 @@ excerpt: >
 
 Как можно превратить береговую линию Ломоносова в приветливое, инклюзивное и устойчивое общественное пространство? Сейчас побережье этого города, расположенного неподалеку от Санкт-Петербурга, представляет собой изолированный район, который выглядит покинутым, как будто лишенным чувства собственности. Местные жители хотят превратить это пространство в место.
 
-<Carousel>
-<img src="/assets/sea-of-orange/sorange_1_1.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_2.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_3.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_4.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_5.jpg"/>
-<img src="/assets/sea-of-orange/sorange_1_6.jpg"/>
-</Carousel>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9kY0QMP-ylw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Используя язык воображения, методологию "создания мест" (place-making) и инструменты сторителлинга, проект "Waterfront/Водная линия" и коллектив художников из Роттердама Observatorium вместе с местными жителями шаг за шагом трансформируют настоящее и будущее Янтарного пляжа.
 
@@ -43,6 +36,15 @@ excerpt: >
 Цель проекта — пробудить интерес к современному паблик-арту и его различным смыслам, а также поднять тему новой городской экологии. Речь идет о предоставлении знаний и практических инструментов для создания арт-объектов в общественных пространствах, сделанных в соответствии с идеями и потребностями местных жителей. Мы также поддерживаем Цели ООН в области устойчивого развития.
 
 Янтарный пляж — это лишь первый шаг на пути к превращению этого прибрежного участка в рекреационное и культурное место с новым видом биоразнообразия (мы убеждены: что хорошо для флоры и фауны, то хорошо и для людей).
+
+<Carousel>
+<img src="/assets/sea-of-orange/sorange_1_1.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_2.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_3.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_4.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_5.jpg"/>
+<img src="/assets/sea-of-orange/sorange_1_6.jpg"/>
+</Carousel>
 
 **Примечание:**<br/>
 Несмотря на то, что нам пришлось отложить проект более чем на год, всемирная пандемия Covid-19 лишний раз заставила нас осознать, насколько важно заботиться о нашей планете и наших соседях.
