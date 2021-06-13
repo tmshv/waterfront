@@ -24,6 +24,7 @@ excerpt: >
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9kY0QMP-ylw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 Используя язык воображения, методологию "создания мест" (place-making) и инструменты сторителлинга, проект "Waterfront/Водная линия" и коллектив художников из Роттердама Observatorium вместе с местными жителями шаг за шагом трансформируют настоящее и будущее Янтарного пляжа.
 
 > Истории становятся объектами.<br/>
