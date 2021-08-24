@@ -18,6 +18,8 @@ cover: /assets/sea-of-orange/sorange_si_1.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_si_1.jpg)
+
 Once upon a time on the waterfront of Lomonosov...
 
 ...ancient fish got out of the sea. It was not yet Lomonosov or even Oranienbaum, it was the ancient coast of the nameless ancient sea. The sea was deep, and the fish crawled up the steep, sloping bottom for a long time until the surface of the water appeared. Then they hovered for a couple of millennia at the surface to gain courage, and then they surfaced, adapted to the air and decided to grow fingers and claws on the fins, and looked back and happily turned over and decided to continue living on earth (and eventually turned into a man)
