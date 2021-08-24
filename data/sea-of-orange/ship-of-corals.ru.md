@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_si_5.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_si_5.jpg)
+
 Корабль, будто сотканный из кораллов, волн и потоков ветра. А также место, которое защитило бы двух-трех человек от бури (сильного ветра или дождя).
