@@ -18,6 +18,8 @@ cover: /assets/sea-of-orange/sorange_si_6.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_si_6.jpg)
+
 The Fire, A Tree, A Ship, The Slide, A Barbecue, The Tower
 
 Many stories and over the centuries have been written about the relationship with the sea and the waterfronts around St Petersburg. These were always a little ambiguous. ‘Yes’ we love the river Neva and the Sea and ‘No’ we don’t do much with or on it. The Waterfront project wants to address this issue in various ways. Exhibitions, site-specific events and a research program that combines thinking and doing and does this in collaboration with many organizations and communities. The sea, the rivers and the waterfronts are in the focus of everybody's intentions also because the growing and densifying city of St Petersburg needs ‘places to breathe’.
