@@ -18,8 +18,11 @@ cover: /assets/sea-of-orange/sorange_si_3.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
-It necessary to notice, that the lights on the other side of the bay, are not the city lights, it's just the lights of the seaside road. So it creates a thin chain of lights, like a necklace, which divides the darkness exactly on the horizon. It's the best decoration for the city. Light is multiplied by reflection. The night light is a reddish light over the city and a cold blue light over the Bronka. Reflected in the overcast sky. In between this reflected light is the starry sky over Oranienbaum, peeking out from behind the clouds.
+![](/assets/sea-of-orange/sorange_si_3.jpg)
 
-The triumphal arch composed of lights can become such a point of light, between the two patches of light, if it is positioned in the middle of the bay formed here. A pier can be built to it, so that you can admire the silhouette of the city and get a feeling of separation from the familiar world.
+Важно отметить, что огни на другой стороне залива — это свет не от города, а от прибрежной дороги. Издали это напоминает тонкую цепочку огней, похожую на ожерелье, которое разделяет темноту точно по линии горизонта. Это очень красиво. Свет отражается в воде, и его становится больше. Ночь — это красноватый отсвет над городом и холодный синий свет над Бронкой, который бликует в затянутом тучами небе. За этим отраженным светом — звездное небо над Ораниенбаумом, выглядывающее из-за облаков.
+
+Триумфальная арка из огней, если расположить ее по центру образовавшейся здесь бухты, может стать таким световым акцентом между двумя другими световыми пятнами. К ней можно пристроить пирс, чтобы можно было полюбоваться очертанием города и почувствовать себя как бы  оторванным от привычного мира.
+
 
 © Федор Романычев
