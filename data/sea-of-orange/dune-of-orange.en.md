@@ -27,11 +27,7 @@ The first impulse is the Dune of Orange. A free for all land art project to mark
 <img src="/assets/DJI_0169 copy.jpg"/>    
 </Carousel>
 
-During the first Orange Day and Night event, that is NOT A LOUD event, we stand on a manmade dune overlooking a garden with plants that clean the earth, we think of a future for art and culture and we standstill to look at the world in peace and quiet. The Dune of Orange is a first artistic impulse that hopefully creates an impact for the future.
-
-On and around the Dune of Orange we learn about the 15 Dreamrocks that talk about 'crazy' but also realistic ideas that could become the first small steps for this new future.
-
-From no man’s land to an observatory to look at the world around us.
+During the opening event a day at the Sea of Orange, we stand on a manmade dune overlooking a park on the waterfront, we think of a future for art and culture and we standstill to look at the world in peace and quiet. The Dune of Orange is a first artistic impulse that hopefully creates an impact for the future. From no man’s land to an observatory to look at the world around us.
 
 <Carousel>
 <img src="/assets/sea-of-orange/sorange_5_2.jpg"/>
