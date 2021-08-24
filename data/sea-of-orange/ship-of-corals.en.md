@@ -18,4 +18,6 @@ cover: /assets/sea-of-orange/sorange_si_5.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
+![](/assets/sea-of-orange/sorange_si_5.jpg)
+
 A ship where the corals, the waves and the flows of the wind are mixed and as a result converted into the ship. Also, there should be some kind of a place that would protect two or three people from the 'storm' (strong wind, heavy rain and so on)
