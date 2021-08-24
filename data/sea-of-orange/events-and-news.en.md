@@ -18,7 +18,7 @@ cover: /assets/_DSC7078_copy.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
-## ORANGE NIGHT
+## A DAY AT THE SEA OF ORANGE
 
 The Sea of Orange project was launched in December 2019. The main place of its action is the so-called Amber beach in the North-East of the city of Lomonosov. This is where the first meeting of the participants took place. The Waterfront project team, architects from the bureau Observatorium and residents of the city, all together, during the three-day workshop, we explored the coastline of Lomonosov, discussed the history of the beach and possible options for its further development. Each of the participants created their own ‘map of ideas’ and presented their own vision of how the beach area might look in the future.
 
