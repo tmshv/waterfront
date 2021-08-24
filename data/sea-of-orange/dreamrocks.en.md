@@ -18,7 +18,7 @@ cover: /assets/_DSC7078_copy.jpg
 <a href="/sea-of-orange/team-and-partners">TEAM & PARTNERS</a>
 </Menu>
 
-The fifteen dreamrocks are spread out in the park. It is a route through the park and on every rock, you discover a different idea for the future of the Sea of Orange park. These dreams open up your imagination and gives you a glimp of a possible future of the Sea of Orange park.
+The fifteen dreamrocks are the inspiration for the future of the park. It is an archive to look at and remember what dreams can mean and what they can do for changing environments. These dreams open up your imagination and give you a glimpse of a possible future of the Sea of Orange park.
 
 <Grid columns="3">
     <Card title="Sand is often associated with time" href="/sea-of-orange/dreamrock-1" src="/assets/sea-of-orange/sorange_7_1.jpg" ratio="4/3" />
