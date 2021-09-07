@@ -98,9 +98,9 @@ cover: /assets/wf_about_head.jpg
 
 ### Координаторы проекта
 
-<Person src="/assets/pers_polina.jpg" shape="circle">
+<Person src="/assets/pers_shtanko_p.jpg" shape='circle'>
 
-**Полина Климовицкая**
+**Полина Штанько**
 
 **Координатор проекта, социолог, Институт исследования стрит-арта**
 
@@ -147,12 +147,6 @@ cover: /assets/wf_about_head.jpg
 <Person src="/assets/pers_letunovsky.jpg" shape="circle">
 
 **Дмитрий Летуновский**
-
-</Person>
-
-<Person src="/assets/pers_shtanko_p.jpg" shape='circle'>
-
-**Полина Штанько**
 
 </Person>
 
@@ -266,9 +260,9 @@ Port 78
 
 ## Как с нами связаться
 
-**Полина Климовицкая** координатор проекта
+**Полина Штанько** координатор проекта
 
-+79500237093, coordinator@streetartinstitute.com
++79516702907, coordinator@streetartinstitute.com
 
 **Вика Григоренко** редактор сайта
 
