@@ -292,7 +292,7 @@ Port 78
 
 **Полина Штанько** координатор проекта
 
-+79516702907, coordinator@streetartinstitute.com
++79516702907, team@waterfront.tools
 
 **Вика Григоренко** редактор сайта
 
