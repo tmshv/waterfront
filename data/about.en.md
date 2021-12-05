@@ -4,11 +4,11 @@ cover: /assets/wf_about_head.jpg
 
 # About
 
-Waterfront is an international interdisciplinary project implemented by the Street Art Research Institute and the Danish Cultural Institute in St. Petersburg. The focus of Waterfront project is the city's embankments, coastal areas and the problems related to their use.
+Waterfront is an international interdisciplinary project implemented jointly with the Danish Cultural Institute in St. Petersburg. The focus of Waterfront project is the city's embankments, coastal areas and the problems related to their use.
 
 ## Context
 
-Waterfront: neighbourhood&community is an international interdisciplinary project implemented by the Institute of Street Art Research and the Danish Institute of Culture in St. Petersburg. The focus of Waterfront: neighbourhood&community is the city's embankments, coastal areas and the problems related to their use.
+Waterfront: neighbourhood&community is an international interdisciplinary project implemented jointly the Danish Institute of Culture in St. Petersburg. The focus of Waterfront: neighbourhood&community is the city's embankments, coastal areas and the problems related to their use.
 
 Many Russian cities are traditionally located near the water: some of them are situated on the shores of the seas and bays, the others are separated by rivers or stand next to artificial reservoirs. In each of these cities, coastal areas become a place of concentration of local residents and tourists. Water spaces are in the public domain, but they are generally managed and maintained by local authorities without the involvement of local residents. This authoritarian approach, when local communities are excluded from the landscaping and improvement process, results in controversial projects that do not always meet the real needs of residents.
 
@@ -134,32 +134,6 @@ She strives to make the city a more human-friendly space and has all the necessa
 
 </Person>
 
-### Active participants
-
-<Person src="/assets/pers_kuznechikova_e.jpg" shape="circle">
-
-**Ekaterina Kuznechikova**
-
-</Person>
-
-<Person src="/assets/pers_letunovsky.jpg" shape="circle">
-
-**Dmitry Letunovsky**
-
-</Person>
-
-<Person src="/assets/pers_shtanko_p.jpg" shape='circle'>
-
-**Polina Shtanko**
-
-</Person>
-
-<Person src="/assets/pers_kiskina_t.jpg" shape="circle">
-
-**Tatyana Kiskina**
-
-</Person>
-
 ## Our experts
 
 <Person src="/assets/pers_daniyar.jpg" shape="circle">
@@ -273,14 +247,6 @@ Director of sales and marketing of the management company Port 78.
 
 ## Organizers
 
-<Person src="/assets/logo_institute.jpg">
-
-**Street Art Research Institute**
-
-The Institute is an open platform for research and educational activities in the field of art in the public urban environment. In the center of attention are three equivalent concepts: people, art, street. Supporting initiatives related to the phenomenon of art in public space, specialists from the Institute design changes in the urban environment and work with cultural policy: create platforms for discussion, establish a dialogue with public regulators and provide expert support for projects.
-
-</Person>
-
 <Person src="/assets/logo_dansk_institute.jpg">
 
 **Danish Cultural Institute in St. Petersburg**
@@ -330,14 +296,6 @@ Library, information and cultural center of art and music of V. V. Mayakovsky Li
 **Creative Industries NL**
 
 Creative Industries NL is a Dutch Foundation that supports initiatives in architecture, design, digital culture and other creative practices. The purpose of the Foundation is interdisciplinary interaction between cultural, social and economic spheres and the development and implementation of project solutions for socio-cultural problems through grants.
-
-</Person>
-
-<Person src="/assets/archclub.jpg">
-
-**Archclub**
-
-Archclub is a multipurpose loft with a unique view of the Gulf of Finland in the Sevkabel Port on Vasilievsky island. The Archclub provides a platform for various events and discussions, and serves as a place of communication for architects, designers and anyone interested in the development of the city.
 
 </Person>
 
