@@ -100,11 +100,11 @@ She strives to make the city a more human-friendly space and has all the necessa
 
 ### Project Coordinators
 
-<Person src="/assets/pers_polina.jpg" shape="circle">
+<Person src="/assets/pers_shtanko_p.jpg" shape='circle'>
 
-**Polina Klimovitskaya**
+**Polina Shtanko**
 
-**Project coordinator, Sociologist, Street Art Research Institute**
+**Project coordinator**
 
 </Person>
 
@@ -237,9 +237,9 @@ Director of sales and marketing of the management company Port 78.
 
 ## Contact us
 
-**Polina Klimovitskaya** project coordinator
+**Polina Shtanko** project coordinator
 
-+79500237093, coordinator@streetartinstitute.com
++79516702907, team@waterfront.tools
 
 **Viktoriia Grigorenko** website editor
 
