@@ -3,7 +3,7 @@ year: 2021
 city: Saint Petersburg
 tags:
     - project
-cover: /assets/performative_lab_keypict_ROW_1920x1280.jpg
+cover: /assets/performative_lab_keypict_logo_1920x1280.jpg
 excerpt: >
     Художественно-урбанистический проект «Waterfront/Водная линия», миссия которого — исследование повседневности в современных городах у воды, объявляет открытый 
     конкурс на участие в лаборатории перформативного исследования «Waterfront: плоть, вода и камень». Заявку может подать один художник или коллектив авторов, 
