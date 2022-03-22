@@ -64,14 +64,6 @@ In 2020, we plan to make the project more public, turning it into an open platfo
 
 On February 15, we held an open meeting at the Mayakovsky Library's Center for Art and Music to discuss the project's agenda for 2020. Follow our social networks to be updated about our upcoming events!
 
-## Follow us
-
-[Facebook](https://www.facebook.com/waterfront.tools)
-
-[Instagram](https://www.instagram.com/waterfront.tools/)
-
-[Youtube](https://www.youtube.com/channel/UCuGZYvNOfbfIzZTlKZKYzqw)
-
 ## Our team
 
 ### Producers
