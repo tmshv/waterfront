@@ -94,11 +94,6 @@ cover: /assets/wf_about_head.jpg
 
 [Вконтакте](https://vk.com/waterfront2019)
 
-[Facebook](https://www.facebook.com/waterfront.tools)
-
-[Instagram](https://www.instagram.com/waterfront.tools/)
-
-[Youtube](https://www.youtube.com/channel/UCuGZYvNOfbfIzZTlKZKYzqw)
 
 ## Команда
 
