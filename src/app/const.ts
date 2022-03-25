@@ -23,18 +23,18 @@ export const imageSize: IRect = {
 }
 
 export const social: ISocialItem[] = [
-    {
-        icon: mdiInstagram,
-        url: 'https://www.instagram.com/waterfront.tools',
-    },
-    {
-        icon: mdiYoutube,
-        url: 'https://www.youtube.com/channel/UCuGZYvNOfbfIzZTlKZKYzqw',
-    },
-    {
-        icon: mdiFacebookBox,
-        url: 'https://www.facebook.com/waterfront.tools',
-    },
+    // {
+    //     icon: mdiInstagram,
+    //     url: 'https://www.instagram.com/waterfront.tools',
+    // },
+    // {
+    //     icon: mdiYoutube,
+    //     url: 'https://www.youtube.com/channel/UCuGZYvNOfbfIzZTlKZKYzqw',
+    // },
+    // {
+    //     icon: mdiFacebookBox,
+    //     url: 'https://www.facebook.com/waterfront.tools',
+    // },
     {
         icon: mdiVkBox,
         url: 'https://vk.com/waterfront2019',
