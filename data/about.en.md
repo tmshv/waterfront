@@ -291,3 +291,5 @@ Creative Industries NL is a Dutch Foundation that supports initiatives in archit
 
 </Person>
 
+[Policy regarding the processing of personal data](https://drive.google.com/file/d/1Dq4yAmtF48VEFdbVFiOE7Ld3KFXrHPHd/view?usp=sharing)
+
