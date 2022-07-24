@@ -325,3 +325,5 @@ Creative Industries NL — голландский фонд, поддержива
 
 </Person>
 
+[Политика в отношении обработки персональных данных](https://drive.google.com/drive/u/0/folders/1mDKYoQ-17YAgJTX3UYVc5MMm9NURFwum) 
+
