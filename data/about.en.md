@@ -10,8 +10,6 @@ The project is being realised by the Consulate General of the Netherlands in St.
 
 ## Context
 
-Waterfront: neighbourhood&community is an international interdisciplinary project implemented jointly the Danish Institute of Culture in St. Petersburg. The focus of Waterfront: neighbourhood&community is the city's embankments, coastal areas and the problems related to their use.
-
 Many Russian cities are traditionally located near the water: some of them are situated on the shores of the seas and bays, the others are separated by rivers or stand next to artificial reservoirs. In each of these cities, coastal areas become a place of concentration of local residents and tourists. Water spaces are in the public domain, but they are generally managed and maintained by local authorities without the involvement of local residents. This authoritarian approach, when local communities are excluded from the landscaping and improvement process, results in controversial projects that do not always meet the real needs of residents.
 
 In the framework of the Waterfront project, we strive not only to change the space of the city embankments, but also to motivate citizens to reconsider their role in the process of their improvement. We are eager to develop and establish different ways of interaction between residents and representatives of local government, business and the art community. The cooperation of these groups is the key to creating a comfortable and modern urban environment, which is open to all.
