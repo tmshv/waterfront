@@ -4,7 +4,9 @@ cover: /assets/wf_about_head.jpg
 
 # About
 
-Waterfront is an international interdisciplinary project implemented jointly with the Danish Cultural Institute in St. Petersburg. The focus of Waterfront project is the city's embankments, coastal areas and the problems related to their use.
+Waterfront is an international interdisciplinary project initiated by experts and activists. The focus of Waterfront project is the city's embankments, coastal areas and the problems related to their use.
+
+The project is being realised by the Consulate General of the Netherlands in St. Petersburg and Danish Cultural Institute.
 
 ## Context
 
