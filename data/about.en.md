@@ -68,16 +68,6 @@ On February 15, we held an open meeting at the Mayakovsky Library's Center for A
 
 ### Producers
 
-<Person src="/assets/pers_andreya.jpg">
-
-**Andrey Anisimov**
-
-Deputy Director at the Danish Institute of Сulture in St. Petersburg
-
-«Our goal is to explore how industrial areas in the Baltic sea region are transformed into new cultural and public spaces. We strive to create continuous contacts between experts from Northern Europe and experts from the North-West of Russia and to build a dialogue that will lead to creation of comfortable coastal spaces in Russia».
-
-</Person>
-
 <Person src="/assets/pers_albina.jpg">
 
 **Albina Motor**
@@ -88,43 +78,27 @@ She strives to make the city a more human-friendly space and has all the necessa
 
 «A modern architect is not a specialist with a big ego. First of all, the modern architect pays attention to social problems. And we, citizens, being very different people, can be co-authors of urban change. This is one of the ideas that we are trying to convey through the project».
 
-</Person>
+<Person src="/assets/pers_andreya.jpg">
 
-### Project Coordinators
+**Andrey Anisimov**
+
+Deputy Director at the Danish Institute of Сulture in St. Petersburg
+
+«Our goal is to explore how industrial areas in the Baltic sea region are transformed into new cultural and public spaces. We strive to create continuous contacts between experts from Northern Europe and experts from the North-West of Russia and to build a dialogue that will lead to creation of comfortable coastal spaces in Russia».
+
+</Person>
 
 <Person src="/assets/pers_shtanko_p.jpg" shape='circle'>
 
 **Polina Shtanko**
 
-**Project coordinator**
-
-</Person>
-
-<Person src="/assets/pers_mshatunova.jpeg" shape="circle">
-
-**Maria Shatunova**
-
-**Journal coordinator, Sociologist**
-
-</Person>
-
-### Designer
+**Executive Producer**
 
 <Person src="/assets/pers_ilyad.jpg" shape="circle">
 
 **Ilya Davydov**
 
-**Photographer, videographer**
-
-</Person>
-
-### Website editor
-
-<Person src="/assets/pers_vikag.jpg" shape="circle">
-
-**Viktoriia Grigorenko**
-
-</Person>
+**Art Director**
 
 ## Our experts
 
