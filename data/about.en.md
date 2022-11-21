@@ -165,28 +165,6 @@ Angelina writes for Russian and international media. She is director of the Bure
 
 </Person>
 
-## Our consultants
-
-<Person src="/assets/pers_romanb.jpg" shape="circle">
-
-**Roman Borozdin**
-
-Port 78, "St. Petersburg — the sea capital»
-
-The founder of the management company Port 78, which aims to improve the yacht and water infrastructure.
-
-</Person>
-
-<Person src="/assets/pers_olgap.jpg" shape="circle">
-
-**Olga Pridorogina**
-
-Port 78
-
-Director of sales and marketing of the management company Port 78.
-
-</Person>
-
 ## Web-platform
 
 **Daniyar Yusupov** architect, urbanist
