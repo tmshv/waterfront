@@ -66,7 +66,7 @@ public space, and the Harbour in which they live could be like.
 
 By organizing events and engaging locals, the team members expanded residents’  understanding of the place: the team showed the Harbour as a part of history, 
 as an object of cultural heritage. Together with the residents, team members reflected on the Harbour’s identity. They also told children about the culture of 
-behavior, about the RST (Russian Student Troops) , about ecology and recycling. Moreover, team members expanded children’s understanding of water use, tried to 
+behavior, about ecology and recycling. Moreover, team members expanded children’s understanding of water use, tried to 
 instill awareness of its value.
 
 The Galernaya Harbour team also managed to establish links with friendly projects and organizations, thereby increasing the credibility of various active societies 

@@ -2,7 +2,7 @@
 tags:
     - event
 cover: /assets/perf_lab_finalists.jpg
-excerpt: 8 сентября 2021
+excerpt: 14 января 2021
 date: 14.01.2022
 ---
 

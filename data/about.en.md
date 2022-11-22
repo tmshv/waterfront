@@ -4,11 +4,11 @@ cover: /assets/wf_about_head.jpg
 
 # About
 
-Waterfront is an international interdisciplinary project implemented jointly with the Danish Cultural Institute in St. Petersburg. The focus of Waterfront project is the city's embankments, coastal areas and the problems related to their use.
+Waterfront is an international interdisciplinary project initiated by experts and activists. The focus of Waterfront project is the city's embankments, coastal areas and the problems related to their use.
+
+The project is being realised by the Consulate General of the Netherlands in St. Petersburg and Danish Cultural Institute.
 
 ## Context
-
-Waterfront: neighbourhood&community is an international interdisciplinary project implemented jointly the Danish Institute of Culture in St. Petersburg. The focus of Waterfront: neighbourhood&community is the city's embankments, coastal areas and the problems related to their use.
 
 Many Russian cities are traditionally located near the water: some of them are situated on the shores of the seas and bays, the others are separated by rivers or stand next to artificial reservoirs. In each of these cities, coastal areas become a place of concentration of local residents and tourists. Water spaces are in the public domain, but they are generally managed and maintained by local authorities without the involvement of local residents. This authoritarian approach, when local communities are excluded from the landscaping and improvement process, results in controversial projects that do not always meet the real needs of residents.
 
@@ -68,16 +68,6 @@ On February 15, we held an open meeting at the Mayakovsky Library's Center for A
 
 ### Producers
 
-<Person src="/assets/pers_andreya.jpg">
-
-**Andrey Anisimov**
-
-Deputy Director at the Danish Institute of Сulture in St. Petersburg
-
-«Our goal is to explore how industrial areas in the Baltic sea region are transformed into new cultural and public spaces. We strive to create continuous contacts between experts from Northern Europe and experts from the North-West of Russia and to build a dialogue that will lead to creation of comfortable coastal spaces in Russia».
-
-</Person>
-
 <Person src="/assets/pers_albina.jpg">
 
 **Albina Motor**
@@ -90,39 +80,29 @@ She strives to make the city a more human-friendly space and has all the necessa
 
 </Person>
 
-### Project Coordinators
+<Person src="/assets/pers_andreya.jpg">
+
+**Andrey Anisimov**
+
+Deputy Director at the Danish Institute of Сulture in St. Petersburg
+
+«Our goal is to explore how industrial areas in the Baltic sea region are transformed into new cultural and public spaces. We strive to create continuous contacts between experts from Northern Europe and experts from the North-West of Russia and to build a dialogue that will lead to creation of comfortable coastal spaces in Russia».
+
+</Person>
 
 <Person src="/assets/pers_shtanko_p.jpg" shape='circle'>
 
 **Polina Shtanko**
 
-**Project coordinator**
+**Executive Producer**
 
 </Person>
-
-<Person src="/assets/pers_mshatunova.jpeg" shape="circle">
-
-**Maria Shatunova**
-
-**Journal coordinator, Sociologist**
-
-</Person>
-
-### Designer
 
 <Person src="/assets/pers_ilyad.jpg" shape="circle">
 
 **Ilya Davydov**
 
-**Photographer, videographer**
-
-</Person>
-
-### Website editor
-
-<Person src="/assets/pers_vikag.jpg" shape="circle">
-
-**Viktoriia Grigorenko**
+**Art Director**
 
 </Person>
 
@@ -173,6 +153,7 @@ Over the years, I have managed to implement several important city initiatives, 
 </Person>
 
 <Person src="/assets/pers_davydova_a.jpg" shape="circle">
+
 **Angelina Davydova**
 
 **Ecologist, environmental journalist**
@@ -188,28 +169,6 @@ Angelina writes for Russian and international media. She is director of the Bure
 **City activist, founder of the initiative group Trees of St. Petersburg**
 
 «For many years, I have been interested in the city and the laws under which it develops. I read a lot about it, and I was constantly traveling to see how megacities are arranged in other countries. In St. Petersburg, the process of creating open public spaces has just begun. To speed it up, I decided to go into activism».
-
-</Person>
-
-## Our consultants
-
-<Person src="/assets/pers_romanb.jpg" shape="circle">
-
-**Roman Borozdin**
-
-Port 78, "St. Petersburg — the sea capital»
-
-The founder of the management company Port 78, which aims to improve the yacht and water infrastructure.
-
-</Person>
-
-<Person src="/assets/pers_olgap.jpg" shape="circle">
-
-**Olga Pridorogina**
-
-Port 78
-
-Director of sales and marketing of the management company Port 78.
 
 </Person>
 
@@ -291,3 +250,4 @@ Creative Industries NL is a Dutch Foundation that supports initiatives in archit
 
 </Person>
 
+[Policy regarding the processing of personal data](https://drive.google.com/file/d/1Dq4yAmtF48VEFdbVFiOE7Ld3KFXrHPHd/view?usp=sharing)
