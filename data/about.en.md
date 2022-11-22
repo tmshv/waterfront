@@ -78,6 +78,8 @@ She strives to make the city a more human-friendly space and has all the necessa
 
 «A modern architect is not a specialist with a big ego. First of all, the modern architect pays attention to social problems. And we, citizens, being very different people, can be co-authors of urban change. This is one of the ideas that we are trying to convey through the project».
 
+</Person>
+
 <Person src="/assets/pers_andreya.jpg">
 
 **Andrey Anisimov**
@@ -94,11 +96,15 @@ Deputy Director at the Danish Institute of Сulture in St. Petersburg
 
 **Executive Producer**
 
+</Person>
+
 <Person src="/assets/pers_ilyad.jpg" shape="circle">
 
 **Ilya Davydov**
 
 **Art Director**
+
+</Person>
 
 ## Our experts
 
@@ -147,6 +153,7 @@ Over the years, I have managed to implement several important city initiatives, 
 </Person>
 
 <Person src="/assets/pers_davydova_a.jpg" shape="circle">
+
 **Angelina Davydova**
 
 **Ecologist, environmental journalist**
@@ -244,4 +251,3 @@ Creative Industries NL is a Dutch Foundation that supports initiatives in archit
 </Person>
 
 [Policy regarding the processing of personal data](https://drive.google.com/file/d/1Dq4yAmtF48VEFdbVFiOE7Ld3KFXrHPHd/view?usp=sharing)
-
