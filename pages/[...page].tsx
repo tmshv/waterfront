@@ -1,6 +1,5 @@
-import renderToString from 'next-mdx-remote/render-to-string'
-import hydrate from 'next-mdx-remote/hydrate'
-import { MdxRemote } from 'next-mdx-remote/types'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 import { components } from '@/mdx'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { getPages, getPageBySlug } from '@/api'
@@ -18,18 +17,11 @@ const BasicProvider = props => (
 )
 
 type Props = Omit<PageDefinition, 'content'> & {
-    source: MdxRemote.Source
+    source: any
 }
 
-const Page: NextPage<Props> = props => {
+const Page: NextPage<Props> = ({ source, ...props }) => {
     const router = useRouter()
-    const content = hydrate(props.source, {
-        components,
-        provider: {
-            component: BasicProvider,
-            props: {}
-        }
-    })
 
     return (
         <PageContext.Provider value={props as any}>
@@ -39,7 +31,9 @@ const Page: NextPage<Props> = props => {
 
             <ControlsContext.Provider value={{ size: 'default', shape: 'default' }}>
                 <PageLayout>
-                    {content}
+                    <article>
+                        <MDXRemote {...source} components={components} />
+                    </article>
                 </PageLayout>
             </ControlsContext.Provider>
         </PageContext.Provider>
@@ -61,16 +55,16 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
     }
 
     const { content, ...def } = page
-    const source = await renderToString(content, {
-        components,
-        provider: {
-            component: PageContext.Provider,
-            props: {
-                value: {
-                    ...def,
-                }
-            }
-        }
+    const source = await serialize(content, {
+        
+        // provider: {
+        //     component: PageContext.Provider,
+        //     props: {
+        //         value: {
+        //             ...def,
+        //         }
+        //     }
+        // }
     })
 
     return {

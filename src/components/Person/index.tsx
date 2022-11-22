@@ -2,7 +2,7 @@ import s from './person.module.css'
 
 import { memo } from 'react'
 import { Columns } from '@/ui/Columns'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 export type PersonProps = {
     style?: React.CSSProperties
