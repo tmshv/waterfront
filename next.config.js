@@ -6,8 +6,5 @@ module.exports = withBundleAnalyzer({
     i18n: {
         locales: ['ru', 'en'],
         defaultLocale: 'ru',
-    },
-    future: {
-        webpack5: true,
     }
 })
