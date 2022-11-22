@@ -31,7 +31,7 @@ export const Carousel: React.FC<CarouselProps> = props => {
     const handlers = useSwipeable({
         onSwipedLeft: () => slide(NEXT),
         onSwipedRight: () => slide(PREV),
-        preventDefaultTouchmoveEvent: true,
+        // preventDefaultTouchmoveEvent: true,
         trackMouse: true
     })
 
