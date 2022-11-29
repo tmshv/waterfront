@@ -108,18 +108,6 @@ Deputy Director at the Danish Institute of Сulture in St. Petersburg
 
 ## Our experts
 
-<Person src="/assets/pers_daniyar.jpg" shape="circle">
-
-**Daniyar Yusupov**
-
-**Architect, urbanist**
-
-Since 2004 specializes in the development of the urban environment of post-Soviet cities. He has launched more than forty master plans, development strategies and spatial planning schemes across the country. In 2012, Daniyar co-organized the SREDA Institute of urban studies in St. Petersburg. Since 2017, he has been managing the design::unit Studio, which focus is the design of open urban spaces.
-
-«We proceed from the fact that the complexity of the urban structure requires a corresponding complexity of decisions and interventions. Therefore, the quality of design solutions can be developed only in interdisciplinary teams. In the Waterfront project, we are committed to this approach».
-
-</Person>
-
 <Person src="/assets/pers_pilikin.jpg" shape="circle">
 
 **Dmitry Pilikin**
@@ -131,14 +119,13 @@ Dmitry has been working in the field of contemporary art since 1989. Since 1995 
 «In our project, everything and everyone are important. But it is the artists who can find unexpected solutions, that will be later implemented by other team members».
 
 </Person>
+<Person src="/assets/pers_davydova_a.jpg" shape="circle">
 
-<Person src="/assets/pers_kseniyak.jpg" shape="circle">
+**Angelina Davydova**
 
-**Ksenia Kuzmina**
+**Ecologist, environmental journalist**
 
-**Sociologist, associate Professor at the HSE in St. Petersburg**
-
-«Today, cities and territories are actively competing for resources. One of the most important mechanisms for attracting investment is the rethinking of already created facilities and territories. To do this, we need to put into practice the concept of collective imagination, which is the key factor of Waterfront project».
+Angelina writes for Russian and international media. She is director of the Bureau of Environmental Information. Lecturer of St. Petersburg state University and ITMO, organiser of courses in environmental journalism and communication. The observer of the UN talks in the field of climate change since 2008. Fellow of the Humphrey Fellowship program at the University of California, Davis in 2018/2019.
 
 </Person>
 
@@ -152,16 +139,6 @@ Over the years, I have managed to implement several important city initiatives, 
 
 </Person>
 
-<Person src="/assets/pers_davydova_a.jpg" shape="circle">
-
-**Angelina Davydova**
-
-**Ecologist, environmental journalist**
-
-Angelina writes for Russian and international media. She is director of the Bureau of Environmental Information. Lecturer of St. Petersburg state University and ITMO, organiser of courses in environmental journalism and communication. The observer of the UN talks in the field of climate change since 2008. Fellow of the Humphrey Fellowship program at the University of California, Davis in 2018/2019.
-
-</Person>
-
 <Person src="/assets/pers_tinika_m.jpg" shape="circle">
 
 **Maria Tinika**
@@ -169,6 +146,26 @@ Angelina writes for Russian and international media. She is director of the Bure
 **City activist, founder of the initiative group Trees of St. Petersburg**
 
 «For many years, I have been interested in the city and the laws under which it develops. I read a lot about it, and I was constantly traveling to see how megacities are arranged in other countries. In St. Petersburg, the process of creating open public spaces has just begun. To speed it up, I decided to go into activism».
+
+<Person src="/assets/pers_daniyar.jpg" shape="circle">
+
+**Daniyar Yusupov**
+
+**Architect, urbanist**
+
+Since 2004 specializes in the development of the urban environment of post-Soviet cities. He has launched more than forty master plans, development strategies and spatial planning schemes across the country. In 2012, Daniyar co-organized the SREDA Institute of urban studies in St. Petersburg. Since 2017, he has been managing the design::unit Studio, which focus is the design of open urban spaces.
+
+«We proceed from the fact that the complexity of the urban structure requires a corresponding complexity of decisions and interventions. Therefore, the quality of design solutions can be developed only in interdisciplinary teams. In the Waterfront project, we are committed to this approach».
+
+</Person>
+
+<Person src="/assets/pers_kseniyak.jpg" shape="circle">
+
+**Ksenia Kuzmina**
+
+**Sociologist, associate Professor at the HSE in St. Petersburg**
+
+«Today, cities and territories are actively competing for resources. One of the most important mechanisms for attracting investment is the rethinking of already created facilities and territories. To do this, we need to put into practice the concept of collective imagination, which is the key factor of Waterfront project».
 
 </Person>
 
@@ -192,11 +189,7 @@ Angelina writes for Russian and international media. She is director of the Bure
 
 +79516702907, team@waterfront.tools
 
-**Viktoriia Grigorenko** website editor
-
-+79817640984, ozzzzjet@mail.ru
-
-## Organizers
+## Organisers and partners
 
 <Person src="/assets/logo_dansk_institute.jpg">
 
@@ -204,11 +197,9 @@ Angelina writes for Russian and international media. She is director of the Bure
 
 The Danish Cultural Institute was founded in 1940. It is a self-governing organization under the auspices of the Danish Ministry of culture. The main objectives of the Danish Institute of Culture are to promote dialogue, exchange of experience and ideas in the field of culture between Denmark and other countries and, through international cooperation between cultural institutions and artists, to promote cultural values both in Denmark and abroad.
 
-The Institute cooperates with cultural institutions of other countries under the auspices of EUNIC – Association of cultural institutions of the European Union (Goethe Institute, French Institute, Institute of Finland, Polish Institute, etc.).
+The Institute cooperates with cultural institutions of other countries under the auspices of EUNIC – Association of cultural institutions of the European Union (Goethe Institute, French Institute, etc.).
 
 </Person>
-
-## Our partners
 
 <Person src="/assets/logo_hse_spb.jpg">
 
