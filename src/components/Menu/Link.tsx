@@ -18,9 +18,7 @@ export const Link: React.FC<ILinkProps> = props => {
         <NextLink
             href={props.href}
         >
-            <a>
-                <span>{props.children}</span>
-            </a>
+            <span>{props.children}</span>
         </NextLink>
     )
 }
