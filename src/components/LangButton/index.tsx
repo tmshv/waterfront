@@ -16,8 +16,7 @@ export const LangButton: React.FC<ILangButtonProps> = () => {
     const [href, locale] = useOppositeLocale()
 
     return (
-        <Link href={href} locale={locale} className={cx(s.button, 'flag-icon-background', `flag-icon-${code}`)}>
-        </Link>
+        <Link href={href} locale={locale} className={cx(s.button, 'flag-icon-background', `flag-icon-${code}`)}></Link>
     )
 }
 

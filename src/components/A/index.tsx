@@ -35,7 +35,6 @@ export const A: React.FC<AProps> = props => {
                 [s.android]: isGooglePlay(props.href),
             })}
         >
-
             {props.children}
         </Link>
     )
