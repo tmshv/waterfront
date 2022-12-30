@@ -10,12 +10,6 @@ import { Opengraph } from '@/components/Opengraph'
 import { PageLayout } from '@/components/PageLayout'
 import { ControlsContext } from '@/context/controls'
 
-const BasicProvider = props => (
-    <article>
-        {props.children}
-    </article>
-)
-
 type Props = Omit<PageDefinition, 'content'> & {
     source: any
 }
@@ -56,15 +50,6 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
 
     const { content, ...def } = page
     const source = await serialize(content, {
-        
-        // provider: {
-        //     component: PageContext.Provider,
-        //     props: {
-        //         value: {
-        //             ...def,
-        //         }
-        //     }
-        // }
     })
 
     return {
