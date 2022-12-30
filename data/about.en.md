@@ -201,9 +201,6 @@ The Institute cooperates with cultural institutions of other countries under the
 
 </Person>
 
-**Consulate General of the Netherlands in St. Petersburg**
-
-
 <Person src="/assets/logo_hse_spb.jpg">
 
 **HSE in St. Petersburg**
