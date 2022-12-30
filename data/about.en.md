@@ -147,6 +147,8 @@ Over the years, I have managed to implement several important city initiatives, 
 
 «For many years, I have been interested in the city and the laws under which it develops. I read a lot about it, and I was constantly traveling to see how megacities are arranged in other countries. In St. Petersburg, the process of creating open public spaces has just begun. To speed it up, I decided to go into activism».
 
+</Person>
+
 <Person src="/assets/pers_daniyar.jpg" shape="circle">
 
 **Daniyar Yusupov**
