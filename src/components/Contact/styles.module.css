@@ -1,0 +1,18 @@
+.link {
+    padding-right: var(--size-l);
+    padding-bottom: var(--size-m);
+
+    color: var(--color-text-opposite);
+
+    transition: color 200ms;
+}
+
+.link:hover,
+.link:active,
+.link:focus {
+    color: var(--color-brand-dark);
+}
+
+.link:last-child {
+    padding-right: 0px;
+}
