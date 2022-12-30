@@ -46,10 +46,10 @@ export const menu: IMenuItem[] = [
     //     name: 'Sea of Orange',
     //     url: '/sea-of-orange',
     // },
-    {
-        name: 'Map',
-        url: '/map',
-    },
+    // {
+    //     name: 'Map',
+    //     url: '/map',
+    // },
     {
         name: 'About',
         url: '/',
