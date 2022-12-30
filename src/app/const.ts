@@ -42,17 +42,17 @@ export const social: ISocialItem[] = [
 ]
 
 export const menu: IMenuItem[] = [
-    {
-        name: 'Sea of Orange',
-        url: '/sea-of-orange',
-    },
+    // {
+    //     name: 'Sea of Orange',
+    //     url: '/sea-of-orange',
+    // },
     {
         name: 'Map',
-        url: '/',
+        url: '/map',
     },
     {
         name: 'About',
-        url: '/about',
+        url: '/',
     },
     {
         name: 'Projects',
@@ -62,10 +62,10 @@ export const menu: IMenuItem[] = [
         name: 'Events',
         url: '/events',
     },
-    {
-        name: 'Catalog',
-        url: '/catalog',
-    }
+    // {
+    //     name: 'Catalog',
+    //     url: '/catalog',
+    // }
 ]
 
 export const contacts = [
