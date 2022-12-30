@@ -1,110 +1,58 @@
-import dynamic from 'next/dynamic'
-import { NextPage, GetStaticProps } from 'next'
-import { ViewState } from 'react-map-gl/src/mapbox/mapbox'
-import { MapLegend } from '@/components/MapLegend'
-import { useLegend } from '@/hooks/useLegend'
-import { ICity } from '@/types'
-import { useCity } from '@/hooks/useCity'
-import { Select } from '@/components/Select'
-import { AppLayout } from '@/components/AppLayout'
-import { useState, useEffect, useMemo, useContext } from 'react'
-import { MapContext, defaultMapOptions } from '@/context/map'
-import { cities } from '@/app/const'
-import { FeatureCollection } from 'geojson'
-import { getFeatures } from '@/api'
-import { AppPointFeature } from '@/app/types'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
+import { components } from '@/mdx'
+import { GetStaticProps, NextPage } from 'next'
+import { getPageBySlug } from '@/api'
+import { PageDefinition } from '@/types'
+import { PageContext } from '@/context/page'
+import { useRouter } from 'next/router'
+import { Opengraph } from '@/components/Opengraph'
+import { PageLayout } from '@/components/PageLayout'
+import { ControlsContext } from '@/context/controls'
 
-const WaterfontMap = dynamic(import('@/components/WaterfrontMap').then(m => m.WaterfontMap), {
-    ssr: false,
-})
-
-interface IProps {
-    cities: ICity[]
-    features: {
-        [name: string]: FeatureCollection
-    }
+type Props = Omit<PageDefinition, 'content'> & {
+    source: any
 }
 
-const Main: React.FC<IProps> = props => {
-    const { featureSettings } = useContext(MapContext)
-    const cityOptions = useMemo(
-        () => props.cities
-            .map(x => ({
-                value: x.key,
-                label: x.title,
-            })),
-        [props.cities],
-    )
-
-    const [city, setCity] = useCity(props.cities)
-    const [legend, dispatchLegend] = useLegend(featureSettings)
-    const [viewport, setViewport] = useState<ViewState>(city.viewport)
-    // const features = useFeatures(city.key)
-
-    useEffect(() => {
-        setViewport(city.viewport)
-    }, [city])
+const Page: NextPage<Props> = ({ source, ...props }) => {
+    const router = useRouter()
 
     return (
-        <MapContext.Provider value={defaultMapOptions}>
-            <AppLayout
-                side={(
-                    <>
-                        <Select
-                            onChange={value => {
-                                setCity(value)
-                            }}
-                            value={city.key}
-                            options={cityOptions}
-                        />
-                        <MapLegend
-                            data={legend}
-                            onChangeItemSelected={dispatchLegend}
-                        />
-                    </>
-                )}
-            >
-                <WaterfontMap
-                    legend={legend}
-                    features={props.features[city.key].features as any}
-                    viewport={viewport}
-                    onChangeViewport={v => setViewport(v)}
-                />
-            </AppLayout>
-        </MapContext.Provider>
+        <PageContext.Provider value={props as any}>
+            <Opengraph
+                url={router.asPath}
+            />
+
+            <ControlsContext.Provider value={{ size: 'default', shape: 'default' }}>
+                <PageLayout>
+                    <article>
+                        <MDXRemote {...source} components={components} />
+                    </article>
+                </PageLayout>
+            </ControlsContext.Provider>
+        </PageContext.Provider>
     )
 }
 
-type Props = {
-    data: {
-        [name: string]: FeatureCollection
-    }
-}
-
-const Index: NextPage<Props> = props => (
-    <MapContext.Provider value={defaultMapOptions}>
-        <Main
-            cities={[...cities.values()]}
-            features={props.data as any}
-        />
-    </MapContext.Provider>
-)
-
 export const getStaticProps: GetStaticProps<Props> = async ctx => {
-    const locale = ctx.locale ?? 'ru'
-    const spb = await getFeatures(locale, 'saint_petersburg')
-    const oslo = await getFeatures(locale, 'oslo')
-    const stockholm = await getFeatures(locale, 'stockholm')
+    let slug = '/about'
+    const page = await getPageBySlug(ctx.locale, slug)
+    if (!page) {
+        return {
+            notFound: true,
+        }
+    }
+
+    const { content, ...def } = page
+    const source = await serialize(content, {
+    })
 
     return {
         props: {
-            data: {
-                saint_petersburg: spb!,
-                oslo: oslo!,
-                stockholm: stockholm!,
-            }
+            ...def,
+            source,
         }
     }
 }
 
-export default Index
+export default Page
