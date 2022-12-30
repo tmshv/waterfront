@@ -62,10 +62,10 @@ export const Card: React.FC<CardProps> = props => {
             style={props.style}
         >
             {!props.href ? content : (
-                <Link href={props.href}>
-                    <a className={s.link}>
-                        {content}
-                    </a>
+                <Link href={props.href}
+                    className={s.link}
+                >
+                    {content}
                 </Link>
             )}
         </section>

@@ -14,8 +14,7 @@ export interface IFeaturePreviewProps {
 export const FeaturePreview: React.FC<IFeaturePreviewProps> = memo(props => {
     return (
         <Link href={props.href}>
-            <a>
-                <style jsx>{`
+            <style jsx>{`
                     a {
                         display: block;
 
@@ -41,32 +40,31 @@ export const FeaturePreview: React.FC<IFeaturePreviewProps> = memo(props => {
                     .wf-popup-content {
                         padding: 10px;
                     }
-                `}</style>
+            `}</style>
 
-                <div className={'wf-popup-content'}>
-                    {!props.year ? null : (
-                        <p className={'date'}>
-                            {props.year}
-                        </p>
-                    )}
-                    <h3>
-                        {renderMarkdown(props.title)}
-                    </h3>
-                    {!props.body ? null : (
-                        <p>
-                            {renderMarkdown(props.body)}
-                        </p>
-                    )}
-                </div>
+            <div className={'wf-popup-content'}>
+                {!props.year ? null : (
+                    <p className={'date'}>
+                        {props.year}
+                    </p>
+                )}
+                <h3>
+                    {renderMarkdown(props.title)}
+                </h3>
+                {!props.body ? null : (
+                    <p>
+                        {renderMarkdown(props.body)}
+                    </p>
+                )}
+            </div>
 
-                <Image
-                    src={props.previewImageSrc}
-                    width={1}
-                    height={1}
-                    layout={'responsive'}
-                    objectFit={'cover'}
-                />
-            </a>
+            <Image
+                src={props.previewImageSrc}
+                width={1}
+                height={1}
+                layout={'responsive'}
+                objectFit={'cover'}
+            />
         </Link>
     )
 })

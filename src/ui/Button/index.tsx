@@ -65,18 +65,18 @@ export const Button: React.SFC<ButtonProps> =
 
         if (href) {
             return (
-                <Link href={href}>
-                    <a
-                        {...props as any}
-                        ref={ref}
-                        className={cx(
-                            s.button,
-                            themeClass[theme],
-                            sizeClass[sizeValue],
-                            shapeClass[shapeValue],
-                            props.className
-                        )}
-                    >{children}</a>
+                <Link href={href}
+                    {...props as any}
+                    ref={ref}
+                    className={cx(
+                        s.button,
+                        themeClass[theme],
+                        sizeClass[sizeValue],
+                        shapeClass[shapeValue],
+                        props.className
+                    )}
+                >
+                    {children}
                 </Link>
             )
         }

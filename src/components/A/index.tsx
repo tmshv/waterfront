@@ -22,7 +22,6 @@ export type AProps = React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnch
 export const A: React.FC<AProps> = props => {
     const router = useRouter()
     const active = !!props.href && (router && router.asPath !== props.href)
-
     if (!active) {
         return (
             <span>{props.children}</span>
@@ -30,12 +29,14 @@ export const A: React.FC<AProps> = props => {
     }
 
     return (
-        <Link href={props.href}>
-            <a className={cx({
+        <Link href={props.href}
+            className={cx({
                 [s.ios]: isIos(props.href),
                 [s.android]: isGooglePlay(props.href),
             })}
-            >{props.children}</a>
+        >
+
+            {props.children}
         </Link>
     )
 }

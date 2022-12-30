@@ -26,24 +26,23 @@ export const Card: React.FC<ICardProps> = props => {
         >
             <Link
                 href={props.href}
+                className={styles.link}
             >
-                <a className={styles.link}>
-                    <ImageBlock src={src}>
-                        {tags.map(x => (
-                            <Tag key={x}>
-                                {x}
-                            </Tag>
-                        ))}
-                    </ImageBlock>
+                <ImageBlock src={src}>
+                    {tags.map(x => (
+                        <Tag key={x}>
+                            {x}
+                        </Tag>
+                    ))}
+                </ImageBlock>
 
-                    <div className={styles.body}>
-                        <h2>
-                            {props.title}
-                        </h2>
+                <div className={styles.body}>
+                    <h2>
+                        {props.title}
+                    </h2>
 
-                        {props.children}
-                    </div>
-                </a>
+                    {props.children}
+                </div>
             </Link>
         </section>
     )
