@@ -1,9 +1,8 @@
 import styles from './styles.module.css'
 
-import { ContactList } from '../ContactList'
 import LangButton from '../LangButton'
-import { contacts } from 'src/app/const'
 import cx from 'classnames'
+import { Contact } from '../Contact'
 
 const year = () => (new Date()).getFullYear()
 
@@ -26,8 +25,9 @@ export const Footer: React.FC = () => (
         </section>
 
         <section className={styles.section}>
-            <ContactList
-                items={contacts}
+            <Contact
+                href={'mailto:team@waterfront.tools'}
+                label={'team@waterfront.tools'}
             />
         </section>
     </footer>
